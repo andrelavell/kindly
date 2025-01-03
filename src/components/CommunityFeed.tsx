@@ -141,7 +141,7 @@ const ImpactCard = motion(React.forwardRef<HTMLDivElement, { impact: Impact }>((
       <div className="absolute inset-0 bg-gradient-to-r from-rose-50/30 via-transparent to-transparent animate-gradient" />
       
       {/* Live indicator */}
-      <div className="absolute top-3 md:top-4 right-3 md:right-4 flex items-center gap-1.5">
+      <div className="hidden md:flex absolute top-4 right-4 items-center gap-1.5">
         <div className="w-[6px] h-[6px] rounded-full bg-green-400 animate-pulse" />
         <span className="text-xs font-medium text-gray-400">{timeAgo}</span>
       </div>
@@ -161,7 +161,7 @@ const ImpactCard = motion(React.forwardRef<HTMLDivElement, { impact: Impact }>((
           {/* Top row: User and Store */}
           <div className="flex items-center gap-1.5 mb-1.5 md:mb-2">
             <span className="font-medium text-gray-900 text-sm md:text-base">{impact.user}</span>
-            <span className="text-gray-400 text-sm md:text-base">shopped at</span>
+            <span className="text-gray-400 text-xs md:text-base">shopped at</span>
             <span className="font-medium text-gray-900 text-sm md:text-base">
               {impact.store}
             </span>
