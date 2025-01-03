@@ -102,18 +102,21 @@ export function ImpactStories() {
           </div>
 
           {/* Stories Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
             {stories.map((story, index) => (
               <motion.div
                 key={story.title}
-                className={`group relative overflow-hidden rounded-3xl ${story.className}`}
+                className={`group relative overflow-hidden rounded-2xl md:rounded-3xl ${
+                  // Apply special sizing only on md and up
+                  index === 0 ? 'md:col-span-2 md:row-span-2' : ''
+                }`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
                 {/* Image */}
-                <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="relative aspect-[3/2] md:aspect-[4/3] overflow-hidden">
                   <img 
                     src={story.image}
                     alt={story.title}
@@ -123,23 +126,23 @@ export function ImpactStories() {
                 </div>
 
                 {/* Content */}
-                <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                  <span className="text-rose-300 font-medium text-sm mb-2">
+                <div className="absolute inset-0 p-4 md:p-6 flex flex-col justify-end">
+                  <span className="text-rose-300 font-medium text-xs md:text-sm mb-1.5 md:mb-2">
                     {story.category}
                   </span>
-                  <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
+                  <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-white mb-1.5 md:mb-2">
                     {story.title}
                   </h3>
-                  <p className="text-white/80 text-sm mb-4 line-clamp-2">
+                  <p className="text-white/80 text-xs md:text-sm mb-3 md:mb-4 line-clamp-2">
                     "{story.quote}"
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className="text-white/60 text-sm">
+                    <span className="text-white/60 text-xs md:text-sm">
                       {story.location}
                     </span>
-                    <button className="text-white flex items-center gap-1 text-sm group/btn">
+                    <button className="text-white flex items-center gap-1 text-xs md:text-sm group/btn">
                       Read More 
-                      <ArrowRight className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-3 h-3 md:w-4 md:h-4 transform group-hover/btn:translate-x-1 transition-transform" />
                     </button>
                   </div>
                 </div>
