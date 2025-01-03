@@ -21,8 +21,7 @@ export function Hero() {
             <h2 className="text-lg font-medium text-[#222] mb-4">Make Every Purchase Matter</h2>
             
             <h1 className="text-5xl font-bold mb-6 text-[rgb(244,63,94)] leading-tight">
-              Transform Your Daily Shopping Into Acts of Kindness
-            </h1>
+            Turn Everyday Shopping Into Life-Changing Acts of Kindness            </h1>
             
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
               Every time you shop online, you could be helping a child get education, 

@@ -59,9 +59,10 @@ export function CauseSection() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* Left side - Impact Summary */}
             <div>
-              <h2 className="text-3xl font-bold mb-6">
-                Choose a Cause You Care About
-              </h2>
+              <h2 className="text-lg font-medium text-rose-500 mb-4">Make a Difference Today</h2>
+              <h3 className="text-5xl font-bold text-gray-900 mb-6">
+              Support What Matters Most to You
+              </h3>
               <p className="text-gray-600 mb-8 text-lg">
                 Whether it's supporting education, protecting the environment, or helping those in need,
                 your everyday shopping can make a real difference. Choose a cause close to your heart
@@ -77,6 +78,14 @@ export function CauseSection() {
             <div className="relative max-w-[480px] mx-auto">
               {/* Extension Content */}
               <div className="bg-white rounded-lg shadow-lg border border-gray-200">
+                {/* Header with dashboard title */}
+                <div className="px-6 pt-6 pb-4 border-b border-gray-100">
+                  <div className="flex items-center justify-between mb-1">
+                    <h4 className="text-sm font-medium text-gray-500">Your Selected Cause</h4>
+                    <div className="text-xs font-medium text-rose-500">Making a Difference Together</div>
+                  </div>
+                </div>
+
                 <div className="p-6 border-b border-gray-100">
                   <div className="flex items-center justify-between mb-8">
                     <div className="flex items-center space-x-4">
@@ -87,7 +96,15 @@ export function CauseSection() {
                       />
                       <div>
                         <h3 className="font-bold text-lg">Save the Children</h3>
-                        <p className="text-gray-500 text-sm">Your selected cause</p>
+                        <div className="flex items-center gap-2">
+                          <p className="text-gray-500 text-sm">Your selected cause</p>
+                          <button className="text-sm text-rose-500 hover:text-rose-600 font-medium flex items-center gap-1">
+                            <span>Change</span>
+                            <svg className="w-3 h-3" viewBox="0 0 20 20" fill="currentColor">
+                              <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                            </svg>
+                          </button>
+                        </div>
                       </div>
                     </div>
                     <div className="bg-rose-50 text-rose-600 px-3 py-1 rounded-full text-sm font-medium">
@@ -130,10 +147,10 @@ export function CauseSection() {
                 <div className="px-6 py-4 bg-gray-50 rounded-b-lg">
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-500">Updated 2m ago</span>
-                    <a href="#" className="text-rose-500 hover:text-rose-600 font-medium flex items-center space-x-1">
+                    <span className="text-rose-500 font-medium flex items-center space-x-1 cursor-default">
                       <span>View Details</span>
                       <ArrowUpRight className="w-4 h-4" />
-                    </a>
+                    </span>
                   </div>
                 </div>
               </div>
