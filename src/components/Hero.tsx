@@ -33,14 +33,7 @@ export function Hero() {
               <Button size="lg" variant="primary" icon={browserInfo.icon}>
                 {browserInfo.actionText} – It's Free
               </Button>
-              <motion.p 
-                className="text-sm text-gray-500"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
-              >
-                Join 10,000+ people<br />making a difference
-              </motion.p>
+             
             </div>
           </motion.div>
           

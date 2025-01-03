@@ -15,13 +15,13 @@ const faqs = [
   },
   {
     icon: <Shield className="w-5 h-5" />,
-    question: "Real talk - how safe is my data? ",
+    question: "How safe is my data? ",
     answer: "Super safe! We only activate when you're shopping to enable donations. No tracking, no personal data collection - we keep it minimal and secure."
   },
   {
     icon: <ShoppingBag className="w-5 h-5" />,
     question: "Which stores are in on this? ",
-    answer: "Over 50,000 stores including Amazon, Walmart, and Target. When you shop at a supported store, we'll let you know!"
+    answer: "Over 50,000 stores including Amazon, Walmart, and Target. Our extension automatically appears when you shop at supported stores."
   },
   {
     icon: <Heart className="w-5 h-5" />,
