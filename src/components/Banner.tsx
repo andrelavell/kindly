@@ -7,7 +7,7 @@ export function Banner() {
   const BrowserIcon = browserInfo.icon;
 
   return (
-    <div className="bg-gradient-to-r from-rose-500 to-rose-600 text-white py-2.5">
+    <div className="hidden md:block bg-gradient-to-r from-rose-500 to-rose-600 text-white py-2.5">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto flex items-center justify-center gap-3">
           <BrowserIcon className="w-4 h-4 text-rose-200" />
