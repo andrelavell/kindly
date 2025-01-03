@@ -2,7 +2,7 @@ services:
   - type: static
     name: kindly
     buildCommand: npm install && npm run build
-    publishDirectory: out
+    publishDirectory: dist
     envVars:
       - key: NODE_ENV
         value: production
