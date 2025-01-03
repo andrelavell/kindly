@@ -1,11 +1,5 @@
 services:
-  - type: web
+  - type: static
     name: kindly
-    runtime: static
-    buildCommand: "npm install && npm run build"
-    staticPublishPath: ./dist
-    envVars:
-      - key: NODE_ENV
-        value: production
-    autoDeploy: true
-    branch: main
+    buildCommand: npm run build
+    publishPath: dist
