@@ -1,0 +1,10 @@
+services:
+  - type: static
+    name: kindly
+    buildCommand: npm install && npm run build
+    publishDirectory: out
+    envVars:
+      - key: NODE_ENV
+        value: production
+    autoDeploy: true
+    branch: main
