@@ -1,6 +1,4 @@
-import { Chrome } from '../components/icons/Chrome';
-import { Firefox } from '../components/icons/Firefox';
-import { Safari } from '../components/icons/Safari';
+import { Chrome, Firefox, Safari } from 'lucide-react';
 
 export function getBrowserInfo() {
   if (typeof window === 'undefined') {
