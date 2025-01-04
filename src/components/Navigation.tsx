@@ -11,10 +11,10 @@ export function Navigation() {
 
   const navLinks = [
     { name: 'About', href: '/about' },
-    { name: 'Stores', href: '/stores' },
+    { name: 'Supported Stores', href: '/stores' },
+    { name: 'Charity Directory', href: '/charity-directory' },
     { name: 'Ambassadors', href: '/ambassadors' },
     { name: 'Press', href: '/press' },
-    { name: 'Charity Directory', href: '/charity-directory' },
   ];
 
   return (

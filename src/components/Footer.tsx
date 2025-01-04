@@ -5,7 +5,7 @@ import Link from 'next/link';
 // Import navigation links from Navigation component
 const navLinks = [
   { name: 'About', href: '/about' },
-  { name: 'Stores', href: '/stores' },
+  { name: 'Supported Stores', href: '/stores' },
   { name: 'Ambassadors', href: '/ambassadors' },
   { name: 'Press', href: '/press' },
   { name: 'Charity Directory', href: '/charity-directory' },
