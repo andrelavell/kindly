@@ -9,20 +9,28 @@ import { Footer } from './components/Footer';
 import { Banner } from './components/Banner';
 import { FAQ } from './components/FAQ';
 import { WhyPeopleSection } from './components/WhyPeopleSection';
+import { Routes, Route } from 'react-router-dom';
+import { Stores } from './pages/Stores';
 
 function App() {
   return (
     <div className="min-h-screen">
       <Banner />
       <Navigation />
-      <Hero />
-      <HowItWorks />
-      <ImpactStories />
-      <CauseSection />
-      <WhyPeopleSection />
-      <FAQ />
-      <CallToAction /> 
-    
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Hero />
+            <HowItWorks />
+            <ImpactStories />
+            <CauseSection />
+            <WhyPeopleSection />
+            <FAQ />
+            <CallToAction />
+          </>
+        } />
+        <Route path="/stores" element={<Stores />} />
+      </Routes>
       <Footer />
     </div>
   );

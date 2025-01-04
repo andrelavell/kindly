@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Heart, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Button } from './Button';
 import { getBrowserInfo } from '../utils/browserDetection';
 
@@ -9,6 +10,7 @@ export function Navigation() {
 
   const navLinks = [
     { name: 'About', href: '#' },
+    { name: 'Stores', href: '/stores' },
     { name: 'Ambassadors', href: '#' },
     { name: 'Nonprofits', href: '#' },
     { name: 'News', href: '#' },
@@ -23,7 +25,7 @@ export function Navigation() {
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-2">
+            <Link to="/" className="flex items-center space-x-2">
               <div className="relative">
                 <Heart className="w-8 h-8 text-rose-500" />
                 <motion.div 
@@ -42,64 +44,80 @@ export function Navigation() {
                 </motion.div>
               </div>
               <span className="text-2xl font-bold">Kindly</span>
-            </div>
+            </Link>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-6">
               {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
-                >
-                  {link.name}
-                </a>
+                link.href.startsWith('#') ? (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className="text-gray-600 hover:text-rose-500 transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    className="text-gray-600 hover:text-rose-500 transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
               <Button variant="primary" size="md" icon={browserInfo.icon}>
                 {browserInfo.actionText}
               </Button>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 -mr-2 text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="text-gray-600 hover:text-rose-500 focus:outline-none"
+              >
+                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 overflow-hidden"
+            className="md:hidden"
           >
-            <div className="container mx-auto px-4 py-4">
-              <div className="max-w-7xl mx-auto space-y-4">
-                <div className="flex flex-col space-y-3">
-                  {navLinks.map((link) => (
-                    <a
-                      key={link.name}
-                      href={link.href}
-                      className="text-base text-gray-600 hover:text-gray-900 transition-colors"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {link.name}
-                    </a>
-                  ))}
-                </div>
-                <div className="pt-4 border-t border-gray-100">
-                  <Button variant="primary" size="lg" icon={browserInfo.icon} className="w-full justify-center">
-                    {browserInfo.actionText}
-                  </Button>
-                </div>
+            <div className="px-4 pt-2 pb-3 space-y-1 bg-white">
+              {navLinks.map((link) => (
+                link.href.startsWith('#') ? (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-rose-500 transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-rose-500 transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                )
+              ))}
+              <div className="pt-4 border-t border-gray-100">
+                <Button variant="primary" size="lg" icon={browserInfo.icon} className="w-full justify-center">
+                  {browserInfo.actionText}
+                </Button>
               </div>
             </div>
           </motion.div>
