@@ -45,15 +45,21 @@ export function Navigation() {
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-6">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href.toLowerCase()}
-                  className="text-gray-600 hover:text-rose-500 transition-colors"
-                >
-                  {link.name}
-                </Link>
-              ))}
+              <Link href="/about" className="text-gray-600 hover:text-rose-500 transition-colors">
+                About
+              </Link>
+              <Link href="/stores" className="text-gray-600 hover:text-rose-500 transition-colors">
+                Supported Stores
+              </Link>
+              <Link href="/charity-directory" className="text-gray-600 hover:text-rose-500 transition-colors">
+                Charity Directory
+              </Link>
+              <Link href="/ambassadors" className="text-gray-600 hover:text-rose-500 transition-colors">
+                Ambassadors
+              </Link>
+              <Link href="/press" className="text-gray-600 hover:text-rose-500 transition-colors">
+                Press
+              </Link>
               <Button variant="primary" size="md" icon={browserInfo.icon}>
                 {browserInfo.actionText}
               </Button>
@@ -82,15 +88,21 @@ export function Navigation() {
             className="md:hidden"
           >
             <div className="px-4 pt-2 pb-3 space-y-1 bg-white">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href.toLowerCase()}
-                  className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-rose-500 transition-colors"
-                >
-                  {link.name}
-                </Link>
-              ))}
+              <Link href="/about" className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-rose-500 transition-colors">
+                About
+              </Link>
+              <Link href="/stores" className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-rose-500 transition-colors">
+                Supported Stores
+              </Link>
+              <Link href="/charity-directory" className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-rose-500 transition-colors">
+                Charity Directory
+              </Link>
+              <Link href="/ambassadors" className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-rose-500 transition-colors">
+                Ambassadors
+              </Link>
+              <Link href="/press" className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-rose-500 transition-colors">
+                Press
+              </Link>
               <div className="pt-4 border-t border-gray-100">
                 <Button variant="primary" size="lg" icon={browserInfo.icon} className="w-full justify-center">
                   {browserInfo.actionText}

@@ -13,14 +13,6 @@ const nextConfig = {
   poweredByHeader: false,
   trailingSlash: false,
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
-  async rewrites() {
-    return [
-      {
-        source: '/:path*',
-        destination: '/:path*',
-      },
-    ];
-  },
 }
 
 module.exports = nextConfig
