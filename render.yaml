@@ -1,9 +1,15 @@
 services:
-  - type: static
+  - type: web
     name: kindly
-    env: static
+    env: node
     buildCommand: npm install && npm run build
-    staticPublishPath: ./out
+    startCommand: node server.js
+    nodeVersion: 18.x
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
     headers:
       - path: /*
         name: X-Frame-Options
