@@ -13,6 +13,8 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 export default function About() {
+  const browserInfo = React.useMemo(() => getBrowserInfo(), []);
+
   const stats = [
     { number: '500+', label: 'Supported Charities' },
     { number: '$2.5M+', label: 'Impact Generated' },
@@ -294,7 +296,7 @@ export default function About() {
               size="lg"
               className="inline-flex items-center"
             >
-              Add to {getBrowserInfo().name} <ArrowRight className="ml-2 w-5 h-5" />
+              Add to {browserInfo.name} <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Instagram, Youtube, Twitter, ChevronRight, Users, Sparkles, DollarSign } from 'lucide-react';
 import { Button } from '../components/Button';
@@ -11,7 +11,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export default function Ambassadors() {
+export default function ambassadors() {
   const [formData, setFormData] = React.useState({
     name: '',
     email: '',
@@ -74,7 +74,7 @@ export default function Ambassadors() {
               </h1>
               <p className="text-xl text-gray-600 mb-8">
                 Join our mission to transform everyday shopping into a force for good. 
-                As a Kindly Ambassador, you'll help create positive change while building 
+                As a Kindly Ambassador, you’ll help create positive change while building 
                 your personal brand.
               </p>
               <Button 
