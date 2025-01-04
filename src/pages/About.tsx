@@ -12,7 +12,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export default function about() {
+export default function About() {
   const stats = [
     { number: '500+', label: 'Supported Charities' },
     { number: '$2.5M+', label: 'Impact Generated' },

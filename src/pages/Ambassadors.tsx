@@ -11,7 +11,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export default function ambassadors() {
+export default function Ambassadors() {
   const [formData, setFormData] = React.useState({
     name: '',
     email: '',
