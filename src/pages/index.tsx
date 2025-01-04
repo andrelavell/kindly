@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Head from 'next/head';
 import { Hero } from '../components/Hero'
 import { HowItWorks } from '../components/HowItWorks'
@@ -8,6 +9,33 @@ import { FAQ } from '../components/FAQ'
 import { CallToAction } from '../components/CallToAction'
 import { CommunitySpotlight } from '../components/CommunitySpotlight'
 import { CommunityImpact } from '../components/CommunityImpact'
+
+export const metadata: Metadata = {
+  title: 'Kindly - Shop with Purpose',
+  description: 'Make a difference while you shop. Kindly automatically donates a portion of your purchase to causes you care about, at no extra cost to you.',
+  openGraph: {
+    title: 'Kindly - Shop with Purpose',
+    description: 'Make a difference while you shop. Kindly automatically donates a portion of your purchase to causes you care about, at no extra cost to you.',
+    url: 'https://kindly.com',
+    siteName: 'Kindly',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Kindly - Shop with Purpose',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Kindly - Shop with Purpose',
+    description: 'Make a difference while you shop. Kindly automatically donates a portion of your purchase to causes you care about, at no extra cost to you.',
+    images: ['/og-image.jpg'],
+  },
+}
 
 export default function Home() {
   return (
