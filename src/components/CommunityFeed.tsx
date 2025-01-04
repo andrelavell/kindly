@@ -10,6 +10,7 @@ interface Impact {
   amount: string;
   donation: string;
   impact: string;
+  timestamp: number;
 }
 
 const MAX_IMPACTS = 3;
@@ -116,29 +117,46 @@ const getImpactForAmount = (amount: number): string => {
   }
 };
 
+const formatTimeAgo = (timestamp: number): string => {
+  const seconds = Math.floor((Date.now() - timestamp) / 1000);
+  if (seconds < 60) {
+    return "Just now";
+  } else if (seconds < 3600) {
+    return `${Math.floor(seconds / 60)}m ago`;
+  } else if (seconds < 86400) {
+    return `${Math.floor(seconds / 3600)}h ago`;
+  } else {
+    return `${Math.floor(seconds / 86400)}d ago`;
+  }
+};
+
 const ImpactCard = motion(React.forwardRef<HTMLDivElement, { impact: Impact }>(({ impact }, ref) => {
   const [timeAgo, setTimeAgo] = useState("Just now");
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const seconds = Math.floor((Date.now() - impact.id) / 1000);
-      if (seconds < 5) {
+      const seconds = Math.floor((Date.now() - impact.timestamp) / 1000);
+      if (seconds < 60) {
         setTimeAgo("Just now");
       } else {
-        setTimeAgo(`${seconds}s ago`);
+        setTimeAgo(formatTimeAgo(impact.timestamp));
       }
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [impact.id]);
+  }, [impact.timestamp]);
 
   return (
-    <div
+    <div 
       ref={ref}
-      className="relative bg-white rounded-xl p-3 md:p-4 shadow-[0_8px_30px_rgba(0,0,0,0.08)] border border-gray-100 hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] hover:border-gray-200 transition-all duration-300 overflow-hidden"
+      className={`
+        relative bg-white rounded-lg p-4
+        border border-gray-200/50
+        shadow-sm
+      `}
     >
       {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-rose-50/30 via-transparent to-transparent animate-gradient" />
+      {/* <div className="absolute inset-0 bg-gradient-to-r from-rose-50/30 via-transparent to-transparent animate-gradient" /> */}
       
       {/* Live indicator */}
       <div className="hidden md:flex absolute top-4 right-4 items-center gap-1.5">
@@ -203,12 +221,13 @@ export function CommunityFeed({ inHero = false }: { inHero?: boolean }) {
     const lastName = faker.person.lastName();
     
     return {
-      id: timestamp,
+      id: Math.floor(Math.random() * 1000000),
       user: `${firstName} ${lastName[0]}.`,
       store,
       amount: amount.toFixed(2),
       donation,
-      impact: getImpactForAmount(parseFloat(donation))
+      impact: getImpactForAmount(parseFloat(donation)),
+      timestamp
     };
   };
 
@@ -233,52 +252,56 @@ export function CommunityFeed({ inHero = false }: { inHero?: boolean }) {
   }, []);
 
   return (
-    <div className="relative bg-gradient-to-b from-gray-50/50 to-gray-100/50 backdrop-blur-xl rounded-2xl border border-gray-200/50 p-4 md:p-6 shadow-[0_0_50px_-12px_rgba(0,0,0,0.12)]">
-      <div className="absolute inset-0 bg-white/50 rounded-2xl backdrop-blur-sm" style={{ WebkitMaskImage: 'linear-gradient(to bottom, black, transparent)' }} />
-      
-      {/* Title */}
-      <div className="relative mb-4 md:mb-6 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
-          <h3 className="font-semibold text-gray-900">Live Impact Feed</h3>
+    <div className="bg-gray-50 rounded-lg p-4 shadow-sm">
+      <div className="space-y-4">
+        {/* Title */}
+        <div className="relative mb-4 md:mb-6 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="relative">
+              <div className="w-2 h-2 rounded-full bg-emerald-500"></div>
+              <div className="absolute inset-0 w-2 h-2 rounded-full bg-emerald-500 animate-ping opacity-75"></div>
+            </div>
+            <h3 className="font-semibold text-gray-900">Live Impact Feed</h3>
+          </div>
         </div>
-      </div>
 
-      {/* Feed Items */}
-      <motion.div layout className="space-y-3 md:space-y-4 relative">
-        <AnimatePresence mode="popLayout" initial={false}>
-          {currentImpacts.map((impact) => (
-            <motion.div
-              key={impact.id}
-              layout
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{
-                layout: { duration: 0.3 },
-                opacity: { duration: 0.2 },
-                y: { duration: 0.2 }
-              }}
-            >
-              <ImpactCard impact={impact} />
-            </motion.div>
-          ))}
-        </AnimatePresence>
-        
-        {/* Gradient overlay suggesting more content */}
-        <motion.div 
-          className="absolute bottom-0 left-0 right-0 h-16 md:h-20 bg-gradient-to-t from-white to-transparent pointer-events-none"
-          animate={{ 
-            opacity: [1, 0.8, 1],
-            y: [0, 2, 0]
-          }}
-          transition={{ 
-            duration: 3, 
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-      </motion.div>
+        {/* Feed Items */}
+        <motion.div layout className="space-y-3 md:space-y-4 relative">
+          <AnimatePresence mode="popLayout" initial={false}>
+            {currentImpacts.map((impact) => (
+              <motion.div
+                key={impact.id}
+                layout
+                initial={{ opacity: 0, y: -20, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{
+                  layout: { duration: 0.3 },
+                  opacity: { duration: 0.2 },
+                  scale: { duration: 0.2 },
+                  y: { duration: 0.2 }
+                }}
+              >
+                <ImpactCard impact={impact} />
+              </motion.div>
+            ))}
+          </AnimatePresence>
+          
+          {/* Gradient overlay suggesting more content */}
+          <motion.div 
+            className="absolute bottom-0 left-0 right-0 h-16 md:h-20 bg-gradient-to-t from-white to-transparent pointer-events-none"
+            animate={{ 
+              opacity: [1, 0.8, 1],
+              y: [0, 2, 0]
+            }}
+            transition={{ 
+              duration: 3, 
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+        </motion.div>
+      </div>
     </div>
   );
 }
