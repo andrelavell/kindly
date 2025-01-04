@@ -37,7 +37,7 @@ const getDomainVariations = (store: Store) => {
     baseName === 'walmart' ? 'walmart-inc.com' : null,
   ].filter(Boolean) as string[];
 
-  return [...new Set(variations)]; // Remove duplicates
+  return Array.from(new Set(variations)); // Remove duplicates
 };
 
 // Helper function to get store logo URL with multiple fallbacks

@@ -1,4 +1,4 @@
-import { Chrome, Firefox, Safari } from 'lucide-react';
+import { Chrome, Globe, Compass } from 'lucide-react';
 
 export function getBrowserInfo() {
   if (typeof window === 'undefined') {
@@ -16,14 +16,14 @@ export function getBrowserInfo() {
     return {
       name: 'Firefox',
       actionText: 'Add to Firefox',
-      icon: Firefox,
+      icon: Globe,
       isSupported: true
     };
   } else if (userAgent.includes('safari') && !userAgent.includes('chrome')) {
     return {
       name: 'Safari',
       actionText: 'Add to Safari',
-      icon: Safari,
+      icon: Compass,
       isSupported: true
     };
   } else {

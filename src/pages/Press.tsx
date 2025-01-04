@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Download, Mail, ArrowRight, Award, Newspaper, Image, FileText } from 'lucide-react';
 import { Button } from '../components/Button';
 
-export function Press() {
+export default function Press() {
   const pressHighlights = [
     {
       source: "TechCrunch",

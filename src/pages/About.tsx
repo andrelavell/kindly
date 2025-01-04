@@ -4,7 +4,7 @@ import { Heart, Globe, Users, Sparkles, ArrowRight } from 'lucide-react';
 import { Button } from '../components/Button';
 import { getBrowserInfo } from '../utils/browserDetection';
 
-export function About() {
+export default function About() {
   const stats = [
     { number: '500+', label: 'Supported Charities' },
     { number: '$2.5M+', label: 'Impact Generated' },

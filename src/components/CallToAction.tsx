@@ -31,7 +31,7 @@ export function CallToAction() {
           </p>
 
           <div className="flex items-center justify-center gap-4">
-            <Button variant="white" size="lg" icon={Chrome} className="relative group">
+            <Button variant="secondary" size="lg" icon={Chrome} className="relative group">
               <span>Add to Chrome</span>
               <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
             </Button>

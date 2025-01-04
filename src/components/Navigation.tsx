@@ -48,7 +48,7 @@ export function Navigation() {
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
-                  href={link.href}
+                  href={link.href.toLowerCase()}
                   className="text-gray-600 hover:text-rose-500 transition-colors"
                 >
                   {link.name}
@@ -85,7 +85,7 @@ export function Navigation() {
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
-                  href={link.href}
+                  href={link.href.toLowerCase()}
                   className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-rose-500 transition-colors"
                 >
                   {link.name}

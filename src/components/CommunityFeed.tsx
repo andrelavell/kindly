@@ -106,7 +106,7 @@ const impactsByRange = {
 };
 
 const getImpactForAmount = (amount: number): string => {
-  const donationAmount = parseFloat(amount);
+  const donationAmount = amount;
   if (donationAmount >= 15) {
     return impactsByRange.large[Math.floor(Math.random() * impactsByRange.large.length)];
   } else if (donationAmount >= 5) {
@@ -208,7 +208,7 @@ export function CommunityFeed({ inHero = false }: { inHero?: boolean }) {
       store,
       amount: amount.toFixed(2),
       donation,
-      impact: getImpactForAmount(donation)
+      impact: getImpactForAmount(parseFloat(donation))
     };
   };
 

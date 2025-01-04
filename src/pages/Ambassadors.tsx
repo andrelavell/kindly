@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Heart, Instagram, Youtube, Twitter, ChevronRight, Users, Sparkles, DollarSign } from 'lucide-react';
 import { Button } from '../components/Button';
 
-export function Ambassadors() {
+export default function Ambassadors() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',

@@ -7,6 +7,8 @@ interface ButtonProps {
   size?: 'sm' | 'md' | 'lg';
   icon?: LucideIcon;
   onClick?: () => void;
+  className?: string;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 export function Button({ 
@@ -14,7 +16,9 @@ export function Button({
   variant = 'primary', 
   size = 'md', 
   icon: Icon,
-  onClick 
+  onClick,
+  className = '',
+  type = 'button'
 }: ButtonProps) {
   const baseStyles = "inline-flex items-center justify-center font-medium rounded-full";
   
@@ -43,8 +47,9 @@ export function Button({
 
   return (
     <button
+      type={type}
       onClick={onClick}
-      className={`${baseStyles} ${sizes[size]}`}
+      className={`${baseStyles} ${sizes[size]} ${className}`}
       style={getStyles()}
       onMouseOver={(e) => {
         if (variant === 'primary') {
