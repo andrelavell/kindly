@@ -43,7 +43,7 @@ export function HowItWorks() {
     {
       number: "02",
       title: "Shop as Usual",
-      description: "Continue shopping at your favorite stores - no extra steps needed"
+      description: "Once installed, just shop normally at your favorite stores. Our extension works automatically in the background."
     },
     {
       number: "03",

@@ -11,10 +11,15 @@ import { FAQ } from './components/FAQ';
 import { WhyPeopleSection } from './components/WhyPeopleSection';
 import { Routes, Route } from 'react-router-dom';
 import { Stores } from './pages/Stores';
+import { Ambassadors } from './pages/Ambassadors';
+import { About } from './pages/About';
+import { Press } from './pages/Press';
+import { ScrollToTop } from './components/ScrollToTop';
 
 function App() {
   return (
     <div className="min-h-screen">
+      <ScrollToTop />
       <Banner />
       <Navigation />
       <Routes>
@@ -30,6 +35,9 @@ function App() {
           </>
         } />
         <Route path="/stores" element={<Stores />} />
+        <Route path="/ambassadors" element={<Ambassadors />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/press" element={<Press />} />
       </Routes>
       <Footer />
     </div>

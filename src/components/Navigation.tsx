@@ -9,12 +9,10 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: 'About', href: '#' },
+    { name: 'About', href: '/about' },
     { name: 'Stores', href: '/stores' },
-    { name: 'Ambassadors', href: '#' },
-    { name: 'Nonprofits', href: '#' },
-    { name: 'News', href: '#' },
-    { name: 'Nonprofit login', href: '#' },
+    { name: 'Ambassadors', href: '/ambassadors' },
+    { name: 'Press', href: '/press' },
     { name: 'Charity Directory', href: '#' },
   ];
 
