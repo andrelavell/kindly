@@ -12,7 +12,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export default function About() {
+export default function about() {
   const browserInfo = React.useMemo(() => getBrowserInfo(), []);
 
   const stats = [

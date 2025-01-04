@@ -9,6 +9,7 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
+        <script type="text/javascript" src="https://s.skimresources.com/js/276473X1762555.skimlinks.js"></script>
       </body>
     </Html>
   )

@@ -11,7 +11,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export default function Stores() {
+export default function stores() {
   const [searchQuery, setSearchQuery] = React.useState('');
   const [selectedCategory, setSelectedCategory] = React.useState<string>('');
   const [filteredStores, setFilteredStores] = React.useState(storesList);
