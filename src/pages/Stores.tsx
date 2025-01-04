@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Filter, Star } from 'lucide-react';
-import { stores, categories, searchStores, getStoreLogo } from '../data/stores';
+import { stores as storesList, categories, searchStores, getStoreLogo } from '../data/stores';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 
@@ -11,10 +11,10 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export default function Stores() {
+export default function stores() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('');
-  const [filteredStores, setFilteredStores] = useState(stores);
+  const [filteredStores, setFilteredStores] = useState(storesList);
   const [storeLogo, setStoreLogo] = useState<{ [key: string]: string | null }>({});
 
   useEffect(() => {

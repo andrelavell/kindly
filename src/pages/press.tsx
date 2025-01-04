@@ -11,7 +11,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-export default function Press() {
+export default function press() {
   const pressHighlights = [
     {
       source: "TechCrunch",
