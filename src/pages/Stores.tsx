@@ -2,10 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Filter, Star } from 'lucide-react';
 import { stores, categories, searchStores, getStoreLogo } from '../data/stores';
+import { GetStaticProps } from 'next';
+import Head from 'next/head';
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {},
+    revalidate: 60
   }
 }
 

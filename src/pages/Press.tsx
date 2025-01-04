@@ -2,10 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Download, Mail, ArrowRight, Award, Newspaper, Image, FileText } from 'lucide-react';
 import { Button } from '../components/Button';
+import { GetStaticProps } from 'next';
+import Head from 'next/head';
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {},
+    revalidate: 60
   }
 }
 

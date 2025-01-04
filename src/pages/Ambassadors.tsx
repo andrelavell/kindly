@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Instagram, Youtube, Twitter, ChevronRight, Users, Sparkles, DollarSign } from 'lucide-react';
 import { Button } from '../components/Button';
+import { GetStaticProps } from 'next';
+import Head from 'next/head';
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {},
+    revalidate: 60
   }
 }
 
 export default function Ambassadors() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = React.useState({
     name: '',
     email: '',
     instagram: '',

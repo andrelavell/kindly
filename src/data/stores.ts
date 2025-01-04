@@ -69,7 +69,6 @@ export const getStoreLogo = async (store: Store): Promise<string | null> => {
 
   // Try each provider with a timeout
   const timeout = 3000; // 3 seconds timeout
-  
   for (const url of providers) {
     try {
       const controller = new AbortController();
