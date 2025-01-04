@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Instagram, Youtube, Twitter, ChevronRight, Users, Sparkles, DollarSign } from 'lucide-react';
 import { Button } from '../components/Button';
@@ -20,6 +20,17 @@ export default function ambassadors() {
     niche: '',
     message: ''
   });
+
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [submitStatus, setSubmitStatus] = React.useState<'idle' | 'success' | 'error'>('idle');
+
+  useEffect(() => {
+    // Initialize any browser-specific validation or form handling
+    const form = document.getElementById('signup-form');
+    if (form) {
+      form.setAttribute('novalidate', 'true');
+    }
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData(prev => ({

@@ -14,24 +14,41 @@ export const getStaticProps: GetStaticProps = async () => {
 export default function stores() {
   const [searchQuery, setSearchQuery] = React.useState('');
   const [selectedCategory, setSelectedCategory] = React.useState<string>('');
-  const [filteredStores, setFilteredStores] = React.useState(storesList);
+  const [filteredStores, setFilteredStores] = React.useState([]);
   const [storeLogo, setStoreLogo] = React.useState<{ [key: string]: string | null }>({});
 
   React.useEffect(() => {
-    setFilteredStores(searchStores(searchQuery, selectedCategory));
+    // Initialize stores
+    setFilteredStores(storesList);
+  }, []);
+
+  React.useEffect(() => {
+    if (filteredStores.length > 0) {
+      setFilteredStores(searchStores(searchQuery, selectedCategory));
+    }
   }, [searchQuery, selectedCategory]);
 
-  // Load store logos
   React.useEffect(() => {
     const loadLogos = async () => {
       const logoPromises = filteredStores.map(async (store) => {
         if (storeLogo[store.name] === undefined) {
           const logo = await getStoreLogo(store);
-          setStoreLogo(prev => ({ ...prev, [store.name]: logo }));
+          return { name: store.name, logo };
         }
+        return null;
       });
-      await Promise.all(logoPromises);
+
+      const logos = await Promise.all(logoPromises);
+      const newLogos = logos.reduce((acc, curr) => {
+        if (curr) {
+          acc[curr.name] = curr.logo;
+        }
+        return acc;
+      }, {});
+
+      setStoreLogo(prev => ({ ...prev, ...newLogos }));
     };
+
     loadLogos();
   }, [filteredStores]);
 

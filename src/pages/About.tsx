@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Globe, Users, Sparkles, ArrowRight } from 'lucide-react';
+import { Heart, Globe, Users, Sparkles, ArrowRight, Chrome } from 'lucide-react';
 import { Button } from '../components/Button';
 import { getBrowserInfo } from '../utils/browserDetection';
 import { GetStaticProps } from 'next';
@@ -13,7 +13,16 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 export default function about() {
-  const browserInfo = React.useMemo(() => getBrowserInfo(), []);
+  const [browserInfo, setBrowserInfo] = React.useState({
+    name: 'Chrome',
+    actionText: 'Add to Chrome',
+    icon: Chrome,
+    isSupported: true
+  });
+
+  React.useEffect(() => {
+    setBrowserInfo(getBrowserInfo());
+  }, []);
 
   const stats = [
     { number: '500+', label: 'Supported Charities' },
