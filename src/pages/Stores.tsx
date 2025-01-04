@@ -3,6 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Filter, Star } from 'lucide-react';
 import { stores, categories, searchStores, getStoreLogo } from '../data/stores';
 
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}
+
 export default function Stores() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('');

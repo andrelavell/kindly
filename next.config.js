@@ -11,6 +11,8 @@ const nextConfig = {
   },
   output: 'standalone',
   poweredByHeader: false,
+  trailingSlash: false,
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
 }
 
 module.exports = nextConfig

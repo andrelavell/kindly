@@ -4,6 +4,12 @@ import { Heart, Globe, Users, Sparkles, ArrowRight } from 'lucide-react';
 import { Button } from '../components/Button';
 import { getBrowserInfo } from '../utils/browserDetection';
 
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}
+
 export default function About() {
   const stats = [
     { number: '500+', label: 'Supported Charities' },

@@ -3,6 +3,12 @@ import { motion } from 'framer-motion';
 import { Download, Mail, ArrowRight, Award, Newspaper, Image, FileText } from 'lucide-react';
 import { Button } from '../components/Button';
 
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}
+
 export default function Press() {
   const pressHighlights = [
     {

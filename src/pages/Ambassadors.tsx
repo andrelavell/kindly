@@ -3,6 +3,12 @@ import { motion } from 'framer-motion';
 import { Heart, Instagram, Youtube, Twitter, ChevronRight, Users, Sparkles, DollarSign } from 'lucide-react';
 import { Button } from '../components/Button';
 
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}
+
 export default function Ambassadors() {
   const [formData, setFormData] = useState({
     name: '',
