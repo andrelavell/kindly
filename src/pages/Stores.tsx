@@ -7,8 +7,7 @@ import Head from 'next/head';
 
 export const getStaticProps: GetStaticProps = async () => {
   return {
-    props: {},
-    revalidate: 60
+    props: {}
   }
 }
 

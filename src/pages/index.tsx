@@ -12,8 +12,7 @@ import { GetStaticProps } from 'next'
 
 export const getStaticProps: GetStaticProps = async () => {
   return {
-    props: {}, // will be passed to the page component as props
-    revalidate: 60 // regenerate page every 60 seconds if needed
+    props: {}
   }
 }
 

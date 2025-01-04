@@ -1,17 +1,9 @@
 services:
-  - type: web
+  - type: static
     name: kindly
-    env: node
-    buildCommand: npm run build
-    startCommand: npm start
-    nodeVersion: 18.x
-    envVars:
-      - key: NODE_ENV
-        value: production
-      - key: PORT
-        value: 3000
-      - key: NEXT_PUBLIC_BASE_URL
-        value: https://kindly.onrender.com
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./out
     headers:
       - path: /*
         name: X-Frame-Options
