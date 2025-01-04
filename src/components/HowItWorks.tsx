@@ -43,12 +43,12 @@ export function HowItWorks() {
     {
       number: "02",
       title: "Shop as Usual",
-      description: "Continue shopping at your favorite stores - no extra steps needed"
+      description: "Keep shopping at your favorite stores. If it's one of our supported stores, you will be notified with an alert in your browser"
     },
     {
       number: "03",
-      title: "Make an Impact",
-      description: "Watch your impact grow as we donate to your chosen causes"
+      title: "Donate Automatically",
+      description: "We pass our commissions from the merchant to your cause of choice"
     }
   ];
 

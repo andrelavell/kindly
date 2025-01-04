@@ -13,6 +13,7 @@
     "@faker-js/faker": "^9.3.0",
     "@tanstack/react-query": "^5.62.11",
     "axios": "^1.7.9",
+    "cloudinary": "^2.5.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
@@ -20,10 +21,12 @@
     "lodash": "^4.17.21",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
+    "@types/node": "^22.10.5",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
@@ -35,6 +38,7 @@
     "node-fetch": "^3.3.2",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.3.0",
     "vite": "^5.4.2"
