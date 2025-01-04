@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import Head from 'next/head';
 import { Hero } from '../components/Hero'
 import { HowItWorks } from '../components/HowItWorks'
@@ -9,32 +8,13 @@ import { FAQ } from '../components/FAQ'
 import { CallToAction } from '../components/CallToAction'
 import { CommunitySpotlight } from '../components/CommunitySpotlight'
 import { CommunityImpact } from '../components/CommunityImpact'
+import { GetStaticProps } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Kindly - Shop with Purpose',
-  description: 'Make a difference while you shop. Kindly automatically donates a portion of your purchase to causes you care about, at no extra cost to you.',
-  openGraph: {
-    title: 'Kindly - Shop with Purpose',
-    description: 'Make a difference while you shop. Kindly automatically donates a portion of your purchase to causes you care about, at no extra cost to you.',
-    url: 'https://kindly.com',
-    siteName: 'Kindly',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Kindly - Shop with Purpose',
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Kindly - Shop with Purpose',
-    description: 'Make a difference while you shop. Kindly automatically donates a portion of your purchase to causes you care about, at no extra cost to you.',
-    images: ['/og-image.jpg'],
-  },
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {}, // will be passed to the page component as props
+    revalidate: 60 // regenerate page every 60 seconds if needed
+  }
 }
 
 export default function Home() {
@@ -45,9 +25,12 @@ export default function Home() {
         <meta name="description" content="Transform your everyday shopping into meaningful support for causes you care about. Join Kindly and make every purchase count." />
         <meta property="og:title" content="Kindly - Shop & Support Causes You Care About" />
         <meta property="og:description" content="Transform your everyday shopping into meaningful support for causes you care about. Join Kindly and make every purchase count." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://kindly.com" />
         <meta property="og:image" content="/og-image.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://kindly.com" />
       </Head>
 
@@ -66,32 +49,34 @@ export default function Home() {
         </div>
       </div>
 
-      <Hero />
-      <HowItWorks />
-      <ImpactStories />
-      <CauseSection />
-      <WhyPeopleSection />
-      
-      {/* Community Impact Section */}
-      <section className="py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Making a Difference Together
-            </h2>
-            <p className="mt-4 text-lg leading-8 text-gray-600">
-              Every purchase creates positive change. See how our community is transforming lives, one donation at a time.
-            </p>
+      <main>
+        <Hero />
+        <HowItWorks />
+        <ImpactStories />
+        <CauseSection />
+        <WhyPeopleSection />
+        
+        {/* Community Impact Section */}
+        <section className="py-16 sm:py-24">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Making a Difference Together
+              </h2>
+              <p className="mt-4 text-lg leading-8 text-gray-600">
+                Every purchase creates positive change. See how our community is transforming lives, one donation at a time.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <CommunityImpact />
+              <CommunitySpotlight />
+            </div>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <CommunityImpact />
-            <CommunitySpotlight />
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <FAQ />
-      <CallToAction />
+        <FAQ />
+        <CallToAction />
+      </main>
     </>
   )
 }
