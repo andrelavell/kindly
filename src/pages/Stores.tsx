@@ -45,11 +45,13 @@ export default function Stores() {
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Our Supported Stores
+                Supported Stores
               </h1>
-              <p className="text-xl text-gray-600 mb-12">
-                Shop at thousands of your favorite stores while making a difference.
-                Every purchase helps support the causes you care about.
+              <p className="text-xl text-gray-600 mb-6">
+                We support over 48,500 stores worldwide to help you make a difference.
+              </p>
+              <p className="text-lg text-gray-500 mb-12">
+                Below are some of our most popular stores. Use the search to find any supported store that isn't listed.
               </p>
 
               {/* Search and Filter */}
@@ -59,10 +61,10 @@ export default function Stores() {
                     <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                     <input
                       type="text"
-                      placeholder="Search stores..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:border-rose-500 focus:ring-2 focus:ring-rose-200 outline-none transition-all"
+                      className="w-full pl-12 pr-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent"
+                      placeholder="Search all 48,500+ supported stores..."
                     />
                   </div>
                   <div className="relative">
