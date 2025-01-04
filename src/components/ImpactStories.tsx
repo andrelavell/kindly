@@ -136,14 +136,10 @@ export function ImpactStories() {
                   <p className="text-white/80 text-xs md:text-sm mb-3 md:mb-4 line-clamp-2">
                     "{story.quote}"
                   </p>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center">
                     <span className="text-white/60 text-xs md:text-sm">
                       {story.location}
                     </span>
-                    <button className="text-white flex items-center gap-1 text-xs md:text-sm group/btn">
-                      Read More 
-                      <ArrowRight className="w-3 h-3 md:w-4 md:h-4 transform group-hover/btn:translate-x-1 transition-transform" />
-                    </button>
                   </div>
                 </div>
               </motion.div>
