@@ -114,17 +114,14 @@ export function ImpactStories() {
                     <h3 className="text-lg font-bold text-gray-900 mb-2">
                       {story.title}
                     </h3>
-                    <p className="text-sm text-gray-600 mb-3 italic line-clamp-3">
+                    <p className="text-sm text-gray-600 mb-3  line-clamp-3">
                       "{story.quote}"
                     </p>
                     <div className="flex items-center justify-between">
                       <span className="text-gray-500 text-xs">
                         {story.location}
                       </span>
-                      <button className="text-rose-500 hover:text-rose-600 transition-colors flex items-center gap-1 text-xs font-medium">
-                        Read more
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </button>
+                      
                     </div>
                   </div>
                 </motion.div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getBrowserInfo } from '../utils/browserDetection';
+import { ChevronDown, Heart } from 'lucide-react';
 
 export function HowItWorks() {
   const browserInfo = getBrowserInfo();
@@ -53,17 +54,17 @@ export function HowItWorks() {
     {
       number: "01",
       title: browserInfo.actionText,
-      description: "Install our extension in one click - it's free and takes seconds"
+      description: "Install the Kindly extension in just one click. It’s free, quick, and easy!"
     },
     {
       number: "02",
       title: "Shop at Partner Stores",
-      description: "When you shop at supported stores, we'll notify you to support your cause at no extra cost"
+      description: "When you visit participating stores, we’ll let you know you can support your cause—at no extra cost to you"
     },
     {
       number: "03",
       title: "Automatic Donations",
-      description: "After your purchase, we'll donate a percentage to your chosen cause - all handled by us, no extra steps needed"
+      description: "Make a purchase, and we’ll handle the rest. A percentage of what you spend goes directly to your chosen cause—effortlessly and automatically."
     }
   ];
 
@@ -160,7 +161,8 @@ export function HowItWorks() {
                       className="w-[320px]"
                     >
                       <div className="bg-rose-500 text-white px-4 py-3 rounded-t-lg flex justify-between items-center">
-                        <div className="flex items-center">
+                        <div className="flex items-center gap-1.5">
+                          <Heart className="w-4 h-4" fill="white" />
                           <span className="text-sm font-semibold text-white">KINDLY</span>
                         </div>
                         <button className="text-white hover:text-rose-100">
@@ -188,6 +190,10 @@ export function HowItWorks() {
                           <p className="text-[#2D3648]/70 text-sm text-center">
                             For Breast Cancer Research
                           </p>
+                          <button className="text-rose-500 hover:text-rose-600 text-sm font-medium mt-2 mx-auto flex items-center justify-center gap-1 transition-colors">
+                            Change cause
+                            <ChevronDown className="w-4 h-4" />
+                          </button>
                         </div>
                         
                         <div className="relative">
@@ -243,7 +249,8 @@ export function HowItWorks() {
                       className="w-[320px]"
                     >
                       <div className="bg-rose-500 text-white px-4 py-3 rounded-t-lg flex justify-between items-center">
-                        <div className="flex items-center">
+                        <div className="flex items-center gap-1.5">
+                          <Heart className="w-4 h-4" fill="white" />
                           <span className="text-sm font-semibold text-white">KINDLY</span>
                         </div>
                         <button className="text-white hover:text-rose-100">
