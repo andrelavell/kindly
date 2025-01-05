@@ -1,7 +1,8 @@
 import React, { useEffect, useMemo, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Filter, Star } from 'lucide-react';
-import { stores as storesList, categories, searchStores, getStoreLogo, Store } from '../data/stores';
+import { stores as storesList, categories, searchStores, getStoreLogo } from '../data/stores';
+import { Store } from '../types';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useDebouncedCallback } from 'use-debounce';
