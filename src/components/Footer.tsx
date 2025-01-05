@@ -6,12 +6,13 @@ import Link from 'next/link';
 const navLinks = [
   { name: 'About', href: '/about' },
   { name: 'Supported Stores', href: '/stores' },
-  { name: 'Ambassadors', href: '/ambassadors' },
-  { name: 'Press', href: '/press' },
   { name: 'Charity Directory', href: '/charity-directory' },
+  { name: 'For Creators', href: '/creators' },
+  { name: 'Press', href: '/press' },
 ];
 
 const supportLinks = [
+  { name: 'FAQ', href: '/faq' },
   { name: 'Privacy Policy', href: '/privacy' },
   { name: 'Terms of Service', href: '/terms' },
   { name: 'Contact Us', href: '/contact' },

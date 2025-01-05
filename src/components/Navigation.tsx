@@ -17,8 +17,8 @@ export function Navigation() {
   const navLinks = [
     { name: 'About', href: '/about' },
     { name: 'Supported Stores', href: '/stores' },
+    { name: 'For Creators', href: '/creators' },
     { name: 'Charity Directory', href: '/charity-directory' },
-    { name: 'Ambassadors', href: '/ambassadors' },
     { name: 'Press', href: '/press' },
   ];
 
@@ -56,11 +56,11 @@ export function Navigation() {
               <Link href="/stores" className="text-gray-600 hover:text-rose-500 transition-colors">
                 Supported Stores
               </Link>
+              <Link href="/creators" className="text-gray-600 hover:text-rose-500 transition-colors">
+                For Creators
+              </Link>
               <Link href="/charity-directory" className="text-gray-600 hover:text-rose-500 transition-colors">
                 Charity Directory
-              </Link>
-              <Link href="/ambassadors" className="text-gray-600 hover:text-rose-500 transition-colors">
-                Ambassadors
               </Link>
               <Link href="/press" className="text-gray-600 hover:text-rose-500 transition-colors">
                 Press
@@ -99,11 +99,11 @@ export function Navigation() {
               <Link href="/stores" className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-rose-500 transition-colors">
                 Supported Stores
               </Link>
+              <Link href="/creators" className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-rose-500 transition-colors">
+                For Creators
+              </Link>
               <Link href="/charity-directory" className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-rose-500 transition-colors">
                 Charity Directory
-              </Link>
-              <Link href="/ambassadors" className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-rose-500 transition-colors">
-                Ambassadors
               </Link>
               <Link href="/press" className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-rose-500 transition-colors">
                 Press

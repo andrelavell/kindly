@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, MessageCircle, Heart } from 'lucide-react';
 
-const faqs = [
+const userFaqs = [
   {
     question: "Does it cost me anything extra to shop with Kindly?",
     answer: "Not at all. When you shop with Kindly, the prices at your favorite stores remain exactly the same. The donations come from the commission we earn when you make a purchase. Merchants pay us a small percentage of the sale for referring you to their store, and we use this commission to make charitable contributions—at no additional cost to you."
@@ -52,8 +52,40 @@ const faqs = [
   }
 ];
 
+const creatorFaqs = [
+  {
+    question: "Does Kindly override existing affiliate links?",
+    answer: "No, Kindly does not automatically override affiliate links. We give users the option to either support your affiliate link or donate to a charity. The choice is always up to the user."
+  },
+  {
+    question: "How does Kindly ensure my affiliate revenue is protected?",
+    answer: "When users shop, Kindly detects affiliate links and provides them with the option to either support the original affiliate (you) or donate to a charity. Your affiliate links will only be overridden if the user chooses to donate, ensuring that your revenue is protected as long as the user selects your link."
+  },
+  {
+    question: "Will Kindly impact my affiliate earnings?",
+    answer: "Kindly respects your affiliate links unless the user explicitly chooses to donate instead. We present users with an easy choice, so they can continue supporting your affiliate revenue while also having the option to donate to charity."
+  },
+  {
+    question: "How does Kindly notify users about their options?",
+    answer: "Before completing a purchase, Kindly notifies users if an affiliate link is detected. We clearly explain the impact of each choice—whether to support a creator or make a donation—so users can make an informed decision."
+  },
+  {
+    question: "Can I opt-out of Kindly's tracking on my affiliate links?",
+    answer: "Currently, creators cannot opt-out of Kindly's tracking, but we make sure to respect your links by allowing users to choose between supporting you or donating to charity. We aim to avoid conflicts and always give the user control."
+  },
+  {
+    question: "How does Kindly ensure transparency with creators?",
+    answer: "Kindly is committed to transparency. We provide clear reporting on how affiliate links are handled and ensure that users understand the options they have, giving both creators and users a fair and ethical experience."
+  },
+  {
+    question: "How does Kindly address concerns about affiliate link conflicts?",
+    answer: "Kindly works by giving users the option to either support your affiliate link or donate to charity, not by automatically overriding links. This ensures that your affiliate revenue is protected while also offering users the opportunity to contribute to a cause they care about."
+  }
+];
+
 export function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openUserIndex, setOpenUserIndex] = useState<number | null>(null);
+  const [openCreatorIndex, setOpenCreatorIndex] = useState<number | null>(null);
 
   return (
     <section className="py-24 bg-gradient-to-b from-white to-rose-50/20 relative overflow-hidden">
@@ -61,60 +93,95 @@ export function FAQ() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(240,249,250,0.2),_transparent_70%)]" />
       
       <div className="container mx-auto px-4 relative">
-        <div className="max-w-3xl mx-auto">
-          {/* Header Section */}
-          <div className="text-center mb-16">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <MessageCircle className="w-8 h-8 text-rose-500" />
-              <span className="text-rose-500 font-medium">Got Questions?</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Let's Chat About{' '}
-              <span className="relative inline-block">
-                Kindly
-                <span className="absolute -bottom-2 left-0 w-full h-1 bg-rose-500/30" />
-              </span>
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Find answers to common questions about how Kindly works, our impact, and how you can make a difference while you shop.
-            </p>
+        {/* Header Section */}
+        <div className="text-center mb-16">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <MessageCircle className="w-8 h-8 text-rose-500" />
+            <span className="text-rose-500 font-medium">Got Questions?</span>
           </div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Let's Chat About{' '}
+            <span className="relative inline-block">
+              Kindly
+              <span className="absolute -bottom-2 left-0 w-full h-1 bg-rose-500/30" />
+            </span>
+          </h2>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            Find answers to common questions about how Kindly works, our impact, and how you can make a difference while you shop.
+          </p>
+        </div>
 
-          {/* FAQ Accordion */}
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <div 
-                key={index}
-                className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100"
-              >
-                <button
-                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="w-full px-6 py-4 flex justify-between items-center text-left hover:bg-gray-50/50 transition-colors"
+        {/* FAQ Grid */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+          {/* For Users Section */}
+          <div>
+            <h3 className="text-2xl font-bold mb-8 text-gray-900">For Users</h3>
+            <div className="space-y-4">
+              {userFaqs.map((faq, index) => (
+                <div 
+                  key={index}
+                  className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100"
                 >
-                  <span className="font-medium text-gray-900 pr-6">{faq.question}</span>
-                  <div className={`flex-shrink-0 p-2 rounded-full bg-rose-50 text-rose-500 transform transition-transform duration-200 ${
-                    openIndex === index ? 'rotate-180' : ''
-                  }`}>
-                    <ChevronDown className="w-4 h-4" />
-                  </div>
-                </button>
-                
-                {openIndex === index && (
-                  <div className="px-6 pb-4 pt-2 text-gray-600 leading-relaxed">
-                    {faq.answer}
-                  </div>
-                )}
-              </div>
-            ))}
+                  <button
+                    onClick={() => setOpenUserIndex(openUserIndex === index ? null : index)}
+                    className="w-full px-6 py-4 flex justify-between items-center text-left hover:bg-gray-50/50 transition-colors"
+                  >
+                    <span className="font-medium text-gray-900 pr-6">{faq.question}</span>
+                    <div className={`flex-shrink-0 p-2 rounded-full bg-rose-50 text-rose-500 transform transition-transform duration-200 ${
+                      openUserIndex === index ? 'rotate-180' : ''
+                    }`}>
+                      <ChevronDown className="w-4 h-4" />
+                    </div>
+                  </button>
+                  
+                  {openUserIndex === index && (
+                    <div className="px-6 pb-4 pt-2 text-gray-600 leading-relaxed">
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Bottom CTA */}
-          <div className="mt-16 text-center">
-            <a href="/contact" className="inline-flex items-center justify-center gap-2 text-rose-500 font-medium hover:text-rose-600 transition-colors">
-              <Heart className="w-5 h-5" />
-              <span>Still have questions? We're here to help!</span>
-            </a>
+          {/* For Creators Section */}
+          <div>
+            <h3 className="text-2xl font-bold mb-8 text-gray-900">For Creators</h3>
+            <div className="space-y-4">
+              {creatorFaqs.map((faq, index) => (
+                <div 
+                  key={index}
+                  className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100"
+                >
+                  <button
+                    onClick={() => setOpenCreatorIndex(openCreatorIndex === index ? null : index)}
+                    className="w-full px-6 py-4 flex justify-between items-center text-left hover:bg-gray-50/50 transition-colors"
+                  >
+                    <span className="font-medium text-gray-900 pr-6">{faq.question}</span>
+                    <div className={`flex-shrink-0 p-2 rounded-full bg-rose-50 text-rose-500 transform transition-transform duration-200 ${
+                      openCreatorIndex === index ? 'rotate-180' : ''
+                    }`}>
+                      <ChevronDown className="w-4 h-4" />
+                    </div>
+                  </button>
+                  
+                  {openCreatorIndex === index && (
+                    <div className="px-6 pb-4 pt-2 text-gray-600 leading-relaxed">
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="mt-16 text-center">
+          <a href="/contact" className="inline-flex items-center justify-center gap-2 text-rose-500 font-medium hover:text-rose-600 transition-colors">
+            <Heart className="w-5 h-5" />
+            <span>Still have questions? We're here to help!</span>
+          </a>
         </div>
       </div>
     </section>

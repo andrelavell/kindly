@@ -59,7 +59,7 @@ export function HowItWorks() {
     {
       number: "02",
       title: "Shop at Partner Stores",
-      description: "When you visit participating stores, we’ll let you know you can support your cause—at no extra cost to you"
+      description: "Shop as usual, and we’ll notify you when you can support your cause at no extra cost to you"
     },
     {
       number: "03",
@@ -278,7 +278,7 @@ export function HowItWorks() {
                             className="text-center"
                           >
                             <h3 className="text-[#2D3648] text-xl font-semibold mb-4">
-                              Offer Activated!
+                            Donation Activated!
                             </h3>
                             <p className="text-[#2D3648] text-base">
                               Purchases will now generate up to a 2.6% donation to Susan G Komen for Breast Cancer Research.
