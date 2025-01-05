@@ -1,10 +1,10 @@
-export interface Charity {
+export interface Cause {
   id: number;
   name: string;
   category: string;
 }
 
-export const charities: Charity[] = [
+export const causes: Cause[] = [
   { id: 1, name: "Save the Children", category: "Children" },
   { id: 2, name: "World Wildlife Fund", category: "Environment" },
   { id: 3, name: "Doctors Without Borders", category: "Healthcare" },
