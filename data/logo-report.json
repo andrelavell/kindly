@@ -1,0 +1,1679 @@
+{
+  "processed": [
+    {
+      "name": "Costco",
+      "status": "failed"
+    },
+    {
+      "name": "Sam's Club",
+      "status": "failed"
+    },
+    {
+      "name": "Kohl's",
+      "status": "failed"
+    },
+    {
+      "name": "Big Lots",
+      "status": "failed"
+    },
+    {
+      "name": "Dollar General",
+      "status": "failed",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "name": "Family Dollar",
+      "status": "failed"
+    },
+    {
+      "name": "Five Below",
+      "status": "failed"
+    },
+    {
+      "name": "Dollar Tree",
+      "status": "failed",
+      "error": "Unknown error"
+    },
+    {
+      "name": "JCPenney",
+      "status": "failed"
+    },
+    {
+      "name": "Marshalls",
+      "status": "failed"
+    },
+    {
+      "name": "HomeGoods",
+      "status": "failed"
+    },
+    {
+      "name": "Ross",
+      "status": "failed",
+      "error": "Unknown error"
+    },
+    {
+      "name": "Tuesday Morning",
+      "status": "failed"
+    },
+    {
+      "name": "Adidas",
+      "status": "failed"
+    },
+    {
+      "name": "H&M",
+      "status": "failed"
+    },
+    {
+      "name": "Zara",
+      "status": "failed"
+    },
+    {
+      "name": "Uniqlo",
+      "status": "failed"
+    },
+    {
+      "name": "ASOS",
+      "status": "failed"
+    },
+    {
+      "name": "The North Face",
+      "status": "failed",
+      "error": "Unknown error"
+    },
+    {
+      "name": "Urban Outfitters",
+      "status": "failed"
+    },
+    {
+      "name": "Patagonia",
+      "status": "failed",
+      "error": "Unknown error"
+    },
+    {
+      "name": "Gap",
+      "status": "failed",
+      "error": "Unknown error"
+    },
+    {
+      "name": "Old Navy",
+      "status": "failed"
+    },
+    {
+      "name": "Banana Republic",
+      "status": "failed"
+    },
+    {
+      "name": "Forever 21",
+      "status": "failed"
+    },
+    {
+      "name": "Macy's",
+      "status": "failed"
+    },
+    {
+      "name": "J.Crew",
+      "status": "failed"
+    },
+    {
+      "name": "Puma",
+      "status": "failed",
+      "error": "Unknown error"
+    },
+    {
+      "name": "Under Armour",
+      "status": "failed"
+    },
+    {
+      "name": "Best Buy",
+      "status": "failed"
+    },
+    {
+      "name": "Samsung",
+      "status": "failed"
+    },
+    {
+      "name": "Dell",
+      "status": "failed"
+    },
+    {
+      "name": "Newegg",
+      "status": "failed"
+    },
+    {
+      "name": "B&H Photo",
+      "status": "failed"
+    },
+    {
+      "name": "GameStop",
+      "status": "failed"
+    },
+    {
+      "name": "Sony",
+      "status": "success",
+      "cloudinaryUrl": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736051193/kindly/store-logos/stores/sony.png"
+    },
+    {
+      "name": "Home Depot",
+      "status": "failed"
+    },
+    {
+      "name": "Lowe's",
+      "status": "failed"
+    },
+    {
+      "name": "Bed Bath & Beyond",
+      "status": "failed"
+    },
+    {
+      "name": "Crate & Barrel",
+      "status": "failed"
+    },
+    {
+      "name": "West Elm",
+      "status": "failed"
+    },
+    {
+      "name": "Pottery Barn",
+      "status": "failed"
+    },
+    {
+      "name": "Williams Sonoma",
+      "status": "failed"
+    },
+    {
+      "name": "Restoration Hardware",
+      "status": "failed"
+    },
+    {
+      "name": "The Container Store",
+      "status": "failed"
+    },
+    {
+      "name": "Five Star",
+      "status": "failed"
+    },
+    {
+      "name": "Poppin",
+      "status": "failed"
+    },
+    {
+      "name": "School Specialty",
+      "status": "failed"
+    },
+    {
+      "name": "Mead",
+      "status": "failed"
+    },
+    {
+      "name": "Post-it",
+      "status": "failed"
+    },
+    {
+      "name": "Sephora",
+      "status": "failed",
+      "error": "Unknown error"
+    },
+    {
+      "name": "Ulta Beauty",
+      "status": "failed"
+    },
+    {
+      "name": "MAC Cosmetics",
+      "status": "failed"
+    },
+    {
+      "name": "Bath & Body Works",
+      "status": "failed"
+    },
+    {
+      "name": "The Body Shop",
+      "status": "failed"
+    },
+    {
+      "name": "Dermstore",
+      "status": "failed"
+    },
+    {
+      "name": "Glossier",
+      "status": "failed"
+    },
+    {
+      "name": "Fenty Beauty",
+      "status": "failed"
+    },
+    {
+      "name": "Charlotte Tilbury",
+      "status": "failed"
+    },
+    {
+      "name": "Kiehl's",
+      "status": "failed"
+    },
+    {
+      "name": "Estée Lauder",
+      "status": "failed"
+    },
+    {
+      "name": "NYX Cosmetics",
+      "status": "failed"
+    },
+    {
+      "name": "Morphe",
+      "status": "failed"
+    },
+    {
+      "name": "Booking.com",
+      "status": "failed"
+    },
+    {
+      "name": "Hotels.com",
+      "status": "failed"
+    },
+    {
+      "name": "CheapOair",
+      "status": "failed"
+    },
+    {
+      "name": "Southwest Airlines",
+      "status": "failed"
+    },
+    {
+      "name": "Gucci",
+      "status": "failed"
+    },
+    {
+      "name": "Louis Vuitton",
+      "status": "failed"
+    },
+    {
+      "name": "Burberry",
+      "status": "failed",
+      "error": "Unknown error"
+    },
+    {
+      "name": "Chanel",
+      "status": "failed"
+    },
+    {
+      "name": "Hermès",
+      "status": "failed"
+    },
+    {
+      "name": "Cartier",
+      "status": "failed"
+    },
+    {
+      "name": "Tiffany & Co",
+      "status": "failed"
+    },
+    {
+      "name": "Rolex",
+      "status": "failed"
+    },
+    {
+      "name": "Tag Heuer",
+      "status": "failed"
+    },
+    {
+      "name": "Bulgari",
+      "status": "failed"
+    },
+    {
+      "name": "Saint Laurent",
+      "status": "failed"
+    },
+    {
+      "name": "PetSmart",
+      "status": "failed",
+      "error": "Unknown error"
+    },
+    {
+      "name": "Petco",
+      "status": "failed"
+    },
+    {
+      "name": "BarkBox",
+      "status": "failed"
+    },
+    {
+      "name": "Rover",
+      "status": "failed"
+    },
+    {
+      "name": "Wag",
+      "status": "failed"
+    },
+    {
+      "name": "Pet Supplies Plus",
+      "status": "failed"
+    },
+    {
+      "name": "O'Reilly Auto Parts",
+      "status": "failed"
+    },
+    {
+      "name": "Advance Auto Parts",
+      "status": "failed"
+    },
+    {
+      "name": "NAPA Auto Parts",
+      "status": "failed"
+    },
+    {
+      "name": "CarParts.com",
+      "status": "failed"
+    },
+    {
+      "name": "TireRack",
+      "status": "failed"
+    },
+    {
+      "name": "Pep Boys",
+      "status": "failed"
+    },
+    {
+      "name": "JC Whitney",
+      "status": "failed"
+    },
+    {
+      "name": "4 Wheel Parts",
+      "status": "failed"
+    },
+    {
+      "name": "Staples",
+      "status": "failed"
+    },
+    {
+      "name": "The Container Store",
+      "status": "failed"
+    },
+    {
+      "name": "Five Star",
+      "status": "failed"
+    },
+    {
+      "name": "Poppin",
+      "status": "failed"
+    },
+    {
+      "name": "School Specialty",
+      "status": "failed"
+    },
+    {
+      "name": "Mead",
+      "status": "failed"
+    },
+    {
+      "name": "Post-it",
+      "status": "failed"
+    },
+    {
+      "name": "Buy Buy Baby",
+      "status": "failed"
+    },
+    {
+      "name": "The Children's Place",
+      "status": "failed"
+    },
+    {
+      "name": "OshKosh B'gosh",
+      "status": "failed"
+    },
+    {
+      "name": "Pottery Barn Kids",
+      "status": "failed"
+    },
+    {
+      "name": "Melissa & Doug",
+      "status": "failed"
+    },
+    {
+      "name": "Hanna Andersson",
+      "status": "failed"
+    },
+    {
+      "name": "Primary",
+      "status": "failed"
+    },
+    {
+      "name": "Janie and Jack",
+      "status": "failed"
+    },
+    {
+      "name": "Kay Jewelers",
+      "status": "failed"
+    },
+    {
+      "name": "Swarovski",
+      "status": "failed"
+    },
+    {
+      "name": "Alex and Ani",
+      "status": "failed"
+    },
+    {
+      "name": "Blue Nile",
+      "status": "failed"
+    },
+    {
+      "name": "James Allen",
+      "status": "failed",
+      "error": "Unknown error"
+    },
+    {
+      "name": "Brilliant Earth",
+      "status": "failed"
+    },
+    {
+      "name": "Mejuri",
+      "status": "failed",
+      "error": "Unknown error"
+    },
+    {
+      "name": "Monica Vinader",
+      "status": "failed"
+    },
+    {
+      "name": "Barnes & Noble",
+      "status": "failed"
+    },
+    {
+      "name": "Books A Million",
+      "status": "failed"
+    },
+    {
+      "name": "ThriftBooks",
+      "status": "failed"
+    },
+    {
+      "name": "Book Depository",
+      "status": "failed"
+    },
+    {
+      "name": "Scribd",
+      "status": "failed"
+    },
+    {
+      "name": "Half Price Books",
+      "status": "failed"
+    },
+    {
+      "name": "Better World Books",
+      "status": "failed"
+    },
+    {
+      "name": "Bookshop.org",
+      "status": "failed"
+    },
+    {
+      "name": "Whole Foods",
+      "status": "failed"
+    },
+    {
+      "name": "Wine.com",
+      "status": "failed"
+    },
+    {
+      "name": "Blue Apron",
+      "status": "failed"
+    },
+    {
+      "name": "Home Chef",
+      "status": "failed"
+    },
+    {
+      "name": "Drizly",
+      "status": "failed",
+      "error": "Unknown error"
+    },
+    {
+      "name": "Total Wine",
+      "status": "failed"
+    },
+    {
+      "name": "FreshDirect",
+      "status": "failed"
+    },
+    {
+      "name": "LEGO",
+      "status": "failed"
+    },
+    {
+      "name": "Toys R Us",
+      "status": "failed"
+    },
+    {
+      "name": "Build-A-Bear Workshop",
+      "status": "failed"
+    },
+    {
+      "name": "American Girl",
+      "status": "failed"
+    },
+    {
+      "name": "Hasbro",
+      "status": "failed"
+    },
+    {
+      "name": "Pokemon Center",
+      "status": "failed"
+    },
+    {
+      "name": "Hot Topic",
+      "status": "failed"
+    },
+    {
+      "name": "ThinkGeek",
+      "status": "failed"
+    },
+    {
+      "name": "REI",
+      "status": "failed"
+    },
+    {
+      "name": "Dick's Sporting Goods",
+      "status": "failed"
+    },
+    {
+      "name": "Bass Pro Shops",
+      "status": "failed"
+    },
+    {
+      "name": "Cabela's",
+      "status": "failed"
+    },
+    {
+      "name": "Academy Sports",
+      "status": "failed"
+    },
+    {
+      "name": "Backcountry",
+      "status": "failed",
+      "error": "Request failed with status code 404"
+    },
+    {
+      "name": "Moosejaw",
+      "status": "failed"
+    },
+    {
+      "name": "Steep & Cheap",
+      "status": "failed"
+    },
+    {
+      "name": "Sierra Trading Post",
+      "status": "failed"
+    },
+    {
+      "name": "Eastern Mountain Sports",
+      "status": "failed"
+    }
+  ],
+  "missing": [
+    {
+      "name": "Costco",
+      "category": "Major Retailers",
+      "attemptedSources": [
+        "costco.com",
+        "www.costco.com"
+      ]
+    },
+    {
+      "name": "Sam's Club",
+      "category": "Major Retailers",
+      "attemptedSources": [
+        "samsclub.com",
+        "sams-club.com",
+        "www.sams-club.com"
+      ]
+    },
+    {
+      "name": "Kohl's",
+      "category": "Major Retailers",
+      "attemptedSources": [
+        "kohls.com",
+        "www.kohls.com"
+      ]
+    },
+    {
+      "name": "Big Lots",
+      "category": "Major Retailers",
+      "attemptedSources": [
+        "big-lots.com",
+        "www.big-lots.com"
+      ]
+    },
+    {
+      "name": "Family Dollar",
+      "category": "Major Retailers",
+      "attemptedSources": [
+        "family-dollar.com",
+        "www.family-dollar.com"
+      ]
+    },
+    {
+      "name": "Five Below",
+      "category": "Major Retailers",
+      "attemptedSources": [
+        "five-below.com",
+        "www.five-below.com"
+      ]
+    },
+    {
+      "name": "JCPenney",
+      "category": "Major Retailers",
+      "attemptedSources": [
+        "jcpenney.com",
+        "www.jcpenney.com"
+      ]
+    },
+    {
+      "name": "Marshalls",
+      "category": "Major Retailers",
+      "attemptedSources": [
+        "marshalls.com",
+        "www.marshalls.com",
+        "marshallsonline.com"
+      ]
+    },
+    {
+      "name": "HomeGoods",
+      "category": "Major Retailers",
+      "attemptedSources": [
+        "homegoods.com",
+        "www.homegoods.com"
+      ]
+    },
+    {
+      "name": "Tuesday Morning",
+      "category": "Major Retailers",
+      "attemptedSources": [
+        "tuesday-morning.com",
+        "www.tuesday-morning.com"
+      ]
+    },
+    {
+      "name": "Adidas",
+      "category": "Fashion & Apparel",
+      "attemptedSources": [
+        "adidas.com",
+        "www.adidas.com"
+      ]
+    },
+    {
+      "name": "H&M",
+      "category": "Fashion & Apparel",
+      "attemptedSources": [
+        "hm.com",
+        "www.hm.com"
+      ]
+    },
+    {
+      "name": "Zara",
+      "category": "Fashion & Apparel",
+      "attemptedSources": [
+        "zara.com",
+        "www.zara.com"
+      ]
+    },
+    {
+      "name": "Uniqlo",
+      "category": "Fashion & Apparel",
+      "attemptedSources": [
+        "uniqlo.com",
+        "www.uniqlo.com"
+      ]
+    },
+    {
+      "name": "ASOS",
+      "category": "Fashion & Apparel",
+      "attemptedSources": [
+        "asos.com",
+        "www.asos.com"
+      ]
+    },
+    {
+      "name": "Urban Outfitters",
+      "category": "Fashion & Apparel",
+      "attemptedSources": [
+        "urban-outfitters.com",
+        "www.urban-outfitters.com"
+      ]
+    },
+    {
+      "name": "Old Navy",
+      "category": "Fashion & Apparel",
+      "attemptedSources": [
+        "old-navy.com",
+        "www.old-navy.com"
+      ]
+    },
+    {
+      "name": "Banana Republic",
+      "category": "Fashion & Apparel",
+      "attemptedSources": [
+        "banana-republic.com",
+        "www.banana-republic.com"
+      ]
+    },
+    {
+      "name": "Forever 21",
+      "category": "Fashion & Apparel",
+      "attemptedSources": [
+        "forever-21.com",
+        "www.forever-21.com"
+      ]
+    },
+    {
+      "name": "Macy's",
+      "category": "Fashion & Apparel",
+      "attemptedSources": [
+        "macys.com",
+        "www.macys.com"
+      ]
+    },
+    {
+      "name": "J.Crew",
+      "category": "Fashion & Apparel",
+      "attemptedSources": [
+        "j-crew.com",
+        "www.j-crew.com"
+      ]
+    },
+    {
+      "name": "Under Armour",
+      "category": "Fashion & Apparel",
+      "attemptedSources": [
+        "under-armour.com",
+        "www.under-armour.com"
+      ]
+    },
+    {
+      "name": "Best Buy",
+      "category": "Electronics & Tech",
+      "attemptedSources": [
+        "best-buy.com",
+        "www.best-buy.com"
+      ]
+    },
+    {
+      "name": "Samsung",
+      "category": "Electronics & Tech",
+      "attemptedSources": [
+        "samsung.com",
+        "www.samsung.com"
+      ]
+    },
+    {
+      "name": "Dell",
+      "category": "Electronics & Tech",
+      "attemptedSources": [
+        "dell.com",
+        "www.dell.com"
+      ]
+    },
+    {
+      "name": "Newegg",
+      "category": "Electronics & Tech",
+      "attemptedSources": [
+        "newegg.com",
+        "www.newegg.com"
+      ]
+    },
+    {
+      "name": "B&H Photo",
+      "category": "Electronics & Tech",
+      "attemptedSources": [
+        "bh-photo.com",
+        "www.bh-photo.com"
+      ]
+    },
+    {
+      "name": "GameStop",
+      "category": "Electronics & Tech",
+      "attemptedSources": [
+        "gamestop.com",
+        "www.gamestop.com"
+      ]
+    },
+    {
+      "name": "Home Depot",
+      "category": "Home & Garden",
+      "attemptedSources": [
+        "home-depot.com",
+        "www.home-depot.com"
+      ]
+    },
+    {
+      "name": "Lowe's",
+      "category": "Home & Garden",
+      "attemptedSources": [
+        "lowes.com",
+        "www.lowes.com"
+      ]
+    },
+    {
+      "name": "Bed Bath & Beyond",
+      "category": "Home & Garden",
+      "attemptedSources": [
+        "bed-bath-beyond.com",
+        "www.bed-bath-beyond.com"
+      ]
+    },
+    {
+      "name": "Crate & Barrel",
+      "category": "Home & Garden",
+      "attemptedSources": [
+        "crate-barrel.com",
+        "www.crate-barrel.com"
+      ]
+    },
+    {
+      "name": "West Elm",
+      "category": "Home & Garden",
+      "attemptedSources": [
+        "west-elm.com",
+        "www.west-elm.com"
+      ]
+    },
+    {
+      "name": "Pottery Barn",
+      "category": "Home & Garden",
+      "attemptedSources": [
+        "pottery-barn.com",
+        "www.pottery-barn.com"
+      ]
+    },
+    {
+      "name": "Williams Sonoma",
+      "category": "Home & Garden",
+      "attemptedSources": [
+        "williams-sonoma.com",
+        "www.williams-sonoma.com"
+      ]
+    },
+    {
+      "name": "Restoration Hardware",
+      "category": "Home & Garden",
+      "attemptedSources": [
+        "restoration-hardware.com",
+        "www.restoration-hardware.com"
+      ]
+    },
+    {
+      "name": "The Container Store",
+      "category": "Home & Garden",
+      "attemptedSources": [
+        "the-container-store.com",
+        "www.the-container-store.com"
+      ]
+    },
+    {
+      "name": "Five Star",
+      "category": "Home & Garden",
+      "attemptedSources": [
+        "five-star.com",
+        "www.five-star.com"
+      ]
+    },
+    {
+      "name": "Poppin",
+      "category": "Home & Garden",
+      "attemptedSources": [
+        "poppin.com",
+        "www.poppin.com"
+      ]
+    },
+    {
+      "name": "School Specialty",
+      "category": "Home & Garden",
+      "attemptedSources": [
+        "school-specialty.com",
+        "www.school-specialty.com"
+      ]
+    },
+    {
+      "name": "Mead",
+      "category": "Home & Garden",
+      "attemptedSources": [
+        "mead.com",
+        "www.mead.com"
+      ]
+    },
+    {
+      "name": "Post-it",
+      "category": "Home & Garden",
+      "attemptedSources": [
+        "post-it.com",
+        "www.post-it.com"
+      ]
+    },
+    {
+      "name": "Ulta Beauty",
+      "category": "Health & Beauty",
+      "attemptedSources": [
+        "ulta-beauty.com",
+        "www.ulta-beauty.com"
+      ]
+    },
+    {
+      "name": "MAC Cosmetics",
+      "category": "Health & Beauty",
+      "attemptedSources": [
+        "mac-cosmetics.com",
+        "www.mac-cosmetics.com"
+      ]
+    },
+    {
+      "name": "Bath & Body Works",
+      "category": "Health & Beauty",
+      "attemptedSources": [
+        "bath-body-works.com",
+        "www.bath-body-works.com"
+      ]
+    },
+    {
+      "name": "The Body Shop",
+      "category": "Health & Beauty",
+      "attemptedSources": [
+        "the-body-shop.com",
+        "www.the-body-shop.com"
+      ]
+    },
+    {
+      "name": "Dermstore",
+      "category": "Health & Beauty",
+      "attemptedSources": [
+        "dermstore.com",
+        "www.dermstore.com"
+      ]
+    },
+    {
+      "name": "Glossier",
+      "category": "Health & Beauty",
+      "attemptedSources": [
+        "glossier.com",
+        "www.glossier.com"
+      ]
+    },
+    {
+      "name": "Fenty Beauty",
+      "category": "Health & Beauty",
+      "attemptedSources": [
+        "fenty-beauty.com",
+        "www.fenty-beauty.com"
+      ]
+    },
+    {
+      "name": "Charlotte Tilbury",
+      "category": "Health & Beauty",
+      "attemptedSources": [
+        "charlotte-tilbury.com",
+        "www.charlotte-tilbury.com"
+      ]
+    },
+    {
+      "name": "Kiehl's",
+      "category": "Health & Beauty",
+      "attemptedSources": [
+        "kiehls.com",
+        "www.kiehls.com"
+      ]
+    },
+    {
+      "name": "Estée Lauder",
+      "category": "Health & Beauty",
+      "attemptedSources": [
+        "este-lauder.com",
+        "www.este-lauder.com"
+      ]
+    },
+    {
+      "name": "NYX Cosmetics",
+      "category": "Health & Beauty",
+      "attemptedSources": [
+        "nyx-cosmetics.com",
+        "www.nyx-cosmetics.com"
+      ]
+    },
+    {
+      "name": "Morphe",
+      "category": "Health & Beauty",
+      "attemptedSources": [
+        "morphe.com",
+        "www.morphe.com"
+      ]
+    },
+    {
+      "name": "Booking.com",
+      "category": "Travel & Leisure",
+      "attemptedSources": [
+        "booking-com.com",
+        "www.booking-com.com"
+      ]
+    },
+    {
+      "name": "Hotels.com",
+      "category": "Travel & Leisure",
+      "attemptedSources": [
+        "hotels-com.com",
+        "www.hotels-com.com"
+      ]
+    },
+    {
+      "name": "CheapOair",
+      "category": "Travel & Leisure",
+      "attemptedSources": [
+        "cheapoair.com",
+        "www.cheapoair.com"
+      ]
+    },
+    {
+      "name": "Southwest Airlines",
+      "category": "Travel & Leisure",
+      "attemptedSources": [
+        "southwest-airlines.com",
+        "www.southwest-airlines.com"
+      ]
+    },
+    {
+      "name": "Gucci",
+      "category": "Luxury",
+      "attemptedSources": [
+        "gucci.com",
+        "www.gucci.com"
+      ]
+    },
+    {
+      "name": "Louis Vuitton",
+      "category": "Luxury",
+      "attemptedSources": [
+        "louis-vuitton.com",
+        "www.louis-vuitton.com"
+      ]
+    },
+    {
+      "name": "Chanel",
+      "category": "Luxury",
+      "attemptedSources": [
+        "chanel.com",
+        "www.chanel.com"
+      ]
+    },
+    {
+      "name": "Hermès",
+      "category": "Luxury",
+      "attemptedSources": [
+        "herms.com",
+        "www.herms.com"
+      ]
+    },
+    {
+      "name": "Cartier",
+      "category": "Luxury",
+      "attemptedSources": [
+        "cartier.com",
+        "www.cartier.com"
+      ]
+    },
+    {
+      "name": "Tiffany & Co",
+      "category": "Luxury",
+      "attemptedSources": [
+        "tiffany-co.com",
+        "www.tiffany-co.com"
+      ]
+    },
+    {
+      "name": "Rolex",
+      "category": "Luxury",
+      "attemptedSources": [
+        "rolex.com",
+        "www.rolex.com"
+      ]
+    },
+    {
+      "name": "Tag Heuer",
+      "category": "Luxury",
+      "attemptedSources": [
+        "tag-heuer.com",
+        "www.tag-heuer.com"
+      ]
+    },
+    {
+      "name": "Bulgari",
+      "category": "Luxury",
+      "attemptedSources": [
+        "bulgari.com",
+        "www.bulgari.com"
+      ]
+    },
+    {
+      "name": "Saint Laurent",
+      "category": "Luxury",
+      "attemptedSources": [
+        "saint-laurent.com",
+        "www.saint-laurent.com"
+      ]
+    },
+    {
+      "name": "Petco",
+      "category": "Pet Supplies",
+      "attemptedSources": [
+        "petco.com",
+        "www.petco.com"
+      ]
+    },
+    {
+      "name": "BarkBox",
+      "category": "Pet Supplies",
+      "attemptedSources": [
+        "barkbox.com",
+        "www.barkbox.com"
+      ]
+    },
+    {
+      "name": "Rover",
+      "category": "Pet Supplies",
+      "attemptedSources": [
+        "rover.com",
+        "www.rover.com"
+      ]
+    },
+    {
+      "name": "Wag",
+      "category": "Pet Supplies",
+      "attemptedSources": [
+        "wag.com",
+        "www.wag.com"
+      ]
+    },
+    {
+      "name": "Pet Supplies Plus",
+      "category": "Pet Supplies",
+      "attemptedSources": [
+        "pet-supplies-plus.com",
+        "www.pet-supplies-plus.com"
+      ]
+    },
+    {
+      "name": "O'Reilly Auto Parts",
+      "category": "Automotive",
+      "attemptedSources": [
+        "oreilly-auto-parts.com",
+        "www.oreilly-auto-parts.com"
+      ]
+    },
+    {
+      "name": "Advance Auto Parts",
+      "category": "Automotive",
+      "attemptedSources": [
+        "advance-auto-parts.com",
+        "www.advance-auto-parts.com"
+      ]
+    },
+    {
+      "name": "NAPA Auto Parts",
+      "category": "Automotive",
+      "attemptedSources": [
+        "napa-auto-parts.com",
+        "www.napa-auto-parts.com"
+      ]
+    },
+    {
+      "name": "CarParts.com",
+      "category": "Automotive",
+      "attemptedSources": [
+        "carparts-com.com",
+        "www.carparts-com.com"
+      ]
+    },
+    {
+      "name": "TireRack",
+      "category": "Automotive",
+      "attemptedSources": [
+        "tirerack.com",
+        "www.tirerack.com"
+      ]
+    },
+    {
+      "name": "Pep Boys",
+      "category": "Automotive",
+      "attemptedSources": [
+        "pep-boys.com",
+        "www.pep-boys.com"
+      ]
+    },
+    {
+      "name": "JC Whitney",
+      "category": "Automotive",
+      "attemptedSources": [
+        "jc-whitney.com",
+        "www.jc-whitney.com"
+      ]
+    },
+    {
+      "name": "4 Wheel Parts",
+      "category": "Automotive",
+      "attemptedSources": [
+        "4-wheel-parts.com",
+        "www.4-wheel-parts.com"
+      ]
+    },
+    {
+      "name": "Staples",
+      "category": "Office & School",
+      "attemptedSources": [
+        "staples.com",
+        "www.staples.com"
+      ]
+    },
+    {
+      "name": "The Container Store",
+      "category": "Office & School",
+      "attemptedSources": [
+        "the-container-store.com",
+        "www.the-container-store.com"
+      ]
+    },
+    {
+      "name": "Five Star",
+      "category": "Office & School",
+      "attemptedSources": [
+        "five-star.com",
+        "www.five-star.com"
+      ]
+    },
+    {
+      "name": "Poppin",
+      "category": "Office & School",
+      "attemptedSources": [
+        "poppin.com",
+        "www.poppin.com"
+      ]
+    },
+    {
+      "name": "School Specialty",
+      "category": "Office & School",
+      "attemptedSources": [
+        "school-specialty.com",
+        "www.school-specialty.com"
+      ]
+    },
+    {
+      "name": "Mead",
+      "category": "Office & School",
+      "attemptedSources": [
+        "mead.com",
+        "www.mead.com"
+      ]
+    },
+    {
+      "name": "Post-it",
+      "category": "Office & School",
+      "attemptedSources": [
+        "post-it.com",
+        "www.post-it.com"
+      ]
+    },
+    {
+      "name": "Buy Buy Baby",
+      "category": "Baby & Kids",
+      "attemptedSources": [
+        "buy-buy-baby.com",
+        "www.buy-buy-baby.com"
+      ]
+    },
+    {
+      "name": "The Children's Place",
+      "category": "Baby & Kids",
+      "attemptedSources": [
+        "the-childrens-place.com",
+        "www.the-childrens-place.com"
+      ]
+    },
+    {
+      "name": "OshKosh B'gosh",
+      "category": "Baby & Kids",
+      "attemptedSources": [
+        "oshkosh-bgosh.com",
+        "www.oshkosh-bgosh.com"
+      ]
+    },
+    {
+      "name": "Pottery Barn Kids",
+      "category": "Baby & Kids",
+      "attemptedSources": [
+        "pottery-barn-kids.com",
+        "www.pottery-barn-kids.com"
+      ]
+    },
+    {
+      "name": "Melissa & Doug",
+      "category": "Baby & Kids",
+      "attemptedSources": [
+        "melissa-doug.com",
+        "www.melissa-doug.com"
+      ]
+    },
+    {
+      "name": "Hanna Andersson",
+      "category": "Baby & Kids",
+      "attemptedSources": [
+        "hanna-andersson.com",
+        "www.hanna-andersson.com"
+      ]
+    },
+    {
+      "name": "Primary",
+      "category": "Baby & Kids",
+      "attemptedSources": [
+        "primary.com",
+        "www.primary.com"
+      ]
+    },
+    {
+      "name": "Janie and Jack",
+      "category": "Baby & Kids",
+      "attemptedSources": [
+        "janie-and-jack.com",
+        "www.janie-and-jack.com"
+      ]
+    },
+    {
+      "name": "Kay Jewelers",
+      "category": "Jewelry & Accessories",
+      "attemptedSources": [
+        "kay-jewelers.com",
+        "www.kay-jewelers.com"
+      ]
+    },
+    {
+      "name": "Swarovski",
+      "category": "Jewelry & Accessories",
+      "attemptedSources": [
+        "swarovski.com",
+        "www.swarovski.com"
+      ]
+    },
+    {
+      "name": "Alex and Ani",
+      "category": "Jewelry & Accessories",
+      "attemptedSources": [
+        "alex-and-ani.com",
+        "www.alex-and-ani.com"
+      ]
+    },
+    {
+      "name": "Blue Nile",
+      "category": "Jewelry & Accessories",
+      "attemptedSources": [
+        "blue-nile.com",
+        "www.blue-nile.com"
+      ]
+    },
+    {
+      "name": "Brilliant Earth",
+      "category": "Jewelry & Accessories",
+      "attemptedSources": [
+        "brilliant-earth.com",
+        "www.brilliant-earth.com"
+      ]
+    },
+    {
+      "name": "Monica Vinader",
+      "category": "Jewelry & Accessories",
+      "attemptedSources": [
+        "monica-vinader.com",
+        "www.monica-vinader.com"
+      ]
+    },
+    {
+      "name": "Barnes & Noble",
+      "category": "Books & Media",
+      "attemptedSources": [
+        "barnes-noble.com",
+        "www.barnes-noble.com"
+      ]
+    },
+    {
+      "name": "Books A Million",
+      "category": "Books & Media",
+      "attemptedSources": [
+        "books-a-million.com",
+        "www.books-a-million.com"
+      ]
+    },
+    {
+      "name": "ThriftBooks",
+      "category": "Books & Media",
+      "attemptedSources": [
+        "thriftbooks.com",
+        "www.thriftbooks.com"
+      ]
+    },
+    {
+      "name": "Book Depository",
+      "category": "Books & Media",
+      "attemptedSources": [
+        "book-depository.com",
+        "www.book-depository.com"
+      ]
+    },
+    {
+      "name": "Scribd",
+      "category": "Books & Media",
+      "attemptedSources": [
+        "scribd.com",
+        "www.scribd.com"
+      ]
+    },
+    {
+      "name": "Half Price Books",
+      "category": "Books & Media",
+      "attemptedSources": [
+        "half-price-books.com",
+        "www.half-price-books.com"
+      ]
+    },
+    {
+      "name": "Better World Books",
+      "category": "Books & Media",
+      "attemptedSources": [
+        "better-world-books.com",
+        "www.better-world-books.com"
+      ]
+    },
+    {
+      "name": "Bookshop.org",
+      "category": "Books & Media",
+      "attemptedSources": [
+        "bookshop-org.com",
+        "www.bookshop-org.com"
+      ]
+    },
+    {
+      "name": "Whole Foods",
+      "category": "Food & Drink",
+      "attemptedSources": [
+        "whole-foods.com",
+        "www.whole-foods.com"
+      ]
+    },
+    {
+      "name": "Wine.com",
+      "category": "Food & Drink",
+      "attemptedSources": [
+        "wine-com.com",
+        "www.wine-com.com"
+      ]
+    },
+    {
+      "name": "Blue Apron",
+      "category": "Food & Drink",
+      "attemptedSources": [
+        "blue-apron.com",
+        "www.blue-apron.com"
+      ]
+    },
+    {
+      "name": "Home Chef",
+      "category": "Food & Drink",
+      "attemptedSources": [
+        "home-chef.com",
+        "www.home-chef.com"
+      ]
+    },
+    {
+      "name": "Total Wine",
+      "category": "Food & Drink",
+      "attemptedSources": [
+        "total-wine.com",
+        "www.total-wine.com"
+      ]
+    },
+    {
+      "name": "FreshDirect",
+      "category": "Food & Drink",
+      "attemptedSources": [
+        "freshdirect.com",
+        "www.freshdirect.com"
+      ]
+    },
+    {
+      "name": "LEGO",
+      "category": "Toys & Games",
+      "attemptedSources": [
+        "lego.com",
+        "www.lego.com"
+      ]
+    },
+    {
+      "name": "Toys R Us",
+      "category": "Toys & Games",
+      "attemptedSources": [
+        "toys-r-us.com",
+        "www.toys-r-us.com"
+      ]
+    },
+    {
+      "name": "Build-A-Bear Workshop",
+      "category": "Toys & Games",
+      "attemptedSources": [
+        "build-a-bear-workshop.com",
+        "www.build-a-bear-workshop.com"
+      ]
+    },
+    {
+      "name": "American Girl",
+      "category": "Toys & Games",
+      "attemptedSources": [
+        "american-girl.com",
+        "www.american-girl.com"
+      ]
+    },
+    {
+      "name": "Hasbro",
+      "category": "Toys & Games",
+      "attemptedSources": [
+        "hasbro.com",
+        "www.hasbro.com"
+      ]
+    },
+    {
+      "name": "Pokemon Center",
+      "category": "Toys & Games",
+      "attemptedSources": [
+        "pokemon-center.com",
+        "www.pokemon-center.com"
+      ]
+    },
+    {
+      "name": "Hot Topic",
+      "category": "Toys & Games",
+      "attemptedSources": [
+        "hot-topic.com",
+        "www.hot-topic.com"
+      ]
+    },
+    {
+      "name": "ThinkGeek",
+      "category": "Toys & Games",
+      "attemptedSources": [
+        "thinkgeek.com",
+        "www.thinkgeek.com"
+      ]
+    },
+    {
+      "name": "REI",
+      "category": "Sports & Outdoors",
+      "attemptedSources": [
+        "rei.com",
+        "www.rei.com"
+      ]
+    },
+    {
+      "name": "Dick's Sporting Goods",
+      "category": "Sports & Outdoors",
+      "attemptedSources": [
+        "dicks-sporting-goods.com",
+        "www.dicks-sporting-goods.com"
+      ]
+    },
+    {
+      "name": "Bass Pro Shops",
+      "category": "Sports & Outdoors",
+      "attemptedSources": [
+        "bass-pro-shops.com",
+        "www.bass-pro-shops.com"
+      ]
+    },
+    {
+      "name": "Cabela's",
+      "category": "Sports & Outdoors",
+      "attemptedSources": [
+        "cabelas.com",
+        "www.cabelas.com"
+      ]
+    },
+    {
+      "name": "Academy Sports",
+      "category": "Sports & Outdoors",
+      "attemptedSources": [
+        "academy-sports.com",
+        "www.academy-sports.com"
+      ]
+    },
+    {
+      "name": "Moosejaw",
+      "category": "Sports & Outdoors",
+      "attemptedSources": [
+        "moosejaw.com",
+        "www.moosejaw.com"
+      ]
+    },
+    {
+      "name": "Steep & Cheap",
+      "category": "Sports & Outdoors",
+      "attemptedSources": [
+        "steep-cheap.com",
+        "www.steep-cheap.com"
+      ]
+    },
+    {
+      "name": "Sierra Trading Post",
+      "category": "Sports & Outdoors",
+      "attemptedSources": [
+        "sierra-trading-post.com",
+        "www.sierra-trading-post.com"
+      ]
+    },
+    {
+      "name": "Eastern Mountain Sports",
+      "category": "Sports & Outdoors",
+      "attemptedSources": [
+        "eastern-mountain-sports.com",
+        "www.eastern-mountain-sports.com"
+      ]
+    }
+  ]
+}

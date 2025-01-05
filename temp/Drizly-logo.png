@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Drizly</title>
+    <link
+      href="./drizly-sunset-static-assets/images/favicon16.png"
+      rel="shortcut icon"
+      type="image/png"
+      size="16x16"
+    />
+    <link
+      href="./drizly-sunset-static-assets/images/favicon32.png"
+      rel="shortcut icon"
+      type="image/png"
+      size="32x32"
+    />
+    <link
+      rel="stylesheet"
+      href="./drizly-sunset-static-assets/styles/common.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./drizly-sunset-static-assets/styles/home.css"
+    />
+  </head>
+  <body class="body">
+    <div class="main">
+      <h1 class="headline">Looks like you missed last call.</h1>
+      <p class="information">
+        Drizly is no longer in service, but our friends at Uber Eats can handle
+        all of your alcohol delivery needs.
+      </p>
+      <a
+        aria-role="button"
+        class="cta-button"
+        href="https://www.ubereats.com/aisle-feed?verticalCategory=alcoholext2024us&verticalType=ALCOHOL"
+      >
+        Order alcohol on Uber Eats
+        <img
+          src="./drizly-sunset-static-assets/images/right-arrow.svg"
+          width="17"
+          height="22"
+        />
+      </a>
+      <img
+        class="drizly-bear-riding-bike"
+        src="./drizly-sunset-static-assets/images/drizly-sunset-hero.gif"
+        alt="Drizly Sunset"
+      />
+      <p>
+        <a href="./legal.html" class="legal-link"
+          >Terms of Service & Privacy Notice</a
+        >
+      </p>
+    </div>
+  </body>
+</html>
