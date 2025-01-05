@@ -5,19 +5,19 @@ import Image from 'next/image';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 }
-};
+  animate: { opacity: 1, y: 0 }
+} as const;
 
 const staggerContainer = {
+  initial: {},
   animate: {
     transition: {
       staggerChildren: 0.1
     }
   }
-};
+} as const;
 
-export default function Creators() {
+export default function CreatorsPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}

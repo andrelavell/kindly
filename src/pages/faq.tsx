@@ -6,9 +6,8 @@ import Link from 'next/link';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 }
-};
+  animate: { opacity: 1, y: 0 }
+} as const;
 
 export default function FAQPage() {
   return (
@@ -25,7 +24,9 @@ export default function FAQPage() {
           <div className="max-w-3xl mx-auto text-center">
             <motion.div 
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-rose-300 mb-6"
-              {...fadeIn}
+              initial="initial"
+              animate="animate"
+              variants={fadeIn}
             >
               <MessageCircle className="w-5 h-5" />
               <span>Frequently Asked Questions</span>
@@ -35,7 +36,7 @@ export default function FAQPage() {
               className="text-4xl md:text-5xl font-bold text-white mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ delay: 0.2 }}
             >
               Got questions? We've got answers.
             </motion.h1>
@@ -44,7 +45,7 @@ export default function FAQPage() {
               className="text-xl text-gray-300 mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              transition={{ delay: 0.3 }}
             >
               Find answers to common questions about shopping with Kindly and making an impact
             </motion.p>
@@ -63,7 +64,7 @@ export default function FAQPage() {
               className="bg-white rounded-3xl p-12 shadow-xl border border-gray-100"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ delay: 0.1 }}
             >
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 Are you a content creator?
