@@ -1,255 +1,53 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { storeBrands } from '../utils/storeBrands';
-import { faker } from '@faker-js/faker';
-
-interface Impact {
-  id: number;
-  user: string;
-  store: string;
-  amount: string;
-  donation: string;
-  impact: string;
-  timestamp: number;
-}
+import dynamic from 'next/dynamic';
+import type { Impact } from '../utils/impactGenerator';
 
 const MAX_IMPACTS = 3;
 
-const generateAmount = (store: string): number => {
-  // Base amounts for different stores
-  const baseAmounts: { [key: string]: number } = {
-    'Amazon': 35,
-    'Target': 45,
-    'Walmart': 40,
-    'Best Buy': 85,
-    'Apple': 120,
-    'Nike': 65,
-    'Starbucks': 8,
-    'Barnes & Noble': 25,
-    'Home Depot': 55,
-    'Whole Foods': 50
-  };
-
-  const base = baseAmounts[store] || 30;
-  // Generate a random multiplier between 0.5 and 1.5
-  const multiplier = 0.5 + Math.random();
-  // Generate random cents between 0 and 99
-  const cents = Math.floor(Math.random() * 100);
-  
-  return Number((base * multiplier + cents / 100).toFixed(2));
-};
-
-// Impact messages grouped by donation range
-const impactsByRange = {
-  small: [ // $0-5
-    'supported local food banks',
-    'helped fund youth education',
-    'supported clean water initiatives',
-    'contributed to mental health services',
-    'supported environmental conservation',
-    'helped provide medical care',
-    'supported literacy programs',
-    'helped fund homeless shelters',
-    'supported animal welfare',
-    'contributed to disaster relief',
-    'helped fight hunger',
-    'supported children\'s education',
-    'helped provide healthcare access',
-    'supported housing initiatives',
-    'helped protect the environment',
-    'supported veterans services',
-    'helped fund cancer research',
-    'supported refugee assistance',
-    'helped provide emergency relief',
-    'supported community development',
-    'helped fund medical research',
-    'supported wildlife conservation',
-    'helped provide elderly care',
-    'supported youth programs',
-    'helped fund education technology'
-  ],
-  medium: [ // $5-15
-    'supported families in need',
-    'funded job training programs',
-    'supported education initiatives',
-    'helped provide healthcare services',
-    'supported conservation efforts',
-    'helped fund emergency shelters',
-    'supported community programs',
-    'helped provide medical supplies',
-    'supported youth development',
-    'helped protect endangered species',
-    'supported disaster response',
-    'helped fund medical care',
-    'supported housing programs',
-    'helped provide emergency services',
-    'supported environmental protection',
-    'helped fund community centers'
-  ],
-  large: [ // $15+
-    'supported global health initiatives',
-    'helped fund education programs',
-    'supported humanitarian aid',
-    'helped provide emergency relief',
-    'supported conservation projects',
-    'helped fund medical research',
-    'supported community development',
-    'helped provide disaster relief',
-    'supported environmental protection',
-    'helped fund healthcare access',
-    'supported education technology',
-    'helped provide emergency services',
-    'supported wildlife conservation',
-    'helped fund youth programs',
-    'supported medical initiatives',
-    'helped provide community resources'
-  ]
-};
-
-const getImpactForAmount = (amount: number): string => {
-  const donationAmount = amount;
-  if (donationAmount >= 15) {
-    return impactsByRange.large[Math.floor(Math.random() * impactsByRange.large.length)];
-  } else if (donationAmount >= 5) {
-    return impactsByRange.medium[Math.floor(Math.random() * impactsByRange.medium.length)];
-  } else {
-    return impactsByRange.small[Math.floor(Math.random() * impactsByRange.small.length)];
-  }
-};
-
-const formatTimeAgo = (timestamp: number): string => {
-  const seconds = Math.floor((Date.now() - timestamp) / 1000);
-  if (seconds < 60) {
-    return "Just now";
-  } else if (seconds < 3600) {
-    return `${Math.floor(seconds / 60)}m ago`;
-  } else if (seconds < 86400) {
-    return `${Math.floor(seconds / 3600)}h ago`;
-  } else {
-    return `${Math.floor(seconds / 86400)}d ago`;
-  }
-};
-
-const ImpactCard = motion(React.forwardRef<HTMLDivElement, { impact: Impact }>(({ impact }, ref) => {
-  const [timeAgo, setTimeAgo] = useState("Just now");
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const seconds = Math.floor((Date.now() - impact.timestamp) / 1000);
-      if (seconds < 60) {
-        setTimeAgo("Just now");
-      } else {
-        setTimeAgo(formatTimeAgo(impact.timestamp));
-      }
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [impact.timestamp]);
-
-  return (
-    <div 
-      ref={ref}
-      className={`
-        relative bg-white rounded-lg p-4
-        border border-gray-200/50
-        shadow-sm
-      `}
-    >
-      {/* Animated gradient background */}
-      {/* <div className="absolute inset-0 bg-gradient-to-r from-rose-50/30 via-transparent to-transparent animate-gradient" /> */}
-      
-      {/* Live indicator */}
-      <div className="hidden md:flex absolute top-4 right-4 items-center gap-1.5">
-        <div className="w-[6px] h-[6px] rounded-full bg-green-400 animate-pulse" />
-        <span className="text-xs font-medium text-gray-400">{timeAgo}</span>
-      </div>
-
-      <div className="flex gap-3 md:gap-4 relative">
-        <div className="w-8 h-8 md:w-10 md:h-10 shrink-0 rounded-xl bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-1.5 border border-gray-100">
-          {storeBrands[impact.store]?.logo && (
-            <img 
-              src={storeBrands[impact.store].logo} 
-              alt={impact.store}
-              className="w-full h-full object-contain rounded-xl"
-            />
-          )}
-        </div>
-        
-        <div className="flex-1 min-w-0">
-          {/* Top row: User and Store */}
-          <div className="flex items-center gap-1.5 mb-1.5 md:mb-2">
-            <span className="font-medium text-gray-900 text-sm md:text-base">{impact.user}</span>
-            <span className="text-gray-400 text-xs md:text-base">shopped at</span>
-            <span className="font-medium text-gray-900 text-sm md:text-base">
-              {impact.store}
-            </span>
-          </div>
-
-          {/* Middle row: Donation Amount and Impact */}
-          <div className="flex items-baseline gap-2 mb-1.5 md:mb-2">
-            <div className="text-base md:text-lg font-semibold bg-gradient-to-r from-rose-500 to-rose-600 bg-clip-text text-transparent">
-              ${impact.donation}
-            </div>
-            <div className="text-rose-500 font-medium text-sm md:text-base">donated</div>
-          </div>
-          
-          {/* Bottom row: Purchase and Impact */}
-          <div className="flex items-center">
-            <div className="flex items-baseline gap-1.5">
-              <span className="text-xs md:text-sm text-gray-500">from ${impact.amount} purchase</span>
-              <span className="text-gray-300 mx-1 md:mx-1.5">•</span>
-              <span className="text-xs md:text-sm text-gray-900 font-medium">{impact.impact}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}));
+// Dynamically import the ImpactCard component
+const ImpactCard = dynamic(() => import('./ImpactCard'), {
+  ssr: false,
+  loading: () => (
+    <div className="bg-gray-100 rounded-lg p-4 animate-pulse h-24" />
+  ),
+});
 
 export function CommunityFeed({ inHero = false }: { inHero?: boolean }) {
   const [currentImpacts, setCurrentImpacts] = useState<Impact[]>([]);
-  const stores = Object.keys(storeBrands);
-
-  const generateImpact = (timestamp = Date.now()): Impact => {
-    const store = stores[Math.floor(Math.random() * stores.length)];
-    const amount = generateAmount(store);
-    // Generate random percentage between 2-5%
-    const donationPercent = (2 + Math.random() * 3) / 100;
-    const donation = (amount * donationPercent).toFixed(2);
-    const firstName = faker.person.firstName();
-    const lastName = faker.person.lastName();
-    
-    return {
-      id: Math.floor(Math.random() * 1000000),
-      user: `${firstName} ${lastName[0]}.`,
-      store,
-      amount: amount.toFixed(2),
-      donation,
-      impact: getImpactForAmount(parseFloat(donation)),
-      timestamp
-    };
-  };
+  const [impactGenerator, setImpactGenerator] = useState<typeof import('../utils/impactGenerator')>();
 
   useEffect(() => {
+    // Dynamically import the impact generator
+    import('../utils/impactGenerator').then(setImpactGenerator);
+  }, []);
+
+  const generateNewImpact = useCallback((timestamp = Date.now()) => {
+    return impactGenerator?.generateImpact(timestamp);
+  }, [impactGenerator]);
+
+  useEffect(() => {
+    if (!impactGenerator) return;
+
     // Initialize with 3 impacts with different timestamps
     const now = Date.now();
     const initialImpacts = [
-      generateImpact(now),
-      generateImpact(now - 1000), // 1 second ago
-      generateImpact(now - 2000), // 2 seconds ago
-    ];
+      generateNewImpact(now),
+      generateNewImpact(now - 1000), // 1 second ago
+      generateNewImpact(now - 2000), // 2 seconds ago
+    ].filter(Boolean) as Impact[];
+    
     setCurrentImpacts(initialImpacts);
 
     const interval = setInterval(() => {
-      setCurrentImpacts(prev => {
-        const newImpact = generateImpact();
-        return [newImpact, prev[0], prev[1]];
-      });
+      const newImpact = generateNewImpact();
+      if (newImpact) {
+        setCurrentImpacts(prev => [newImpact, prev[0], prev[1]]);
+      }
     }, 4000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [impactGenerator, generateNewImpact]);
 
   return (
     <div className="bg-gray-50 rounded-lg p-4 shadow-sm">
@@ -266,21 +64,26 @@ export function CommunityFeed({ inHero = false }: { inHero?: boolean }) {
         </div>
 
         {/* Feed Items */}
-        <motion.div layout className="space-y-3 md:space-y-4 relative">
+        <motion.div 
+          layout 
+          className="space-y-3 md:space-y-4 relative"
+          style={{ willChange: 'transform' }}
+        >
           <AnimatePresence mode="popLayout" initial={false}>
             {currentImpacts.map((impact) => (
               <motion.div
                 key={impact.id}
-                layout
+                layout="position"
                 initial={{ opacity: 0, y: -20, scale: 0.95 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{
-                  layout: { duration: 0.3 },
+                  layout: { duration: 0.3, type: "spring", bounce: 0.2 },
                   opacity: { duration: 0.2 },
                   scale: { duration: 0.2 },
                   y: { duration: 0.2 }
                 }}
+                style={{ willChange: 'transform' }}
               >
                 <ImpactCard impact={impact} />
               </motion.div>
@@ -299,6 +102,7 @@ export function CommunityFeed({ inHero = false }: { inHero?: boolean }) {
               repeat: Infinity,
               ease: "easeInOut"
             }}
+            style={{ willChange: 'transform, opacity' }}
           />
         </motion.div>
       </div>

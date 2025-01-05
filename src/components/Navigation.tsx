@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Heart, Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import Link from 'next/link';
 import { Button } from './Button';
 import { getBrowserInfo } from '../utils/browserDetection';
@@ -8,6 +8,11 @@ import { getBrowserInfo } from '../utils/browserDetection';
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const browserInfo = getBrowserInfo();
+  const ref = useRef(null);
+  const inView = useInView(ref, {
+    once: false,
+    amount: 0.5
+  });
 
   const navLinks = [
     { name: 'About', href: '/about' },
@@ -23,17 +28,17 @@ export function Navigation() {
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="relative">
+              <div className="relative" ref={ref}>
                 <Heart className="w-8 h-8 text-rose-500" />
                 <motion.div 
                   className="absolute inset-0"
-                  animate={{ 
+                  animate={inView ? { 
                     scale: [1, 1.2, 1],
                     opacity: [1, 0.8, 1]
-                  }}
+                  } : { scale: 1, opacity: 1 }}
                   transition={{ 
                     duration: 2,
-                    repeat: Infinity,
+                    repeat: inView ? Infinity : 0,
                     ease: "easeInOut"
                   }}
                 >

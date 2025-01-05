@@ -68,7 +68,7 @@ export function FAQ() {
               <MessageCircle className="w-8 h-8 text-rose-500" />
               <span className="text-rose-500 font-medium">Got Questions?</span>
             </div>
-            <h2 className="text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Let's Chat About{' '}
               <span className="relative inline-block">
                 Kindly

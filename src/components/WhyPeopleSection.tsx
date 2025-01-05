@@ -2,6 +2,18 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Heart, ShoppingBag, Gift, Sparkles, Users } from 'lucide-react';
 
+const featureVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.1,
+      duration: 0.3
+    }
+  })
+};
+
 export function WhyPeopleSection() {
   const features = [
     {
@@ -55,7 +67,7 @@ export function WhyPeopleSection() {
               Community Love
             </motion.span>
             <motion.h2 
-              className="text-4xl md:text-5xl font-bold mb-6"
+              className="text-3xl md:text-4xl font-bold mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -79,11 +91,13 @@ export function WhyPeopleSection() {
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                custom={index}
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                variants={featureVariants}
                 className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
+                style={{ willChange: 'transform' }}
               >
                 <div className="w-12 h-12 bg-rose-100 rounded-xl flex items-center justify-center text-rose-500 mb-4">
                   {feature.icon}

@@ -6,7 +6,7 @@ export function ImpactSection() {
     <section className="py-24 bg-gradient-to-b from-white to-rose-50 relative">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-20">
+          <h2 className="text-3xl md:text-4xl font-bold mb-16">
             Our Growing <span className="text-rose-500">Impact</span>
           </h2>
           <Stats 

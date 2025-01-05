@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getBrowserInfo } from '../utils/browserDetection';
 
@@ -8,30 +9,44 @@ export function HowItWorks() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 60 }); // Start below button
   const [isClicking, setIsClicking] = useState(false);
 
-  // Animation sequence
+  // Animation sequence with cleanup
   useEffect(() => {
+    let isSubscribed = true;
+
     const sequence = async () => {
+      if (!isSubscribed) return;
+
       // Reset state
       setAnimationState('initial');
       setCursorPosition({ x: 0, y: 60 }); // Start below
-      await new Promise(r => setTimeout(r, 1000));
+      await new Promise(r => setTimeout(r, 2500));
+      if (!isSubscribed) return;
 
       // Move to button
       setCursorPosition({ x: 0, y: 0 }); // Move up to button
-      await new Promise(r => setTimeout(r, 800));
+      await new Promise(r => setTimeout(r, 1000));
+      if (!isSubscribed) return;
 
       // Click animation
       setIsClicking(true);
       await new Promise(r => setTimeout(r, 200));
+      if (!isSubscribed) return;
+      
       setIsClicking(false);
       setAnimationState('activated');
       await new Promise(r => setTimeout(r, 3000));
+      if (!isSubscribed) return;
 
       // Restart sequence
       sequence();
     };
 
     sequence();
+
+    // Cleanup function
+    return () => {
+      isSubscribed = false;
+    };
   }, []);
 
   const steps = [
@@ -42,13 +57,13 @@ export function HowItWorks() {
     },
     {
       number: "02",
-      title: "Shop as Usual",
-      description: "Once installed, just shop normally at your favorite stores. Our extension works automatically in the background."
+      title: "Shop at Partner Stores",
+      description: "When you shop at supported stores, we'll notify you to support your cause at no extra cost"
     },
     {
       number: "03",
-      title: "Make an Impact",
-      description: "Watch your impact grow as we donate to your chosen causes"
+      title: "Automatic Donations",
+      description: "After your purchase, we'll donate a percentage to your chosen cause - all handled by us, no extra steps needed"
     }
   ];
 
@@ -61,8 +76,8 @@ export function HowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-lg font-medium text-rose-500 mb-4">How Kindly Works</h2>
-            <h3 className="text-5xl font-bold text-gray-900">
+            <h2 className="text-base font-medium text-rose-500 mb-3">How Kindly Works</h2>
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
               Making Impact Simple
             </h3>
           </motion.div>
@@ -75,6 +90,7 @@ export function HowItWorks() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="rounded-2xl shadow-2xl bg-white relative"
+            style={{ willChange: 'transform' }}
           >
             {/* Browser Chrome */}
             <div className="bg-gray-100 px-4 py-3 border-b border-gray-200">
@@ -156,19 +172,21 @@ export function HowItWorks() {
                       
                       <div className="p-6">
                         <div className="mb-6">
-                          <img 
-                            src="https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/356833589_807648994255497_2911508593876776268_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=IO6pMkseHOcQ7kNvgGcRjtH&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&_nc_gid=AEfvJqy0iQY-laGTZCvxIXf&oh=00_AYD4NOT9p5jjuvLYApsmxOVSWYpWZVLqEAx3hkqHJjHh0w&oe=677B625A" 
-                            alt="Michael J Fox Foundation" 
-                            className="w-[60px] h-[60px] mx-auto mb-4 rounded-lg"
-                          />
+                          <div className="relative w-[80px] h-[80px] mx-auto mb-6">
+                            <Image 
+                              src="/images/causes/susan-g-komen-logo.png"
+                              alt="Susan G Komen"
+                              fill
+                              className="rounded-lg object-contain bg-white"
+                              sizes="80px"
+                              priority
+                            />
+                          </div>
                           <h3 className="text-[#2D3648] text-xl font-semibold text-center leading-tight mb-2">
-                            Get up to 2.6% donated to
+                            Get up to 2.6% donated to Susan G Komen
                           </h3>
-                          <h4 className="text-[#2D3648] text-lg font-medium text-center leading-tight">
-                            Michael J Fox Foundation
-                          </h4>
-                          <p className="text-[#2D3648] text-center mt-1">
-                            For Parkinsons Research
+                          <p className="text-[#2D3648]/70 text-sm text-center">
+                            For Breast Cancer Research
                           </p>
                         </div>
                         
@@ -237,11 +255,16 @@ export function HowItWorks() {
                       
                       <div className="p-6">
                         <div className="mb-6">
-                          <img 
-                            src="https://scontent-sjc3-1.xx.fbcdn.net/v/t39.30808-6/356833589_807648994255497_2911508593876776268_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=IO6pMkseHOcQ7kNvgGcRjtH&_nc_zt=23&_nc_ht=scontent-sjc3-1.xx&_nc_gid=AEfvJqy0iQY-laGTZCvxIXf&oh=00_AYD4NOT9p5jjuvLYApsmxOVSWYpWZVLqEAx3hkqHJjHh0w&oe=677B625A" 
-                            alt="Michael J Fox Foundation" 
-                            className="w-[60px] h-[60px] mx-auto mb-4 rounded-lg"
-                          />
+                          <div className="relative w-[80px] h-[80px] mx-auto mb-6">
+                            <Image 
+                              src="/images/causes/susan-g-komen-logo.png"
+                              alt="Susan G Komen"
+                              fill
+                              className="rounded-lg object-contain bg-white"
+                              sizes="80px"
+                              priority
+                            />
+                          </div>
                           <motion.div
                             initial={{ scale: 0.9 }}
                             animate={{ scale: 1 }}
@@ -251,7 +274,7 @@ export function HowItWorks() {
                               Offer Activated!
                             </h3>
                             <p className="text-[#2D3648] text-base">
-                              Purchases will now generate up to a 2.6% donation to Michael J Fox Foundation For Parkinsons Research.
+                              Purchases will now generate up to a 2.6% donation to Susan G Komen for Breast Cancer Research.
                             </p>
                           </motion.div>
                         </div>
@@ -273,6 +296,7 @@ export function HowItWorks() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
                 className="bg-white rounded-3xl shadow-lg p-8"
+                style={{ willChange: 'transform' }}
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">

@@ -1,67 +1,59 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CharitySelector } from './CharitySelector';
+import dynamic from 'next/dynamic';
 import { Heart, TrendingUp, Users, Calendar, Target, Gift, X, Minus, ArrowUpRight } from 'lucide-react';
+import { causeMetrics, causes } from '../utils/metrics';
+
+// Dynamically import CauseSelector to reduce initial bundle size
+const CauseSelector = dynamic(() => import('./CauseSelector').then(mod => mod.CauseSelector), {
+  ssr: true,
+  loading: () => (
+    <div className="bg-white rounded-2xl p-8 shadow-xl animate-pulse">
+      <div className="h-8 w-48 bg-gray-200 rounded mb-6"></div>
+      <div className="space-y-3">
+        {[1, 2, 3, 4, 5].map((i) => (
+          <div key={i} className="h-16 bg-gray-100 rounded-xl"></div>
+        ))}
+      </div>
+    </div>
+  ),
+});
 
 export function CauseSection() {
-  const causes = [
-    {
-      name: "Education",
-      icon: "🎓",
-      description: "Support schools and educational programs worldwide"
-    },
-    {
-      name: "Healthcare",
-      icon: "🏥",
-      description: "Provide medical care and supplies to those in need"
-    },
-    {
-      name: "Environment",
-      icon: "🌱",
-      description: "Protect wildlife and preserve natural habitats"
-    },
-    {
-      name: "Hunger",
-      icon: "🥘",
-      description: "Help feed families and support food banks"
-    }
-  ];
-
-  const metrics = [
-    {
-      label: 'Total Contribution',
-      value: '$284.50',
-      icon: Gift,
-      color: 'text-rose-500',
-      change: '+$12.75 this month'
-    },
-    {
-      label: 'Shopping Sessions',
-      value: '47',
-      icon: Target,
-      color: 'text-emerald-500',
-      change: '12 stores visited'
-    }
-  ];
-
   return (
     <section className="py-24 relative overflow-hidden bg-gray-50">
-      {/* Diagonal background */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-white via-gray-50 to-rose-50/30 -skew-y-6 origin-top-left transform-gpu" />
+      {/* Diagonal background with hardware acceleration */}
+      <motion.div 
+        className="absolute inset-0 bg-gradient-to-tr from-white via-gray-50 to-rose-50/30 -skew-y-6 origin-top-left"
+        style={{ 
+          willChange: 'transform',
+          transform: 'translateZ(0)'
+        }} 
+      />
       
       {/* Background pattern */}
-      <div className="absolute inset-0 opacity-[0.02]" style={{ 
-        backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"
-      }} />
+      <div 
+        className="absolute inset-0 opacity-[0.02] bg-repeat"
+        style={{ 
+          backgroundImage: "url('/patterns/plus.svg')",
+          willChange: 'transform',
+          transform: 'translateZ(0)'
+        }}
+      />
 
       <div className="container mx-auto px-4 relative">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* Left side - Impact Summary */}
-            <div>
-              <h2 className="text-lg font-medium text-rose-500 mb-4">Make a Difference Today</h2>
-              <h3 className="text-5xl font-bold text-gray-900 mb-6">
-              Support What Matters Most to You
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="text-base font-medium text-rose-500 mb-3">Make a Difference Today</h2>
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Choose Your Cause
               </h3>
               <p className="text-gray-600 mb-8 text-lg">
                 Whether it's supporting education, protecting the environment, or helping those in need,
@@ -72,10 +64,16 @@ export function CauseSection() {
                 <Heart className="w-5 h-5" />
                 <span className="font-medium">Over 1000+ verified charities to choose from</span>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right side - Chrome Extension Popup Style */}
-            <div className="relative max-w-[400px] mx-auto">
+            <motion.div 
+              className="relative max-w-[400px] mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
               {/* Extension Header */}
               <div className="bg-[#f1f3f4] rounded-t-lg border border-gray-200 shadow-xl">
                 <div className="flex items-center px-4 py-3 space-x-2">
@@ -91,7 +89,7 @@ export function CauseSection() {
               </div>
 
               {/* Extension Content */}
-              <div className="bg-white border-x border-b border-gray-200 rounded-b-lg shadow-xl">
+              <div className="bg-white rounded-b-lg border-x border-b border-gray-200 shadow-xl">
                 {/* Header with dashboard title */}
                 <div className="px-4 pt-4 pb-3 border-b border-gray-100">
                   <div className="flex items-center justify-between mb-1">
@@ -104,7 +102,7 @@ export function CauseSection() {
                     <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-1.5 border border-gray-100">
                         <img
-                          src="/images/charities/save-the-children-logo.png"
+                          src="/images/causes/save-the-children-logo.png"
                           alt="Save the Children"
                           className="w-full h-full object-contain rounded-lg"
                         />
@@ -128,7 +126,7 @@ export function CauseSection() {
                   </div>
 
                   <div className="grid grid-cols-2 gap-3">
-                    {metrics.map((metric) => (
+                    {causeMetrics.map((metric) => (
                       <div
                         key={metric.label}
                         className="bg-gray-50 rounded-lg p-3"
@@ -173,7 +171,7 @@ export function CauseSection() {
                 <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-gradient-to-br from-rose-100/20 to-rose-200/30 blur-lg rounded-full"></div>
                 <div className="absolute -top-4 -left-4 w-16 h-16 bg-gradient-to-br from-blue-100/20 to-blue-200/30 blur-lg rounded-full"></div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
