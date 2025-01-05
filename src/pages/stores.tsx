@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Filter, Star } from 'lucide-react';
-import { stores as storesList, categories, searchStores, getStoreLogo } from '../data/stores';
+import { stores as storesList, categories, searchStores, getStoreLogo, Store } from '../data/stores';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useDebouncedCallback } from 'use-debounce';
@@ -50,7 +50,7 @@ export default function stores() {
   }, [inView, filteredStores.length]);
 
   // Load logos in batches
-  const loadStoreLogo = useCallback(async (store: { name: string }) => {
+  const loadStoreLogo = useCallback(async (store: Store) => {
     if (storeLogo[store.name] !== undefined || loadingLogosRef.current.has(store.name)) {
       return;
     }
