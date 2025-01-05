@@ -1,5 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { Sparkles } from 'lucide-react';
 
 interface SpotlightDonor {
   id: number;
@@ -9,6 +11,34 @@ interface SpotlightDonor {
   impactDescription: string;
   donationsCount: number;
 }
+
+const causeColors: { [key: string]: { text: string; bg: string; border: string } } = {
+  'Environmental Conservation': {
+    text: 'text-emerald-700',
+    bg: 'bg-emerald-50',
+    border: 'border-emerald-100'
+  },
+  'Education': {
+    text: 'text-blue-700',
+    bg: 'bg-blue-50',
+    border: 'border-blue-100'
+  },
+  'Healthcare': {
+    text: 'text-sky-700',
+    bg: 'bg-sky-50',
+    border: 'border-sky-100'
+  },
+  'Food Security': {
+    text: 'text-amber-700',
+    bg: 'bg-amber-50',
+    border: 'border-amber-100'
+  },
+  'Community Development': {
+    text: 'text-violet-700',
+    bg: 'bg-violet-50',
+    border: 'border-violet-100'
+  }
+};
 
 const spotlightDonors: SpotlightDonor[] = [
   {
@@ -63,67 +93,79 @@ function getAvatarUrl(name: string) {
 }
 
 export function CommunitySpotlight() {
+  const getCauseColors = (cause: string) => {
+    return causeColors[cause] || { text: 'text-gray-700', bg: 'bg-gray-50', border: 'border-gray-100' };
+  };
+
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200/50 overflow-hidden">
-      <div className="bg-rose-500 px-4 py-5 sm:px-6 border-b border-gray-200/50">
-        <div>
-          <h3 className="text-lg font-semibold leading-6 text-white">
+    <div className="bg-white rounded-2xl shadow-lg border border-gray-200/50 overflow-hidden h-full flex flex-col">
+      <div className="bg-rose-500 px-6 py-6 sm:px-8 border-b border-gray-200/50">
+        <div className="flex items-center gap-2">
+          <Sparkles className="w-5 h-5 text-rose-100" />
+          <h3 className="text-xl font-bold leading-6 text-white">
             Community Impact Spotlight
           </h3>
-          <p className="mt-1 text-sm text-rose-100">
-            Showcasing some of our amazing contributors
-          </p>
         </div>
+        <p className="mt-2 text-sm text-rose-100 font-medium">
+          Celebrating some of our amazing contributors making a difference
+        </p>
       </div>
       
-      <div className="divide-y divide-gray-200/50">
-        {spotlightDonors.map((donor) => (
-          <div
-            key={donor.id}
-            className="px-4 py-4 sm:px-6 hover:bg-gray-50 transition-colors"
-          >
-            <div className="flex items-center justify-between">
-              <div className="flex items-center min-w-0 gap-x-4">
-                <div className="flex-none">
-                  <Image
-                    src={getAvatarUrl(donor.name)}
-                    alt=""
-                    width={32}
-                    height={32}
-                    className="rounded-full"
-                    unoptimized
-                  />
+      <div className="divide-y divide-gray-200/50 flex-1">
+        {spotlightDonors.map((donor, index) => {
+          const colors = getCauseColors(donor.favoriteCause);
+          return (
+            <motion.div
+              key={donor.id}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              className="relative px-6 py-6 sm:px-8 group"
+            >
+              <div className="flex items-center justify-between">
+                <div className="flex items-center min-w-0 gap-x-5">
+                  <div className="flex-none relative">
+                    <div className="absolute inset-0 bg-rose-200 rounded-full animate-pulse" />
+                    <Image
+                      src={getAvatarUrl(donor.name)}
+                      alt=""
+                      width={44}
+                      height={44}
+                      className="rounded-full relative ring-2 ring-white shadow-sm"
+                      unoptimized
+                    />
+                  </div>
+                  <div className="min-w-0 flex-auto">
+                    <p className="text-base font-semibold leading-6 text-gray-900">
+                      {donor.name}
+                    </p>
+                    <p className="mt-2 text-sm leading-5 text-gray-500 font-medium">
+                      {donor.favoriteCause}
+                    </p>
+                  </div>
                 </div>
-                <div className="min-w-0 flex-auto">
-                  <p className="text-sm font-semibold leading-6 text-gray-900">
-                    {donor.name}
+                <div className="text-right">
+                  <p className="text-lg font-bold text-rose-500">
+                    ${donor.totalDonated.toLocaleString()}
                   </p>
-                  <p className="mt-1 text-xs leading-5 text-gray-500">
-                    {donor.favoriteCause}
+                  <p className="mt-2 text-sm text-gray-500 font-medium">
+                    {donor.donationsCount} donations
                   </p>
                 </div>
               </div>
-              <div className="text-right">
-                <p className="text-sm font-medium text-gray-900">
-                  ${donor.totalDonated.toLocaleString()}
-                </p>
-                <p className="mt-1 text-xs text-gray-500">
-                  {donor.donationsCount} donations
-                </p>
+              <div className="mt-4">
+                <div className={`text-sm ${colors.text} ${colors.bg} rounded-full px-4 py-1.5 inline-block font-medium border ${colors.border} shadow-sm`}>
+                  {donor.impactDescription}
+                </div>
               </div>
-            </div>
-            <div className="mt-2">
-              <div className="text-xs text-gray-600 bg-gray-50 rounded-md px-2 py-1 inline-block">
-                {donor.impactDescription}
-              </div>
-            </div>
-          </div>
-        ))}
+            </motion.div>
+          );
+        })}
       </div>
       
-      <div className="px-4 py-4 sm:px-6 bg-gray-50 border-t border-gray-200/50">
-        <p className="text-xs text-center text-gray-500">
-          Join our community and make your impact today
+      <div className="px-6 py-5 sm:px-8 bg-white border-t border-gray-200/50 flex items-center justify-center">
+        <p className="text-sm text-center text-rose-500 font-medium">
+          Join our community of changemakers today
         </p>
       </div>
     </div>
