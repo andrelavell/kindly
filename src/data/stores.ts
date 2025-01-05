@@ -20,14 +20,20 @@ export const categories = [
   "Baby & Kids"
 ];
 
-// Helper function to get store logo URL
+// Helper function to get store logo URL using Clearbit
 export const getStoreLogo = async (store: Store): Promise<string | null> => {
-  if (store.cloudinaryLogo) {
-    return store.cloudinaryLogo;
+  if (store.domain) {
+    return `https://logo.clearbit.com/${store.domain}`;
   }
 
-  // Fallback to first letter if no logo
-  return null;
+  // Format domain from store name
+  const domain = store.name.toLowerCase()
+    .replace(/[&']/g, '') // Remove & and '
+    .replace(/[\s.-]+/g, '-') // Replace spaces, dots, and hyphens with a single hyphen
+    .replace(/[^a-z0-9-]/g, '') // Remove any other special characters
+    + '.com';
+
+  return `https://logo.clearbit.com/${domain}`;
 };
 
 // Helper function to search stores
@@ -54,22 +60,67 @@ export const stores: Store[] = [
     "name": "Amazon",
     "category": "Major Retailers",
     "popular": true,
-    "domain": "amazon.com",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736048698/kindly/store-logos/stores/amazon.ico"
+    "domain": "amazon.com"
   },
   {
     "name": "Walmart",
     "category": "Major Retailers",
     "popular": true,
-    "domain": "walmart.com",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736048697/kindly/store-logos/stores/walmart.ico"
+    "domain": "walmart.com"
   },
   {
     "name": "Target",
     "category": "Major Retailers",
     "popular": true,
-    "domain": "target.com",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736048697/kindly/store-logos/stores/target.png"
+    "domain": "target.com"
+  },
+  {
+    "name": "Best Buy",
+    "category": "Electronics & Tech",
+    "popular": true,
+    "domain": "bestbuy.com"
+  },
+  {
+    "name": "Apple",
+    "category": "Electronics & Tech",
+    "popular": true,
+    "domain": "apple.com"
+  },
+  {
+    "name": "Nike",
+    "category": "Fashion & Apparel",
+    "popular": true,
+    "domain": "nike.com"
+  },
+  {
+    "name": "Adidas",
+    "category": "Fashion & Apparel",
+    "popular": true,
+    "domain": "adidas.com"
+  },
+  {
+    "name": "H&M",
+    "category": "Fashion & Apparel",
+    "popular": true,
+    "domain": "hm.com"
+  },
+  {
+    "name": "Wayfair",
+    "category": "Home & Garden",
+    "popular": true,
+    "domain": "wayfair.com"
+  },
+  {
+    "name": "Home Depot",
+    "category": "Home & Garden",
+    "popular": true,
+    "domain": "homedepot.com"
+  },
+  {
+    "name": "Lowe's",
+    "category": "Home & Garden",
+    "popular": true,
+    "domain": "lowes.com"
   },
   {
     "name": "Costco",
@@ -81,934 +132,1593 @@ export const stores: Store[] = [
     "name": "eBay",
     "category": "Major Retailers",
     "popular": true,
-    "domain": "ebay.com",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736048697/kindly/store-logos/stores/ebay.ico"
+    "domain": "ebay.com"
   },
   {
-    "name": "Sam's Club",
+    "name": "Etsy",
     "category": "Major Retailers",
     "popular": true,
-    "domain": "samsclub.com"
-  },
-  {
-    "name": "Kohl's",
-    "category": "Major Retailers",
-    "popular": true
-  },
-  {
-    "name": "BJ's Wholesale Club",
-    "category": "Major Retailers",
-    "domain": "bjs.com",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736048950/kindly/store-logos/stores/bj-s-wholesale-club.ico"
-  },
-  {
-    "name": "Big Lots",
-    "category": "Major Retailers"
-  },
-  {
-    "name": "Dollar General",
-    "category": "Major Retailers"
-  },
-  {
-    "name": "Family Dollar",
-    "category": "Major Retailers"
-  },
-  {
-    "name": "Five Below",
-    "category": "Major Retailers"
-  },
-  {
-    "name": "Dollar Tree",
-    "category": "Major Retailers"
-  },
-  {
-    "name": "JCPenney",
-    "category": "Major Retailers"
-  },
-  {
-    "name": "Marshalls",
-    "category": "Major Retailers",
-    "popular": true
-  },
-  {
-    "name": "TJ Maxx",
-    "category": "Major Retailers",
-    "popular": true,
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736048985/kindly/store-logos/stores/tj-maxx.ico"
-  },
-  {
-    "name": "HomeGoods",
-    "category": "Major Retailers",
-    "popular": true
-  },
-  {
-    "name": "Ross",
-    "category": "Major Retailers"
-  },
-  {
-    "name": "Burlington",
-    "category": "Major Retailers",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049020/kindly/store-logos/stores/burlington.ico"
-  },
-  {
-    "name": "Tuesday Morning",
-    "category": "Major Retailers"
-  },
-  {
-    "name": "Nike",
-    "category": "Fashion & Apparel",
-    "popular": true,
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049023/kindly/store-logos/stores/nike.ico"
-  },
-  {
-    "name": "Adidas",
-    "category": "Fashion & Apparel",
-    "popular": true
-  },
-  {
-    "name": "H&M",
-    "category": "Fashion & Apparel",
-    "popular": true
-  },
-  {
-    "name": "Zara",
-    "category": "Fashion & Apparel",
-    "popular": true
-  },
-  {
-    "name": "Uniqlo",
-    "category": "Fashion & Apparel",
-    "popular": true
-  },
-  {
-    "name": "ASOS",
-    "category": "Fashion & Apparel",
-    "popular": true
-  },
-  {
-    "name": "The North Face",
-    "category": "Fashion & Apparel",
-    "popular": true
-  },
-  {
-    "name": "Levi's",
-    "category": "Fashion & Apparel",
-    "popular": true,
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049060/kindly/store-logos/stores/levi-s.ico"
-  },
-  {
-    "name": "Urban Outfitters",
-    "category": "Fashion & Apparel",
-    "popular": true
-  },
-  {
-    "name": "Patagonia",
-    "category": "Fashion & Apparel"
-  },
-  {
-    "name": "Gap",
-    "category": "Fashion & Apparel",
-    "popular": true
-  },
-  {
-    "name": "Old Navy",
-    "category": "Fashion & Apparel",
-    "popular": true
-  },
-  {
-    "name": "Banana Republic",
-    "category": "Fashion & Apparel"
-  },
-  {
-    "name": "Forever 21",
-    "category": "Fashion & Apparel"
-  },
-  {
-    "name": "Macy's",
-    "category": "Fashion & Apparel",
-    "popular": true
-  },
-  {
-    "name": "Nordstrom",
-    "category": "Fashion & Apparel",
-    "popular": true,
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049102/kindly/store-logos/stores/nordstrom.ico"
-  },
-  {
-    "name": "J.Crew",
-    "category": "Fashion & Apparel"
-  },
-  {
-    "name": "Anthropologie",
-    "category": "Fashion & Apparel",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049106/kindly/store-logos/stores/anthropologie.ico"
-  },
-  {
-    "name": "Puma",
-    "category": "Fashion & Apparel"
-  },
-  {
-    "name": "Under Armour",
-    "category": "Fashion & Apparel",
-    "popular": true
-  },
-  {
-    "name": "Best Buy",
-    "category": "Electronics & Tech",
-    "popular": true
-  },
-  {
-    "name": "Apple",
-    "category": "Electronics & Tech",
-    "popular": true,
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049117/kindly/store-logos/stores/apple.ico"
-  },
-  {
-    "name": "Samsung",
-    "category": "Electronics & Tech",
-    "popular": true
-  },
-  {
-    "name": "Microsoft",
-    "category": "Electronics & Tech",
-    "popular": true,
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049134/kindly/store-logos/stores/microsoft.ico"
-  },
-  {
-    "name": "Dell",
-    "category": "Electronics & Tech",
-    "popular": true
-  },
-  {
-    "name": "HP",
-    "category": "Electronics & Tech",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049137/kindly/store-logos/stores/hp.ico"
-  },
-  {
-    "name": "Lenovo",
-    "category": "Electronics & Tech",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049141/kindly/store-logos/stores/lenovo.gif"
-  },
-  {
-    "name": "Newegg",
-    "category": "Electronics & Tech",
-    "popular": true
-  },
-  {
-    "name": "B&H Photo",
-    "category": "Electronics & Tech"
-  },
-  {
-    "name": "GameStop",
-    "category": "Electronics & Tech",
-    "popular": true
-  },
-  {
-    "name": "Bose",
-    "category": "Electronics & Tech",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049159/kindly/store-logos/stores/bose.ico"
-  },
-  {
-    "name": "Sony",
-    "category": "Electronics & Tech",
-    "popular": true
-  },
-  {
-    "name": "LG",
-    "category": "Electronics & Tech",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049164/kindly/store-logos/stores/lg.ico"
-  },
-  {
-    "name": "Razer",
-    "category": "Electronics & Tech",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049163/kindly/store-logos/stores/razer.ico"
-  },
-  {
-    "name": "Logitech",
-    "category": "Electronics & Tech",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049167/kindly/store-logos/stores/logitech.ico"
-  },
-  {
-    "name": "Wayfair",
-    "category": "Home & Garden",
-    "popular": true,
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049167/kindly/store-logos/stores/wayfair.ico"
-  },
-  {
-    "name": "IKEA",
-    "category": "Home & Garden",
-    "popular": true,
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049171/kindly/store-logos/stores/ikea.ico"
-  },
-  {
-    "name": "Home Depot",
-    "category": "Home & Garden",
-    "popular": true
-  },
-  {
-    "name": "Lowe's",
-    "category": "Home & Garden",
-    "popular": true
-  },
-  {
-    "name": "Bed Bath & Beyond",
-    "category": "Home & Garden",
-    "popular": true
-  },
-  {
-    "name": "Crate & Barrel",
-    "category": "Home & Garden",
-    "popular": true
-  },
-  {
-    "name": "West Elm",
-    "category": "Home & Garden"
-  },
-  {
-    "name": "Pottery Barn",
-    "category": "Home & Garden",
-    "popular": true
-  },
-  {
-    "name": "Williams Sonoma",
-    "category": "Home & Garden",
-    "popular": true
-  },
-  {
-    "name": "Restoration Hardware",
-    "category": "Home & Garden"
-  },
-  {
-    "name": "The Container Store",
-    "category": "Home & Garden"
-  },
-  {
-    "name": "Five Star",
-    "category": "Home & Garden"
-  },
-  {
-    "name": "Poppin",
-    "category": "Home & Garden"
-  },
-  {
-    "name": "Quill",
-    "category": "Home & Garden",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049217/kindly/store-logos/stores/quill.ico"
-  },
-  {
-    "name": "School Specialty",
-    "category": "Home & Garden"
-  },
-  {
-    "name": "Mead",
-    "category": "Home & Garden"
-  },
-  {
-    "name": "Post-it",
-    "category": "Home & Garden"
-  },
-  {
-    "name": "Moleskine",
-    "category": "Home & Garden",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049235/kindly/store-logos/stores/moleskine.ico"
+    "domain": "etsy.com"
   },
   {
     "name": "Sephora",
     "category": "Health & Beauty",
-    "popular": true
+    "popular": true,
+    "domain": "sephora.com"
   },
   {
     "name": "Ulta Beauty",
     "category": "Health & Beauty",
-    "popular": true
-  },
-  {
-    "name": "MAC Cosmetics",
-    "category": "Health & Beauty"
-  },
-  {
-    "name": "Bath & Body Works",
-    "category": "Health & Beauty"
-  },
-  {
-    "name": "The Body Shop",
-    "category": "Health & Beauty"
-  },
-  {
-    "name": "Dermstore",
-    "category": "Health & Beauty"
-  },
-  {
-    "name": "Glossier",
-    "category": "Health & Beauty"
-  },
-  {
-    "name": "Fenty Beauty",
-    "category": "Health & Beauty"
-  },
-  {
-    "name": "Charlotte Tilbury",
-    "category": "Health & Beauty"
-  },
-  {
-    "name": "Kiehl's",
-    "category": "Health & Beauty"
-  },
-  {
-    "name": "Origins",
-    "category": "Health & Beauty",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049265/kindly/store-logos/stores/origins.ico"
-  },
-  {
-    "name": "Clinique",
-    "category": "Health & Beauty",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049268/kindly/store-logos/stores/clinique.ico"
-  },
-  {
-    "name": "Estée Lauder",
-    "category": "Health & Beauty"
-  },
-  {
-    "name": "NYX Cosmetics",
-    "category": "Health & Beauty"
-  },
-  {
-    "name": "Morphe",
-    "category": "Health & Beauty"
-  },
-  {
-    "name": "Expedia",
-    "category": "Travel & Leisure",
     "popular": true,
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049275/kindly/store-logos/stores/expedia.ico"
-  },
-  {
-    "name": "Booking.com",
-    "category": "Travel & Leisure",
-    "popular": true
-  },
-  {
-    "name": "Hotels.com",
-    "category": "Travel & Leisure"
-  },
-  {
-    "name": "Airbnb",
-    "category": "Travel & Leisure",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049281/kindly/store-logos/stores/airbnb.ico"
-  },
-  {
-    "name": "Vrbo",
-    "category": "Travel & Leisure",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049284/kindly/store-logos/stores/vrbo.ico"
-  },
-  {
-    "name": "Kayak",
-    "category": "Travel & Leisure",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049284/kindly/store-logos/stores/kayak.ico"
-  },
-  {
-    "name": "Priceline",
-    "category": "Travel & Leisure",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049288/kindly/store-logos/stores/priceline.ico"
-  },
-  {
-    "name": "Travelocity",
-    "category": "Travel & Leisure",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049287/kindly/store-logos/stores/travelocity.ico"
-  },
-  {
-    "name": "Hotwire",
-    "category": "Travel & Leisure",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049294/kindly/store-logos/stores/hotwire.ico"
-  },
-  {
-    "name": "Orbitz",
-    "category": "Travel & Leisure",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049291/kindly/store-logos/stores/orbitz.ico"
-  },
-  {
-    "name": "TripAdvisor",
-    "category": "Travel & Leisure",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049297/kindly/store-logos/stores/tripadvisor.ico"
-  },
-  {
-    "name": "Agoda",
-    "category": "Travel & Leisure",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049298/kindly/store-logos/stores/agoda.png"
-  },
-  {
-    "name": "Hopper",
-    "category": "Travel & Leisure",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049301/kindly/store-logos/stores/hopper.ico"
-  },
-  {
-    "name": "CheapOair",
-    "category": "Travel & Leisure"
-  },
-  {
-    "name": "Southwest Airlines",
-    "category": "Travel & Leisure"
-  },
-  {
-    "name": "Gucci",
-    "category": "Luxury",
-    "popular": true
-  },
-  {
-    "name": "Louis Vuitton",
-    "category": "Luxury",
-    "popular": true
-  },
-  {
-    "name": "Burberry",
-    "category": "Luxury"
-  },
-  {
-    "name": "Prada",
-    "category": "Luxury",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049332/kindly/store-logos/stores/prada.ico"
-  },
-  {
-    "name": "Chanel",
-    "category": "Luxury"
-  },
-  {
-    "name": "Hermès",
-    "category": "Luxury"
-  },
-  {
-    "name": "Cartier",
-    "category": "Luxury"
-  },
-  {
-    "name": "Tiffany & Co",
-    "category": "Luxury"
-  },
-  {
-    "name": "Rolex",
-    "category": "Luxury"
-  },
-  {
-    "name": "Omega",
-    "category": "Luxury",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049376/kindly/store-logos/stores/omega.ico"
-  },
-  {
-    "name": "Tag Heuer",
-    "category": "Luxury"
-  },
-  {
-    "name": "Bulgari",
-    "category": "Luxury"
-  },
-  {
-    "name": "Saint Laurent",
-    "category": "Luxury"
-  },
-  {
-    "name": "Balenciaga",
-    "category": "Luxury",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049393/kindly/store-logos/stores/balenciaga.ico"
-  },
-  {
-    "name": "Fendi",
-    "category": "Luxury",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049393/kindly/store-logos/stores/fendi.ico"
+    "domain": "ulta.com"
   },
   {
     "name": "Chewy",
     "category": "Pet Supplies",
     "popular": true,
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049396/kindly/store-logos/stores/chewy.ico"
+    "domain": "chewy.com"
+  },
+  {
+    "name": "GameStop",
+    "category": "Toys & Games",
+    "popular": true,
+    "domain": "gamestop.com"
+  },
+  {
+    "name": "Expedia",
+    "category": "Travel",
+    "popular": true,
+    "domain": "expedia.com"
+  },
+  {
+    "name": "Booking.com",
+    "category": "Travel",
+    "popular": true,
+    "domain": "booking.com"
+  },
+  {
+    "name": "Airbnb",
+    "category": "Travel",
+    "popular": true,
+    "domain": "airbnb.com"
+  },
+  {
+    "name": "Dell",
+    "category": "Electronics & Tech",
+    "popular": true,
+    "domain": "dell.com"
+  },
+  {
+    "name": "Samsung",
+    "category": "Electronics & Tech",
+    "popular": true,
+    "domain": "samsung.com"
+  },
+  {
+    "name": "Nordstrom",
+    "category": "Fashion & Apparel",
+    "popular": true,
+    "domain": "nordstrom.com"
+  },
+  {
+    "name": "Macy's",
+    "category": "Fashion & Apparel",
+    "popular": true,
+    "domain": "macys.com"
+  },
+  {
+    "name": "Sam's Club",
+    "category": "Major Retailers",
+    "domain": "samsclub.com"
+  },
+  {
+    "name": "Kohl's",
+    "category": "Major Retailers",
+    "domain": "kohls.com"
+  },
+  {
+    "name": "BJ's Wholesale Club",
+    "category": "Major Retailers",
+    "domain": "bjs.com"
+  },
+  {
+    "name": "Big Lots",
+    "category": "Major Retailers",
+    "domain": "biglots.com"
+  },
+  {
+    "name": "Dollar General",
+    "category": "Major Retailers",
+    "domain": "dollargeneral.com"
+  },
+  {
+    "name": "Family Dollar",
+    "category": "Major Retailers",
+    "domain": "familydollar.com"
+  },
+  {
+    "name": "Five Below",
+    "category": "Major Retailers",
+    "domain": "fivebelow.com"
+  },
+  {
+    "name": "Dollar Tree",
+    "category": "Major Retailers",
+    "domain": "dollartree.com"
+  },
+  {
+    "name": "JCPenney",
+    "category": "Major Retailers",
+    "domain": "jcpenney.com"
+  },
+  {
+    "name": "Marshalls",
+    "category": "Major Retailers",
+    "domain": "marshalls.com"
+  },
+  {
+    "name": "TJ Maxx",
+    "category": "Major Retailers",
+    "domain": "tjmaxx.com"
+  },
+  {
+    "name": "HomeGoods",
+    "category": "Major Retailers",
+    "domain": "homegoods.com"
+  },
+  {
+    "name": "Ross",
+    "category": "Major Retailers",
+    "domain": "ross.com"
+  },
+  {
+    "name": "Burlington",
+    "category": "Major Retailers",
+    "domain": "burlington.com"
+  },
+  {
+    "name": "Tuesday Morning",
+    "category": "Major Retailers",
+    "domain": "tuesdaymorning.com"
+  },
+  {
+    "name": "Uniqlo",
+    "category": "Fashion & Apparel",
+    "domain": "uniqlo.com"
+  },
+  {
+    "name": "ASOS",
+    "category": "Fashion & Apparel",
+    "domain": "asos.com"
+  },
+  {
+    "name": "The North Face",
+    "category": "Fashion & Apparel",
+    "domain": "thenorthface.com"
+  },
+  {
+    "name": "Levi's",
+    "category": "Fashion & Apparel",
+    "domain": "levis.com"
+  },
+  {
+    "name": "Urban Outfitters",
+    "category": "Fashion & Apparel",
+    "domain": "urbanoutfitters.com"
+  },
+  {
+    "name": "Patagonia",
+    "category": "Fashion & Apparel",
+    "domain": "patagonia.com"
+  },
+  {
+    "name": "Gap",
+    "category": "Fashion & Apparel",
+    "domain": "gap.com"
+  },
+  {
+    "name": "Old Navy",
+    "category": "Fashion & Apparel",
+    "domain": "oldnavy.com"
+  },
+  {
+    "name": "Banana Republic",
+    "category": "Fashion & Apparel",
+    "domain": "bananarepublic.com"
+  },
+  {
+    "name": "Forever 21",
+    "category": "Fashion & Apparel",
+    "domain": "forever21.com"
+  },
+  {
+    "name": "Microsoft",
+    "category": "Electronics & Tech",
+    "domain": "microsoft.com"
+  },
+  {
+    "name": "HP",
+    "category": "Electronics & Tech",
+    "domain": "hp.com"
+  },
+  {
+    "name": "Lenovo",
+    "category": "Electronics & Tech",
+    "domain": "lenovo.com"
+  },
+  {
+    "name": "Sony",
+    "category": "Electronics & Tech",
+    "domain": "sony.com"
+  },
+  {
+    "name": "LG",
+    "category": "Electronics & Tech",
+    "domain": "lg.com"
+  },
+  {
+    "name": "Bose",
+    "category": "Electronics & Tech",
+    "domain": "bose.com"
+  },
+  {
+    "name": "Newegg",
+    "category": "Electronics & Tech",
+    "domain": "newegg.com"
+  },
+  {
+    "name": "IKEA",
+    "category": "Home & Garden",
+    "domain": "ikea.com"
+  },
+  {
+    "name": "Bed Bath & Beyond",
+    "category": "Home & Garden",
+    "domain": "bedbathandbeyond.com"
+  },
+  {
+    "name": "Crate & Barrel",
+    "category": "Home & Garden",
+    "domain": "crateandbarrel.com"
+  },
+  {
+    "name": "West Elm",
+    "category": "Home & Garden",
+    "domain": "westelm.com"
+  },
+  {
+    "name": "Pottery Barn",
+    "category": "Home & Garden",
+    "domain": "potterybarn.com"
+  },
+  {
+    "name": "Williams Sonoma",
+    "category": "Home & Garden",
+    "domain": "williams-sonoma.com"
+  },
+  {
+    "name": "Restoration Hardware",
+    "category": "Home & Garden",
+    "domain": "restorationhardware.com"
+  },
+  {
+    "name": "The Container Store",
+    "category": "Home & Garden",
+    "domain": "containerstore.com"
+  },
+  {
+    "name": "Five Star",
+    "category": "Home & Garden",
+    "domain": "fivestars.com"
+  },
+  {
+    "name": "Poppin",
+    "category": "Home & Garden",
+    "domain": "poppin.com"
+  },
+  {
+    "name": "Quill",
+    "category": "Home & Garden",
+    "domain": "quill.com"
+  },
+  {
+    "name": "School Specialty",
+    "category": "Home & Garden",
+    "domain": "schoolspecialty.com"
+  },
+  {
+    "name": "Mead",
+    "category": "Home & Garden",
+    "domain": "mead.com"
+  },
+  {
+    "name": "Post-it",
+    "category": "Home & Garden",
+    "domain": "post-it.com"
+  },
+  {
+    "name": "Moleskine",
+    "category": "Home & Garden",
+    "domain": "moleskine.com"
+  },
+  {
+    "name": "Overstock",
+    "category": "Home & Garden",
+    "domain": "overstock.com"
+  },
+  {
+    "name": "Sur La Table",
+    "category": "Home & Garden",
+    "domain": "surlatable.com"
+  },
+  {
+    "name": "Dyson",
+    "category": "Home & Garden",
+    "domain": "dyson.com"
+  },
+  {
+    "name": "iRobot",
+    "category": "Home & Garden",
+    "domain": "irobot.com"
+  },
+  {
+    "name": "Shark",
+    "category": "Home & Garden",
+    "domain": "sharkclean.com"
+  },
+  {
+    "name": "Ninja Kitchen",
+    "category": "Home & Garden",
+    "domain": "ninjakitchen.com"
+  },
+  {
+    "name": "KitchenAid",
+    "category": "Home & Garden",
+    "domain": "kitchenaid.com"
+  },
+  {
+    "name": "Instant Pot",
+    "category": "Home & Garden",
+    "domain": "instantbrands.com"
+  },
+  {
+    "name": "Vitamix",
+    "category": "Home & Garden",
+    "domain": "vitamix.com"
+  },
+  {
+    "name": "Nutribullet",
+    "category": "Home & Garden",
+    "domain": "nutribullet.com"
+  },
+  {
+    "name": "Breville",
+    "category": "Home & Garden",
+    "domain": "breville.com"
+  },
+  {
+    "name": "Keurig",
+    "category": "Home & Garden",
+    "domain": "keurig.com"
+  },
+  {
+    "name": "MAC Cosmetics",
+    "category": "Health & Beauty",
+    "domain": "maccosmetics.com"
+  },
+  {
+    "name": "Bath & Body Works",
+    "category": "Health & Beauty",
+    "domain": "bathandbodyworks.com"
+  },
+  {
+    "name": "The Body Shop",
+    "category": "Health & Beauty",
+    "domain": "thebodyshop.com"
+  },
+  {
+    "name": "Dermstore",
+    "category": "Health & Beauty",
+    "domain": "dermstore.com"
+  },
+  {
+    "name": "Glossier",
+    "category": "Health & Beauty",
+    "domain": "glossier.com"
+  },
+  {
+    "name": "Fenty Beauty",
+    "category": "Health & Beauty",
+    "domain": "fentybeauty.com"
+  },
+  {
+    "name": "Charlotte Tilbury",
+    "category": "Health & Beauty",
+    "domain": "charlottetilbury.com"
+  },
+  {
+    "name": "Kiehl's",
+    "category": "Health & Beauty",
+    "domain": "kiehls.com"
+  },
+  {
+    "name": "Origins",
+    "category": "Health & Beauty",
+    "domain": "origins.com"
+  },
+  {
+    "name": "Clinique",
+    "category": "Health & Beauty",
+    "domain": "clinique.com"
+  },
+  {
+    "name": "Estée Lauder",
+    "category": "Health & Beauty",
+    "domain": "esteelauder.com"
+  },
+  {
+    "name": "NYX Cosmetics",
+    "category": "Health & Beauty",
+    "domain": "nyxcosmetics.com"
+  },
+  {
+    "name": "Morphe",
+    "category": "Health & Beauty",
+    "domain": "morphe.com"
+  },
+  {
+    "name": "Benefit Cosmetics",
+    "category": "Health & Beauty",
+    "domain": "benefitcosmetics.com"
+  },
+  {
+    "name": "Urban Decay",
+    "category": "Health & Beauty",
+    "domain": "urbandecay.com"
+  },
+  {
+    "name": "Too Faced",
+    "category": "Health & Beauty",
+    "domain": "toofaced.com"
+  },
+  {
+    "name": "NARS",
+    "category": "Health & Beauty",
+    "domain": "narscosmetics.com"
+  },
+  {
+    "name": "Hotels.com",
+    "category": "Travel",
+    "domain": "hotels.com"
+  },
+  {
+    "name": "Vrbo",
+    "category": "Travel",
+    "domain": "vrbo.com"
+  },
+  {
+    "name": "Kayak",
+    "category": "Travel",
+    "domain": "kayak.com"
+  },
+  {
+    "name": "Priceline",
+    "category": "Travel",
+    "domain": "priceline.com"
+  },
+  {
+    "name": "Travelocity",
+    "category": "Travel",
+    "domain": "travelocity.com"
+  },
+  {
+    "name": "Hotwire",
+    "category": "Travel",
+    "domain": "hotwire.com"
+  },
+  {
+    "name": "Orbitz",
+    "category": "Travel",
+    "domain": "orbitz.com"
+  },
+  {
+    "name": "TripAdvisor",
+    "category": "Travel",
+    "domain": "tripadvisor.com"
+  },
+  {
+    "name": "Agoda",
+    "category": "Travel",
+    "domain": "agoda.com"
+  },
+  {
+    "name": "Hopper",
+    "category": "Travel",
+    "domain": "hopper.com"
+  },
+  {
+    "name": "CheapOair",
+    "category": "Travel",
+    "domain": "cheapoair.com"
+  },
+  {
+    "name": "Southwest Airlines",
+    "category": "Travel",
+    "domain": "southwest.com"
+  },
+  {
+    "name": "Gucci",
+    "category": "Luxury",
+    "domain": "gucci.com"
+  },
+  {
+    "name": "Louis Vuitton",
+    "category": "Luxury",
+    "domain": "louisvuitton.com"
+  },
+  {
+    "name": "Burberry",
+    "category": "Luxury",
+    "domain": "burberry.com"
+  },
+  {
+    "name": "Prada",
+    "category": "Luxury",
+    "domain": "prada.com"
+  },
+  {
+    "name": "Chanel",
+    "category": "Luxury",
+    "domain": "chanel.com"
+  },
+  {
+    "name": "Hermès",
+    "category": "Luxury",
+    "domain": "hermes.com"
+  },
+  {
+    "name": "Cartier",
+    "category": "Luxury",
+    "domain": "cartier.com"
+  },
+  {
+    "name": "Tiffany & Co",
+    "category": "Luxury",
+    "domain": "tiffany.com"
+  },
+  {
+    "name": "Rolex",
+    "category": "Luxury",
+    "domain": "rolex.com"
+  },
+  {
+    "name": "Omega",
+    "category": "Luxury",
+    "domain": "omegawatches.com"
+  },
+  {
+    "name": "Tag Heuer",
+    "category": "Luxury",
+    "domain": "tagheuer.com"
+  },
+  {
+    "name": "Bulgari",
+    "category": "Luxury",
+    "domain": "bulgari.com"
+  },
+  {
+    "name": "Saint Laurent",
+    "category": "Luxury",
+    "domain": "ysl.com"
+  },
+  {
+    "name": "Balenciaga",
+    "category": "Luxury",
+    "domain": "balenciaga.com"
+  },
+  {
+    "name": "Fendi",
+    "category": "Luxury",
+    "domain": "fendi.com"
   },
   {
     "name": "PetSmart",
     "category": "Pet Supplies",
-    "popular": true
+    "domain": "petsmart.com"
   },
   {
     "name": "Petco",
-    "category": "Pet Supplies"
+    "category": "Pet Supplies",
+    "domain": "petco.com"
   },
   {
     "name": "BarkBox",
-    "category": "Pet Supplies"
+    "category": "Pet Supplies",
+    "domain": "barkbox.com"
   },
   {
     "name": "Rover",
-    "category": "Pet Supplies"
+    "category": "Pet Supplies",
+    "domain": "rover.com"
   },
   {
     "name": "Wag",
-    "category": "Pet Supplies"
+    "category": "Pet Supplies",
+    "domain": "wag.com"
   },
   {
     "name": "Pet Supplies Plus",
-    "category": "Pet Supplies"
+    "category": "Pet Supplies",
+    "domain": "petsuppliesplus.com"
   },
   {
     "name": "1800PetMeds",
     "category": "Pet Supplies",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049415/kindly/store-logos/stores/1800petmeds.ico"
+    "domain": "1800petmeds.com"
   },
   {
     "name": "PetFlow",
     "category": "Pet Supplies",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049419/kindly/store-logos/stores/petflow.png"
+    "domain": "petflow.com"
   },
   {
     "name": "PetPlate",
     "category": "Pet Supplies",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049419/kindly/store-logos/stores/petplate.ico"
+    "domain": "petplate.com"
   },
   {
     "name": "AutoZone",
-    "category": "Automotive",
-    "popular": true,
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049422/kindly/store-logos/stores/autozone.ico"
+    "category": "Auto & Parts",
+    "domain": "autozone.com"
   },
   {
     "name": "O'Reilly Auto Parts",
-    "category": "Automotive"
+    "category": "Auto & Parts",
+    "domain": "oreillyauto.com"
   },
   {
     "name": "Advance Auto Parts",
-    "category": "Automotive"
+    "category": "Auto & Parts",
+    "domain": "advanceautoparts.com"
   },
   {
     "name": "NAPA Auto Parts",
-    "category": "Automotive"
+    "category": "Auto & Parts",
+    "domain": "napaonline.com"
   },
   {
     "name": "CarParts.com",
-    "category": "Automotive"
+    "category": "Auto & Parts",
+    "domain": "carparts.com"
   },
   {
     "name": "TireRack",
-    "category": "Automotive"
+    "category": "Auto & Parts",
+    "domain": "tirerack.com"
   },
   {
     "name": "Pep Boys",
-    "category": "Automotive"
+    "category": "Auto & Parts",
+    "domain": "pepboys.com"
   },
   {
     "name": "JC Whitney",
-    "category": "Automotive"
+    "category": "Auto & Parts",
+    "domain": "jcwhitney.com"
   },
   {
     "name": "RockAuto",
-    "category": "Automotive",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049468/kindly/store-logos/stores/rockauto.ico"
+    "category": "Auto & Parts",
+    "domain": "rockauto.com"
   },
   {
     "name": "4 Wheel Parts",
-    "category": "Automotive"
+    "category": "Auto & Parts",
+    "domain": "4wheelparts.com"
   },
   {
     "name": "Staples",
-    "category": "Office & School",
-    "popular": true
+    "category": "Office Supplies",
+    "domain": "staples.com"
   },
   {
     "name": "Office Depot",
-    "category": "Office & School",
-    "popular": true,
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049472/kindly/store-logos/stores/office-depot.gif"
+    "category": "Office Supplies",
+    "domain": "officedepot.com"
   },
   {
     "name": "The Container Store",
-    "category": "Office & School"
+    "category": "Office Supplies",
+    "domain": "containerstore.com"
   },
   {
     "name": "Five Star",
-    "category": "Office & School"
+    "category": "Office Supplies",
+    "domain": "fivestars.com"
   },
   {
     "name": "Poppin",
-    "category": "Office & School"
+    "category": "Office Supplies",
+    "domain": "poppin.com"
   },
   {
     "name": "Quill",
-    "category": "Office & School",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049217/kindly/store-logos/stores/quill.ico"
+    "category": "Office Supplies",
+    "domain": "quill.com"
   },
   {
     "name": "School Specialty",
-    "category": "Office & School"
+    "category": "Office Supplies",
+    "domain": "schoolspecialty.com"
   },
   {
     "name": "Mead",
-    "category": "Office & School"
+    "category": "Office Supplies",
+    "domain": "mead.com"
   },
   {
     "name": "Post-it",
-    "category": "Office & School"
+    "category": "Office Supplies",
+    "domain": "post-it.com"
   },
   {
     "name": "Moleskine",
-    "category": "Office & School",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049235/kindly/store-logos/stores/moleskine.ico"
+    "category": "Office Supplies",
+    "domain": "moleskine.com"
+  },
+  {
+    "name": "Discount School Supply",
+    "category": "Office Supplies",
+    "domain": "discountschoolsupply.com"
+  },
+  {
+    "name": "VistaPrint",
+    "category": "Office Supplies",
+    "domain": "vistaprint.com"
   },
   {
     "name": "Buy Buy Baby",
     "category": "Baby & Kids",
-    "popular": true
+    "domain": "buybuybaby.com"
   },
   {
     "name": "Carter's",
     "category": "Baby & Kids",
-    "popular": true,
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049500/kindly/store-logos/stores/carter-s.ico"
+    "domain": "carters.com"
   },
   {
     "name": "The Children's Place",
-    "category": "Baby & Kids"
+    "category": "Baby & Kids",
+    "domain": "childrensplace.com"
   },
   {
     "name": "Gymboree",
     "category": "Baby & Kids",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049504/kindly/store-logos/stores/gymboree.png"
+    "domain": "gymboree.com"
   },
   {
     "name": "OshKosh B'gosh",
-    "category": "Baby & Kids"
+    "category": "Baby & Kids",
+    "domain": "oshkosh.com"
   },
   {
     "name": "Pottery Barn Kids",
-    "category": "Baby & Kids"
+    "category": "Baby & Kids",
+    "domain": "potterybarnkids.com"
   },
   {
     "name": "Melissa & Doug",
-    "category": "Baby & Kids"
+    "category": "Baby & Kids",
+    "domain": "melissaanddoug.com"
   },
   {
     "name": "Hanna Andersson",
-    "category": "Baby & Kids"
+    "category": "Baby & Kids",
+    "domain": "hannaandersson.com"
   },
   {
     "name": "Primary",
-    "category": "Baby & Kids"
+    "category": "Baby & Kids",
+    "domain": "primary.com"
   },
   {
     "name": "Janie and Jack",
-    "category": "Baby & Kids"
+    "category": "Baby & Kids",
+    "domain": "janieandjack.com"
   },
   {
     "name": "Pandora",
     "category": "Jewelry & Accessories",
-    "popular": true,
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049539/kindly/store-logos/stores/pandora.ico"
+    "domain": "pandora.net"
   },
   {
     "name": "Kay Jewelers",
     "category": "Jewelry & Accessories",
-    "popular": true
+    "domain": "kay.com"
   },
   {
     "name": "Swarovski",
-    "category": "Jewelry & Accessories"
+    "category": "Jewelry & Accessories",
+    "domain": "swarovski.com"
   },
   {
     "name": "Alex and Ani",
-    "category": "Jewelry & Accessories"
+    "category": "Jewelry & Accessories",
+    "domain": "alexandani.com"
   },
   {
     "name": "Blue Nile",
-    "category": "Jewelry & Accessories"
+    "category": "Jewelry & Accessories",
+    "domain": "bluenile.com"
   },
   {
     "name": "James Allen",
-    "category": "Jewelry & Accessories"
+    "category": "Jewelry & Accessories",
+    "domain": "jamesallen.com"
   },
   {
     "name": "Brilliant Earth",
-    "category": "Jewelry & Accessories"
+    "category": "Jewelry & Accessories",
+    "domain": "brilliantearth.com"
   },
   {
     "name": "David Yurman",
     "category": "Jewelry & Accessories",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049563/kindly/store-logos/stores/david-yurman.ico"
+    "domain": "davidyurman.com"
   },
   {
     "name": "Mejuri",
-    "category": "Jewelry & Accessories"
+    "category": "Jewelry & Accessories",
+    "domain": "mejuri.com"
   },
   {
     "name": "Monica Vinader",
-    "category": "Jewelry & Accessories"
+    "category": "Jewelry & Accessories",
+    "domain": "monicavinader.com"
   },
   {
     "name": "Barnes & Noble",
     "category": "Books & Media",
-    "popular": true
+    "domain": "barnesandnoble.com"
   },
   {
     "name": "Books A Million",
-    "category": "Books & Media"
+    "category": "Books & Media",
+    "domain": "booksamillion.com"
   },
   {
     "name": "AbeBooks",
     "category": "Books & Media",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049574/kindly/store-logos/stores/abebooks.ico"
+    "domain": "abebooks.com"
   },
   {
     "name": "ThriftBooks",
-    "category": "Books & Media"
+    "category": "Books & Media",
+    "domain": "thriftbooks.com"
   },
   {
     "name": "Book Depository",
-    "category": "Books & Media"
+    "category": "Books & Media",
+    "domain": "bookdepository.com"
   },
   {
     "name": "Audible",
     "category": "Books & Media",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049578/kindly/store-logos/stores/audible.ico"
+    "domain": "audible.com"
   },
   {
     "name": "Scribd",
-    "category": "Books & Media"
+    "category": "Books & Media",
+    "domain": "scribd.com"
   },
   {
     "name": "Half Price Books",
-    "category": "Books & Media"
+    "category": "Books & Media",
+    "domain": "hpb.com"
   },
   {
     "name": "Better World Books",
-    "category": "Books & Media"
+    "category": "Books & Media",
+    "domain": "betterworldbooks.com"
   },
   {
     "name": "Bookshop.org",
-    "category": "Books & Media"
+    "category": "Books & Media",
+    "domain": "bookshop.org"
   },
   {
     "name": "Whole Foods",
     "category": "Food & Drink",
-    "popular": true
+    "domain": "wholefoodsmarket.com"
   },
   {
     "name": "Wine.com",
     "category": "Food & Drink",
-    "popular": true
+    "domain": "wine.com"
   },
   {
     "name": "Blue Apron",
-    "category": "Food & Drink"
+    "category": "Food & Drink",
+    "domain": "blueapron.com"
   },
   {
     "name": "HelloFresh",
     "category": "Food & Drink",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049600/kindly/store-logos/stores/hellofresh.ico"
+    "domain": "hellofresh.com"
   },
   {
     "name": "Home Chef",
-    "category": "Food & Drink"
+    "category": "Food & Drink",
+    "domain": "homechef.com"
   },
   {
     "name": "Drizly",
-    "category": "Food & Drink"
+    "category": "Food & Drink",
+    "domain": "drizly.com"
   },
   {
     "name": "Total Wine",
-    "category": "Food & Drink"
+    "category": "Food & Drink",
+    "domain": "totalwine.com"
   },
   {
     "name": "Instacart",
     "category": "Food & Drink",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049625/kindly/store-logos/stores/instacart.png"
+    "domain": "instacart.com"
   },
   {
     "name": "FreshDirect",
-    "category": "Food & Drink"
+    "category": "Food & Drink",
+    "domain": "freshdirect.com"
   },
   {
     "name": "Goldbelly",
     "category": "Food & Drink",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049628/kindly/store-logos/stores/goldbelly.ico"
+    "domain": "goldbelly.com"
   },
   {
     "name": "LEGO",
     "category": "Toys & Games",
-    "popular": true
+    "domain": "lego.com"
   },
   {
     "name": "Toys R Us",
     "category": "Toys & Games",
-    "popular": true
+    "domain": "toysrus.com"
   },
   {
     "name": "Build-A-Bear Workshop",
-    "category": "Toys & Games"
+    "category": "Toys & Games",
+    "domain": "buildabear.com"
   },
   {
     "name": "American Girl",
-    "category": "Toys & Games"
+    "category": "Toys & Games",
+    "domain": "americangirl.com"
   },
   {
     "name": "Hasbro",
-    "category": "Toys & Games"
+    "category": "Toys & Games",
+    "domain": "hasbro.com"
   },
   {
     "name": "Mattel",
     "category": "Toys & Games",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049670/kindly/store-logos/stores/mattel.ico"
+    "domain": "mattel.com"
   },
   {
     "name": "Nintendo",
     "category": "Toys & Games",
-    "cloudinaryLogo": "https://res.cloudinary.com/dvgf0xsjq/image/upload/v1736049674/kindly/store-logos/stores/nintendo.ico"
+    "domain": "nintendo.com"
   },
   {
     "name": "Pokemon Center",
-    "category": "Toys & Games"
+    "category": "Toys & Games",
+    "domain": "pokemoncenter.com"
   },
   {
     "name": "Hot Topic",
-    "category": "Toys & Games"
+    "category": "Toys & Games",
+    "domain": "hottopic.com"
   },
   {
     "name": "ThinkGeek",
-    "category": "Toys & Games"
+    "category": "Toys & Games",
+    "domain": "thinkgeek.com"
+  },
+  {
+    "name": "PlayStation",
+    "category": "Toys & Games",
+    "domain": "playstation.com"
+  },
+  {
+    "name": "Xbox",
+    "category": "Toys & Games",
+    "domain": "xbox.com"
+  },
+  {
+    "name": "Steam",
+    "category": "Toys & Games",
+    "domain": "steampowered.com"
+  },
+  {
+    "name": "Ravensburger",
+    "category": "Toys & Games",
+    "domain": "ravensburger.us"
+  },
+  {
+    "name": "Melissa & Doug",
+    "category": "Toys & Games",
+    "domain": "melissaanddoug.com"
   },
   {
     "name": "REI",
     "category": "Sports & Outdoors",
-    "popular": true
+    "domain": "rei.com"
   },
   {
     "name": "Dick's Sporting Goods",
     "category": "Sports & Outdoors",
-    "popular": true
+    "domain": "dickssportinggoods.com"
   },
   {
     "name": "Bass Pro Shops",
-    "category": "Sports & Outdoors"
+    "category": "Sports & Outdoors",
+    "domain": "basspro.com"
   },
   {
     "name": "Cabela's",
-    "category": "Sports & Outdoors"
+    "category": "Sports & Outdoors",
+    "domain": "cabelas.com"
   },
   {
     "name": "Academy Sports",
-    "category": "Sports & Outdoors"
+    "category": "Sports & Outdoors",
+    "domain": "academy.com"
   },
   {
     "name": "Backcountry",
-    "category": "Sports & Outdoors"
+    "category": "Sports & Outdoors",
+    "domain": "backcountry.com"
   },
   {
     "name": "Moosejaw",
-    "category": "Sports & Outdoors"
+    "category": "Sports & Outdoors",
+    "domain": "moosejaw.com"
   },
   {
     "name": "Steep & Cheap",
-    "category": "Sports & Outdoors"
+    "category": "Sports & Outdoors",
+    "domain": "steepandcheap.com"
   },
   {
     "name": "Sierra Trading Post",
-    "category": "Sports & Outdoors"
+    "category": "Sports & Outdoors",
+    "domain": "sierratradingpost.com"
   },
   {
     "name": "Eastern Mountain Sports",
-    "category": "Sports & Outdoors"
+    "category": "Sports & Outdoors",
+    "domain": "ems.com"
+  },
+  {
+    "name": "The North Face",
+    "category": "Sports & Outdoors",
+    "domain": "thenorthface.com"
+  },
+  {
+    "name": "Columbia",
+    "category": "Sports & Outdoors",
+    "domain": "columbia.com"
+  },
+  {
+    "name": "Under Armour",
+    "category": "Sports & Outdoors",
+    "domain": "underarmour.com"
+  },
+  {
+    "name": "Patagonia",
+    "category": "Sports & Outdoors",
+    "domain": "patagonia.com"
+  },
+  {
+    "name": "Arc'teryx",
+    "category": "Sports & Outdoors",
+    "domain": "arcteryx.com"
+  },
+  {
+    "name": "Yeti",
+    "category": "Sports & Outdoors",
+    "domain": "yeti.com"
+  },
+  {
+    "name": "Hydro Flask",
+    "category": "Sports & Outdoors",
+    "domain": "hydroflask.com"
+  },
+  {
+    "name": "Coleman",
+    "category": "Sports & Outdoors",
+    "domain": "coleman.com"
+  },
+  {
+    "name": "Osprey",
+    "category": "Sports & Outdoors",
+    "domain": "osprey.com"
+  },
+  {
+    "name": "Michaels",
+    "category": "Art & Crafts",
+    "domain": "michaels.com"
+  },
+  {
+    "name": "Joann",
+    "category": "Art & Crafts",
+    "domain": "joann.com"
+  },
+  {
+    "name": "Hobby Lobby",
+    "category": "Art & Crafts",
+    "domain": "hobbylobby.com"
+  },
+  {
+    "name": "Blick Art Materials",
+    "category": "Art & Crafts",
+    "domain": "dickblick.com"
+  },
+  {
+    "name": "Paper Source",
+    "category": "Art & Crafts",
+    "domain": "papersource.com"
+  },
+  {
+    "name": "Cricut",
+    "category": "Art & Crafts",
+    "domain": "cricut.com"
+  },
+  {
+    "name": "Silhouette America",
+    "category": "Art & Crafts",
+    "domain": "silhouetteamerica.com"
+  },
+  {
+    "name": "Arteza",
+    "category": "Art & Crafts",
+    "domain": "arteza.com"
+  },
+  {
+    "name": "Minted",
+    "category": "Art & Crafts",
+    "domain": "minted.com"
+  },
+  {
+    "name": "Shutterfly",
+    "category": "Art & Crafts",
+    "domain": "shutterfly.com"
+  },
+  {
+    "name": "Snapfish",
+    "category": "Art & Crafts",
+    "domain": "snapfish.com"
+  },
+  {
+    "name": "Mixbook",
+    "category": "Art & Crafts",
+    "domain": "mixbook.com"
+  },
+  {
+    "name": "Frontier Airlines",
+    "category": "Travel",
+    "domain": "flyfrontier.com"
+  },
+  {
+    "name": "Spirit Airlines",
+    "category": "Travel",
+    "domain": "spirit.com"
+  },
+  {
+    "name": "JetBlue",
+    "category": "Travel",
+    "domain": "jetblue.com"
+  },
+  {
+    "name": "Alaska Airlines",
+    "category": "Travel",
+    "domain": "alaskaair.com"
+  },
+  {
+    "name": "Hawaiian Airlines",
+    "category": "Travel",
+    "domain": "hawaiianairlines.com"
+  },
+  {
+    "name": "Carnival Cruise Line",
+    "category": "Travel",
+    "domain": "carnival.com"
+  },
+  {
+    "name": "Royal Caribbean",
+    "category": "Travel",
+    "domain": "royalcaribbean.com"
+  },
+  {
+    "name": "Norwegian Cruise Line",
+    "category": "Travel",
+    "domain": "ncl.com"
+  },
+  {
+    "name": "Disney Cruise Line",
+    "category": "Travel",
+    "domain": "disneycruise.disney.go.com"
+  },
+  {
+    "name": "Princess Cruises",
+    "category": "Travel",
+    "domain": "princess.com"
+  },
+  {
+    "name": "Tire Rack",
+    "category": "Auto & Parts",
+    "domain": "tirerack.com"
+  },
+  {
+    "name": "CarParts.com",
+    "category": "Auto & Parts",
+    "domain": "carparts.com"
+  },
+  {
+    "name": "RockAuto",
+    "category": "Auto & Parts",
+    "domain": "rockauto.com"
+  },
+  {
+    "name": "4 Wheel Parts",
+    "category": "Auto & Parts",
+    "domain": "4wheelparts.com"
+  },
+  {
+    "name": "Summit Racing",
+    "category": "Auto & Parts",
+    "domain": "summitracing.com"
+  },
+  {
+    "name": "Jegs",
+    "category": "Auto & Parts",
+    "domain": "jegs.com"
+  },
+  {
+    "name": "Crutchfield",
+    "category": "Auto & Parts",
+    "domain": "crutchfield.com"
+  },
+  {
+    "name": "Primary",
+    "category": "Baby & Kids",
+    "domain": "primary.com"
+  },
+  {
+    "name": "Janie and Jack",
+    "category": "Baby & Kids",
+    "domain": "janieandjack.com"
+  },
+  {
+    "name": "Tea Collection",
+    "category": "Baby & Kids",
+    "domain": "teacollection.com"
+  },
+  {
+    "name": "Maisonette",
+    "category": "Baby & Kids",
+    "domain": "maisonette.com"
+  },
+  {
+    "name": "Melissa & Doug",
+    "category": "Baby & Kids",
+    "domain": "melissaanddoug.com"
+  },
+  {
+    "name": "Reformation",
+    "category": "Fashion & Apparel",
+    "domain": "thereformation.com"
+  },
+  {
+    "name": "Everlane",
+    "category": "Fashion & Apparel",
+    "domain": "everlane.com"
+  },
+  {
+    "name": "Madewell",
+    "category": "Fashion & Apparel",
+    "domain": "madewell.com"
+  },
+  {
+    "name": "& Other Stories",
+    "category": "Fashion & Apparel",
+    "domain": "stories.com"
+  },
+  {
+    "name": "COS",
+    "category": "Fashion & Apparel",
+    "domain": "cos.com"
+  },
+  {
+    "name": "Asus",
+    "category": "Electronics & Tech",
+    "domain": "asus.com"
+  },
+  {
+    "name": "MSI",
+    "category": "Electronics & Tech",
+    "domain": "msi.com"
+  },
+  {
+    "name": "Acer",
+    "category": "Electronics & Tech",
+    "domain": "acer.com"
+  },
+  {
+    "name": "LG Electronics",
+    "category": "Electronics & Tech",
+    "domain": "lg.com"
+  },
+  {
+    "name": "Sony",
+    "category": "Electronics & Tech",
+    "domain": "sony.com"
+  },
+  {
+    "name": "Philips",
+    "category": "Electronics & Tech",
+    "domain": "philips.com"
+  },
+  {
+    "name": "Brooklinen",
+    "category": "Home & Garden",
+    "domain": "brooklinen.com"
+  },
+  {
+    "name": "Parachute",
+    "category": "Home & Garden",
+    "domain": "parachutehome.com"
+  },
+  {
+    "name": "The Company Store",
+    "category": "Home & Garden",
+    "domain": "thecompanystore.com"
+  },
+  {
+    "name": "Frontgate",
+    "category": "Home & Garden",
+    "domain": "frontgate.com"
+  },
+  {
+    "name": "Grandin Road",
+    "category": "Home & Garden",
+    "domain": "grandinroad.com"
+  },
+  {
+    "name": "Ballard Designs",
+    "category": "Home & Garden",
+    "domain": "ballarddesigns.com"
+  },
+  {
+    "name": "Tatcha",
+    "category": "Health & Beauty",
+    "domain": "tatcha.com"
+  },
+  {
+    "name": "Drunk Elephant",
+    "category": "Health & Beauty",
+    "domain": "drunkelephant.com"
+  },
+  {
+    "name": "Youth To The People",
+    "category": "Health & Beauty",
+    "domain": "youthtothepeople.com"
+  },
+  {
+    "name": "Rare Beauty",
+    "category": "Health & Beauty",
+    "domain": "rarebeauty.com"
+  },
+  {
+    "name": "Merrell",
+    "category": "Sports & Outdoors",
+    "domain": "merrell.com"
+  },
+  {
+    "name": "Salomon",
+    "category": "Sports & Outdoors",
+    "domain": "salomon.com"
+  },
+  {
+    "name": "Black Diamond",
+    "category": "Sports & Outdoors",
+    "domain": "blackdiamondequipment.com"
+  },
+  {
+    "name": "Petzl",
+    "category": "Sports & Outdoors",
+    "domain": "petzl.com"
+  },
+  {
+    "name": "Mattel",
+    "category": "Toys & Games",
+    "domain": "mattel.com"
+  },
+  {
+    "name": "Hasbro",
+    "category": "Toys & Games",
+    "domain": "hasbro.com"
+  },
+  {
+    "name": "Fisher-Price",
+    "category": "Toys & Games",
+    "domain": "fisher-price.com"
+  },
+  {
+    "name": "Petmate",
+    "category": "Pet Supplies",
+    "domain": "petmate.com"
+  },
+  {
+    "name": "Kurgo",
+    "category": "Pet Supplies",
+    "domain": "kurgo.com"
+  },
+  {
+    "name": "Ruffwear",
+    "category": "Pet Supplies",
+    "domain": "ruffwear.com"
+  },
+  {
+    "name": "Starbucks",
+    "category": "Food & Beverage",
+    "domain": "starbucks.com"
+  },
+  {
+    "name": "Nespresso",
+    "category": "Food & Beverage",
+    "domain": "nespresso.com"
+  },
+  {
+    "name": "Coffee Bean & Tea Leaf",
+    "category": "Food & Beverage",
+    "domain": "coffeebean.com"
+  },
+  {
+    "name": "Peet's Coffee",
+    "category": "Food & Beverage",
+    "domain": "peets.com"
+  },
+  {
+    "name": "David's Tea",
+    "category": "Food & Beverage",
+    "domain": "davidstea.com"
+  },
+  {
+    "name": "Teavana",
+    "category": "Food & Beverage",
+    "domain": "teavana.com"
+  },
+  {
+    "name": "Harney & Sons",
+    "category": "Food & Beverage",
+    "domain": "harney.com"
+  },
+  {
+    "name": "Bookshop.org",
+    "category": "Books & Media",
+    "domain": "bookshop.org"
+  },
+  {
+    "name": "Better World Books",
+    "category": "Books & Media",
+    "domain": "betterworldbooks.com"
+  },
+  {
+    "name": "Alibris",
+    "category": "Books & Media",
+    "domain": "alibris.com"
+  },
+  {
+    "name": "Monica Vinader",
+    "category": "Jewelry & Accessories",
+    "domain": "monicavinader.com"
+  },
+  {
+    "name": "Missoma",
+    "category": "Jewelry & Accessories",
+    "domain": "missoma.com"
+  },
+  {
+    "name": "Kendra Scott",
+    "category": "Jewelry & Accessories",
+    "domain": "kendrascott.com"
+  },
+  {
+    "name": "Jerry's Artarama",
+    "category": "Art & Crafts",
+    "domain": "jerrysartarama.com"
+  },
+  {
+    "name": "Artist & Craftsman",
+    "category": "Art & Crafts",
+    "domain": "artistcraftsman.com"
+  },
+  {
+    "name": "Cheap Joe's Art Stuff",
+    "category": "Art & Crafts",
+    "domain": "cheapjoes.com"
+  },
+  {
+    "name": "Delta Airlines",
+    "category": "Travel",
+    "domain": "delta.com"
+  },
+  {
+    "name": "United Airlines",
+    "category": "Travel",
+    "domain": "united.com"
+  },
+  {
+    "name": "American Airlines",
+    "category": "Travel",
+    "domain": "aa.com"
+  },
+  {
+    "name": "Pep Boys",
+    "category": "Auto & Parts",
+    "domain": "pepboys.com"
+  },
+  {
+    "name": "JC Whitney",
+    "category": "Auto & Parts",
+    "domain": "jcwhitney.com"
+  },
+  {
+    "name": "Pottery Barn Kids",
+    "category": "Baby & Kids",
+    "domain": "potterybarnkids.com"
+  },
+  {
+    "name": "Crate & Kids",
+    "category": "Baby & Kids",
+    "domain": "crateandbarrel.com/kids"
+  },
+  {
+    "name": "Babylist",
+    "category": "Baby & Kids",
+    "domain": "babylist.com"
+  },
+  {
+    "name": "Ergobaby",
+    "category": "Baby & Kids",
+    "domain": "ergobaby.com"
+  },
+  {
+    "name": "UPPAbaby",
+    "category": "Baby & Kids",
+    "domain": "uppababy.com"
+  },
+  {
+    "name": "Bugaboo",
+    "category": "Baby & Kids",
+    "domain": "bugaboo.com"
+  },
+  {
+    "name": "Stokke",
+    "category": "Baby & Kids",
+    "domain": "stokke.com"
+  },
+  {
+    "name": "Graco",
+    "category": "Baby & Kids",
+    "domain": "gracobaby.com"
+  },
+  {
+    "name": "4moms",
+    "category": "Baby & Kids",
+    "domain": "4moms.com"
   }
 ];

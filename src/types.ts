@@ -3,5 +3,4 @@ export interface Store {
   category: string;
   popular?: boolean;
   domain?: string;
-  cloudinaryLogo?: string;
 }

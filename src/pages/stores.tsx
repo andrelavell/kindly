@@ -95,21 +95,15 @@ export default function stores() {
       {/* Hero Section */}
       <div className="bg-gray-50 py-24">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
+          <div className="max-w-6xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Supported Stores
-              </h1>
-              <p className="text-xl text-gray-600 mb-6">
-                We support over 48,500 stores worldwide to help you make a difference.
-              </p>
-              <p className="text-lg text-gray-500 mb-12">
-                Below are some of our most popular stores. Use the search to find any supported store that isn't listed.
-              </p>
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 whitespace-nowrap">Supported Stores</h1>
+              <p className="text-xl text-gray-600 mb-6 whitespace-nowrap">We support over 48,500 stores worldwide to help you make a difference.</p>
+              <p className="text-lg text-gray-500 mb-12 whitespace-nowrap">Below are some of our most popular stores. Use the search to find any supported store that isn't listed.</p>
 
               {/* Search and Filter */}
               <div className="max-w-2xl mx-auto">
@@ -189,21 +183,34 @@ export default function stores() {
                           />
                         ) : (
                           <div className="w-full h-full flex items-center justify-center bg-gray-100 rounded-md">
-                            <span className="text-lg font-semibold text-gray-400">
+                            <span className="text-lg font-medium text-gray-500">
                               {store.name.charAt(0)}
                             </span>
                           </div>
                         )}
                       </div>
-                      <h3 className="text-gray-900 font-medium group-hover:text-rose-500 transition-colors text-center">
+                      <h3 className="text-sm font-medium text-gray-900 text-center group-hover:text-rose-600 transition-colors">
                         {store.name}
                       </h3>
-                      <p className="text-sm text-gray-500 mt-1">
+                      <p className="text-xs text-gray-500 mt-1">
                         {store.category}
                       </p>
                     </div>
                   </motion.div>
                 ))}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: Math.min(visibleStoresList.length * 0.05, 1) }}
+                  className="relative col-span-2 md:col-span-3 lg:col-span-4 xl:col-span-5 bg-rose-50/50 rounded-xl border border-rose-100 p-8 text-center"
+                >
+                  <p className="text-xl text-gray-900 font-medium">
+                    Plus {(48500 - storesList.length).toLocaleString()} more stores available!
+                  </p>
+                  <p className="text-gray-600 mt-2">
+                    Can't find what you're looking for? Try searching above – your favorite store is probably supported
+                  </p>
+                </motion.div>
               </motion.div>
               {visibleStores < filteredStores.length && (
                 <div ref={loadMoreRef} className="h-20 flex items-center justify-center mt-8">
