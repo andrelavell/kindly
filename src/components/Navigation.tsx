@@ -75,7 +75,6 @@ export function Navigation() {
                   {link.name}
                 </Link>
               ))}
-
               {user ? (
                 <div className="relative">
                   <button
@@ -106,21 +105,8 @@ export function Navigation() {
                   )}
                 </div>
               ) : (
-                <>
-                  <Link 
-                    href="/signin" 
-                    className="text-gray-600 hover:text-rose-500 transition-colors"
-                  >
-                    Sign in
-                  </Link>
-                  <Link href="/signup">
-                    <Button variant="primary" size="md">
-                      Sign up
-                    </Button>
-                  </Link>
-                </>
+                <></>
               )}
-
               <Button variant="primary" size="md" icon={browserInfo.icon}>
                 {browserInfo.actionText}
               </Button>
@@ -158,7 +144,6 @@ export function Navigation() {
                   {link.name}
                 </Link>
               ))}
-
               {user ? (
                 <>
                   <Link
@@ -175,22 +160,8 @@ export function Navigation() {
                   </button>
                 </>
               ) : (
-                <>
-                  <Link
-                    href="/signin"
-                    className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-rose-500 transition-colors"
-                  >
-                    Sign in
-                  </Link>
-                  <Link
-                    href="/signup"
-                    className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-rose-500 transition-colors"
-                  >
-                    Sign up
-                  </Link>
-                </>
+                <></>
               )}
-
               <div className="pt-4 border-t border-gray-100">
                 <Button variant="primary" size="lg" icon={browserInfo.icon} className="w-full justify-center">
                   {browserInfo.actionText}
