@@ -3,58 +3,32 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { getAnalytics } from 'firebase/analytics';
 
-// Debug: Check if environment variables are loaded
-console.log('Firebase Config:', {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY?.trim(),
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN?.trim(),
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID?.trim(),
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET?.trim(),
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID?.trim(),
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID?.trim(),
-  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID?.trim()
-});
-
+// Ensure we're only initializing Firebase on the client side
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY?.trim(),
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN?.trim(),
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID?.trim(),
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET?.trim(),
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID?.trim(),
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID?.trim(),
-  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID?.trim()
+  apiKey: "AIzaSyB28flW9W4tiyWzquksHbNS5up6bIzyl8g",
+  authDomain: "kindly-81b3b.firebaseapp.com",
+  projectId: "kindly-81b3b",
+  storageBucket: "kindly-81b3b.firebasestorage.app",
+  messagingSenderId: "226420039983",
+  appId: "1:226420039983:web:27554dd0ece3a51db301da",
+  measurementId: "G-0CG211ET49"
 };
 
-// Check if required config is present
-if (!firebaseConfig.apiKey) {
-  throw new Error('Firebase API Key is missing. Make sure NEXT_PUBLIC_FIREBASE_API_KEY is set in your environment variables.');
-}
-
-// Initialize Firebase
+// Initialize Firebase only on client side
 let app;
-try {
-  app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
-} catch (error) {
-  console.error('Error initializing Firebase:', error);
-  throw error;
-}
-
 let auth;
-try {
-  auth = getAuth(app);
-} catch (error) {
-  console.error('Error initializing Firebase Auth:', error);
-  throw error;
-}
-
-const db = getFirestore(app);
-
-// Initialize Analytics only on client side
+let db;
 let analytics = null;
+
 if (typeof window !== 'undefined') {
   try {
+    app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
+    auth = getAuth(app);
+    db = getFirestore(app);
     analytics = getAnalytics(app);
   } catch (error) {
-    console.error('Error initializing Firebase Analytics:', error);
+    console.error('Error initializing Firebase:', error);
+    throw error;
   }
 }
 
