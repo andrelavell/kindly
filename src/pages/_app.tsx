@@ -5,6 +5,7 @@ import { Banner } from '../components/Banner'
 import { Navigation } from '../components/Navigation'
 import { Footer } from '../components/Footer'
 import { trackPageView } from '../utils/analytics'
+import { AuthProvider } from '../contexts/AuthContext'
 import '../styles/globals.css'
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -23,11 +24,13 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [router.events])
 
   return (
-    <div className="min-h-screen">
-      <Banner />
-      <Navigation />
-      <Component {...pageProps} />
-      <Footer />
-    </div>
+    <AuthProvider>
+      <div className="min-h-screen">
+        <Banner />
+        <Navigation />
+        <Component {...pageProps} />
+        <Footer />
+      </div>
+    </AuthProvider>
   )
 }

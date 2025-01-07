@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirm Your Kindly Account</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.5;
+      color: #374151;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .header {
+      background-color: #F43F5E;
+      padding: 24px;
+      text-align: center;
+      border-radius: 8px 8px 0 0;
+    }
+    .logo {
+      width: 120px;
+      margin-bottom: 16px;
+    }
+    .content {
+      background-color: #ffffff;
+      padding: 32px 24px;
+      border: 1px solid #E5E7EB;
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+    }
+    .title {
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: 600;
+      margin: 0;
+    }
+    .subtitle {
+      color: #ffffff;
+      opacity: 0.9;
+      margin: 8px 0 0 0;
+    }
+    .button {
+      display: inline-block;
+      background-color: #F43F5E;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 500;
+      margin: 24px 0;
+    }
+    .footer {
+      text-align: center;
+      color: #6B7280;
+      font-size: 14px;
+      margin-top: 32px;
+    }
+    .highlight {
+      color: #F43F5E;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2" style="margin-bottom: 16px;">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+      <h1 class="title">Welcome to Kindly!</h1>
+      <p class="subtitle">One last step to start making a difference</p>
+    </div>
+    
+    <div class="content">
+      <p>Hi {{ .Email }},</p>
+      
+      <p>Thank you for joining Kindly! We're excited to have you on board. To complete your registration and start tracking your donations, please confirm your email address.</p>
+      
+      <div style="text-align: center;">
+        <a href="{{ .ConfirmationURL }}" class="button">
+          Confirm Email Address
+        </a>
+      </div>
+      
+      <p>Or copy and paste this URL into your browser:</p>
+      <p style="word-break: break-all; color: #6B7280; font-size: 14px;">
+        {{ .ConfirmationURL }}
+      </p>
+      
+      <p>With Kindly, you can:</p>
+      <ul>
+        <li>Track your charitable impact</li>
+        <li>Support causes you care about</li>
+        <li>Make a difference while you shop</li>
+      </ul>
+      
+      <p>If you didn't create a Kindly account, you can safely ignore this email.</p>
+      
+      <div class="footer">
+        <p>Need help? Contact us at <span class="highlight">support@joinkindly.org</span></p>
+        <p>&copy; 2025 Kindly. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

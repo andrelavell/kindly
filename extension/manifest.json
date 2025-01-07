@@ -2,15 +2,22 @@
   "manifest_version": 3,
   "name": "Kindly",
   "version": "1.0.0",
-  "description": "Transform your everyday shopping into meaningful impact",
+  "description": "Make a difference while you shop",
   "permissions": [
     "storage",
     "webNavigation",
+    "identity",
     "tabs"
   ],
   "host_permissions": [
-    "*://*.amazon.com/*"
+    "*://*.amazon.com/*",
+    "https://*.firebaseapp.com/*",
+    "https://*.googleapis.com/*",
+    "https://*.supabase.co/*"
   ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' https://*.firebaseio.com https://*.googleapis.com;"
+  },
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
