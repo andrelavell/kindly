@@ -204,31 +204,31 @@ export default function CreatorsPage() {
                   </div>
                 </div>
               </div>
-              
-              <div className="relative">
-                <Image
-                  src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80"
-                  alt="Creator working on content"
-                  width={600}
-                  height={800}
-                  className="rounded-2xl shadow-xl"
-                />
-                <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-xl shadow-lg max-w-sm">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-rose-500 flex items-center justify-center">
-                      <Heart className="w-6 h-6 text-white" fill="currentColor" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">Creator First</h4>
-                      <p className="text-sm text-gray-500">Always has been, always will be</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-2">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <svg key={star} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+
+              {/* Preview of Affiliate Detection */}
+              <div className="flex items-center justify-center">
+                <div className="relative p-6 bg-white rounded-xl shadow-lg w-full max-w-md">
+                  <div className="text-center">
+                    <div className="mb-4">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="mx-auto text-rose-500">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                       </svg>
-                    ))}
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">We've detected another affiliate</h3>
+                    <p className="text-sm text-gray-600 mb-4">
+                      We've detected another affiliate connected to your purchase (creator-20). This might support a website or creator you recently visited.
+                    </p>
+                    <div className="flex gap-3 justify-center mb-4">
+                      <button className="px-4 py-2 bg-white text-gray-600 border border-rose-500 rounded-lg font-medium">
+                        Support Creator
+                      </button>
+                      <button className="px-4 py-2 bg-rose-500 text-white border-none rounded-lg font-medium">
+                        Donate to Charity
+                      </button>
+                    </div>
+                    <p className="text-xs text-gray-500 bg-gray-50 p-3 rounded-lg">
+                      If you choose to donate to charity, the affiliate commission from your purchase will be received by Kindly and donated to your selected cause.
+                    </p>
                   </div>
                 </div>
               </div>

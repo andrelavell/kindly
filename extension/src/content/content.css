@@ -1,0 +1,47 @@
+/* Animations for the popup */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#kindly-popup {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Button styles */
+#kindly-activate {
+  transition: background-color 0.2s ease;
+}
+
+#kindly-activate:hover {
+  background-color: #e11d48 !important;
+}
+
+#kindly-activate:disabled {
+  background-color: #16a34a !important;
+  cursor: default;
+}
+
+#kindly-close {
+  background: transparent !important;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+#kindly-close:hover {
+  opacity: 1;
+}
+
+#kindly-change-cause {
+  transition: opacity 0.2s ease;
+}
+
+#kindly-change-cause:hover {
+  opacity: 0.7;
+}
