@@ -122,8 +122,8 @@ export function CauseSelection() {
                   </p>
                   <a 
                     href={selectedCause ? 
-                      "https://joinkindly.com/dashboard" : 
-                      "https://joinkindly.com/dashboard#select-cause"}
+                      "https://joinkindly.org/dashboard" : 
+                      "https://joinkindly.org/dashboard#select-cause"}
                     target="_blank"
                     rel="noopener noreferrer" 
                     className="text-sm text-rose-500 flex items-center gap-1 hover:text-rose-600"
@@ -182,7 +182,7 @@ export function CauseSelection() {
                 minute: '2-digit'
               })}</span>
             )}
-            <span className="text-rose-500 font-medium flex items-center space-x-1 cursor-pointer" onClick={() => window.location.href = 'https://joinkindly.com/dashboard'}>
+            <span className="text-rose-500 font-medium flex items-center space-x-1 cursor-pointer" onClick={() => window.location.href = 'https://joinkindly.org/dashboard'}>
               <span>View Details</span>
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 11l5-5m0 0l5 5m-5-5v12" />

@@ -64,7 +64,7 @@ export function AccountDetails() {
   const handleLogout = async () => {
     try {
       await signOut();
-      window.location.href = 'https://joinkindly.com/signin';
+      window.location.href = 'https://joinkindly.org/signin';
     } catch (error) {
       console.error('Error signing out:', error);
     }
