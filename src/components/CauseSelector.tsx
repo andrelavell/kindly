@@ -23,9 +23,9 @@ const buttonVariants = {
 };
 
 export function CauseSelector() {
-  const [selectedCause, setSelectedCause] = useState<number | null>(null);
+  const [selectedCause, setSelectedCause] = useState<string | null>(null);
   
-  const handleCauseSelect = useCallback((id: number) => {
+  const handleCauseSelect = useCallback((id: string) => {
     setSelectedCause(id);
   }, []);
 

@@ -1,51 +1,51 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { Auth } from '../components/Auth';
-import { Welcome } from '../components/Welcome';
 import { CauseSelection } from '../components/CauseSelection';
-import { Account } from '../components/Account';
-import { AuthProvider, useAuth } from '../contexts/AuthContext';
+import { AccountDetails } from '../components/AccountDetails';
+import { AuthProvider } from '../contexts/AuthContext';
 import './popup.css';
 
-function App() {
-  const { user } = useAuth();
-  const [currentRoute, setCurrentRoute] = useState(window.location.hash || '#');
+function Popup() {
+  const [currentView, setCurrentView] = useState<'cause' | 'account'>('cause');
 
-  useEffect(() => {
-    const handleHashChange = () => {
-      setCurrentRoute(window.location.hash);
-    };
+  const toggleView = () => {
+    setCurrentView(currentView === 'cause' ? 'account' : 'cause');
+  };
 
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
-
-  if (!user) {
-    return <Auth />;
-  }
-
-  switch (currentRoute) {
-    case '#welcome':
-      return <Welcome />;
-    case '#cause-selection':
-      return <CauseSelection />;
-    case '#account':
-      return <Account />;
-    default:
-      return <CauseSelection />;
-  }
-}
-
-const container = document.getElementById('root');
-if (!container) {
-  throw new Error('Root element not found');
-}
-
-const root = createRoot(container);
-root.render(
-  <React.StrictMode>
+  return (
     <AuthProvider>
-      <App />
+      <div className="w-[400px]">
+        {currentView === 'cause' ? (
+          <div className="relative">
+            <CauseSelection />
+            <button
+              onClick={toggleView}
+              className="absolute top-3 right-3 text-white hover:text-gray-100 transition-colors"
+              aria-label="Account"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+            </button>
+          </div>
+        ) : (
+          <div className="relative">
+            <AccountDetails />
+            <button
+              onClick={toggleView}
+              className="absolute top-3 right-12 text-white hover:text-gray-100 transition-colors"
+              aria-label="Back to Cause"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+          </div>
+        )}
+      </div>
     </AuthProvider>
-  </React.StrictMode>
-);
+  );
+}
+
+const root = createRoot(document.getElementById('root')!);
+root.render(<Popup />);
