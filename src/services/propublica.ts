@@ -46,14 +46,15 @@ export const searchNonprofits = async (
   }
 };
 
-export const getNonprofitDetails = async (ein: string): Promise<Nonprofit> => {
+export const getNonprofitDetails = async (ein: string) => {
   try {
-    const response = await fetch(`${BASE_URL}/organizations/${ein}.json`);
+    const response = await fetch(`/api/nonprofits/${ein}`);
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error('Failed to fetch nonprofit details');
     }
     const data = await response.json();
-    return data.organization;
+    console.log('Nonprofit Details Response:', JSON.stringify(data, null, 2));
+    return data;
   } catch (error) {
     console.error('Error fetching nonprofit details:', error);
     throw error;

@@ -16,50 +16,50 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="bg-white rounded-lg shadow overflow-hidden">
-          {/* Dashboard Header */}
-          <div className="px-6 py-4 border-b border-gray-200">
-            <h1 className="text-2xl font-semibold text-gray-900">Dashboard</h1>
+    <div className="min-h-screen">
+      {activeTab === 'cause' ? (
+        <CauseSection activeTab={activeTab} onTabChange={setActiveTab} />
+      ) : (
+        <div>
+          <div className="bg-gradient-to-r from-rose-500 to-rose-600">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mx-auto text-center pt-16 pb-20">
+                <h1 className="text-4xl font-bold mb-4 text-white">
+                  Your Impact Statistics
+                </h1>
+                <p className="text-xl text-white/90 mb-12">
+                  Track the difference you're making through your donations
+                </p>
+                <div className="inline-flex rounded-lg bg-white/10 p-1">
+                  <button
+                    onClick={() => setActiveTab('cause')}
+                    className={`${
+                      activeTab === 'cause'
+                        ? 'bg-white text-rose-600'
+                        : 'text-white hover:bg-white/10'
+                    } px-6 py-2 rounded-md text-sm font-medium transition-colors`}
+                  >
+                    Select Cause
+                  </button>
+                  <button
+                    onClick={() => setActiveTab('stats')}
+                    className={`${
+                      activeTab === 'stats'
+                        ? 'bg-white text-rose-600'
+                        : 'text-white hover:bg-white/10'
+                    } px-6 py-2 rounded-md text-sm font-medium transition-colors`}
+                  >
+                    Statistics
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
-
-          {/* Tabs */}
-          <div className="border-b border-gray-200">
-            <nav className="-mb-px flex">
-              <button
-                onClick={() => setActiveTab('cause')}
-                className={`${
-                  activeTab === 'cause'
-                    ? 'border-rose-500 text-rose-600'
-                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                } whitespace-nowrap py-4 px-6 border-b-2 font-medium text-sm`}
-              >
-                Select Cause
-              </button>
-              <button
-                onClick={() => setActiveTab('stats')}
-                className={`${
-                  activeTab === 'stats'
-                    ? 'border-rose-500 text-rose-600'
-                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                } whitespace-nowrap py-4 px-6 border-b-2 font-medium text-sm`}
-              >
-                Statistics
-              </button>
-            </nav>
-          </div>
-
-          {/* Tab Content */}
-          <div className="p-6">
-            {activeTab === 'cause' ? (
-              <CauseSection />
-            ) : (
-              <StatsContainer />
-            )}
+          <div className="container mx-auto px-4 py-8">
+            <StatsContainer />
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

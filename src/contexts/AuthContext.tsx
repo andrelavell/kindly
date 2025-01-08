@@ -35,7 +35,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const fetchUserProfile = async (userId: string) => {
       try {
-        const userDoc = await getDoc(doc(db, 'profiles', userId));
+        const userDoc = await getDoc(doc(db, 'users', userId));
         if (userDoc.exists()) {
           setUserProfile(userDoc.data() as UserProfile);
         }

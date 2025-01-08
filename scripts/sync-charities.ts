@@ -55,7 +55,8 @@ async function saveCharitiesToFirestore(charities: CharityBasicInfo[]) {
 
   for (const charity of charities) {
     const charityRef = charitiesRef.doc(charity.ein);
-    currentBatch.set(charityRef, charity);
+    // Use set with merge option to update existing documents without overwriting other fields
+    currentBatch.set(charityRef, charity, { merge: true });
     operationCount++;
 
     if (operationCount === BATCH_SIZE) {
@@ -95,9 +96,10 @@ async function syncCharities() {
           name: org.name,
           nteeCode: org.ntee_code,
           category: CATEGORIES[org.ntee_code.charAt(0)] || 'Other',
-          city: org.city,
-          state: org.state
-        }));
+          city: org.city?.trim(),
+          state: org.state?.trim().toUpperCase() // Ensure state is uppercase
+        }))
+        .filter(charity => charity.state && charity.state.length === 2); // Only include valid state codes
 
       await saveCharitiesToFirestore(charities);
       

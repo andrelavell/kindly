@@ -41,13 +41,14 @@ export function Auth({ mode }: AuthProps) {
         const user = userCredential.user;
 
         // Create user profile in Firestore
-        await setDoc(doc(db, 'profiles', user.uid), {
+        await setDoc(doc(db, 'users', user.uid), {
           id: user.uid,
           first_name: firstName,
           last_name: lastName,
           email: email,
           tracking_id: generateTrackingId(),
           created_at: new Date().toISOString(),
+          selectedCharity: null,
           stats: {
             totalContribution: 0,
             monthlyContribution: 0,

@@ -1,10 +1,11 @@
-import admin from 'firebase-admin';
+import * as admin from 'firebase-admin';
 import { getFirestore } from 'firebase-admin/firestore';
-import { join, dirname } from 'path';
+import * as path from 'path';
 import { fileURLToPath } from 'url';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const serviceAccount = join(__dirname, 'service-account-key.json');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const serviceAccount = path.join(__dirname, 'service-account-key.json');
 
 // Initialize Firebase Admin with service account
 admin.initializeApp({
