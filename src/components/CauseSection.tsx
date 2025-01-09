@@ -7,61 +7,27 @@ import { Search, Heart, ArrowRight } from 'lucide-react';
 import debounce from 'lodash/debounce';
 import type { Charity } from '../types/firebase';
 
-const FEATURED_CHARITIES = [
+const FEATURED_CHARITIES: Charity[] = [
   {
-    name: "National Multiple Sclerosis Society",
-    description: "We will cure MS while empowering people affected by MS to live their best lives",
-    imageUrl: "/images/charities/ms-society.png",
-    ein: "131914609"
+    id: '1',
+    name: 'St. Jude Children\'s Research Hospital',
+    description: 'Leading children\'s hospital pioneering research and treatments for kids with cancer and other life-threatening diseases.',
   },
   {
-    name: "charity: water",
-    description: "charity: water is a global nonprofit organization working to end the water crisis by bringing clean and safe water to people around the world.",
-    imageUrl: "/images/charities/charity2.png",
-    ein: "223936753"
+    id: '2',
+    name: 'American Red Cross',
+    description: 'Emergency response and blood services organization helping communities prepare for and respond to disasters.',
   },
   {
-    name: "Susan G Komen Breast Cancer Foundation",
-    description: "Save lives by meeting the most critical needs in our communities and investing in breakthrough research to prevent and cure breast cancer.",
-    imageUrl: "/images/charities/susan-g-komen-logo.jpg",
-    ein: "751835298"
+    id: '3',
+    name: 'World Wildlife Fund',
+    description: 'International conservation organization working to reduce humanity\'s impact on the environment.',
   },
   {
-    name: "Michael J Fox Foundation For Parkinsons Research",
-    description: "The MJF Foundation is dedicated to finding a cure for Parkinson's disease through an aggressively funded research agenda.",
-    imageUrl: "/images/charities/charity4.png",
-    ein: "134141945"
+    id: '4',
+    name: 'Feeding America',
+    description: 'Nationwide network of food banks fighting hunger and food waste in America.',
   },
-  {
-    name: "Autism Speaks",
-    description: "Autism Speaks is dedicated to promoting solutions, across the spectrum and throughout the life span, for the needs of people with autism and their families.",
-    imageUrl: "/images/charities/charity5.png",
-    ein: "202329938"
-  },
-  {
-    name: "March Of Dimes",
-    description: "March of Dimes is dedicated to leading the fight for the health of all moms and babies.",
-    imageUrl: "/images/charities/charity6.png",
-    ein: "131846366"
-  },
-  {
-    name: "Unicef USA",
-    description: "UNICEF USA relentlessly pursues an equitable world for every child by increasing UNICEF's global impact through fundraising, advocacy, and education.",
-    imageUrl: "/images/charities/charity7.png",
-    ein: "131760110"
-  },
-  {
-    name: "International Development Enterprises",
-    description: "iDE creates income and livelihood opportunities for poor, rural households.",
-    imageUrl: "/images/charities/charity8.png",
-    ein: "237069110"
-  },
-  {
-    name: "Neuroendocrine Tumor Research Foundation",
-    description: "The mission of the Neuroendocrine Tumor Research Foundation is to fund research to discover cures and more effective treatments.",
-    imageUrl: "/images/charities/charity9.png",
-    ein: "201945347"
-  }
 ];
 
 interface CauseSectionProps {
@@ -69,11 +35,18 @@ interface CauseSectionProps {
   onTabChange: (tab: string) => void;
 }
 
+interface Charity {
+  id: string;
+  name: string;
+  description?: string;
+  // Add other charity fields as needed
+}
+
 export function CauseSection({ activeTab, onTabChange }: CauseSectionProps) {
   const { user } = useAuth();
   const [selectedCharity, setSelectedCharity] = useState<{name: string, ein: string} | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState<any[]>([]);
+  const [searchResults, setSearchResults] = useState<Charity[]>([]);
   const [loading, setLoading] = useState(false);
   const [showResults, setShowResults] = useState(false);
 
@@ -126,10 +99,10 @@ export function CauseSection({ activeTab, onTabChange }: CauseSectionProps) {
       const querySnapshot = await getDocs(charitiesRef);
       
       const results = querySnapshot.docs
-        .map(doc => ({ id: doc.id, ...doc.data() }))
+        .map(doc => ({ id: doc.id, ...doc.data() } as Charity))
         .filter(charity => 
-          charity.name.toUpperCase().includes(searchTermUpper) ||
-          (charity.description && charity.description.toUpperCase().includes(searchTermUpper))
+          (charity.name?.toUpperCase().includes(searchTermUpper) ||
+          charity.description?.toUpperCase().includes(searchTermUpper)) ?? false
         )
         .slice(0, 5); // Limit to 5 results
 
@@ -154,7 +127,7 @@ export function CauseSection({ activeTab, onTabChange }: CauseSectionProps) {
     debouncedSearch(value);
   };
 
-  const handleSelectCharity = async (charity: any) => {
+  const handleSelectCharity = async (charity: Charity) => {
     if (!user?.uid) return;
 
     setSelectedCharity(charity);
@@ -348,7 +321,7 @@ export function CauseSection({ activeTab, onTabChange }: CauseSectionProps) {
                   <div className="absolute z-10 w-full mt-2 bg-white rounded-xl shadow-xl overflow-hidden">
                     {searchResults.map((charity) => (
                       <div
-                        key={charity.ein}
+                        key={charity.id}
                         className="border-b border-gray-100 last:border-0 hover:bg-gray-50 transition-colors"
                       >
                         <div className="p-4">
@@ -389,10 +362,10 @@ export function CauseSection({ activeTab, onTabChange }: CauseSectionProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {FEATURED_CHARITIES.map((charity) => (
               <div
-                key={charity.ein}
+                key={charity.id}
                 onClick={() => handleSelectCharity(charity)}
                 className={`bg-white rounded-xl shadow-md hover:shadow-lg transition-all ${
-                  selectedCharity?.ein === charity.ein
+                  selectedCharity?.id === charity.id
                     ? 'ring-2 ring-rose-500'
                     : 'hover:scale-[1.02]'
                 }`}
@@ -411,7 +384,7 @@ export function CauseSection({ activeTab, onTabChange }: CauseSectionProps) {
                     <h3 className="text-xl font-semibold text-gray-900">{charity.name}</h3>
                   </div>
                   <p className="text-gray-600 flex-grow">{charity.description}</p>
-                  {selectedCharity?.ein === charity.ein && (
+                  {selectedCharity?.id === charity.id && (
                     <div className="mt-4 pt-4 border-t border-gray-100 text-rose-600 text-sm font-medium flex items-center gap-2">
                       <Heart className="w-4 h-4" fill="currentColor" />
                       Selected Organization

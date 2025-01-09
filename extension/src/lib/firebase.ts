@@ -3,13 +3,13 @@ import { getAuth, setPersistence, browserLocalPersistence, indexedDBLocalPersist
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB28flW9W4tiyWzquksHbNS5up6bIzyl8g",
-  authDomain: "kindly-81b3b.firebaseapp.com",
-  projectId: "kindly-81b3b",
-  storageBucket: "kindly-81b3b.firebasestorage.app",
-  messagingSenderId: "226420039983",
-  appId: "1:226420039983:web:27554dd0ece3a51db301da",
-  measurementId: "G-0CG211ET49"
+  apiKey: "AIzaSyC0o0T1l9OQNja_FT-0XS6-23n1N5B2y3Q",
+  authDomain: "kindly-99f17.firebaseapp.com",
+  projectId: "kindly-99f17",
+  storageBucket: "kindly-99f17.firebasestorage.app",
+  messagingSenderId: "585600986589",
+  appId: "1:585600986589:web:08586e34c1d39f76469a34",
+  measurementId: "G-RT68GRMX3W"
 };
 
 // Initialize Firebase
