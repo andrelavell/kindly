@@ -52,9 +52,9 @@ export default async function handler(
               const missionPatterns = [
                 /<MissionDesc>([^<]+)<\/MissionDesc>/,
                 /<ActivityOrMissionDesc>([^<]+)<\/ActivityOrMissionDesc>/,
-                /<ProgramServiceAccomplishments>.*?<Desc>([^<]+)<\/Desc>/s,
-                /<ProgramSrvcAccomplishmentGrp>.*?<Desc>([^<]+)<\/Desc>/s,
-                /<Organization501c3>.*?<Desc>([^<]+)<\/Desc>/s,
+                /<ProgramServiceAccomplishments>[\s\S]*?<Desc>([^<]+)<\/Desc>/,
+                /<ProgramSrvcAccomplishmentGrp>[\s\S]*?<Desc>([^<]+)<\/Desc>/,
+                /<Organization501c3>[\s\S]*?<Desc>([^<]+)<\/Desc>/,
                 /<ProgramServiceDescription>([^<]+)<\/ProgramServiceDescription>/,
                 /<Description>([^<]+)<\/Description>/
               ];
