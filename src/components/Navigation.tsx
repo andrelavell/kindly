@@ -1,21 +1,16 @@
 import React, { useState, useRef } from 'react';
-import { Heart, Menu, X, User } from 'lucide-react';
+import { Heart, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import Link from 'next/link';
 import { Button } from './Button';
 import { getBrowserInfo } from '../utils/browserDetection';
-import { useAuth } from '../contexts/AuthContext';
-import { auth } from '../utils/firebase';
-import { signOut } from 'firebase/auth';
 import { useRouter } from 'next/router';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
-  const [showUserMenu, setShowUserMenu] = useState(false);
   const browserInfo = getBrowserInfo();
   const ref = useRef(null);
   const router = useRouter();
-  const { user, userProfile } = useAuth();
   const inView = useInView(ref, {
     once: false,
     amount: 0.5
@@ -27,15 +22,6 @@ export function Navigation() {
     { name: 'For Creators', href: '/creators' },
     { name: 'Press', href: '/press' },
   ];
-
-  const handleSignOut = async () => {
-    try {
-      await signOut(auth);
-      router.push('/');
-    } catch (err) {
-      console.error('Sign out error:', err);
-    }
-  };
 
   return (
     <nav className="relative z-50 py-4 border-b border-gray-100 bg-white">
@@ -49,65 +35,37 @@ export function Navigation() {
                   className="absolute inset-0"
                   animate={inView ? { 
                     scale: [1, 1.2, 1],
-                    opacity: [1, 0.8, 1]
-                  } : { scale: 1, opacity: 1 }}
-                  transition={{ 
-                    duration: 2,
-                    repeat: inView ? Infinity : 0,
-                    ease: "easeInOut"
-                  }}
+                    transition: { 
+                      duration: 1,
+                      repeat: Infinity,
+                      repeatDelay: 2
+                    }
+                  } : {}}
                 >
                   <Heart className="w-8 h-8 text-rose-500" />
                 </motion.div>
               </div>
-              <span className="text-2xl font-bold">Kindly</span>
+              <span className="text-xl font-bold text-gray-900">Kindly</span>
             </Link>
-            
+
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-6">
+            <div className="hidden md:flex items-center space-x-8">
               {navLinks.map((link) => (
-                <Link 
+                <Link
                   key={link.name}
-                  href={link.href} 
-                  className="text-gray-600 hover:text-rose-500 transition-colors"
+                  href={link.href}
+                  className="text-sm font-medium text-gray-700 hover:text-gray-900"
                 >
                   {link.name}
                 </Link>
               ))}
-              {user ? (
-                <div className="relative">
-                  <button
-                    onClick={() => setShowUserMenu(!showUserMenu)}
-                    className="flex items-center space-x-2 text-gray-600 hover:text-rose-500 transition-colors"
-                  >
-                    <User className="w-5 h-5" />
-                    <span>{userProfile?.first_name || 'Account'}</span>
-                  </button>
-
-                  {showUserMenu && (
-                    <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-                      <div className="py-1">
-                        <Link
-                          href="/dashboard"
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        >
-                          Dashboard
-                        </Link>
-                        <button
-                          onClick={handleSignOut}
-                          className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        >
-                          Sign out
-                        </button>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <></>
-              )}
-              <Button variant="primary" size="md" icon={browserInfo.icon}>
-                {browserInfo.actionText}
+              <Button
+                href={browserInfo.isChrome ? "https://chrome.google.com/webstore/detail/your-extension-id" : "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-rose-500 hover:bg-rose-600 text-white px-4 py-2 rounded-lg"
+              >
+                {browserInfo.isChrome ? "Add to Chrome" : "Coming Soon"}
               </Button>
             </div>
 
@@ -115,61 +73,53 @@ export function Navigation() {
             <div className="md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-gray-600 hover:text-rose-500 focus:outline-none"
+                className="text-gray-500 hover:text-gray-600"
               >
-                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                {isOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
               </button>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden"
-          >
-            <div className="px-4 pt-2 pb-3 space-y-1 bg-white">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-rose-500 transition-colors"
-                >
-                  {link.name}
-                </Link>
-              ))}
-              {user ? (
-                <>
+        {/* Mobile Navigation */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden"
+            >
+              <div className="pt-2 pb-4">
+                {navLinks.map((link) => (
                   <Link
-                    href="/dashboard"
-                    className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-rose-500 transition-colors"
+                    key={link.name}
+                    href={link.href}
+                    className="block px-4 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                    onClick={() => setIsOpen(false)}
                   >
-                    Dashboard
+                    {link.name}
                   </Link>
-                  <button
-                    onClick={handleSignOut}
-                    className="block w-full text-left px-3 py-2 text-base font-medium text-gray-600 hover:text-rose-500 transition-colors"
+                ))}
+                <div className="mt-4 px-4">
+                  <Button
+                    href={browserInfo.isChrome ? "https://chrome.google.com/webstore/detail/your-extension-id" : "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-rose-500 hover:bg-rose-600 text-white px-4 py-2 rounded-lg text-center"
                   >
-                    Sign out
-                  </button>
-                </>
-              ) : (
-                <></>
-              )}
-              <div className="pt-4 border-t border-gray-100">
-                <Button variant="primary" size="lg" icon={browserInfo.icon} className="w-full justify-center">
-                  {browserInfo.actionText}
-                </Button>
+                    {browserInfo.isChrome ? "Add to Chrome" : "Coming Soon"}
+                  </Button>
+                </div>
               </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </nav>
   );
 }
