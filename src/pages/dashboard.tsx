@@ -1,18 +1,39 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { StatsContainer } from '../components/Stats';
 import { CauseSection } from '../components/CauseSection';
 import { useRouter } from 'next/router';
+import { Auth } from '../components/Auth';
 
 export default function Dashboard() {
-  const { user } = useAuth();
+  const { user, loading: authLoading } = useAuth();
   const router = useRouter();
   const [activeTab, setActiveTab] = useState('cause');
+  const [loading, setLoading] = useState(true);
 
-  // Redirect if not logged in
-  if (typeof window !== 'undefined' && !user) {
-    router.push('/signin');
-    return null;
+  useEffect(() => {
+    // Wait for auth to initialize
+    if (!authLoading) {
+      if (!user) {
+        router.replace('/signin');
+      } else {
+        setLoading(false);
+      }
+    }
+  }, [user, authLoading, router]);
+
+  // Show loading state while checking auth
+  if (loading || authLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-rose-600"></div>
+      </div>
+    );
+  }
+
+  // Show auth component if not logged in
+  if (!user) {
+    return <Auth mode="signin" />;
   }
 
   return (
@@ -49,7 +70,7 @@ export default function Dashboard() {
                         : 'text-white hover:bg-white/10'
                     } px-6 py-2 rounded-md text-sm font-medium transition-colors`}
                   >
-                    Statistics
+                    View Stats
                   </button>
                 </div>
               </div>

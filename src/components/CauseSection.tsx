@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
-import { doc, getDoc, updateDoc, collection, query, where, getDocs, limit } from 'firebase/firestore';
+import { doc, getDoc, updateDoc, collection, query, where, getDocs, limit, setDoc } from 'firebase/firestore';
 import { db } from '../utils/firebase';
 import Image from 'next/image';
 import { Search, Heart, ArrowRight } from 'lucide-react';
@@ -11,55 +11,55 @@ const FEATURED_CHARITIES = [
   {
     name: "National Multiple Sclerosis Society",
     description: "We will cure MS while empowering people affected by MS to live their best lives",
-    imageUrl: "https://images.givefreely.com/images/n_m7s0sWVLQDJrC5EgobLQlQTS.png",
+    imageUrl: "/images/charities/ms-society.png",
     ein: "131914609"
   },
   {
     name: "charity: water",
     description: "charity: water is a global nonprofit organization working to end the water crisis by bringing clean and safe water to people around the world.",
-    imageUrl: "https://images.givefreely.com/images/n_CuFkDAkszvOsCmTmrK1k63Bv.png",
+    imageUrl: "/images/charities/charity2.png",
     ein: "223936753"
   },
   {
     name: "Susan G Komen Breast Cancer Foundation",
     description: "Save lives by meeting the most critical needs in our communities and investing in breakthrough research to prevent and cure breast cancer.",
-    imageUrl: "https://images.givefreely.com/images/n_gPcsHH0z3PN9ONqL8yRzhpnq.png",
+    imageUrl: "/images/charities/susan-g-komen-logo.jpg",
     ein: "751835298"
   },
   {
     name: "Michael J Fox Foundation For Parkinsons Research",
     description: "The MJF Foundation is dedicated to finding a cure for Parkinson's disease through an aggressively funded research agenda.",
-    imageUrl: "https://images.givefreely.com/images/n_uJg726cbLm4xvzLRcZ9c3Qri.png",
+    imageUrl: "/images/charities/charity4.png",
     ein: "134141945"
   },
   {
     name: "Autism Speaks",
     description: "Autism Speaks is dedicated to promoting solutions, across the spectrum and throughout the life span, for the needs of people with autism and their families.",
-    imageUrl: "https://images.givefreely.com/images/n_VKk3VQ7NZM9M7CrbMHuVqItt.png",
+    imageUrl: "/images/charities/charity5.png",
     ein: "202329938"
   },
   {
     name: "March Of Dimes",
     description: "March of Dimes is dedicated to leading the fight for the health of all moms and babies.",
-    imageUrl: "https://images.givefreely.com/images/n_v611sGGe9Dmzs0v9vDGEzqLv.png",
+    imageUrl: "/images/charities/charity6.png",
     ein: "131846366"
   },
   {
     name: "Unicef USA",
     description: "UNICEF USA relentlessly pursues an equitable world for every child by increasing UNICEF's global impact through fundraising, advocacy, and education.",
-    imageUrl: "https://images.givefreely.com/images/n_AalD8toz3ASoAjH4eIblTit5.png",
+    imageUrl: "/images/charities/charity7.png",
     ein: "131760110"
   },
   {
     name: "International Development Enterprises",
     description: "iDE creates income and livelihood opportunities for poor, rural households.",
-    imageUrl: "https://images.givefreely.com/images/n_GKTCf6hUaiDwwrZOydmSKVda.png",
+    imageUrl: "/images/charities/charity8.png",
     ein: "237069110"
   },
   {
     name: "Neuroendocrine Tumor Research Foundation",
     description: "The mission of the Neuroendocrine Tumor Research Foundation is to fund research to discover cures and more effective treatments.",
-    imageUrl: "https://images.givefreely.com/images/n_YKzC8v5rE8KFIhq0JTpVVMPg.png",
+    imageUrl: "/images/charities/charity9.png",
     ein: "201945347"
   }
 ];
@@ -108,25 +108,36 @@ export function CauseSection({ activeTab, onTabChange }: CauseSectionProps) {
 
     setLoading(true);
     try {
-      const charitiesRef = collection(db, 'charities');
+      // First check featured charities
       const searchTermUpper = searchTerm.toUpperCase();
-      
-      const nameQuery = query(
-        charitiesRef,
-        where('name', '>=', searchTermUpper),
-        where('name', '<=', searchTermUpper + '\uf8ff'),
-        limit(10)
+      const featuredMatches = FEATURED_CHARITIES.filter(charity => 
+        charity.name.toUpperCase().includes(searchTermUpper) ||
+        charity.description.toUpperCase().includes(searchTermUpper)
       );
+
+      if (featuredMatches.length > 0) {
+        setSearchResults(featuredMatches);
+        setLoading(false);
+        return;
+      }
+
+      // If no featured matches, query Firestore
+      const charitiesRef = collection(db, 'charities');
+      const querySnapshot = await getDocs(charitiesRef);
       
-      const nameSnap = await getDocs(nameQuery);
-      const results = nameSnap.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
+      const results = querySnapshot.docs
+        .map(doc => ({ id: doc.id, ...doc.data() }))
+        .filter(charity => 
+          charity.name.toUpperCase().includes(searchTermUpper) ||
+          (charity.description && charity.description.toUpperCase().includes(searchTermUpper))
+        )
+        .slice(0, 5); // Limit to 5 results
 
       setSearchResults(results);
     } catch (error) {
       console.error('Error searching charities:', error);
+      // Fallback to featured charities on error
+      setSearchResults(FEATURED_CHARITIES);
     } finally {
       setLoading(false);
     }
@@ -152,8 +163,31 @@ export function CauseSection({ activeTab, onTabChange }: CauseSectionProps) {
 
     try {
       const userRef = doc(db, 'users', user.uid);
-      let retries = 3;
+      const userDoc = await getDoc(userRef);
       
+      if (!userDoc.exists()) {
+        // Create user document if it doesn't exist
+        await setDoc(userRef, {
+          id: user.uid,
+          email: user.email,
+          created_at: new Date().toISOString(),
+          selectedCharity: {
+            ein: charity.ein,
+            name: charity.name,
+            updatedAt: new Date().toISOString()
+          },
+          stats: {
+            totalContribution: 0,
+            monthlyContribution: 0,
+            shoppingSessions: 0,
+            storesVisited: 0,
+            lastUpdated: new Date().toISOString()
+          }
+        });
+        return;
+      }
+
+      let retries = 3;
       while (retries > 0) {
         try {
           await updateDoc(userRef, {
@@ -163,14 +197,14 @@ export function CauseSection({ activeTab, onTabChange }: CauseSectionProps) {
               updatedAt: new Date().toISOString()
             }
           });
-          break; 
+          break;
         } catch (error: any) {
           console.error(`Error updating profile (${retries} retries left):`, error);
           if (error.code === 'resource-exhausted' && retries > 1) {
             await new Promise(resolve => setTimeout(resolve, 1000));
             retries--;
           } else {
-            throw error; 
+            throw error;
           }
         }
       }
@@ -357,10 +391,10 @@ export function CauseSection({ activeTab, onTabChange }: CauseSectionProps) {
               <div
                 key={charity.ein}
                 onClick={() => handleSelectCharity(charity)}
-                className={`bg-white rounded-xl shadow-sm transition-all ${
+                className={`bg-white rounded-xl shadow-md hover:shadow-lg transition-all ${
                   selectedCharity?.ein === charity.ein
                     ? 'ring-2 ring-rose-500'
-                    : 'hover:shadow-md'
+                    : 'hover:scale-[1.02]'
                 }`}
               >
                 <div className="p-6 h-full flex flex-col">

@@ -16,14 +16,9 @@ const BMF_REGIONS = [
     'eo_vt', 'eo_va', 'eo_wa', 'eo_wv', 'eo_wi', 'eo_wy'
 ];
 
-// Data source URLs and configurations
+// URLs for IRS data
 const URLS = {
-    // IRS Business Master File base URL (state files)
     BMF_BASE: 'https://www.irs.gov/pub/irs-soi',
-    // IRS Form 990 E-File data on AWS (using 2023 index as it's the latest available)
-    EFILE_BASE: 'https://s3.amazonaws.com/irs-form-990',
-    EFILE_INDEX: 'https://s3.amazonaws.com/irs-form-990/index_2023.json',
-    // ProPublica API
     PROPUBLICA: 'https://projects.propublica.org/nonprofits/api/v2'
 };
 
@@ -90,6 +85,147 @@ interface Form990Data {
     };
 }
 
+interface EnrichedCharityData {
+    // Basic Info (from BMF)
+    ein: string;
+    name: string;
+    address: {
+        street: string;
+        city: string;
+        state: string;
+        zip: string;
+    };
+    classification: {
+        subsection: string;
+        foundation_status: string;
+        deductibility: string;
+        activity_codes: string[];
+        organization_type: string;
+        exempt_status: string;
+        ruling_date: string;
+    };
+
+    // Financial Data (from Form 990)
+    financials: {
+        gross_receipts?: number;
+        total_assets?: number;
+        total_liabilities?: number;
+        total_revenue?: number;
+        total_expenses?: number;
+        program_service_revenue?: number;
+        investment_income?: number;
+        contributions_grants?: number;
+        program_expenses?: number;
+        administrative_expenses?: number;
+        fundraising_expenses?: number;
+    };
+
+    // Program Information
+    programs: {
+        mission_statement?: string;
+        accomplishments?: {
+            description: string;
+            expenses?: number;
+            grants?: number;
+            revenue?: number;
+        }[];
+    };
+
+    // People
+    people: {
+        key_employees?: {
+            name: string;
+            title: string;
+            compensation: number;
+            benefits: number;
+            other_compensation: number;
+        }[];
+        board_members?: {
+            name: string;
+            title: string;
+            hours_per_week: number;
+        }[];
+    };
+
+    // Historical Data
+    historical_filings?: {
+        year: number;
+        total_revenue: number;
+        total_expenses: number;
+        total_assets: number;
+        form_type: string;
+    }[];
+
+    // Metadata
+    last_updated: string;
+    data_sources: {
+        bmf_date?: string;
+        form_990_date?: string;
+    };
+}
+
+// Track failed E-File fetches
+const failedEFileFetches = new Set<string>();
+
+// Track stats
+interface SyncStats {
+    totalProcessed: number;
+    noEFileAvailable: number;
+    enrichmentFailed: number;
+    enrichmentSuccess: number;
+}
+
+const stats: SyncStats = {
+    totalProcessed: 0,
+    noEFileAvailable: 0,
+    enrichmentFailed: 0,
+    enrichmentSuccess: 0
+};
+
+// Retry configuration
+const MAX_RETRIES = 5;
+const INITIAL_RETRY_DELAY = 5000; // 5 seconds
+const MAX_RETRY_DELAY = 30000; // 30 seconds
+
+// Rate limiting
+const RATE_LIMIT_DELAY = 1000; // 1 second between requests
+let lastRequestTime = 0;
+
+async function rateLimit() {
+    const now = Date.now();
+    const timeSinceLastRequest = now - lastRequestTime;
+    if (timeSinceLastRequest < RATE_LIMIT_DELAY) {
+        await sleep(RATE_LIMIT_DELAY - timeSinceLastRequest);
+    }
+    lastRequestTime = Date.now();
+}
+
+async function sleep(ms: number): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function retry<T>(
+  operation: () => Promise<T>,
+  retries = MAX_RETRIES,
+  delay = INITIAL_RETRY_DELAY,
+  context = ''
+): Promise<T> {
+  try {
+    return await operation();
+  } catch (error: any) {
+    if (retries > 0) {
+      const nextDelay = Math.min(delay * 2, MAX_RETRY_DELAY);
+      const errorMessage = error.response?.status 
+        ? `HTTP ${error.response.status}`
+        : error.message || 'Unknown error';
+      console.log(`${errorMessage} - Retrying ${context} after ${delay}ms. ${retries} retries remaining.`);
+      await sleep(delay);
+      return retry(operation, retries - 1, nextDelay, context);
+    }
+    throw error;
+  }
+}
+
 async function processBMFStream(region: string): Promise<void> {
     return new Promise(async (resolve, reject) => {
         try {
@@ -111,7 +247,7 @@ async function processBMFStream(region: string): Promise<void> {
                 objectMode: true,
                 async transform(record, encoding, callback) {
                     batch.push(record);
-                    
+
                     if (batch.length >= batchSize) {
                         try {
                             await processBatch(batch);
@@ -192,32 +328,107 @@ async function processBatch(records: BMFRecord[]): Promise<void> {
       - Firebase Failures: ${firebaseFailures}`);
 }
 
+interface IrsFilingIndex {
+    Filings: Array<{
+        EIN: string;
+        ObjectId: string;
+        [key: string]: any;
+    }>;
+}
+
 async function getEFileData(ein: string): Promise<Form990Data | null> {
     try {
-        // Get the index file for 2023 (latest available)
-        const indexResponse = await axios.get(URLS.EFILE_INDEX);
-        const filings = indexResponse.data.Filings.filter(f => f.EIN === ein);
+        await rateLimit();
+        stats.totalProcessed++;
         
-        if (filings.length === 0) {
+        // Get the organization data from ProPublica
+        const orgResponse = await retry<any>(
+            async () => {
+                await rateLimit();
+                return axios.get(`${URLS.PROPUBLICA}/organizations/${ein}.json`, {
+                    headers: {
+                        'Accept': 'application/json',
+                        'User-Agent': 'Mozilla/5.0 (compatible; KindlyCharity/1.0;)'
+                    },
+                    timeout: 10000
+                });
+            },
+            MAX_RETRIES,
+            INITIAL_RETRY_DELAY,
+            `fetching organization data for EIN ${ein}`
+        );
+        
+        if (!orgResponse.data?.organization?.filings_with_data?.length) {
+            stats.noEFileAvailable++;
             return null;
         }
+
+        // Get the latest filing with data
+        const latestFiling = orgResponse.data.organization.filings_with_data[0];
+        await rateLimit();
+
+        // Get the detailed filing data
+        const filingResponse = await retry<any>(
+            async () => {
+                await rateLimit();
+                return axios.get(`${URLS.PROPUBLICA}/filings/${latestFiling.id}.json`, {
+                    headers: {
+                        'Accept': 'application/json',
+                        'User-Agent': 'Mozilla/5.0 (compatible; KindlyCharity/1.0;)'
+                    },
+                    timeout: 10000
+                });
+            },
+            MAX_RETRIES,
+            INITIAL_RETRY_DELAY,
+            `fetching filing ${latestFiling.id} for EIN ${ein}`
+        );
+
+        if (!filingResponse?.data) {
+            stats.enrichmentFailed++;
+            return null;
+        }
+
+        // Convert ProPublica format to our Form990Data format
+        const filing = filingResponse.data;
+        stats.enrichmentSuccess++;
         
-        // Get the most recent filing
-        const latestFiling = filings[0];
-        const xmlUrl = `${URLS.EFILE_BASE}/${latestFiling.ObjectId}_public.xml`;
-        
-        // Download and parse the XML file
-        const xmlResponse = await axios.get(xmlUrl);
-        const parser = new xml2js.Parser({ 
-            explicitArray: false, 
-            trim: true,
-            explicitRoot: false 
-        });
-        const result = await parser.parseStringPromise(xmlResponse.data);
-        
-        return result.Return;
-    } catch (error) {
-        console.error(`Error fetching E-File data for EIN ${ein}:`, error);
+        return {
+            ReturnHeader: {
+                ReturnTs: filing.tax_period_end_date,
+                TaxPeriodEndDt: filing.tax_period_end_date,
+                ReturnTypeCd: filing.form_type || '990',
+                TaxPeriodBeginDt: filing.tax_period_begin_date
+            },
+            ReturnData: {
+                IRS990: {
+                    TotalRevenueAmt: filing.total_revenue,
+                    TotalExpensesAmt: filing.total_expenses,
+                    TotalAssetsEOYAmt: filing.total_assets_end_of_year,
+                    TotalLiabilitiesEOYAmt: filing.total_liabilities_end_of_year,
+                    NetAssetsOrFundBalancesEOYAmt: filing.net_assets_end_of_year,
+                    ProgramServiceRevenueAmt: filing.program_service_revenue,
+                    InvestmentIncomeAmt: filing.investment_income,
+                    ContributionsGrantsAmt: filing.contributions_and_grants,
+                    BenefitsPaidToMembersAmt: filing.benefits_paid_to_members,
+                    SalariesOtherCompensationAmt: filing.salaries_and_compensation,
+                    TotalFundraisingExpenseAmt: filing.total_fundraising_expenses,
+                    TotalProfFundraisingExpensesAmt: filing.professional_fundraising_expenses,
+                    CurrentYearGrantOrContributionAmt: filing.grants_paid,
+                    NetIncomeOrLossAmt: filing.total_revenue - filing.total_expenses
+                }
+            }
+        };
+    } catch (error: any) {
+        // Only log non-404 errors as they indicate actual problems
+        if (error.response?.status !== 404) {
+            const errorMessage = error.response?.status 
+                ? `HTTP ${error.response.status}: ${error.message}`
+                : error.message || error;
+            console.error(`Error fetching E-File data for EIN ${ein}:`, errorMessage);
+        }
+        stats.enrichmentFailed++;
+        failedEFileFetches.add(ein);
         return null;
     }
 }
@@ -234,116 +445,151 @@ async function getProPublicaData(ein: string): Promise<any> {
     }
 }
 
-async function enrichCharityData(bmfRecord: BMFRecord): Promise<any> {
-    try {
-        console.log(`Enriching data for ${bmfRecord.NAME} (${bmfRecord.EIN})...`);
-        
-        // First, get existing data from Firestore
-        const existingDoc = await firestore.collection('charities').doc(bmfRecord.EIN).get();
-        const existingData = existingDoc.exists ? existingDoc.data() : {};
-        
-        if (existingDoc.exists) {
-            console.log(`Found existing record for ${bmfRecord.EIN}, merging data...`);
-        } else {
-            console.log(`Creating new record for ${bmfRecord.EIN}...`);
-        }
-        
-        // Fetch additional data in parallel
-        const [efileData, propublicaData] = await Promise.all([
-            getEFileData(bmfRecord.EIN),
-            getProPublicaData(bmfRecord.EIN)
-        ]);
-        
-        // Combine all data sources, preserving existing data
-        const enrichedData = {
-            ...existingData, // Keep existing data as base
-            ein: bmfRecord.EIN,
-            name: bmfRecord.NAME || existingData?.name,
-            address: {
-                ...existingData?.address,
-                street: bmfRecord.STREET || existingData?.address?.street,
-                city: bmfRecord.CITY || existingData?.address?.city,
-                state: bmfRecord.STATE || existingData?.address?.state,
-                zip: bmfRecord.ZIP || existingData?.address?.zip
-            },
-            classification: {
-                ...existingData?.classification,
-                subsection: bmfRecord.SUBSECTION || existingData?.classification?.subsection,
-                foundationStatus: bmfRecord.FOUNDATION || existingData?.classification?.foundationStatus,
-                deductibility: bmfRecord.DEDUCTIBILITY || existingData?.classification?.deductibility,
-                nteeCode: bmfRecord.NTEE_CD || existingData?.classification?.nteeCode,
-                activityCodes: bmfRecord.ACTIVITY ? bmfRecord.ACTIVITY.split(',') : existingData?.classification?.activityCodes || [],
-                organization: bmfRecord.ORGANIZATION || existingData?.classification?.organization,
-                status: bmfRecord.STATUS || existingData?.classification?.status,
-                rulingDate: bmfRecord.RULING || existingData?.classification?.rulingDate
-            },
-            financials: {
-                ...existingData?.financials,
-                assets: Number(bmfRecord.ASSET_AMT) || existingData?.financials?.assets || 0,
-                revenue: Number(bmfRecord.REVENUE_AMT) || existingData?.financials?.revenue || 0,
-                income: Number(bmfRecord.INCOME_AMT) || existingData?.financials?.income || 0,
-                latestTaxPeriod: bmfRecord.TAX_PERIOD || existingData?.financials?.latestTaxPeriod,
-                // Add new Form 990 data if available
-                form990: efileData?.ReturnData?.IRS990 ? {
-                    ...existingData?.financials?.form990,
-                    grossReceipts: Number(efileData.ReturnData.IRS990.GrossReceiptsAmt) || existingData?.financials?.form990?.grossReceipts || 0,
-                    totalAssets: Number(efileData.ReturnData.IRS990.TotalAssetsEOYAmt) || existingData?.financials?.form990?.totalAssets || 0,
-                    totalLiabilities: Number(efileData.ReturnData.IRS990.TotalLiabilitiesEOYAmt) || existingData?.financials?.form990?.totalLiabilities || 0,
-                    totalRevenue: Number(efileData.ReturnData.IRS990.TotalRevenueAmt) || existingData?.financials?.form990?.totalRevenue || 0,
-                    totalExpenses: Number(efileData.ReturnData.IRS990.TotalExpensesAmt) || existingData?.financials?.form990?.totalExpenses || 0
-                } : existingData?.financials?.form990
-            },
-            programs: efileData?.ReturnData?.IRS990?.ProgramServiceAccomplishmentGrp || existingData?.programs || [],
-            people: efileData?.ReturnData?.IRS990?.CompensationOfHghstPdEmplGrp || existingData?.people || [],
-            // Update ProPublica data if available
-            propublica: propublicaData?.organization ? {
-                ...existingData?.propublica,
-                nteeDescription: propublicaData.organization.ntee_description || existingData?.propublica?.nteeDescription,
-                mission: propublicaData.organization.mission || existingData?.propublica?.mission,
-                website: propublicaData.organization.website || existingData?.propublica?.website,
-                filings: propublicaData.filings_with_data || existingData?.propublica?.filings || []
-            } : existingData?.propublica,
-            metadata: {
-                ...existingData?.metadata,
-                lastUpdated: new Date().toISOString(),
-                sources: {
-                    hasBMF: true,
-                    hasEFile: !!efileData || existingData?.metadata?.sources?.hasEFile,
-                    hasProPublica: !!propublicaData || existingData?.metadata?.sources?.hasProPublica
-                }
-            },
-            // Keep the existing slug or create a new one
-            slug: existingData?.slug || `${bmfRecord.NAME.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${bmfRecord.EIN}`
-        };
+async function processForm990Data(eFileData: Form990Data): Promise<Partial<EnrichedCharityData>> {
+    if (!eFileData?.ReturnData?.IRS990) return {};
 
-        return enrichedData;
-    } catch (error) {
-        console.error(`Error enriching data for EIN ${bmfRecord.EIN}:`, error);
-        return null;
+    const form990 = eFileData.ReturnData.IRS990;
+
+    return {
+        financials: {
+            gross_receipts: Number(form990.GrossReceiptsAmt) || undefined,
+            total_assets: Number(form990.TotalAssetsEOYAmt) || undefined,
+            total_liabilities: Number(form990.TotalLiabilitiesEOYAmt) || undefined,
+            total_revenue: Number(form990.TotalRevenueAmt) || undefined,
+            total_expenses: Number(form990.TotalExpensesAmt) || undefined,
+        },
+        programs: {
+            accomplishments: form990.ProgramServiceAccomplishmentGrp?.map(prog => ({
+                description: prog.DescriptionProgramSrvcAccomTxt || '',
+                expenses: Number(prog.ExpenseAmt) || undefined,
+                grants: Number(prog.GrantAmt) || undefined,
+                revenue: Number(prog.RevenueAmt) || undefined,
+            })),
+        },
+        people: {
+            key_employees: form990.CompensationOfHghstPdEmplGrp?.map(emp => ({
+                name: emp.PersonNm || '',
+                title: emp.TitleTxt || '',
+                compensation: Number(emp.CompensationAmt) || 0,
+                benefits: 0, // Add if available in the data
+                other_compensation: 0, // Add if available in the data
+            })),
+        },
+    };
+}
+
+async function enrichCharityData(bmfRecord: BMFRecord): Promise<EnrichedCharityData> {
+    // Start with BMF data
+    const enrichedData: EnrichedCharityData = {
+        ein: bmfRecord.EIN,
+        name: bmfRecord.NAME,
+        address: {
+            street: bmfRecord.STREET,
+            city: bmfRecord.CITY,
+            state: bmfRecord.STATE,
+            zip: bmfRecord.ZIP,
+        },
+        classification: {
+            subsection: bmfRecord.SUBSECTION,
+            foundation_status: bmfRecord.FOUNDATION,
+            deductibility: bmfRecord.DEDUCTIBILITY,
+            activity_codes: [bmfRecord.ACTIVITY],
+            organization_type: bmfRecord.ORGANIZATION,
+            exempt_status: bmfRecord.STATUS,
+            ruling_date: bmfRecord.RULING,
+        },
+        financials: {},
+        programs: {},
+        people: {},
+        last_updated: new Date().toISOString(),
+        data_sources: {
+            bmf_date: new Date().toISOString(),
+        },
+    };
+
+    // Get Form 990 data
+    const eFileData = await getEFileData(bmfRecord.EIN);
+    if (eFileData) {
+        const form990Data = await processForm990Data(eFileData);
+        Object.assign(enrichedData, form990Data);
+        enrichedData.data_sources.form_990_date = eFileData.ReturnHeader?.ReturnTs;
+    }
+
+    return enrichedData;
+}
+
+async function retryFailedEFileFetches(): Promise<void> {
+    console.log(`Retrying ${failedEFileFetches.size} failed E-File fetches...`);
+    const failedEins = Array.from(failedEFileFetches);
+    let successCount = 0;
+    let stillFailed = 0;
+
+    for (const ein of failedEins) {
+        try {
+            console.log(`Retrying E-File fetch for EIN ${ein}...`);
+            const eFileData = await getEFileData(ein);
+            
+            if (eFileData) {
+                const enrichedData = await processForm990Data(eFileData);
+                // Update the existing document with the new E-File data
+                await firestore.collection('charities').doc(ein).update({
+                    ...enrichedData,
+                    'data_sources.form_990_date': eFileData.ReturnHeader?.ReturnTs || new Date().toISOString()
+                });
+                successCount++;
+                failedEFileFetches.delete(ein);
+            } else {
+                stillFailed++;
+            }
+            
+            // Add a small delay between requests to avoid overwhelming the API
+            await sleep(500);
+        } catch (error) {
+            console.error(`Error retrying E-File fetch for EIN ${ein}:`, error);
+            stillFailed++;
+        }
+    }
+
+    console.log(`Retry results:
+    - Successfully retrieved: ${successCount}
+    - Still failed: ${stillFailed}`);
+
+    // Save remaining failed EINs to a file for future reference
+    if (stillFailed > 0) {
+        const remainingFailed = Array.from(failedEFileFetches);
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+        const failedEinsFile = path.join(__dirname, `failed_eins_${timestamp}.json`);
+        fs.writeFileSync(failedEinsFile, JSON.stringify({
+            timestamp: new Date().toISOString(),
+            eins: remainingFailed
+        }, null, 2));
+        console.log(`Saved ${stillFailed} failed EINs to ${failedEinsFile}`);
     }
 }
 
-async function syncCharityData() {
-    try {
-        console.log('Processing BMF data from all regions...');
-        
-        let processedRegions = 0;
-        const totalRegions = BMF_REGIONS.length;
-        
-        // Process regions in chunks to avoid memory issues
-        const chunkSize = 5;
-        for (let i = 0; i < BMF_REGIONS.length; i += chunkSize) {
-            const chunk = BMF_REGIONS.slice(i, i + chunkSize);
-            await Promise.all(chunk.map(region => processBMFStream(region)));
-            processedRegions += chunk.length;
-            console.log(`Progress: ${processedRegions}/${totalRegions} regions processed (${Math.round(processedRegions/totalRegions*100)}%)`);
-        }
-        
-        console.log('Finished syncing charity data');
-    } catch (error) {
-        console.error('Error syncing charity data:', error);
-        throw error;
+// Modify the main sync function to retry failed fetches at the end
+async function syncCharityData(): Promise<void> {
+    console.log('Starting charity data sync...');
+    
+    for (const region of BMF_REGIONS) {
+        console.log(`Processing BMF data for region: ${region}`);
+        await processBMFStream(region);
     }
+    
+    // After processing all regions, retry any failed E-File fetches
+    if (failedEFileFetches.size > 0) {
+        console.log('Initial sync complete. Starting retry of failed E-File fetches...');
+        await retryFailedEFileFetches();
+    }
+    
+    // Log final stats
+    console.log('\nFinal Statistics:');
+    console.log(`Total Charities Processed: ${stats.totalProcessed}`);
+    console.log(`No E-File Available: ${stats.noEFileAvailable} (${(stats.noEFileAvailable/stats.totalProcessed*100).toFixed(1)}%)`);
+    console.log(`Enrichment Failed: ${stats.enrichmentFailed} (${(stats.enrichmentFailed/stats.totalProcessed*100).toFixed(1)}%)`);
+    console.log(`Successfully Enriched: ${stats.enrichmentSuccess} (${(stats.enrichmentSuccess/stats.totalProcessed*100).toFixed(1)}%)`);
+    
+    console.log('Charity data sync complete!');
 }
 
 // Run the sync if this file is run directly

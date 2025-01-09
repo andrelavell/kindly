@@ -6,10 +6,12 @@ import { Navigation } from '../components/Navigation'
 import { Footer } from '../components/Footer'
 import { trackPageView } from '../utils/analytics'
 import { AuthProvider } from '../contexts/AuthContext'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import '../styles/globals.css'
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter()
+  const queryClient = new QueryClient()
 
   useEffect(() => {
     // Track page views
@@ -24,13 +26,15 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [router.events])
 
   return (
-    <AuthProvider>
-      <div className="min-h-screen">
-        <Banner />
-        <Navigation />
-        <Component {...pageProps} />
-        <Footer />
-      </div>
-    </AuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <div className="min-h-screen">
+          <Banner />
+          <Navigation />
+          <Component {...pageProps} />
+          <Footer />
+        </div>
+      </AuthProvider>
+    </QueryClientProvider>
   )
 }

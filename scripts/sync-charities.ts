@@ -1,17 +1,34 @@
-import { db } from './firebase-admin.js';
-import { WriteBatch } from 'firebase-admin/firestore';
+const admin = require('firebase-admin');
+const { getFirestore } = require('firebase-admin/firestore');
 
 interface CharityBasicInfo {
   ein: string;
   name: string;
   nteeCode: string;
   category: string;
-  city: string;
+  city: string | null;
   state: string;
+  revenue: number;
+}
+
+interface ProPublicaOrganization {
+  ein: number | string;
+  name: string;
+  ntee_code: string | null;
+  city: string | null;
+  state: string | null;
+  revenue_amount: number;
+}
+
+interface ProPublicaResponse {
+  organizations: ProPublicaOrganization[];
+  num_pages: number;
+  total_results: number;
+  cur_page: number;
 }
 
 const BATCH_SIZE = 500; // Firestore batch limit
-const CATEGORIES = {
+const CATEGORIES: { [key: string]: string } = {
   'A': 'Arts, Culture & Humanities',
   'B': 'Education',
   'C': 'Environmental Conservation',
@@ -40,45 +57,64 @@ const CATEGORIES = {
   'Z': 'Unknown'
 };
 
-async function fetchCharitiesPage(page: number): Promise<any> {
+// Initialize Firebase Admin
+const path = require('path');
+admin.initializeApp({
+  credential: admin.credential.cert(path.join(__dirname, 'service-account-key.json'))
+});
+
+const db = getFirestore();
+
+async function fetchCharitiesPage(page: number): Promise<ProPublicaResponse> {
   const response = await fetch(
     `https://projects.propublica.org/nonprofits/api/v2/search.json?page=${page}`
   );
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
   return response.json();
 }
 
-async function saveCharitiesToFirestore(charities: CharityBasicInfo[]) {
+async function commitBatches(batches: any[]): Promise<void> {
+  // Process batches in chunks to avoid overwhelming Firestore
+  const CONCURRENT_BATCHES = 5;
+  for (let i = 0; i < batches.length; i += CONCURRENT_BATCHES) {
+    const batchChunk = batches.slice(i, i + CONCURRENT_BATCHES);
+    await Promise.all(batchChunk.map(batch => batch.commit()));
+  }
+}
+
+async function saveCharitiesToFirestore(charities: CharityBasicInfo[]): Promise<void> {
   const charitiesRef = db.collection('charities');
-  const batches: Promise<void>[] = [];
+  const batches: any[] = [];
   let currentBatch = db.batch();
   let operationCount = 0;
 
   for (const charity of charities) {
     const charityRef = charitiesRef.doc(charity.ein);
-    // Use set with merge option to update existing documents without overwriting other fields
     currentBatch.set(charityRef, charity, { merge: true });
     operationCount++;
 
     if (operationCount === BATCH_SIZE) {
-      batches.push(currentBatch.commit());
+      batches.push(currentBatch);
       currentBatch = db.batch();
       operationCount = 0;
     }
   }
 
   if (operationCount > 0) {
-    batches.push(currentBatch.commit());
+    batches.push(currentBatch);
   }
 
-  await Promise.all(batches);
+  await commitBatches(batches);
 }
 
-async function syncCharities() {
+async function syncCharities(): Promise<void> {
   try {
-    console.log('Starting charity sync...');
-    let page = 1;
+    console.log('Starting charity sync from page 399...');
+    let page = 399;  // Start from one page before where we hit the error
     let hasMore = true;
-    let totalProcessed = 0;
+    let totalProcessed = 7539;  // Adjust total to match page 399
 
     while (hasMore) {
       console.log(`Fetching page ${page}...`);
@@ -90,16 +126,19 @@ async function syncCharities() {
       }
 
       const charities: CharityBasicInfo[] = data.organizations
-        .filter(org => org.ntee_code) // Only include orgs with NTEE codes
+        .filter((org): org is ProPublicaOrganization & { ntee_code: string } => 
+          Boolean(org.ntee_code)) // Only include orgs with NTEE codes
         .map(org => ({
           ein: org.ein.toString(),
           name: org.name,
           nteeCode: org.ntee_code,
           category: CATEGORIES[org.ntee_code.charAt(0)] || 'Other',
-          city: org.city?.trim(),
-          state: org.state?.trim().toUpperCase() // Ensure state is uppercase
+          city: org.city?.trim() || null,
+          state: org.state?.trim()?.toUpperCase() || '', // Ensure state is uppercase
+          revenue: org.revenue_amount || 0
         }))
-        .filter(charity => charity.state && charity.state.length === 2); // Only include valid state codes
+        .filter((charity): charity is CharityBasicInfo => 
+          Boolean(charity.state && charity.state.length === 2)); // Only include valid state codes
 
       await saveCharitiesToFirestore(charities);
       
@@ -119,9 +158,13 @@ async function syncCharities() {
 
     console.log(`Finished syncing ${totalProcessed} charities!`);
   } catch (error) {
-    console.error('Error syncing charities:', error);
+    console.error('Error syncing charities:', error instanceof Error ? error.message : 'Unknown error');
+    throw error; // Re-throw to ensure the script fails if there's an error
   }
 }
 
 // Run the sync
-syncCharities();
+syncCharities().catch(error => {
+  console.error('Fatal error:', error);
+  process.exit(1);
+});
