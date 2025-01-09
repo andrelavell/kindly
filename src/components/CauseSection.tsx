@@ -35,13 +35,6 @@ interface CauseSectionProps {
   onTabChange: (tab: string) => void;
 }
 
-interface Charity {
-  id: string;
-  name: string;
-  description?: string;
-  // Add other charity fields as needed
-}
-
 export function CauseSection({ activeTab, onTabChange }: CauseSectionProps) {
   const { user } = useAuth();
   const [selectedCharity, setSelectedCharity] = useState<{name: string, ein: string} | null>(null);

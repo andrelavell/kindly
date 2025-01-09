@@ -3,13 +3,13 @@ import { getAuth, setPersistence, browserLocalPersistence, indexedDBLocalPersist
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC0o0T1l9OQNja_FT-0XS6-23n1N5B2y3Q",
-  authDomain: "kindly-99f17.firebaseapp.com",
-  projectId: "kindly-99f17",
-  storageBucket: "kindly-99f17.firebasestorage.app",
-  messagingSenderId: "585600986589",
-  appId: "1:585600986589:web:08586e34c1d39f76469a34",
-  measurementId: "G-RT68GRMX3W"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
@@ -17,16 +17,10 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 // Set persistence to IndexedDB for Chrome extension
-(async () => {
-  try {
-    // Try IndexedDB first as it's more reliable for extensions
-    await setPersistence(auth, indexedDBLocalPersistence);
-  } catch (error) {
-    console.warn('IndexedDB persistence failed, falling back to local storage:', error);
-    // Fall back to localStorage if IndexedDB is not available
-    await setPersistence(auth, browserLocalPersistence);
-  }
-})();
+auth.setPersistence(indexedDBLocalPersistence).catch((error) => {
+  console.warn('Failed to set indexedDB persistence, falling back to localStorage:', error);
+  auth.setPersistence(browserLocalPersistence);
+});
 
 // Initialize Firestore
 const db = getFirestore(app);
