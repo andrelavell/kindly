@@ -38,7 +38,9 @@ dist
 
 # Service account
 scripts/service-account.json
+scripts/service-account-key.json
 **/service-account.json
+**/service-account-key.json
 **/*-firebase-adminsdk-*.json
 
 # Firebase
