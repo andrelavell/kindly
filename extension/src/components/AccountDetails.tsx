@@ -74,6 +74,33 @@ export function AccountDetails() {
     return <div className="p-4">Loading...</div>;
   }
 
+  if (!user) {
+    return (
+      <div className="bg-white">
+        <div className="bg-rose-500 rounded-t-lg border border-gray-200 shadow-xl">
+          <div className="flex items-center px-4 py-3 space-x-2">
+            <Heart className="text-white" style={{ width: '18px', height: '18px' }} />
+            <div className="text-base text-white font-medium">Kindly</div>
+          </div>
+        </div>
+        <div className="bg-white border-x border-b border-gray-200 rounded-b-lg shadow-xl p-4">
+          <div className="text-center py-6">
+            <h4 className="text-lg font-medium text-gray-900 mb-2">Not Signed In</h4>
+            <p className="text-sm text-gray-600 mb-4">Please sign in to access your account details</p>
+            <a
+              href="https://joinkindly.org/signin"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-rose-500 hover:bg-rose-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500"
+            >
+              Sign In
+            </a>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-white">
       {/* Extension Header */}

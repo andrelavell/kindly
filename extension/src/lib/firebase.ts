@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, setPersistence, browserLocalPersistence } from "firebase/auth";
+import { getAuth, setPersistence, browserLocalPersistence, indexedDBLocalPersistence } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -15,7 +15,20 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-setPersistence(auth, browserLocalPersistence);
+
+// Set persistence to IndexedDB for Chrome extension
+(async () => {
+  try {
+    // Try IndexedDB first as it's more reliable for extensions
+    await setPersistence(auth, indexedDBLocalPersistence);
+  } catch (error) {
+    console.warn('IndexedDB persistence failed, falling back to local storage:', error);
+    // Fall back to localStorage if IndexedDB is not available
+    await setPersistence(auth, browserLocalPersistence);
+  }
+})();
+
+// Initialize Firestore
 const db = getFirestore(app);
 
 export type UserProfile = {

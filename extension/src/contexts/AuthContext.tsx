@@ -73,18 +73,38 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     console.log('AuthProvider mounted');
     
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      console.log('Auth state changed:', user);
-      setUser(user);
-      
-      if (user) {
-        await fetchUserProfile(user.uid);
-      } else {
-        setUserProfile(null);
-      }
-      setLoading(false);
-    });
+    let retryCount = 0;
+    const maxRetries = 3;
+    
+    const setupAuthListener = () => {
+      const unsubscribe = onAuthStateChanged(auth, async (user) => {
+        console.log('Auth state changed:', user);
+        
+        if (!user && retryCount < maxRetries) {
+          // If we're not authenticated, try to restore the session from IndexedDB
+          retryCount++;
+          console.log(`Attempting to restore auth session (attempt ${retryCount}/${maxRetries})`);
+          
+          // Wait a bit before retrying to allow IndexedDB to initialize
+          setTimeout(setupAuthListener, 1000);
+          return;
+        }
+        
+        setUser(user);
+        
+        if (user) {
+          await fetchUserProfile(user.uid);
+        } else {
+          setUserProfile(null);
+        }
+        setLoading(false);
+      });
 
+      return unsubscribe;
+    };
+
+    const unsubscribe = setupAuthListener();
+    
     return () => {
       console.log('Cleaning up auth subscription');
       unsubscribe();

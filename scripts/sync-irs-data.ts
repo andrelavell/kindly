@@ -1,10 +1,24 @@
-const { db: firestore } = require('./firebase-admin-config');
-const axios = require('axios');
-const fs = require('fs');
-const path = require('path');
-const csv = require('csv-parse');
-const xml2js = require('xml2js');
-const { Transform } = require('stream');
+import * as firebaseAdmin from 'firebase-admin';
+import { getFirestore } from 'firebase-admin/firestore';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+import axios from 'axios';
+import xml2js from 'xml2js';
+import csv from 'csv-parse';
+import { Transform } from 'stream';
+
+// Load service account from JSON
+const serviceAccountPath = join(__dirname, 'service-account-key.json');
+const serviceAccount = JSON.parse(readFileSync(serviceAccountPath, 'utf8'));
+
+// Initialize Firebase Admin
+if (!firebaseAdmin.apps.length) {
+  firebaseAdmin.initializeApp({
+    credential: firebaseAdmin.credential.cert(serviceAccount)
+  });
+}
+
+const db = getFirestore();
 
 // IRS BMF state files - these are the regions we'll pull from
 const BMF_REGIONS = [
@@ -303,7 +317,7 @@ async function processBatch(records: BMFRecord[]): Promise<void> {
             const enrichedData = await enrichCharityData(record);
             if (enrichedData) {
                 try {
-                    await firestore.collection('charities').doc(record.EIN).set(enrichedData);
+                    await db.collection('charities').doc(record.EIN).set(enrichedData);
                     successCount++;
                 } catch (error) {
                     console.error(`Error saving to Firestore for EIN ${record.EIN}:`, error);
@@ -532,7 +546,7 @@ async function retryFailedEFileFetches(): Promise<void> {
             if (eFileData) {
                 const enrichedData = await processForm990Data(eFileData);
                 // Update the existing document with the new E-File data
-                await firestore.collection('charities').doc(ein).update({
+                await db.collection('charities').doc(ein).update({
                     ...enrichedData,
                     'data_sources.form_990_date': eFileData.ReturnHeader?.ReturnTs || new Date().toISOString()
                 });
@@ -558,8 +572,9 @@ async function retryFailedEFileFetches(): Promise<void> {
     if (stillFailed > 0) {
         const remainingFailed = Array.from(failedEFileFetches);
         const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-        const failedEinsFile = path.join(__dirname, `failed_eins_${timestamp}.json`);
-        fs.writeFileSync(failedEinsFile, JSON.stringify({
+        const failedEinsFile = join(__dirname, `failed_eins_${timestamp}.json`);
+        const fs = await import('fs/promises');
+        await fs.writeFile(failedEinsFile, JSON.stringify({
             timestamp: new Date().toISOString(),
             eins: remainingFailed
         }, null, 2));
@@ -593,7 +608,7 @@ async function syncCharityData(): Promise<void> {
 }
 
 // Run the sync if this file is run directly
-if (require.main === module) {
+if (import.meta.url === `file://${__filename}`) {
     syncCharityData()
         .then(() => process.exit(0))
         .catch((error) => {

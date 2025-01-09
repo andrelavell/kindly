@@ -1,5 +1,7 @@
-const admin = require('firebase-admin');
-const { getFirestore } = require('firebase-admin/firestore');
+import * as firebaseAdmin from 'firebase-admin';
+import { getFirestore } from 'firebase-admin/firestore';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
 interface CharityBasicInfo {
   ein: string;
@@ -57,11 +59,16 @@ const CATEGORIES: { [key: string]: string } = {
   'Z': 'Unknown'
 };
 
+// Load service account from JSON
+const serviceAccountPath = join(__dirname, 'service-account-key.json');
+const serviceAccount = JSON.parse(readFileSync(serviceAccountPath, 'utf8'));
+
 // Initialize Firebase Admin
-const path = require('path');
-admin.initializeApp({
-  credential: admin.credential.cert(path.join(__dirname, 'service-account-key.json'))
-});
+if (!firebaseAdmin.apps.length) {
+  firebaseAdmin.initializeApp({
+    credential: firebaseAdmin.credential.cert(serviceAccount)
+  });
+}
 
 const db = getFirestore();
 

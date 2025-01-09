@@ -1,12 +1,19 @@
-const admin = require('firebase-admin');
-const serviceAccount = require('./service-account-key.json');
+import * as firebaseAdmin from 'firebase-admin';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+
+// Load service account from JSON
+const serviceAccountPath = join(__dirname, 'service-account-key.json');
+const serviceAccount = JSON.parse(readFileSync(serviceAccountPath, 'utf8'));
 
 // Initialize Firebase Admin
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
+if (!firebaseAdmin.apps.length) {
+  firebaseAdmin.initializeApp({
+    credential: firebaseAdmin.credential.cert(serviceAccount)
+  });
+}
 
-const db = admin.firestore();
+const db = firebaseAdmin.firestore();
 
 async function addSearchKeywords() {
   try {
