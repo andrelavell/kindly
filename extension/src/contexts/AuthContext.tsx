@@ -173,13 +173,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return () => unsubscribe();
   }, []);
 
-  const signIn = async (email: string, password: string) => {
+  const signIn = async (email: string, password: string): Promise<void> => {
     try {
       setLoading(true);
       console.log('Signing in with:', email);
       const result = await signInWithEmailAndPassword(auth, email, password);
       console.log('Sign in successful:', result.user.email);
-      return result;
+      // Don't return result, just let it complete
     } catch (err) {
       console.error('Sign in error:', err);
       throw err;

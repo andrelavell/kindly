@@ -10,7 +10,11 @@ type UserProfile = {
   email: string;
 };
 
-export function AccountDetails() {
+interface AccountDetailsProps {
+  onBack: () => void;
+}
+
+export function AccountDetails({ onBack }: AccountDetailsProps) {
   const { user, signOut } = useAuth();
   const [profile, setProfile] = useState<UserProfile>({
     firstName: '',
