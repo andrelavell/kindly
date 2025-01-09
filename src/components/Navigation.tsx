@@ -25,7 +25,6 @@ export function Navigation() {
     { name: 'About', href: '/about' },
     { name: 'Supported Stores', href: '/stores' },
     { name: 'For Creators', href: '/creators' },
-    { name: 'Charity Directory', href: '/charity-directory' },
     { name: 'Press', href: '/press' },
   ];
 

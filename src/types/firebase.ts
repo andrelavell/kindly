@@ -3,18 +3,9 @@ export interface UserProfile {
   email: string;
   firstName?: string;
   lastName?: string;
-  selectedCause?: string; // This will store the EIN
+  selectedCause?: string;
   createdAt: Date;
   updatedAt: Date;
-}
-
-export interface Charity {
-  ein: string;
-  name: string;
-  nteeCode: string;
-  category: string;
-  city: string;
-  state: string;
 }
 
 export interface UserStats {
@@ -23,7 +14,7 @@ export interface UserStats {
   totalImpact: number;
   lastDonation?: Date;
   causes: {
-    [ein: string]: {
+    [id: string]: {
       amount: number;
       lastDonation: Date;
     };

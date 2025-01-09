@@ -6,7 +6,6 @@ import Link from 'next/link';
 const navLinks = [
   { name: 'About', href: '/about' },
   { name: 'Supported Stores', href: '/stores' },
-  { name: 'Charity Directory', href: '/charity-directory' },
   { name: 'For Creators', href: '/creators' },
   { name: 'Press', href: '/press' },
 ];
