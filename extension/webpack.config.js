@@ -1,5 +1,17 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
+const dotenv = require('dotenv');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+// Load environment variables from .env file
+const env = dotenv.config().parsed || {};
+
+// Convert environment variables to string values
+const envKeys = Object.keys(env).reduce((prev, next) => {
+  prev[`process.env.${next}`] = JSON.stringify(env[next]);
+  return prev;
+}, {});
 
 module.exports = {
   mode: 'development',
@@ -12,6 +24,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
+    clean: true
   },
   module: {
     rules: [
@@ -30,7 +43,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           'css-loader',
           {
             loader: 'postcss-loader',
@@ -51,11 +64,15 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
     new CopyPlugin({
       patterns: [
         { from: 'public', to: '.' },
         { from: 'manifest.json', to: '.' },
       ],
     }),
+    new webpack.DefinePlugin(envKeys),
   ],
 };

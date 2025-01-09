@@ -13,10 +13,13 @@
     "*://*.amazon.com/*",
     "https://*.firebaseapp.com/*",
     "https://*.googleapis.com/*",
-    "https://*.supabase.co/*"
+    "https://*.supabase.co/*",
+    "https://*.firebase.com/*",
+    "https://*.firebaseio.com/*",
+    "https://*.cloudfunctions.net/*"
   ],
   "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' https://*.firebaseio.com https://*.googleapis.com;"
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' https://*.firebaseio.com https://*.googleapis.com https://*.firebase.com https://*.cloudfunctions.net https://*.firebaseapp.com wss://*.firebaseio.com;"
   },
   "action": {
     "default_popup": "popup.html",

@@ -19,7 +19,13 @@ type UserProfile = {
   tracking_id: string;
   created_at: string;
   selectedCause?: string;
-  donations?: any[];
+  stats: {
+    totalContribution: number;
+    monthlyContribution: number;
+    shoppingSessions: number;
+    storesVisited: number;
+    lastUpdated: string;
+  };
 };
 
 type AuthContextType = {
@@ -39,149 +45,183 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true); 
   const [error, setError] = useState<string | null>(null);
 
   const generateTrackingId = () => {
-    // Generate a random string of 8 characters (numbers and uppercase letters)
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     let result = '';
     for (let i = 0; i < 8; i++) {
       result += chars.charAt(Math.floor(Math.random() * chars.length));
     }
-    return `KND${result}`; // Prefix with KND for Kindly
+    return `KND${result}`;
   };
 
   const fetchUserProfile = async (userId: string) => {
     try {
       console.log('Fetching user profile for:', userId);
-      const userDocRef = doc(db, 'profiles', userId);
+      console.log('Current auth user:', auth.currentUser?.uid);
+      
+      const userDocRef = doc(db, 'users', userId);
+      console.log('Attempting to fetch document:', userDocRef.path);
+      
       const userDoc = await getDoc(userDocRef);
       
       if (userDoc.exists()) {
-        console.log('Profile data:', userDoc.data());
-        setUserProfile(userDoc.data() as UserProfile);
+        const data = userDoc.data();
+        console.log('Document exists with data:', data);
+        setUserProfile(data as UserProfile);
       } else {
-        console.log('No profile found');
+        console.log('No document exists for ID:', userId);
+        // If document doesn't exist, try to create it
+        if (auth.currentUser) {
+          const newProfile: UserProfile = {
+            id: userId,
+            first_name: '',
+            last_name: '',
+            email: auth.currentUser.email || '',
+            tracking_id: generateTrackingId(),
+            created_at: new Date().toISOString(),
+            stats: {
+              totalContribution: 0,
+              monthlyContribution: 0,
+              shoppingSessions: 0,
+              storesVisited: 0,
+              lastUpdated: new Date().toISOString()
+            }
+          };
+          
+          await setDoc(userDocRef, newProfile);
+          console.log('Created new profile for user');
+          setUserProfile(newProfile);
+        }
       }
     } catch (err) {
       console.error('Error in fetchUserProfile:', err);
-      setError(err instanceof Error ? err.message : 'Failed to fetch user profile');
+      if (err instanceof Error) {
+        console.error('Error details:', {
+          message: err.message,
+          stack: err.stack,
+          name: err.name
+        });
+      }
+      // Don't throw the error, just log it
+      setError('Error fetching profile');
+    }
+  };
+
+  const signUp = async (email: string, password: string, firstName: string, lastName: string) => {
+    try {
+      setLoading(true);
+      console.log('Creating new user:', email);
+      const result = await createUserWithEmailAndPassword(auth, email, password);
+      console.log('User created with ID:', result.user.uid);
+
+      const newProfile: UserProfile = {
+        id: result.user.uid,
+        first_name: firstName,
+        last_name: lastName,
+        email: result.user.email!,
+        tracking_id: generateTrackingId(),
+        created_at: new Date().toISOString(),
+        stats: {
+          totalContribution: 0,
+          monthlyContribution: 0,
+          shoppingSessions: 0,
+          storesVisited: 0,
+          lastUpdated: new Date().toISOString()
+        }
+      };
+
+      console.log('Creating user document with ID:', result.user.uid);
+      const userDocRef = doc(db, 'users', result.user.uid);
+      await setDoc(userDocRef, newProfile);
+      console.log('User document created successfully');
+      
+    } catch (error) {
+      console.error('Error in signUp:', error);
+      if (error instanceof Error) {
+        setError(error.message);
+      }
+      throw error;
+    } finally {
+      setLoading(false);
     }
   };
 
   useEffect(() => {
     console.log('AuthProvider mounted');
     
-    let retryCount = 0;
-    const maxRetries = 3;
-    
-    const setupAuthListener = () => {
-      const unsubscribe = onAuthStateChanged(auth, async (user) => {
-        console.log('Auth state changed:', user);
-        
-        if (!user && retryCount < maxRetries) {
-          // If we're not authenticated, try to restore the session from IndexedDB
-          retryCount++;
-          console.log(`Attempting to restore auth session (attempt ${retryCount}/${maxRetries})`);
-          
-          // Wait a bit before retrying to allow IndexedDB to initialize
-          setTimeout(setupAuthListener, 1000);
-          return;
-        }
-        
-        setUser(user);
-        
-        if (user) {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      console.log('Auth state changed.');
+      console.log('User:', user ? { email: user.email, uid: user.uid } : 'null');
+      setUser(user);
+      
+      if (user) {
+        try {
           await fetchUserProfile(user.uid);
-        } else {
-          setUserProfile(null);
+        } catch (err) {
+          console.error('Error fetching profile:', err);
         }
-        setLoading(false);
-      });
+      } else {
+        setUserProfile(null);
+      }
+      
+      setLoading(false);
+    });
 
-      return unsubscribe;
-    };
-
-    const unsubscribe = setupAuthListener();
-    
-    return () => {
-      console.log('Cleaning up auth subscription');
-      unsubscribe();
-    };
+    return () => unsubscribe();
   }, []);
 
   const signIn = async (email: string, password: string) => {
     try {
-      console.log('Signing in:', email);
-      await signInWithEmailAndPassword(auth, email, password);
+      setLoading(true);
+      console.log('Signing in with:', email);
+      const result = await signInWithEmailAndPassword(auth, email, password);
+      console.log('Sign in successful:', result.user.email);
+      return result;
     } catch (err) {
       console.error('Sign in error:', err);
       throw err;
-    }
-  };
-
-  const signUp = async (email: string, password: string, firstName: string, lastName: string) => {
-    try {
-      console.log('Starting signup process in AuthContext...');
-      console.log('Signup data:', { email, firstName, lastName });
-
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;
-
-      console.log('User created successfully:', user);
-
-      // Create user profile in Firestore with tracking ID
-      const profileData: UserProfile = {
-        id: user.uid,
-        first_name: firstName,
-        last_name: lastName,
-        email: email,
-        tracking_id: generateTrackingId(),
-        created_at: new Date().toISOString(),
-      };
-
-      console.log('Profile data:', profileData);
-      const userDocRef = doc(db, 'profiles', user.uid);
-      await setDoc(userDocRef, profileData);
-      console.log('Profile created successfully');
-
-    } catch (err) {
-      console.error('Sign up error:', err);
-      console.error('Error details:', {
-        code: err instanceof Error ? (err as any).code : 'unknown',
-        message: err instanceof Error ? err.message : 'Unknown error',
-        stack: err instanceof Error ? err.stack : undefined
-      });
-      throw err;
+    } finally {
+      setLoading(false);
     }
   };
 
   const signOut = async () => {
     try {
+      setLoading(true);
       await firebaseSignOut(auth);
+      setUserProfile(null);
+      setUser(null);
     } catch (err) {
       console.error('Sign out error:', err);
       throw err;
+    } finally {
+      setLoading(false);
     }
   };
 
   const resetPassword = async (email: string) => {
     try {
+      setLoading(true);
       await sendPasswordResetEmail(auth, email);
     } catch (err) {
-      console.error('Reset password error:', err);
       throw err;
+    } finally {
+      setLoading(false);
     }
   };
 
   const updatePassword = async (newPassword: string) => {
     try {
-      if (!user) throw new Error('No user found');
-      await firebaseUpdatePassword(user, newPassword);
+      setLoading(true);
+      if (!auth.currentUser) throw new Error('No user logged in');
+      await firebaseUpdatePassword(auth.currentUser, newPassword);
     } catch (err) {
-      console.error('Update password error:', err);
       throw err;
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -194,8 +234,18 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     signUp,
     signOut,
     resetPassword,
-    updatePassword
+    updatePassword,
   };
+
+  if (loading && !user) {
+    return (
+      <div className="min-h-[600px] bg-gradient-to-br from-blue-500 to-purple-600 p-6 flex flex-col items-center justify-center text-white">
+        <div className="text-center">
+          <h2 className="text-xl font-semibold mb-2">Loading...</h2>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <AuthContext.Provider value={value}>
