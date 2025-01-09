@@ -37,7 +37,12 @@ build/
 .env.test.local
 .env.production.local
 
+# Service account keys
+scripts/service-account-key.json
+**/service-account-key.json
+
 # Firebase
+.firebase/
 scripts/service-account-key.json
 .env
 .env.local
