@@ -427,7 +427,7 @@ const createDonationPopup = () => {
 };
 
 // Handle activate button click
-const handleActivateClick = (e?: Event) => {
+const handleActivateClick = async (e?: Event) => {
   e?.preventDefault();
   
   const affiliateTag = getCurrentAffiliateTag();
@@ -436,12 +436,39 @@ const handleActivateClick = (e?: Event) => {
   if (affiliateTag) {
     createAffiliateChoiceDialog(affiliateTag);
   } else {
-    // No existing affiliate, directly apply Kindly's tag
-    console.log('Kindly: No existing affiliate, applying Kindly tag');
-    const newUrl = new URL(window.location.href);
-    newUrl.searchParams.set('tag', KINDLY_AFFILIATE_ID);
-    chrome.storage.local.set({ donationActive: true });
-    window.location.href = newUrl.toString();
+    // No existing affiliate, set cookie using a new tab
+    console.log('Kindly: No existing affiliate, setting cookie via new tab');
+    
+    // Create URL with our affiliate tag
+    const currentUrl = new URL(window.location.href);
+    currentUrl.searchParams.set('tag', KINDLY_AFFILIATE_ID);
+    
+    try {
+      // Open new tab with our affiliate tag
+      const tab = await chrome.tabs.create({ 
+        url: currentUrl.toString(),
+        active: false // Open in background
+      });
+
+      // Wait for the tab to finish loading
+      chrome.tabs.onUpdated.addListener(function listener(tabId, info) {
+        if (tabId === tab.id && info.status === 'complete') {
+          // Remove the listener
+          chrome.tabs.onUpdated.removeListener(listener);
+          
+          // Close the tab after a short delay to ensure cookie is set
+          setTimeout(() => {
+            chrome.tabs.remove(tab.id!);
+            
+            // Update local storage and show success state
+            chrome.storage.local.set({ donationActive: true });
+            showSuccessState();
+          }, 1000);
+        }
+      });
+    } catch (error) {
+      console.error('Kindly: Error setting affiliate cookie:', error);
+    }
   }
 };
 
