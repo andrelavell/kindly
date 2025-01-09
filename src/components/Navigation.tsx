@@ -19,8 +19,9 @@ export function Navigation() {
   const navLinks = [
     { name: 'About', href: '/about' },
     { name: 'Supported Stores', href: '/stores' },
-    { name: 'For Creators', href: '/creators' },
-    { name: 'Press', href: '/press' },
+    { name: 'Charity Directory', href: '/charities' },
+    { name: 'For Creators', href: '/creators' }
+
   ];
 
   return (

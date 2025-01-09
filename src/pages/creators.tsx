@@ -216,7 +216,7 @@ export default function CreatorsPage() {
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">We've detected another affiliate</h3>
                     <p className="text-sm text-gray-600 mb-4">
-                      We've detected another affiliate connected to your purchase (creator-20). This might support a website or creator you recently visited.
+                      We've detected another affiliate connected to your purchase, <strong>AnnasRecipes</strong>. This might support a website or creator you recently visited.
                     </p>
                     <div className="flex gap-3 justify-center mb-4">
                       <button className="px-4 py-2 bg-white text-gray-600 border border-rose-500 rounded-lg font-medium">
