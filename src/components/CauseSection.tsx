@@ -9,25 +9,37 @@ import type { Charity } from '../types/firebase';
 
 const FEATURED_CHARITIES: Charity[] = [
   {
-    id: '1',
+    ein: '1',
     name: 'St. Jude Children\'s Research Hospital',
-    description: 'Leading children\'s hospital pioneering research and treatments for kids with cancer and other life-threatening diseases.',
+    nteeCode: 'E',
+    category: 'Health',
+    city: 'Memphis',
+    state: 'TN'
   },
   {
-    id: '2',
+    ein: '2',
     name: 'American Red Cross',
-    description: 'Emergency response and blood services organization helping communities prepare for and respond to disasters.',
+    nteeCode: 'P',
+    category: 'Human Services',
+    city: 'Washington',
+    state: 'DC'
   },
   {
-    id: '3',
+    ein: '3',
     name: 'World Wildlife Fund',
-    description: 'International conservation organization working to reduce humanity\'s impact on the environment.',
+    nteeCode: 'D',
+    category: 'Environment',
+    city: 'Washington',
+    state: 'DC'
   },
   {
-    id: '4',
+    ein: '4',
     name: 'Feeding America',
-    description: 'Nationwide network of food banks fighting hunger and food waste in America.',
-  },
+    nteeCode: 'K',
+    category: 'Food Security',
+    city: 'Chicago',
+    state: 'IL'
+  }
 ];
 
 interface CauseSectionProps {
@@ -37,7 +49,7 @@ interface CauseSectionProps {
 
 export function CauseSection({ activeTab, onTabChange }: CauseSectionProps) {
   const { user } = useAuth();
-  const [selectedCharity, setSelectedCharity] = useState<{name: string, ein: string} | null>(null);
+  const [selectedCharity, setSelectedCharity] = useState<Charity | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<Charity[]>([]);
   const [loading, setLoading] = useState(false);
@@ -53,8 +65,9 @@ export function CauseSection({ activeTab, onTabChange }: CauseSectionProps) {
           const userData = userDoc.data();
           if (userData.selectedCharity) {
             setSelectedCharity({
+              ein: userData.selectedCharity.ein,
               name: userData.selectedCharity.name,
-              ein: userData.selectedCharity.ein
+              updatedAt: userData.selectedCharity.updatedAt
             });
           }
         }
@@ -78,7 +91,9 @@ export function CauseSection({ activeTab, onTabChange }: CauseSectionProps) {
       const searchTermUpper = searchTerm.toUpperCase();
       const featuredMatches = FEATURED_CHARITIES.filter(charity => 
         charity.name.toUpperCase().includes(searchTermUpper) ||
-        charity.description.toUpperCase().includes(searchTermUpper)
+        charity.description?.toUpperCase().includes(searchTermUpper) ||
+        charity.city?.toUpperCase().includes(searchTermUpper) ||
+        charity.state?.toUpperCase().includes(searchTermUpper)
       );
 
       if (featuredMatches.length > 0) {
@@ -95,7 +110,9 @@ export function CauseSection({ activeTab, onTabChange }: CauseSectionProps) {
         .map(doc => ({ id: doc.id, ...doc.data() } as Charity))
         .filter(charity => 
           (charity.name?.toUpperCase().includes(searchTermUpper) ||
-          charity.description?.toUpperCase().includes(searchTermUpper)) ?? false
+          charity.description?.toUpperCase().includes(searchTermUpper) ||
+          charity.city?.toUpperCase().includes(searchTermUpper) ||
+          charity.state?.toUpperCase().includes(searchTermUpper)) ?? false
         )
         .slice(0, 5); // Limit to 5 results
 
@@ -212,8 +229,9 @@ export function CauseSection({ activeTab, onTabChange }: CauseSectionProps) {
         const userData = userDoc.data();
         if (userData.selectedCharity) {
           setSelectedCharity({
+            ein: userData.selectedCharity.ein,
             name: userData.selectedCharity.name,
-            ein: userData.selectedCharity.ein
+            updatedAt: userData.selectedCharity.updatedAt
           });
         }
       }
@@ -355,10 +373,10 @@ export function CauseSection({ activeTab, onTabChange }: CauseSectionProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {FEATURED_CHARITIES.map((charity) => (
               <div
-                key={charity.id}
+                key={charity.ein}
                 onClick={() => handleSelectCharity(charity)}
                 className={`bg-white rounded-xl shadow-md hover:shadow-lg transition-all ${
-                  selectedCharity?.id === charity.id
+                  selectedCharity?.ein === charity.ein
                     ? 'ring-2 ring-rose-500'
                     : 'hover:scale-[1.02]'
                 }`}
@@ -377,7 +395,7 @@ export function CauseSection({ activeTab, onTabChange }: CauseSectionProps) {
                     <h3 className="text-xl font-semibold text-gray-900">{charity.name}</h3>
                   </div>
                   <p className="text-gray-600 flex-grow">{charity.description}</p>
-                  {selectedCharity?.id === charity.id && (
+                  {selectedCharity?.ein === charity.ein && (
                     <div className="mt-4 pt-4 border-t border-gray-100 text-rose-600 text-sm font-medium flex items-center gap-2">
                       <Heart className="w-4 h-4" fill="currentColor" />
                       Selected Organization
