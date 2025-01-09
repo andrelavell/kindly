@@ -19,14 +19,14 @@ const supportLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-gray-900 text-white py-12" role="contentinfo">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Logo and Description */}
             <div>
               <div className="flex items-center space-x-2">
-                <Heart className="w-6 h-6 text-rose-500" />
+                <Heart className="w-6 h-6 text-rose-500" aria-hidden="true" />
                 <span className="text-xl font-bold">Kindly</span>
               </div>
               <p className="mt-4 text-gray-400">
@@ -35,7 +35,7 @@ export function Footer() {
             </div>
             
             {/* Navigation Links */}
-            <div>
+            <nav aria-label="Company navigation">
               <h3 className="text-xl font-semibold mb-4">Company</h3>
               <ul className="space-y-2">
                 {navLinks.map((link) => (
@@ -43,16 +43,17 @@ export function Footer() {
                     <Link 
                       href={link.href} 
                       className="text-gray-400 hover:text-white transition-colors"
+                      aria-label={`Go to ${link.name}`}
                     >
                       {link.name}
                     </Link>
                   </li>
                 ))}
               </ul>
-            </div>
+            </nav>
 
             {/* Support Links */}
-            <div>
+            <nav aria-label="Support navigation">
               <h3 className="text-xl font-semibold mb-4">Support</h3>
               <ul className="space-y-2">
                 {supportLinks.map((link) => (
@@ -60,18 +61,19 @@ export function Footer() {
                     <Link 
                       href={link.href} 
                       className="text-gray-400 hover:text-white transition-colors"
+                      aria-label={`Go to ${link.name}`}
                     >
                       {link.name}
                     </Link>
                   </li>
                 ))}
               </ul>
-            </div>
+            </nav>
           </div>
           
           {/* Copyright */}
           <div className="mt-12 pt-8 border-t border-gray-800">
-            <p className="text-gray-400 text-sm text-center">
+            <p className="text-gray-400 text-sm text-center" role="contentinfo">
               &copy; {new Date().getFullYear()} Kindly. All rights reserved.
             </p>
           </div>

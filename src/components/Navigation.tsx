@@ -29,9 +29,9 @@ export function Navigation() {
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-center">
-            <Link href="/" className="flex items-center space-x-2">
+            <Link href="/" className="flex items-center space-x-2" aria-label="Kindly Home">
               <div className="relative" ref={ref}>
-                <Heart className="w-8 h-8 text-rose-500" />
+                <Heart className="w-8 h-8 text-rose-500" aria-hidden="true" />
                 <motion.div 
                   className="absolute inset-0"
                   animate={inView ? { 
@@ -42,6 +42,7 @@ export function Navigation() {
                       repeatDelay: 2
                     }
                   } : {}}
+                  aria-hidden="true"
                 >
                   <Heart className="w-8 h-8 text-rose-500" />
                 </motion.div>
@@ -50,7 +51,7 @@ export function Navigation() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <nav className="hidden md:flex items-center space-x-8" aria-label="Main navigation">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -68,18 +69,21 @@ export function Navigation() {
               >
                 {browserInfo.isChrome ? "Add to Chrome" : "Coming Soon"}
               </Button>
-            </div>
+            </nav>
 
             {/* Mobile menu button */}
             <div className="md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-gray-500 hover:text-gray-600"
+                className="p-2 -mr-2 text-gray-600"
+                aria-expanded={isOpen}
+                aria-controls="mobile-menu"
+                aria-label={isOpen ? "Close menu" : "Open menu"}
               >
                 {isOpen ? (
-                  <X className="h-6 w-6" />
+                  <X className="w-6 h-6" aria-hidden="true" />
                 ) : (
-                  <Menu className="h-6 w-6" />
+                  <Menu className="w-6 h-6" aria-hidden="true" />
                 )}
               </button>
             </div>
@@ -89,11 +93,11 @@ export function Navigation() {
         {/* Mobile Navigation */}
         <AnimatePresence>
           {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden"
+            <div
+              id="mobile-menu"
+              className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}
+              role="navigation"
+              aria-label="Mobile navigation"
             >
               <div className="pt-2 pb-4">
                 {navLinks.map((link) => (
@@ -117,7 +121,7 @@ export function Navigation() {
                   </Button>
                 </div>
               </div>
-            </motion.div>
+            </div>
           )}
         </AnimatePresence>
       </div>

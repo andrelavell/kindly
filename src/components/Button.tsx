@@ -9,6 +9,12 @@ interface ButtonProps {
   onClick?: () => void;
   className?: string;
   type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
+  'aria-label'?: string;
+  'aria-expanded'?: boolean;
+  'aria-controls'?: string;
+  'aria-pressed'?: boolean;
+  role?: string;
 }
 
 export function Button({ 
@@ -18,9 +24,16 @@ export function Button({
   icon: Icon,
   onClick,
   className = '',
-  type = 'button'
+  type = 'button',
+  disabled,
+  'aria-label': ariaLabel,
+  'aria-expanded': ariaExpanded,
+  'aria-controls': ariaControls,
+  'aria-pressed': ariaPressed,
+  role,
+  ...props
 }: ButtonProps) {
-  const baseStyles = "inline-flex items-center justify-center font-medium rounded-full";
+  const baseStyles = "inline-flex items-center justify-center font-medium rounded-full transition-colors";
   
   const sizes = {
     sm: "px-4 py-2 text-sm",
@@ -49,7 +62,13 @@ export function Button({
     <button
       type={type}
       onClick={onClick}
-      className={`${baseStyles} ${sizes[size]} ${className}`}
+      disabled={disabled}
+      aria-label={ariaLabel}
+      aria-expanded={ariaExpanded}
+      aria-controls={ariaControls}
+      aria-pressed={ariaPressed}
+      role={role}
+      className={`${baseStyles} ${sizes[size]} ${className} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
       style={getStyles()}
       onMouseOver={(e) => {
         if (variant === 'primary') {
@@ -67,8 +86,14 @@ export function Button({
           (e.target as HTMLButtonElement).style.backgroundColor = '#f3f4f6';
         }
       }}
+      {...props}
     >
-      {Icon && <Icon className="w-5 h-5 mr-2" />}
+      {Icon && (
+        <Icon 
+          className={`${size === 'sm' ? 'w-4 h-4' : size === 'lg' ? 'w-6 h-6' : 'w-5 h-5'} ${children ? 'mr-2' : ''}`}
+          aria-hidden="true"
+        />
+      )}
       {children}
     </button>
   );
