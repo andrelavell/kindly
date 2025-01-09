@@ -1,16 +1,24 @@
-import type { AppProps } from 'next/app'
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
-import { Banner } from '../components/Banner'
-import { Navigation } from '../components/Navigation'
-import { Footer } from '../components/Footer'
-import { trackPageView } from '../utils/analytics'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import '../styles/globals.css'
+import type { AppProps } from 'next/app';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import dynamic from 'next/dynamic';
+import { trackPageView } from '../utils/analytics';
+import { Banner } from '../components/Banner';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import '../styles/globals.css';
+
+// Dynamically import heavy components
+const Navigation = dynamic(() => import('../components/Navigation'), {
+  ssr: true,
+});
+
+const Footer = dynamic(() => import('../components/Footer'), {
+  ssr: true,
+});
 
 export default function App({ Component, pageProps }: AppProps) {
-  const router = useRouter()
-  const queryClient = new QueryClient()
+  const router = useRouter();
+  const queryClient = new QueryClient();
 
   useEffect(() => {
     // Track page views
