@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Download, Mail, ArrowRight, Award, Newspaper, Image, FileText } from 'lucide-react';
+import { Download, Mail, ArrowRight, Award, Newspaper, Image as ImageIcon, FileText } from 'lucide-react';
 import { Button } from '../components/Button';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
@@ -42,7 +42,7 @@ export default function press() {
       action: "Download Press Kit"
     },
     {
-      icon: <Image className="w-6 h-6" />,
+      icon: <ImageIcon className="w-6 h-6" />,
       title: "Brand Assets",
       description: "Access our logo files, brand guidelines, and approved imagery for media use.",
       action: "Download Assets"
