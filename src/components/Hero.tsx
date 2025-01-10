@@ -24,7 +24,7 @@ export function Hero() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover z-0"
           >
-            <source src="/videos/hero-bg.mp4" type="video/mp4" />
+            <source src="https://res.cloudinary.com/dvgf0xsjq/video/upload/v1736475895/6740283-uhd_3840_2160_30fps_1_cxjgs4.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
