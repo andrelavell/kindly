@@ -70,22 +70,6 @@ export function Button({
       role={role}
       className={`${baseStyles} ${sizes[size]} ${className} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
       style={getStyles()}
-      onMouseOver={(e) => {
-        if (variant === 'primary') {
-          (e.target as HTMLButtonElement).style.backgroundColor = 'var(--brand-dark-color)'; 
-          (e.target as HTMLButtonElement).style.boxShadow = '0 4px 6px rgba(var(--brand-color-rgb), 0.3)'; 
-        } else {
-          (e.target as HTMLButtonElement).style.backgroundColor = '#e5e7eb';
-        }
-      }}
-      onMouseOut={(e) => {
-        if (variant === 'primary') {
-          (e.target as HTMLButtonElement).style.backgroundColor = 'var(--brand-color)'; 
-          (e.target as HTMLButtonElement).style.boxShadow = '0 2px 4px rgba(var(--brand-color-rgb), 0.25)'; 
-        } else {
-          (e.target as HTMLButtonElement).style.backgroundColor = '#f3f4f6';
-        }
-      }}
       {...props}
     >
       {Icon && (

@@ -3,7 +3,19 @@ import { motion, AnimatePresence } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import type { Impact } from '../utils/impactGenerator';
 import { storeBrands } from '../utils/storeBrands';
-import { Heart as HeartIcon } from 'lucide-react';
+
+const formatTimeAgo = (timestamp: number): string => {
+  const seconds = Math.floor((Date.now() - timestamp) / 1000);
+  if (seconds < 60) {
+    return "Just now";
+  } else if (seconds < 3600) {
+    return `${Math.floor(seconds / 60)}m ago`;
+  } else if (seconds < 86400) {
+    return `${Math.floor(seconds / 3600)}h ago`;
+  } else {
+    return `${Math.floor(seconds / 86400)}d ago`;
+  }
+};
 
 const MAX_IMPACTS = 3;
 
@@ -23,6 +35,16 @@ interface CommunityFeedProps {
 export function CommunityFeed({ inHero = false, showVideo = false }: CommunityFeedProps) {
   const [currentImpacts, setCurrentImpacts] = useState<Impact[]>([]);
   const [impactGenerator, setImpactGenerator] = useState<typeof import('../utils/impactGenerator')>();
+  const [, forceUpdate] = useState({});
+
+  useEffect(() => {
+    // Update timestamps every second
+    const interval = setInterval(() => {
+      forceUpdate({});
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     // Dynamically import the impact generator
@@ -45,10 +67,14 @@ export function CommunityFeed({ inHero = false, showVideo = false }: CommunityFe
       });
     };
 
-    generateNewImpact();
+    // Add initial delay before first impact
+    const initialDelay = setTimeout(generateNewImpact, 2000);
     const interval = setInterval(generateNewImpact, 3000);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearTimeout(initialDelay);
+      clearInterval(interval);
+    };
   }, [impactGenerator, inHero, showVideo]);
 
   const isHeroWithVideo = inHero && showVideo;
@@ -106,13 +132,11 @@ export function CommunityFeed({ inHero = false, showVideo = false }: CommunityFe
                       : 'bg-gray-50 border-[1.5px] border-gray-200/80'
                   }`}
                 >
-                  <div className="absolute top-4 right-4">
-                    <div className="relative">
-                      <HeartIcon className="w-5 h-5 text-brand fill-current" />
-                      <div className="absolute inset-0">
-                        <HeartIcon className="w-5 h-5 text-brand fill-current animate-ping opacity-75" />
-                      </div>
-                    </div>
+                  <div className="absolute top-4 right-4 flex items-center gap-1.5">
+                    <div className="w-[6px] h-[6px] rounded-full bg-green-400" />
+                    <span className={`text-xs font-medium ${
+                      isHeroWithVideo ? 'text-gray-600 md:text-white/90' : 'text-gray-600'
+                    }`}>{formatTimeAgo(impact.timestamp)}</span>
                   </div>
                   <div className="flex items-center gap-4">
                     <div className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden ${

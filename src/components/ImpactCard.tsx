@@ -33,9 +33,9 @@ function ImpactCardComponent({ impact }: { impact: Impact }, ref: React.Forwarde
       className="relative bg-white rounded-lg p-4 border border-gray-200/50 shadow-sm"
     >
       {/* Live indicator */}
-      <div className="hidden md:flex absolute top-4 right-4 items-center gap-1.5">
-        <div className="w-[6px] h-[6px] rounded-full bg-green-400 animate-pulse" />
-        <span className="text-xs font-medium text-gray-400">{timeAgo}</span>
+      <div className="flex absolute top-4 right-4 items-center gap-1.5">
+        <div className="w-[6px] h-[6px] rounded-full bg-green-400" />
+        <span className="text-xs font-medium text-gray-600">{timeAgo}</span>
       </div>
 
       <div className="flex gap-3 md:gap-4 relative">

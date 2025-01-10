@@ -49,7 +49,7 @@ export function Navigation() {
                   <Heart className="w-6 h-6 text-brand" />
                 </motion.div>
               </div>
-              <Link href="/" className="logo text-3xl text-gray-700">
+              <Link href="/" className="logo text-3xl text-[#222222]">
                 kindly
               </Link>
             </div>
@@ -60,7 +60,7 @@ export function Navigation() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-sm font-medium text-gray-700 hover:text-gray-900"
+                  className="text-sm font-medium text-gray-700"
                 >
                   {link.name}
                 </Link>
