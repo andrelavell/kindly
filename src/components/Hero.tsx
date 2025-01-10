@@ -32,7 +32,7 @@ export function Hero() {
 
       <div className="container mx-auto px-4 py-12 md:py-24 relative z-[2]">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+          <div className="grid md:grid-cols-[55fr_45fr] gap-8 md:gap-12 items-start">
             {/* Content */}
             <motion.div 
               className="relative z-20 max-w-xl mx-auto md:mx-0 text-center md:text-left"
@@ -48,13 +48,13 @@ export function Hero() {
               
               <h1 className={`text-4xl md:text-5xl font-bold mb-6 leading-tight ${
                 showVideo 
-                  ? 'text-white md:drop-shadow-2xl md:[text-shadow:0_4px_12px_rgba(0,0,0,0.6),0_8px_24px_rgba(0,0,0,0.4)]'
-                  : ''
+                  ? 'text-gray-900 md:text-white md:drop-shadow-2xl md:[text-shadow:0_4px_12px_rgba(0,0,0,0.6),0_8px_24px_rgba(0,0,0,0.4)]'
+                  : 'text-gray-900'
               }`}>
-                <span className={showVideo ? 'text-white' : 'text-gray-900'}>
+                <span className={showVideo ? 'text-gray-900 md:text-white' : 'text-gray-900'}>
                   Turn Everyday Shopping Into
                 </span>{' '}
-                <span className={showVideo ? 'text-white' : 'brand'}>
+                <span className={showVideo ? 'text-gray-900 md:text-white' : 'brand'}>
                   Life-Changing Acts of Kindness
                 </span>
               </h1>
@@ -78,14 +78,16 @@ export function Hero() {
               </div>
             </motion.div>
             
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="w-full"
-            >
-              <CommunityFeed inHero={true} showVideo={showVideo} />
-            </motion.div>
+            <div className="hidden md:block">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="w-full"
+              >
+                <CommunityFeed isHeroWithVideo={showVideo} />
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>
