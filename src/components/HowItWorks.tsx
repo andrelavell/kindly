@@ -77,7 +77,7 @@ export function HowItWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-base font-medium text-rose-500 mb-3">How Kindly Works</h2>
+            <h2 className="text-base font-medium text-brand mb-3">How Kindly Works</h2>
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
               Making Impact Simple
             </h3>
@@ -116,8 +116,9 @@ export function HowItWorks() {
                   className="h-6 object-contain"
                 />
                 <div className="flex-1">
-                  <div className="bg-white rounded flex items-center px-3 py-1">
+                  <div className="relative flex items-center bg-gray-100 rounded-lg px-4 py-2">
                     <input type="text" placeholder="Search" className="bg-transparent flex-1 outline-none text-gray-900" />
+                    <span className="text-gray-500 font-mono">amazon.com</span>
                   </div>
                 </div>
               </div>
@@ -150,7 +151,7 @@ export function HowItWorks() {
               </div>
 
               {/* Extension Popup */}
-              <div className="absolute top-4 right-4 bg-white rounded-lg shadow-lg">
+              <div className="absolute top-0 right-4 bg-white rounded-lg shadow-lg">
                 <AnimatePresence mode="wait">
                   {animationState === 'initial' ? (
                     <motion.div
@@ -160,12 +161,12 @@ export function HowItWorks() {
                       exit={{ opacity: 0, y: -10 }}
                       className="w-[320px]"
                     >
-                      <div className="bg-rose-500 text-white px-4 py-3 rounded-t-lg flex justify-between items-center">
+                      <div className="bg-brand text-white px-4 py-3 rounded-t-lg flex justify-between items-center">
                         <div className="flex items-center gap-1.5">
                           <Heart className="w-4 h-4" fill="white" />
                           <span className="text-sm font-semibold text-white">KINDLY</span>
                         </div>
-                        <button className="text-white hover:text-rose-100">
+                        <button className="text-white hover:text-brand">
                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                             <path d="M18 6L6 18M6 6l12 12" />
                           </svg>
@@ -190,7 +191,7 @@ export function HowItWorks() {
                           <p className="text-[#2D3648]/70 text-sm text-center">
                             For Breast Cancer Research
                           </p>
-                          <button className="text-rose-500 hover:text-rose-600 text-sm font-medium mt-2 mx-auto flex items-center justify-center gap-1 transition-colors">
+                          <button className="text-brand hover:text-brand text-sm font-medium mt-2 mx-auto flex items-center justify-center gap-1 transition-colors">
                             Change cause
                             <ChevronDown className="w-4 h-4" />
                           </button>
@@ -233,7 +234,7 @@ export function HowItWorks() {
                           <motion.button
                             animate={{ scale: isClicking ? 0.98 : 1 }}
                             transition={{ duration: 0.1 }}
-                            className="w-full bg-[rgb(16,185,129)] hover:bg-[rgb(13,148,103)] text-white font-medium py-3 px-4 rounded-lg transition-colors"
+                            className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-medium py-3 px-4 rounded-lg transition-colors"
                           >
                             Activate & Close
                           </motion.button>
@@ -248,12 +249,12 @@ export function HowItWorks() {
                       exit={{ opacity: 0, y: -10 }}
                       className="w-[320px]"
                     >
-                      <div className="bg-rose-500 text-white px-4 py-3 rounded-t-lg flex justify-between items-center">
+                      <div className="bg-brand text-white px-4 py-3 rounded-t-lg flex justify-between items-center">
                         <div className="flex items-center gap-1.5">
                           <Heart className="w-4 h-4" fill="white" />
                           <span className="text-sm font-semibold text-white">KINDLY</span>
                         </div>
-                        <button className="text-white hover:text-rose-100">
+                        <button className="text-white hover:text-brand">
                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                             <path d="M18 6L6 18M6 6l12 12" />
                           </svg>
@@ -307,7 +308,7 @@ export function HowItWorks() {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-rose-500 rounded-full flex items-center justify-center text-white font-medium">
+                    <div className="w-12 h-12 bg-brand rounded-full flex items-center justify-center text-white font-medium">
                       {step.number}
                     </div>
                   </div>

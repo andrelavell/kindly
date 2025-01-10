@@ -86,7 +86,7 @@ export function CommunityImpact() {
           </div>
           <div className="relative flex justify-center">
             <div className="bg-white px-3">
-              <Heart className="h-5 w-5 text-rose-400" />
+              <Heart className="h-5 w-5 brand" />
             </div>
           </div>
         </div>

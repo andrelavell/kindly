@@ -4,6 +4,7 @@ import { Download, Mail, ArrowRight, Award, Newspaper, Image, FileText } from 'l
 import { Button } from '../components/Button';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
 
 export const getStaticProps: GetStaticProps = async () => {
   return {
@@ -17,19 +18,19 @@ export default function press() {
       source: "TechCrunch",
       title: "Kindly Transforms Online Shopping into Charitable Giving",
       date: "December 2024",
-      image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800"
+      image: "/images/press/article1.jpg"
     },
     {
       source: "Forbes",
       title: "How Kindly is Revolutionizing Charitable Giving",
       date: "November 2024",
-      image: "https://images.unsplash.com/photo-1554774853-aae0a22c8aa4?auto=format&fit=crop&w=800"
+      image: "/images/press/article2.jpg"
     },
     {
       source: "Business Insider",
       title: "The Future of Giving: Kindly's Innovative Approach",
       date: "October 2024",
-      image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=800"
+      image: "/images/press/article3.jpg"
     }
   ];
 
@@ -59,10 +60,12 @@ export default function press() {
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=2000" 
-            alt="Press and Media Background"
-            className="w-full h-full object-cover"
+          <Image 
+            src="/images/press/hero.jpg"
+            alt="Press and media coverage"
+            fill
+            className="object-cover opacity-20"
+            priority
           />
           <div className="absolute inset-0 bg-gray-900/70" />
         </div>
@@ -124,10 +127,11 @@ export default function press() {
                 className="group cursor-pointer"
               >
                 <div className="relative h-48 mb-6 rounded-xl overflow-hidden">
-                  <img 
+                  <Image 
                     src={article.image} 
                     alt={article.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors" />
                 </div>
@@ -136,11 +140,13 @@ export default function press() {
                     <span>{article.source}</span>
                     <span>{article.date}</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 group-hover:text-rose-500 transition-colors">
-                    {article.title}
-                  </h3>
-                  <div className="flex items-center text-rose-500 text-sm font-medium">
-                    Read Article <ArrowRight className="w-4 h-4 ml-1" />
+                  <div className="group">
+                    <h3 className="text-xl font-semibold text-gray-900 group-hover:brand transition-colors">
+                      {article.title}
+                    </h3>
+                    <div className="flex items-center brand text-sm font-medium">
+                      Read Article <ArrowRight className="w-4 h-4 ml-1" />
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -169,8 +175,8 @@ export default function press() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className="p-2 bg-rose-50 rounded-lg w-fit mb-4">
-                  <div className="text-rose-500">
+                <div className="p-2 bg-brand/10 rounded-lg w-fit mb-4">
+                  <div className="brand">
                     {resource.icon}
                   </div>
                 </div>

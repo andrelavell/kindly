@@ -22,12 +22,12 @@ export default function PrivacyPage() {
         <div className="container mx-auto px-4 relative">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div 
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-rose-300 mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 brand mb-6"
               initial="initial"
               animate="animate"
               variants={fadeIn}
             >
-              <Lock className="w-5 h-5" />
+              <Shield className="w-4 h-4" />
               <span>Privacy Policy</span>
             </motion.div>
 
@@ -68,12 +68,12 @@ export default function PrivacyPage() {
             <div className="prose prose-lg max-w-none">
               <div className="space-y-16">
                 {/* Quick Summary */}
-                <div className="bg-rose-50 p-8 rounded-2xl">
+                <div className="bg-brand/5 p-8 rounded-2xl">
                   <h2 className="text-2xl font-bold text-gray-900 mb-6">Quick Summary</h2>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="flex items-start gap-3">
-                      <div className="p-2 bg-rose-100 rounded-lg">
-                        <Eye className="w-5 h-5 text-rose-500" />
+                      <div className="p-2 bg-brand/10 rounded-lg">
+                        <Eye className="w-5 h-5 brand" />
                       </div>
                       <div>
                         <h3 className="font-semibold text-gray-900">What We Track</h3>
@@ -81,8 +81,8 @@ export default function PrivacyPage() {
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <div className="p-2 bg-rose-100 rounded-lg">
-                        <Database className="w-5 h-5 text-rose-500" />
+                      <div className="p-2 bg-brand/10 rounded-lg">
+                        <Database className="w-5 h-5 brand" />
                       </div>
                       <div>
                         <h3 className="font-semibold text-gray-900">Data Storage</h3>
@@ -90,8 +90,8 @@ export default function PrivacyPage() {
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <div className="p-2 bg-rose-100 rounded-lg">
-                        <Cookie className="w-5 h-5 text-rose-500" />
+                      <div className="p-2 bg-brand/10 rounded-lg">
+                        <Cookie className="w-5 h-5 brand" />
                       </div>
                       <div>
                         <h3 className="font-semibold text-gray-900">Cookie Policy</h3>
@@ -99,8 +99,8 @@ export default function PrivacyPage() {
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <div className="p-2 bg-rose-100 rounded-lg">
-                        <Trash2 className="w-5 h-5 text-rose-500" />
+                      <div className="p-2 bg-brand/10 rounded-lg">
+                        <Trash2 className="w-5 h-5 brand" />
                       </div>
                       <div>
                         <h3 className="font-semibold text-gray-900">Data Deletion</h3>
@@ -185,7 +185,7 @@ export default function PrivacyPage() {
                     <li><strong>Analytics Cookies:</strong> Help us improve our service (optional)</li>
                   </ul>
                   <p className="text-gray-600 mb-6">
-                    You can manage your cookie preferences anytime through your <a href="/settings" className="text-rose-600 hover:text-rose-700">account settings</a>. 
+                    You can manage your cookie preferences anytime through your <a href="/settings" className="brand hover:opacity-90">account settings</a>. 
                     We'll always respect your choices about cookie usage.
                   </p>
                 </div>
@@ -288,7 +288,7 @@ export default function PrivacyPage() {
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Link
                       href="/contact"
-                      className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-rose-500 text-white font-medium hover:bg-rose-600 transition-colors"
+                      className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-brand text-white font-medium hover:opacity-90 transition-opacity"
                     >
                       Contact Our Privacy Team
                     </Link>

@@ -62,10 +62,10 @@ function ImpactCardComponent({ impact }: { impact: Impact }, ref: React.Forwarde
 
           {/* Middle row: Donation Amount and Impact */}
           <div className="flex items-baseline gap-2 mb-1.5 md:mb-2">
-            <div className="text-base md:text-lg font-semibold bg-gradient-to-r from-rose-500 to-rose-600 bg-clip-text text-transparent">
+            <div className="text-base md:text-lg font-semibold brand text-transparent">
               ${impact.donation}
             </div>
-            <div className="text-rose-500 font-medium text-sm md:text-base">donated</div>
+            <div className="text-brand font-medium text-sm md:text-base">donated</div>
           </div>
           
           {/* Bottom row: Purchase and Impact */}

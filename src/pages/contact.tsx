@@ -10,7 +10,7 @@ export default function Contact() {
         <meta name="description" content="Get in touch with the Kindly team. We're here to help you make a difference while you shop." />
       </Head>
 
-      <div className="min-h-screen bg-gradient-to-b from-white to-rose-50/20 relative overflow-hidden">
+      <div className="min-h-screen bg-gradient-to-b from-white to-brand/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,228,230,0.2),_transparent_70%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(240,249,250,0.2),_transparent_70%)]" />
 
@@ -18,14 +18,14 @@ export default function Contact() {
           {/* Header Section */}
           <div className="pt-24 pb-16 text-center">
             <div className="flex items-center justify-center gap-3 mb-4">
-              <MessageCircle className="w-8 h-8 text-rose-500" />
-              <span className="text-rose-500 font-medium">Get in Touch</span>
+              <MessageCircle className="w-8 h-8 brand" />
+              <span className="brand font-medium">Get in Touch</span>
             </div>
             <h1 className="text-4xl font-bold mb-6">
               Let's Make a{' '}
               <span className="relative inline-block">
                 Difference
-                <span className="absolute -bottom-2 left-0 w-full h-1 bg-rose-500/30" />
+                <span className="absolute -bottom-2 left-0 w-full h-1 bg-brand opacity-30" />
               </span>
             </h1>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -47,7 +47,7 @@ export default function Contact() {
                         type="text"
                         id="name"
                         name="name"
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-rose-500 focus:border-rose-500 transition-colors"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand focus:border-brand transition-colors"
                         placeholder="Jane Smith"
                       />
                     </div>
@@ -59,7 +59,7 @@ export default function Contact() {
                         type="email"
                         id="email"
                         name="email"
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-rose-500 focus:border-rose-500 transition-colors"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand focus:border-brand transition-colors"
                         placeholder="jane@example.com"
                       />
                     </div>
@@ -71,7 +71,7 @@ export default function Contact() {
                         type="text"
                         id="subject"
                         name="subject"
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-rose-500 focus:border-rose-500 transition-colors"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand focus:border-brand transition-colors"
                         placeholder="How can we help?"
                       />
                     </div>
@@ -83,13 +83,13 @@ export default function Contact() {
                         id="message"
                         name="message"
                         rows={4}
-                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-rose-500 focus:border-rose-500 transition-colors"
+                        className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand focus:border-brand transition-colors"
                         placeholder="Tell us what's on your mind..."
                       />
                     </div>
                     <button
                       type="submit"
-                      className="w-full bg-rose-500 text-white py-3 px-6 rounded-xl hover:bg-rose-600 transition-colors duration-200 flex items-center justify-center gap-2"
+                      className="w-full bg-brand text-white py-3 px-6 rounded-xl hover:opacity-90 transition-opacity duration-200 flex items-center justify-center gap-2"
                     >
                       <Send className="w-4 h-4" />
                       Send Message
@@ -104,20 +104,20 @@ export default function Contact() {
                       <h3 className="text-xl font-semibold mb-4">Ways to Connect</h3>
                       <div className="space-y-6">
                         <div className="flex items-start gap-4">
-                          <div className="flex-shrink-0 w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center text-rose-500">
+                          <div className="flex-shrink-0 w-10 h-10 rounded-full bg-brand/10 flex items-center justify-center brand">
                             <Mail className="w-5 h-5" />
                           </div>
                           <div>
                             <h4 className="font-medium">Email Us</h4>
                             <p className="text-gray-600 mt-1">
                               For general inquiries:{' '}
-                              <a href="mailto:hello@kindly.com" className="text-rose-500 hover:text-rose-600">
+                              <a href="mailto:hello@kindly.com" className="brand hover:opacity-90">
                                 hello@kindly.com
                               </a>
                             </p>
                             <p className="text-gray-600">
                               For partnerships:{' '}
-                              <a href="mailto:partners@kindly.com" className="text-rose-500 hover:text-rose-600">
+                              <a href="mailto:partners@kindly.com" className="brand hover:opacity-90">
                                 partners@kindly.com
                               </a>
                             </p>
@@ -126,11 +126,11 @@ export default function Contact() {
                       </div>
                     </div>
 
-                    <div className="bg-rose-50/50 rounded-2xl p-6">
+                    <div className="bg-brand/5 rounded-2xl p-6">
                       <h3 className="text-xl font-semibold mb-3">Quick Response</h3>
                       <p className="text-gray-600">
                         We aim to respond to all inquiries within 24 hours during business days. For immediate assistance, check our{' '}
-                        <a href="/faq" className="text-rose-500 hover:text-rose-600">
+                        <a href="/faq" className="brand hover:opacity-90">
                           FAQ page
                         </a>
                         .

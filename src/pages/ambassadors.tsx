@@ -4,6 +4,7 @@ import { Heart, Instagram, Youtube, Twitter, ChevronRight, Users, Sparkles, Doll
 import { Button } from '../components/Button';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
 
 export const getStaticProps: GetStaticProps = async () => {
   return {
@@ -47,22 +48,22 @@ export default function ambassadors() {
 
   const benefits = [
     {
-      icon: <Heart className="w-6 h-6 text-rose-500" />,
+      icon: <Heart className="w-6 h-6 brand" />,
       title: "Make a Real Impact",
       description: "Use your influence to drive positive change. Every follower you bring to Kindly helps support important causes worldwide."
     },
     {
-      icon: <DollarSign className="w-6 h-6 text-rose-500" />,
+      icon: <DollarSign className="w-6 h-6 brand" />,
       title: "Earn While Giving Back",
       description: "Receive competitive commission rates and exclusive bonuses while helping your community make a difference."
     },
     {
-      icon: <Users className="w-6 h-6 text-rose-500" />,
+      icon: <Users className="w-6 h-6 brand" />,
       title: "Join an Elite Community",
       description: "Connect with like-minded creators in our exclusive ambassador community. Share strategies, collaborate, and grow together."
     },
     {
-      icon: <Sparkles className="w-6 h-6 text-rose-500" />,
+      icon: <Sparkles className="w-6 h-6 brand" />,
       title: "Premium Resources",
       description: "Get access to custom marketing materials, dedicated support, and early access to new features and campaigns."
     }
@@ -72,7 +73,7 @@ export default function ambassadors() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative bg-gray-50 py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-rose-50 to-white opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-brand to-white opacity-50" />
         <div className="container mx-auto px-4 relative">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div
@@ -105,9 +106,11 @@ export default function ambassadors() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="relative rounded-2xl overflow-hidden h-[400px] group">
-              <img 
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800" 
-                alt="Ambassador" 
+              <Image 
+                src="/images/ambassadors/profile1.jpg"
+                alt="Ambassador"
+                width={400}
+                height={400}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
@@ -121,9 +124,11 @@ export default function ambassadors() {
               </div>
             </div>
             <div className="relative rounded-2xl overflow-hidden h-[400px] group">
-              <img 
-                src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800" 
+              <Image 
+                src="/images/ambassadors/profile2.jpg"
                 alt="Ambassador"
+                width={400}
+                height={400}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
@@ -137,9 +142,11 @@ export default function ambassadors() {
               </div>
             </div>
             <div className="relative rounded-2xl overflow-hidden h-[400px] group">
-              <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800" 
+              <Image 
+                src="/images/ambassadors/profile3.jpg"
                 alt="Ambassador"
+                width={400}
+                height={400}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
@@ -178,7 +185,7 @@ export default function ambassadors() {
                 className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="flex items-start gap-4">
-                  <div className="p-2 bg-rose-50 rounded-lg">
+                  <div className="p-2 bg-brand rounded-lg">
                     {benefit.icon}
                   </div>
                   <div>
@@ -221,7 +228,7 @@ export default function ambassadors() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-rose-500 focus:ring-2 focus:ring-rose-200 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand focus:ring-2 focus:ring-brand/50 outline-none transition-all"
                     required
                   />
                 </div>
@@ -235,7 +242,7 @@ export default function ambassadors() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-rose-500 focus:ring-2 focus:ring-rose-200 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand focus:ring-2 focus:ring-brand/50 outline-none transition-all"
                     required
                   />
                 </div>
@@ -253,7 +260,7 @@ export default function ambassadors() {
                       name="instagram"
                       value={formData.instagram}
                       onChange={handleChange}
-                      className="w-full pl-8 pr-4 py-3 rounded-xl border border-gray-200 focus:border-rose-500 focus:ring-2 focus:ring-rose-200 outline-none transition-all"
+                      className="w-full pl-8 pr-4 py-3 rounded-xl border border-gray-200 focus:border-brand focus:ring-2 focus:ring-brand/50 outline-none transition-all"
                     />
                   </div>
                 </div>
@@ -266,7 +273,7 @@ export default function ambassadors() {
                     name="followers"
                     value={formData.followers}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-rose-500 focus:ring-2 focus:ring-rose-200 outline-none transition-all appearance-none bg-white"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand focus:ring-2 focus:ring-brand/50 outline-none transition-all appearance-none bg-white"
                     required
                   >
                     <option value="">Select range</option>
@@ -287,7 +294,7 @@ export default function ambassadors() {
                   name="niche"
                   value={formData.niche}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-rose-500 focus:ring-2 focus:ring-rose-200 outline-none transition-all appearance-none bg-white"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand focus:ring-2 focus:ring-brand/50 outline-none transition-all appearance-none bg-white"
                   required
                 >
                   <option value="">Select your primary niche</option>
@@ -311,7 +318,7 @@ export default function ambassadors() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-rose-500 focus:ring-2 focus:ring-rose-200 outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand focus:ring-2 focus:ring-brand/50 outline-none transition-all"
                   required
                 />
               </div>

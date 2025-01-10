@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, MessageCircle, Heart } from 'lucide-react';
+import { ChevronDown, MessageCircle, Heart, ArrowRight } from 'lucide-react';
 
 const userFaqs = [
   {
@@ -88,22 +88,18 @@ export function FAQ() {
   const [openCreatorIndex, setOpenCreatorIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-rose-50/20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,228,230,0.2),_transparent_70%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(240,249,250,0.2),_transparent_70%)]" />
-      
-      <div className="container mx-auto px-4 relative">
-        {/* Header Section */}
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <MessageCircle className="w-8 h-8 text-rose-500" />
-            <span className="text-rose-500 font-medium">Got Questions?</span>
+    <section className="py-24 bg-gradient-to-b from-white to-brand/5 relative overflow-hidden">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 mb-3">
+            <MessageCircle className="w-8 h-8 brand" />
+            <span className="brand font-medium">Got Questions?</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl font-bold relative inline-block">
             Let's Chat About{' '}
             <span className="relative inline-block">
               Kindly
-              <span className="absolute -bottom-2 left-0 w-full h-1 bg-rose-500/30" />
+              <span className="absolute -bottom-2 left-0 w-full h-1 bg-brand opacity-30" />
             </span>
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
@@ -111,7 +107,6 @@ export function FAQ() {
           </p>
         </div>
 
-        {/* FAQ Grid */}
         <div className="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto">
           {/* For Users Section */}
           <div>
@@ -120,14 +115,14 @@ export function FAQ() {
               {userFaqs.map((faq, index) => (
                 <div 
                   key={index}
-                  className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100"
+                  className="bg-white rounded-xl border border-gray-200 shadow-sm"
                 >
                   <button
                     onClick={() => setOpenUserIndex(openUserIndex === index ? null : index)}
                     className="w-full px-6 py-4 flex justify-between items-center text-left hover:bg-gray-50/50 transition-colors"
                   >
                     <span className="font-medium text-gray-900 pr-6">{faq.question}</span>
-                    <div className={`flex-shrink-0 p-2 rounded-full bg-rose-50 text-rose-500 transform transition-transform duration-200 ${
+                    <div className={`flex-shrink-0 p-2 rounded-full bg-brand/10 brand transform transition-transform duration-200 ${
                       openUserIndex === index ? 'rotate-180' : ''
                     }`}>
                       <ChevronDown className="w-4 h-4" />
@@ -151,14 +146,14 @@ export function FAQ() {
               {creatorFaqs.map((faq, index) => (
                 <div 
                   key={index}
-                  className="bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100"
+                  className="bg-white rounded-xl border border-gray-200 shadow-sm"
                 >
                   <button
                     onClick={() => setOpenCreatorIndex(openCreatorIndex === index ? null : index)}
                     className="w-full px-6 py-4 flex justify-between items-center text-left hover:bg-gray-50/50 transition-colors"
                   >
                     <span className="font-medium text-gray-900 pr-6">{faq.question}</span>
-                    <div className={`flex-shrink-0 p-2 rounded-full bg-rose-50 text-rose-500 transform transition-transform duration-200 ${
+                    <div className={`flex-shrink-0 p-2 rounded-full bg-brand/10 brand transform transition-transform duration-200 ${
                       openCreatorIndex === index ? 'rotate-180' : ''
                     }`}>
                       <ChevronDown className="w-4 h-4" />
@@ -176,9 +171,8 @@ export function FAQ() {
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-16 text-center">
-          <a href="/contact" className="inline-flex items-center justify-center gap-2 text-rose-500 font-medium hover:text-rose-600 transition-colors">
+        <div className="text-center mt-12">
+          <a href="/contact" className="inline-flex items-center justify-center gap-2 brand font-medium hover:opacity-90 transition-opacity">
             <Heart className="w-5 h-5" />
             <span>Still have questions? We're here to help!</span>
           </a>

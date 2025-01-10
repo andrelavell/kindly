@@ -27,7 +27,7 @@ export default function CharitiesPage() {
                 repeatDelay: 1
               }}
             >
-              <Heart className="w-16 h-16 text-rose-500" />
+              <Heart className="w-16 h-16 brand" />
             </motion.div>
 
             {/* Title */}
@@ -42,12 +42,12 @@ export default function CharitiesPage() {
             </p>
 
             {/* Coming Soon Box */}
-            <div className="bg-rose-50 border border-rose-100 rounded-2xl p-8 mb-12">
+            <div className="bg-brand/5 border border-brand/10 rounded-2xl p-8 mb-12">
               <div className="flex items-center justify-center space-x-3 mb-4">
-                <Calendar className="w-6 h-6 text-rose-500" />
-                <span className="text-lg font-semibold text-rose-700">Coming Soon</span>
+                <Calendar className="w-6 h-6 brand" />
+                <span className="text-lg font-semibold brand">Coming Soon</span>
               </div>
-              <p className="text-rose-600">
+              <p className="brand">
                 Our team is working hard to bring you a curated list of charitable organizations. 
                 Stay tuned for updates!
               </p>

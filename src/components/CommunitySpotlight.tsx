@@ -114,14 +114,14 @@ export function CommunitySpotlight() {
 
   return (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200/50 overflow-hidden h-full flex flex-col">
-      <div className="bg-rose-500 px-6 py-6 sm:px-8 border-b border-gray-200/50">
+      <div className="bg-brand px-6 py-6 sm:px-8 border-b border-gray-200/50">
         <div className="flex items-center gap-2">
-          <Sparkles className="w-5 h-5 text-rose-100" />
+          <Sparkles className="w-5 h-5 text-white" />
           <h3 className="text-xl font-bold leading-6 text-white">
             Community Impact Spotlight
           </h3>
         </div>
-        <p className="mt-2 text-sm text-rose-100 font-medium">
+        <p className="mt-2 text-sm text-white/90 font-medium">
           Celebrating some of our amazing contributors making a difference
         </p>
       </div>
@@ -164,7 +164,7 @@ export function CommunitySpotlight() {
                   </div>
                 </div>
                 <div className="text-right">
-                  <p className="text-lg font-bold text-rose-500">
+                  <p className="text-lg font-bold brand">
                     ${donor.totalDonated.toLocaleString()}
                   </p>
                   <p className="mt-2 text-sm text-gray-500 font-medium">
@@ -183,7 +183,7 @@ export function CommunitySpotlight() {
       </div>
       
       <div className="px-6 py-5 sm:px-8 bg-white border-t border-gray-200/50 flex items-center justify-center">
-        <p className="text-sm text-center text-rose-500 font-medium">
+        <p className="text-sm text-center brand font-medium">
           Join our community of changemakers today
         </p>
       </div>

@@ -6,9 +6,9 @@ interface HeartDividerProps {
 
 export function HeartDivider({ className = '' }: HeartDividerProps) {
   const hearts = [
-    { color: 'text-rose-400', delay: '0s' },
-    { color: 'text-violet-400', delay: '0.2s' },
-    { color: 'text-amber-400', delay: '0.4s' },
+    { color: 'brand', delay: '0s' },
+    { color: 'brand opacity-75', delay: '0.2s' },
+    { color: 'brand opacity-50', delay: '0.4s' },
     { color: 'text-emerald-400', delay: '0.6s' },
     { color: 'text-sky-400', delay: '0.8s' },
   ];

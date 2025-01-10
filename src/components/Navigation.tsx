@@ -29,26 +29,30 @@ export function Navigation() {
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-center">
-            <Link href="/" className="flex items-center space-x-2" aria-label="Kindly Home">
+            <div className="flex items-center gap-2">
               <div className="relative" ref={ref}>
-                <Heart className="w-8 h-8 text-rose-500" aria-hidden="true" />
+                <Heart className="w-6 h-6 text-brand" aria-hidden="true" />
                 <motion.div 
                   className="absolute inset-0"
-                  animate={inView ? { 
+                  initial={{ scale: 1, opacity: 0 }}
+                  animate={inView ? {
                     scale: [1, 1.2, 1],
-                    transition: { 
-                      duration: 1,
-                      repeat: Infinity,
-                      repeatDelay: 2
-                    }
+                    opacity: [0, 1, 0]
                   } : {}}
-                  aria-hidden="true"
+                  transition={{
+                    duration: 2,
+                    ease: "easeInOut",
+                    repeat: Infinity,
+                    repeatDelay: 1
+                  }}
                 >
-                  <Heart className="w-8 h-8 text-rose-500" />
+                  <Heart className="w-6 h-6 text-brand" />
                 </motion.div>
               </div>
-              <span className="text-xl font-bold text-gray-900">Kindly</span>
-            </Link>
+              <Link href="/" className="logo text-3xl text-gray-700">
+                kindly
+              </Link>
+            </div>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8" aria-label="Main navigation">
@@ -65,9 +69,11 @@ export function Navigation() {
                 href={browserInfo.isChrome ? "https://chrome.google.com/webstore/detail/your-extension-id" : "#"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-rose-500 hover:bg-rose-600 text-white px-4 py-2 rounded-lg"
+                size="lg"
+                variant="primary"
+                icon={browserInfo.icon}
               >
-                {browserInfo.isChrome ? "Add to Chrome" : "Coming Soon"}
+                {browserInfo.isChrome ? `${browserInfo.actionText} – It's Free` : "Add to Chrome"}
               </Button>
             </nav>
 
@@ -75,7 +81,7 @@ export function Navigation() {
             <div className="md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-2 -mr-2 text-gray-600"
+                className="p-2 -mr-2 text-brand hover:opacity-75"
                 aria-expanded={isOpen}
                 aria-controls="mobile-menu"
                 aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -115,9 +121,11 @@ export function Navigation() {
                     href={browserInfo.isChrome ? "https://chrome.google.com/webstore/detail/your-extension-id" : "#"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full bg-rose-500 hover:bg-rose-600 text-white px-4 py-2 rounded-lg text-center"
+                    size="lg"
+                    variant="primary"
+                    icon={browserInfo.icon}
                   >
-                    {browserInfo.isChrome ? "Add to Chrome" : "Coming Soon"}
+                    {browserInfo.isChrome ? `${browserInfo.actionText} – It's Free` : "Add to Chrome"}
                   </Button>
                 </div>
               </div>

@@ -49,7 +49,7 @@ export function WhyPeopleSection() {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden bg-gradient-to-b from-white to-rose-50/20">
+    <section className="py-24 relative overflow-hidden bg-gradient-to-b from-white to-brand/5">
       {/* Background elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,228,230,0.3),_transparent_70%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(240,249,250,0.3),_transparent_70%)]" />
@@ -59,7 +59,7 @@ export function WhyPeopleSection() {
           {/* Section Header */}
           <div className="text-center mb-20">
             <motion.span 
-              className="text-rose-500 font-medium block mb-4"
+              className="brand font-medium block mb-4"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -76,7 +76,7 @@ export function WhyPeopleSection() {
               <span className="relative inline-block">
                 Kindly
                 <motion.span
-                  className="absolute -bottom-2 left-0 w-full h-1 bg-rose-500/30"
+                  className="absolute -bottom-2 left-0 w-full h-1 bg-brand opacity-30"
                   initial={{ width: 0 }}
                   whileInView={{ width: '100%' }}
                   viewport={{ once: true }}
@@ -99,7 +99,7 @@ export function WhyPeopleSection() {
                 className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
                 style={{ willChange: 'transform' }}
               >
-                <div className="w-12 h-12 bg-rose-100 rounded-xl flex items-center justify-center text-rose-500 mb-4">
+                <div className="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center brand mb-4">
                   {feature.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>

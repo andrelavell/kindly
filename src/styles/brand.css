@@ -1,0 +1,23 @@
+:root {
+  /* Primary brand color - rose-500 */
+  --brand-color: rgb(244 63 94);
+}
+
+.brand {
+  color: rgb(244 63 94); /* rose-500 */
+}
+
+.bg-brand {
+  background-color: rgb(244 63 94); /* rose-500 */
+}
+
+/* Use with opacity utilities like: class="brand opacity-50" or "bg-brand opacity-10" */
+
+/* Import the font */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&display=swap');
+
+.logo {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { Chrome } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Button } from './Button';
@@ -8,27 +8,29 @@ import { heroConfig } from '../config/heroConfig';
 
 export function Hero() {
   const browserInfo = getBrowserInfo();
-  const { showVideo } = heroConfig;
+  const { showVideo = false } = heroConfig;
 
   return (
     <section className={`relative ${showVideo ? 'md:bg-transparent' : ''} bg-white`}>
       {/* Video Background - Hidden on mobile, shown from md up */}
       {showVideo && (
-        <div className="hidden md:block absolute top-0 left-0 w-1/2 h-full">
-          <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px] z-10" />
+        <div className="hidden md:block absolute inset-0 w-full h-full overflow-hidden">
+          <div className="absolute inset-0 bg-black/10" /> {/* Subtle dark overlay */}
+          <div className="absolute inset-0 bg-black/65 z-[1]" />
           <video
             autoPlay
             loop
             muted
             playsInline
-            className="w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover z-0"
           >
             <source src="/videos/hero-bg.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
           </video>
         </div>
       )}
 
-      <div className="container mx-auto px-4 py-12 md:py-24">
+      <div className="container mx-auto px-4 py-12 md:py-24 relative z-[2]">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
             {/* Content */}
@@ -46,10 +48,15 @@ export function Hero() {
               
               <h1 className={`text-4xl md:text-5xl font-bold mb-6 leading-tight ${
                 showVideo 
-                  ? 'text-gray-900 md:text-white md:drop-shadow-2xl md:[text-shadow:0_4px_12px_rgba(0,0,0,0.6),0_8px_24px_rgba(0,0,0,0.4)]'
-                  : 'text-rose-500'
+                  ? 'text-white md:drop-shadow-2xl md:[text-shadow:0_4px_12px_rgba(0,0,0,0.6),0_8px_24px_rgba(0,0,0,0.4)]'
+                  : ''
               }`}>
-                Turn Everyday Shopping Into <span className="relative">Life-Changing {showVideo && <div className="hidden md:block absolute -bottom-2 left-0 right-0 h-3 [mask-image:url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQwIiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCAyNDAgOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMSA0LjVDMjAgMi41IDQwIDIuNSA2MCA0LjVDODAgNi41IDEwMCA2LjUgMTIwIDQuNUMxNDAgMi41IDE2MCAyLjUgMTgwIDQuNUMyMDAgNi41IDIyMCA2LjUgMjQwIDQuNSIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48L3N2Zz4=')] [mask-size:100%_100%] bg-rose-500"></div>}</span> Acts of Kindness
+                <span className={showVideo ? 'text-white' : 'text-gray-900'}>
+                  Turn Everyday Shopping Into
+                </span>{' '}
+                <span className={showVideo ? 'text-white' : 'brand'}>
+                  Life-Changing Acts of Kindness
+                </span>
               </h1>
               
               <p className={`text-base md:text-lg mb-8 leading-relaxed ${
@@ -77,7 +84,7 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="w-full"
             >
-              <CommunityFeed inHero={true} />
+              <CommunityFeed inHero={true} showVideo={showVideo} />
             </motion.div>
           </div>
         </div>

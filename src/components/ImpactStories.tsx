@@ -14,7 +14,7 @@ export function ImpactStories() {
     <section className="py-24 relative overflow-hidden bg-white">
       {/* Background gradient with hardware acceleration */}
       <motion.div 
-        className="absolute inset-0 bg-gradient-to-br from-rose-50/50 via-white to-teal-50/50"
+        className="absolute inset-0 bg-gradient-to-br from-brand/5 via-white to-teal-50/50"
         style={{ willChange: 'transform' }}
       />
       
@@ -23,7 +23,7 @@ export function ImpactStories() {
           {/* Section Header */}
           <div className="max-w-2xl mb-16">
             <motion.span 
-              className="text-rose-500 font-medium text-sm block mb-3"
+              className="brand font-medium text-sm block mb-3"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -42,7 +42,7 @@ export function ImpactStories() {
               <span className="relative inline-block">
                 Changes Lives
                 <motion.span
-                  className="absolute -bottom-1.5 left-0 w-full h-0.5 bg-rose-500/30"
+                  className="absolute -bottom-1.5 left-0 w-full h-0.5 bg-brand opacity-30"
                   initial={{ width: 0 }}
                   whileInView={{ width: '100%' }}
                   viewport={{ once: true }}
@@ -108,7 +108,7 @@ export function ImpactStories() {
 
                   {/* Content */}
                   <div className="p-4 bg-white rounded-xl border border-gray-100">
-                    <span className="text-rose-500 font-medium text-xs mb-2 block">
+                    <span className="brand opacity-75 font-medium text-xs mb-2 block">
                       {story.category}
                     </span>
                     <h3 className="text-lg font-bold text-gray-900 mb-2">

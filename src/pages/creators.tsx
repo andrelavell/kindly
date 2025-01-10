@@ -24,7 +24,7 @@ export default function CreatorsPage() {
       <section className="relative py-32 overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800 text-white">
         <div className="absolute inset-0 overflow-hidden">
           <Image
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80"
+            src="/images/creators/hero.jpg"
             alt="Creators working together"
             fill
             className="object-cover opacity-20"
@@ -100,7 +100,7 @@ export default function CreatorsPage() {
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 rounded-2xl opacity-60" />
               <Image
-                src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&q=80"
+                src="/images/creators/feature1.jpg"
                 alt="YouTuber creating content"
                 width={400}
                 height={500}
@@ -121,7 +121,7 @@ export default function CreatorsPage() {
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 rounded-2xl opacity-60" />
               <Image
-                src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80"
+                src="/images/creators/feature2.jpg"
                 alt="Social media influencer"
                 width={400}
                 height={500}
@@ -142,7 +142,7 @@ export default function CreatorsPage() {
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 rounded-2xl opacity-60" />
               <Image
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80"
+                src="/images/creators/feature3.jpg"
                 alt="Blogger writing content"
                 width={400}
                 height={500}

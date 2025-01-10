@@ -5,6 +5,7 @@ import { Button } from '../components/Button';
 import { getBrowserInfo } from '../utils/browserDetection';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
 
 export const getStaticProps: GetStaticProps = async () => {
   return {
@@ -33,22 +34,22 @@ export default function about() {
 
   const values = [
     {
-      icon: <Heart className="w-6 h-6 text-rose-500" />,
+      icon: <Heart className="w-6 h-6 brand" />,
       title: "Compassion First",
       description: "We believe in the power of empathy and kindness to transform lives. Every decision we make starts with asking how we can help others."
     },
     {
-      icon: <Globe className="w-6 h-6 text-rose-500" />,
+      icon: <Globe className="w-6 h-6 brand" />,
       title: "Global Impact",
       description: "Our vision extends beyond borders. We're building a worldwide community of givers who believe in the power of collective action."
     },
     {
-      icon: <Users className="w-6 h-6 text-rose-500" />,
+      icon: <Users className="w-6 h-6 brand" />,
       title: "Community Driven",
       description: "We're powered by people who care. Our community of users, partners, and charities work together to create meaningful change."
     },
     {
-      icon: <Sparkles className="w-6 h-6 text-rose-500" />,
+      icon: <Sparkles className="w-6 h-6 brand" />,
       title: "Innovation for Good",
       description: "We leverage technology to make giving effortless and impactful. Innovation drives our mission to transform everyday actions into forces for good."
     }
@@ -59,10 +60,11 @@ export default function about() {
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=2000" 
+          <Image 
+            src="/images/about/hero.jpg"
             alt="People helping"
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-black/60" />
         </div>
@@ -121,10 +123,11 @@ export default function about() {
               transition={{ duration: 0.6 }}
               className="relative h-[500px] rounded-2xl overflow-hidden"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1000" 
+              <Image 
+                src="/images/about/office.jpg"
                 alt="Impactful charity work"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
             </motion.div>
@@ -144,7 +147,7 @@ export default function about() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-3xl md:text-4xl font-bold text-rose-500 mb-2">
+                <div className="text-3xl md:text-4xl font-bold brand mb-2">
                   {stat.number}
                 </div>
                 <div className="text-gray-600">
@@ -178,7 +181,7 @@ export default function about() {
                 className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="flex items-start gap-4">
-                  <div className="p-2 bg-rose-50 rounded-lg">
+                  <div className="p-2 bg-brand/10 rounded-lg">
                     {value.icon}
                   </div>
                   <div>
@@ -219,10 +222,11 @@ export default function about() {
               transition={{ duration: 0.5 }}
               className="relative rounded-2xl overflow-hidden group"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800" 
+              <Image 
+                src="/images/about/team1.jpg"
                 alt="Education"
-                className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-110"
+                fill
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                 <div className="text-white">
@@ -239,10 +243,11 @@ export default function about() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="relative rounded-2xl overflow-hidden group"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800" 
+              <Image 
+                src="/images/about/team2.jpg"
                 alt="Environment"
-                className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-110"
+                fill
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                 <div className="text-white">
@@ -259,10 +264,11 @@ export default function about() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="relative rounded-2xl overflow-hidden group"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?auto=format&fit=crop&w=800" 
+              <Image 
+                src="/images/about/team3.jpg"
                 alt="Healthcare"
-                className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-110"
+                fill
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                 <div className="text-white">
