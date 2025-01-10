@@ -58,7 +58,7 @@ export default function Home() {
         {/* Community Impact Section */}
         <section className="py-16 sm:py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="text-center mb-12">
+            <div className="text-center mb-16">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 Making a Difference Together
               </h2>

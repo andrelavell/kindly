@@ -49,7 +49,7 @@ export function WhyPeopleSection() {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden bg-gradient-to-b from-white to-brand/5">
+    <section className="py-12 md:py-24 relative overflow-hidden bg-gradient-to-b from-white to-brand/5">
       {/* Background elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(255,228,230,0.3),_transparent_70%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(240,249,250,0.3),_transparent_70%)]" />
@@ -87,7 +87,7 @@ export function WhyPeopleSection() {
           </div>
 
           {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -96,7 +96,7 @@ export function WhyPeopleSection() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={featureVariants}
-                className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
+                className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-sm border border-gray-200/50 hover:shadow-md transition-all duration-300"
                 style={{ willChange: 'transform' }}
               >
                 <div className="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center brand mb-4">

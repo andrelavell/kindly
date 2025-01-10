@@ -25,11 +25,11 @@ export function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Logo and Description */}
             <div>
-              <Link href="/" className="flex items-center space-x-2">
+              <Link href="/" className="flex items-center gap-2">
                 <div className="relative">
-                  <Heart className="w-6 h-6 brand" aria-hidden="true" />
+                  <Heart className="w-6 h-6 text-white" aria-hidden="true" />
                 </div>
-                <span className="text-xl font-bold text-gray-900">Kindly</span>
+                <span className="logo text-3xl text-white">kindly</span>
               </Link>
               <p className="mt-4 text-gray-400">
                 Shop at your favorite stores and support causes you care about.

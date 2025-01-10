@@ -4,7 +4,7 @@ import { Button } from './Button';
 
 export function CallToAction() {
   return (
-    <section className="bg-brand py-24 relative overflow-hidden">
+    <section className="bg-brand py-12 md:py-24 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 opacity-30 mix-blend-overlay bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />

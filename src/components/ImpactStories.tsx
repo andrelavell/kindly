@@ -11,7 +11,7 @@ const storyVariants = {
 
 export function ImpactStories() {
   return (
-    <section className="py-24 relative overflow-hidden bg-white">
+    <section className="py-12 md:py-24 relative overflow-hidden bg-white">
       {/* Background gradient with hardware acceleration */}
       <motion.div 
         className="absolute inset-0 bg-gradient-to-br from-brand/5 via-white to-teal-50/50"

@@ -88,20 +88,22 @@ export function FAQ() {
   const [openCreatorIndex, setOpenCreatorIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-brand/5 relative overflow-hidden">
+    <section className="py-12 md:py-24 bg-gradient-to-b from-white to-brand/5 relative overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 mb-3">
-            <MessageCircle className="w-8 h-8 brand" />
-            <span className="brand font-medium">Got Questions?</span>
+          <div className="flex flex-col items-center">
+            <div className="inline-flex items-center gap-2 mb-4">
+              <MessageCircle className="w-8 h-8 brand" />
+              <span className="brand font-medium">Got Questions?</span>
+            </div>
+            <h2 className="text-3xl font-bold relative inline-block mb-6">
+              Let's Chat About{' '}
+              <span className="relative inline-block">
+                Kindly
+                <span className="absolute -bottom-2 left-0 w-full h-1 bg-brand opacity-30" />
+              </span>
+            </h2>
           </div>
-          <h2 className="text-3xl font-bold relative inline-block">
-            Let's Chat About{' '}
-            <span className="relative inline-block">
-              Kindly
-              <span className="absolute -bottom-2 left-0 w-full h-1 bg-brand opacity-30" />
-            </span>
-          </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Find answers to common questions about how Kindly works, our impact, and how you can make a difference while you shop.
           </p>
