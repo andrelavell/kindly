@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getBrowserInfo } from '../utils/browserDetection';
-import { ChevronDown, Heart } from 'lucide-react';
+import { ChevronDown, Heart, ExternalLink } from 'lucide-react';
 
 export function HowItWorks() {
   const browserInfo = getBrowserInfo();
@@ -319,6 +320,15 @@ export function HowItWorks() {
                     <p className="text-gray-600 text-lg">
                       {step.description}
                     </p>
+                    {step.title === "Shop at Partner Stores" && (
+                      <Link 
+                        href="/stores" 
+                        className="inline-flex items-center gap-2 text-brand hover:text-brand/80 font-medium mt-4 transition-colors"
+                      >
+                        View Supported Stores
+                        <ExternalLink className="w-4 h-4" />
+                      </Link>
+                    )}
                   </div>
                 </div>
                 <div className="flex items-center gap-3 mb-4">

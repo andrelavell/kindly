@@ -13,8 +13,6 @@
 
 /* Use with opacity utilities like: class="brand opacity-50" or "bg-brand opacity-10" */
 
-/* Import the font */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&display=swap');
 
 .logo {
   font-family: 'Fraunces', serif;

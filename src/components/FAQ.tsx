@@ -100,7 +100,6 @@ export function FAQ() {
               Let's Chat About{' '}
               <span className="relative inline-block">
                 Kindly
-                <span className="absolute -bottom-2 left-0 w-full h-1 bg-brand opacity-30" />
               </span>
             </h2>
           </div>

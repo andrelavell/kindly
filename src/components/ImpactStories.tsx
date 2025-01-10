@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { RoughNotation } from "react-rough-notation";
 import { impactStories } from '../utils/impactStories';
 
 const storyVariants = {
@@ -10,6 +11,27 @@ const storyVariants = {
 };
 
 export function ImpactStories() {
+  const roughRef = useRef(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        setIsInView(true);
+      }
+    }, {
+      threshold: 0.5,
+    });
+    if (roughRef.current) {
+      observer.observe(roughRef.current);
+    }
+    return () => {
+      if (roughRef.current) {
+        observer.unobserve(roughRef.current);
+      }
+    };
+  }, []);
+
   return (
     <section className="py-12 md:py-24 relative overflow-hidden bg-white">
       {/* Background gradient with hardware acceleration */}
@@ -40,14 +62,17 @@ export function ImpactStories() {
             >
               See How Your Shopping{' '}
               <span className="relative inline-block">
-                Changes Lives
-                <motion.span
-                  className="absolute -bottom-1.5 left-0 w-full h-0.5 bg-brand opacity-30"
-                  initial={{ width: 0 }}
-                  whileInView={{ width: '100%' }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4, duration: 0.4 }}
-                />
+                <RoughNotation 
+                  type="underline" 
+                  show={isInView}
+                  color="var(--brand-color)"
+                  strokeWidth={2}
+                  padding={2}
+                  iterations={2}
+                  animationDuration={800}
+                >
+                  <span ref={roughRef}>Changes Lives</span>
+                </RoughNotation>
               </span>
             </motion.h2>
             <motion.p 

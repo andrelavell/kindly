@@ -1,6 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Chrome } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import { RoughNotation } from "react-rough-notation";
 import { Button } from './Button';
 import { CommunityFeed } from './CommunityFeed';
 import { getBrowserInfo } from '../utils/browserDetection';
@@ -9,6 +10,8 @@ import { heroConfig } from '../config/heroConfig';
 export function Hero() {
   const browserInfo = getBrowserInfo();
   const { showVideo = false } = heroConfig;
+  const roughRef = useRef(null);
+  const isInView = useInView(roughRef, { once: true });
 
   return (
     <section className={`relative ${showVideo ? 'md:bg-transparent' : ''} bg-white`}>
@@ -54,9 +57,27 @@ export function Hero() {
                 <span className={showVideo ? 'text-gray-900 md:text-white' : 'text-gray-900'}>
                   Turn Everyday Shopping Into
                 </span>{' '}
-                <span className={showVideo ? 'text-gray-900 md:text-white' : 'brand'}>
-                  Life-Changing Acts of Kindness
-                </span>
+                {showVideo ? (
+                  <>
+                    <span className="md:hidden">Life-Changing</span>
+                    <span className="hidden md:inline">
+                      <RoughNotation 
+                        type="underline" 
+                        show={isInView}
+                        color="var(--brand-color)"
+                        strokeWidth={2}
+                        padding={2}
+                        iterations={2}
+                        animationDuration={800}
+                      >
+                        <span ref={roughRef}>Life-Changing</span>
+                      </RoughNotation>
+                    </span>
+                  </>
+                ) : (
+                  "Life-Changing"
+                )}{' '}
+                Acts of Kindness
               </h1>
               
               <p className={`text-base md:text-lg mb-8 leading-relaxed ${

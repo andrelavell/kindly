@@ -31,7 +31,7 @@ export function Navigation() {
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-2">
               <div className="relative" ref={ref}>
-                <Heart className="w-6 h-6 text-brand" aria-hidden="true" />
+                <Heart className="w-[1.6rem] h-[1.6rem] text-brand" aria-hidden="true" />
                 <motion.div 
                   className="absolute inset-0"
                   initial={{ scale: 1, opacity: 0 }}
@@ -46,10 +46,10 @@ export function Navigation() {
                     repeatDelay: 1
                   }}
                 >
-                  <Heart className="w-6 h-6 text-brand" />
+                  <Heart className="w-[1.6rem] h-[1.6rem] text-brand" />
                 </motion.div>
               </div>
-              <Link href="/" className="logo text-3xl text-[#222222]">
+              <Link href="/" className="logo text-[2rem] text-[#222222]">
                 kindly
               </Link>
             </div>

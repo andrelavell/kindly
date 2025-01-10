@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Star, Heart, ShoppingBag, Gift, Sparkles, Users } from 'lucide-react';
+import { RoughNotation } from "react-rough-notation";
 
 const featureVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -48,6 +49,27 @@ export function WhyPeopleSection() {
     }
   ];
 
+  const roughRef = useRef(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        setIsInView(true);
+      }
+    }, {
+      threshold: 1.0,
+    });
+    if (roughRef.current) {
+      observer.observe(roughRef.current);
+    }
+    return () => {
+      if (roughRef.current) {
+        observer.unobserve(roughRef.current);
+      }
+    };
+  }, []);
+
   return (
     <section className="py-12 md:py-24 relative overflow-hidden bg-gradient-to-b from-white to-brand/5">
       {/* Background elements */}
@@ -72,17 +94,21 @@ export function WhyPeopleSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              Why People Love{' '}
+              Why People{' '}
               <span className="relative inline-block">
-                Kindly
-                <motion.span
-                  className="absolute -bottom-2 left-0 w-full h-1 bg-brand opacity-30"
-                  initial={{ width: 0 }}
-                  whileInView={{ width: '100%' }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4, duration: 0.4 }}
-                />
-              </span>
+                <RoughNotation 
+                  type="underline" 
+                  show={isInView}
+                  color="var(--brand-color)"
+                  strokeWidth={2}
+                  padding={2}
+                  iterations={2}
+                  animationDuration={800}
+                >
+                  <span ref={roughRef}>Love</span>
+                </RoughNotation>
+              </span>{' '}
+              Kindly
             </motion.h2>
           </div>
 
