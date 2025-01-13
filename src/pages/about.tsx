@@ -25,13 +25,6 @@ export default function about() {
     setBrowserInfo(getBrowserInfo());
   }, []);
 
-  const stats = [
-    { number: '500+', label: 'Supported Charities' },
-    { number: '$2.5M+', label: 'Impact Generated' },
-    { number: '100K+', label: 'Active Users' },
-    { number: '5000+', label: 'Partner Stores' }
-  ];
-
   const values = [
     {
       icon: <Heart className="w-6 h-6 brand" />,
@@ -135,32 +128,8 @@ export default function about() {
         </div>
       </section>
 
-      {/* Impact Stats */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-3xl md:text-4xl font-bold brand mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-gray-600">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Our Values */}
-      <section className="py-24 bg-white">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">

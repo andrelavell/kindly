@@ -1,6 +1,5 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import dynamic from 'next/dynamic';
 import type { Impact } from '../utils/impactGenerator';
 import { storeBrands } from '../utils/storeBrands';
 
@@ -19,14 +18,6 @@ const formatTimeAgo = (timestamp: number): string => {
 
 const MAX_IMPACTS = 3;
 
-// Dynamically import the ImpactCard component
-const ImpactCard = dynamic(() => import('./ImpactCard'), {
-  ssr: false,
-  loading: () => (
-    <div className="bg-gray-100 rounded-lg p-4 animate-pulse h-24" />
-  ),
-});
-
 interface CommunityFeedProps {
   inHero?: boolean;
   showVideo?: boolean;
@@ -36,6 +27,7 @@ export function CommunityFeed({ inHero = false, showVideo = false }: CommunityFe
   const [currentImpacts, setCurrentImpacts] = useState<Impact[]>([]);
   const [impactGenerator, setImpactGenerator] = useState<typeof import('../utils/impactGenerator')>();
   const [, forceUpdate] = useState({});
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     // Update timestamps every second
@@ -65,15 +57,21 @@ export function CommunityFeed({ inHero = false, showVideo = false }: CommunityFe
         const newImpacts = [newImpact, ...prev].slice(0, 3);
         return newImpacts;
       });
+
+      // Schedule next impact with random delay between 1-5 seconds
+      const nextDelay = Math.floor(Math.random() * 4000) + 1000; // Random between 1000-5000ms
+      timeoutRef.current = setTimeout(generateNewImpact, nextDelay);
     };
 
-    // Add initial delay before first impact
-    const initialDelay = setTimeout(generateNewImpact, 2000);
-    const interval = setInterval(generateNewImpact, 3000);
+    // Add initial delay before first impact (random between 1-5 seconds)
+    const initialDelay = Math.floor(Math.random() * 4000) + 1000;
+    const initialTimeout = setTimeout(generateNewImpact, initialDelay);
 
     return () => {
-      clearTimeout(initialDelay);
-      clearInterval(interval);
+      clearTimeout(initialTimeout);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
     };
   }, [impactGenerator, inHero, showVideo]);
 
@@ -174,7 +172,7 @@ export function CommunityFeed({ inHero = false, showVideo = false }: CommunityFe
                         }>${impact.amount} purchase</span>
                       </div>
                       <p className={`text-sm mt-1 ${
-                        isHeroWithVideo ? 'text-gray-600 md:text-white/90' : 'text-gray-600'
+                        isHeroWithVideo ? 'text-gray-600 md:text-white/90 md:font-bold' : 'text-gray-600'
                       }`}>
                         {impact.impact}
                       </p>

@@ -8,7 +8,10 @@ export default function Document() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#FFFFFF" />
         <meta name="description" content="Kindly - Shop at your favorite stores and support causes you care about. Make a difference with every purchase." />
-        <link rel="icon" href="/favicon.ico" />
+        
+        {/* Favicons */}
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="alternate icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
       </Head>

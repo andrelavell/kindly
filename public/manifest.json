@@ -1,0 +1,17 @@
+{
+  "name": "Kindly",
+  "short_name": "Kindly",
+  "description": "Turn everyday shopping into acts of kindness",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#FF4D8D",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
