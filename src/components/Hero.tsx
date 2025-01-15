@@ -43,13 +43,9 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >            
-              <h2 className={`text-base md:text-lg font-medium mb-4 ${
-                showVideo 
-                  ? 'text-gray-900 md:text-white md:[text-shadow:0_2px_8px_rgba(0,0,0,0.9),0_4px_16px_rgba(0,0,0,0.8),0_8px_24px_rgba(0,0,0,0.7)]' 
-                  : 'text-gray-900'
-              }`}>Make Every Purchase Matter</h2>
+            
               
-              <h1 className={`text-4xl md:text-5xl font-bold mb-6 leading-tight ${
+              <h1 className={`text-4xl md:text-5xl font-bold mb-6 leading-normal ${
                 showVideo 
                   ? 'text-gray-900 md:text-white md:[text-shadow:0_4px_16px_rgba(0,0,0,0.95),0_8px_32px_rgba(0,0,0,0.85),0_16px_48px_rgba(0,0,0,0.75)]'
                   : 'text-gray-900'
@@ -63,7 +59,7 @@ export function Hero() {
                     <span className="hidden md:inline">
                       <RoughNotation 
                         type="underline" 
-                        show={isInView}
+                        show={false}
                         color="var(--brand-color)"
                         strokeWidth={2}
                         padding={2}

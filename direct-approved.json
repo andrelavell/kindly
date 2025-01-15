@@ -1,0 +1,30 @@
+[
+  {
+    "id": "amazon",
+    "name": "Amazon",
+    "network": "direct",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "amazon.com"
+      },
+      {
+        "domain": "*.amazon.com"
+      }
+    ],
+    "category": {
+      "parent": "Marketplace",
+      "child": ""
+    },
+    "affiliateId": "kindly0e0-20",
+    "affiliateLink": "https://www.amazon.com?tag=kindly0e0-20",
+    "description": "The world's largest online retailer offering everything from A to Z.",
+    "regions": [
+      {
+        "name": "United States",
+        "domain": "amazon.com",
+        "tag": "kindly0e0-20"
+      }
+    ]
+  }
+]
