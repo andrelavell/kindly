@@ -9,7 +9,6 @@ import { CallToAction } from '../components/CallToAction'
 import { CommunitySpotlight } from '../components/CommunitySpotlight'
 import { CommunityImpact } from '../components/CommunityImpact'
 import { GetStaticProps } from 'next'
-import { RoughNotation } from "react-rough-notation";
 import { useRef, useState, useEffect } from 'react';
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -75,20 +74,7 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Making a Difference{' '}
-                <span className="relative inline-block">
-                  <RoughNotation 
-                    type="underline" 
-                    show={isInView}
-                    color="var(--brand-color)"
-                    strokeWidth={2}
-                    padding={2}
-                    iterations={2}
-                    animationDuration={800}
-                  >
-                    <span ref={roughRef}>Together</span>
-                  </RoughNotation>
-                </span>
+                Making a Difference Together
               </h2>
               <p className="mt-4 text-lg leading-8 text-gray-600">
                 Every purchase creates positive change. See how our community is transforming lives, one donation at a time.

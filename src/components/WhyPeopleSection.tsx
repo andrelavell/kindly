@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Star, Heart, ShoppingBag, Gift, Sparkles, Users } from 'lucide-react';
-import { RoughNotation } from "react-rough-notation";
 
 const featureVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -89,26 +88,12 @@ export function WhyPeopleSection() {
               Community Love
             </motion.span>
             <motion.h2 
-              className="text-3xl md:text-4xl font-bold mb-6"
+              className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              Why People{' '}
-              <span className="relative inline-block">
-                <RoughNotation 
-                  type="underline" 
-                  show={isInView}
-                  color="var(--brand-color)"
-                  strokeWidth={2}
-                  padding={2}
-                  iterations={2}
-                  animationDuration={800}
-                >
-                  <span ref={roughRef}>Love</span>
-                </RoughNotation>
-              </span>{' '}
-              Kindly
+              Why People Love Kindly
             </motion.h2>
           </div>
 

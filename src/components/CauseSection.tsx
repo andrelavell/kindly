@@ -21,7 +21,7 @@ export function CauseSection() {
   ];
 
   return (
-    <section className="py-12 md:py-24 relative overflow-hidden bg-gray-50">
+    <section className="py-12 md:py-24 relative overflow-hidden bg-white">
       {/* Diagonal background */}
       <div className="absolute inset-0 bg-gradient-to-tr from-white via-gray-50 to-brand/30 -skew-y-6 origin-top-left transform-gpu" />
       

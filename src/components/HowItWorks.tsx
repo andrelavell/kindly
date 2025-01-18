@@ -70,25 +70,46 @@ export function HowItWorks() {
   ];
 
   return (
-    <section className="py-12 md:py-24 bg-[#F2F3F9]">
+    <section className="py-12 md:py-24 bg-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-base font-medium text-brand mb-3">How Kindly Works</h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
-              Making Impact Simple
-            </h3>
-          </motion.div>
-        </div>
+        {/* Left side - Content */}
+        <div className="grid md:grid-cols-[60fr_40fr] gap-12 max-w-7xl mx-auto items-center">
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="max-w-[640px]"
+            >
+              <h2 className="brand font-medium mb-4">How It Works</h2>
+              <h3 className="text-[2.75rem] leading-[1.2] font-bold text-[#0B2742] mb-12">
+                Three Simple Steps to<br />Make a Difference
+              </h3>
+              
+              <div className="space-y-8">
+                {steps.map((step, index) => (
+                  <motion.div
+                    key={step.number}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="flex gap-6"
+                  >
+                    <div className="brand text-xl font-bold">{step.number}</div>
+                    <div>
+                      <h4 className="text-[#0B2742] text-xl font-bold mb-2">{step.title}</h4>
+                      <p className="text-[#536B7D] text-lg">{step.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-7xl mx-auto items-center">
-          {/* Browser Mockup */}
+          {/* Right side - Browser Mockup */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="rounded-2xl shadow-2xl bg-white relative"
@@ -294,48 +315,6 @@ export function HowItWorks() {
               </div>
             </div>
           </motion.div>
-
-          {/* Steps */}
-          <div className="space-y-6">
-            {steps.map((step, index) => (
-              <motion.div
-                key={step.number}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className="bg-white rounded-3xl shadow-lg p-8"
-                style={{ willChange: 'transform' }}
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-brand rounded-full flex items-center justify-center text-white font-medium">
-                      {step.number}
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">
-                      {step.title}
-                    </h4>
-                    <p className="text-gray-600 text-lg">
-                      {step.description}
-                    </p>
-                    {step.title === "Shop at Partner Stores" && (
-                      <Link 
-                        href="/stores" 
-                        className="inline-flex items-center gap-2 text-brand hover:text-brand/80 font-medium mt-4 transition-colors"
-                      >
-                        View Supported Stores
-                        <ExternalLink className="w-4 h-4" />
-                      </Link>
-                    )}
-                  </div>
-                </div>
-                <div className="flex items-center gap-3 mb-4">
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
