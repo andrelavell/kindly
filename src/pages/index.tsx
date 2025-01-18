@@ -48,11 +48,11 @@ export default function Home() {
       </Head>
 
       {/* Pre-launch Banner */}
-      <div className="sticky top-0 z-50 bg-gradient-to-r from-blue-600 to-blue-500 text-white px-4 py-3 shadow-md">
+      <div className="sticky top-0 z-50 bg-[#E7F3EF] text-[#0B2742] px-4 py-3 shadow-md">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-center gap-x-3">
             <div className="flex-1 text-center">
-              <p className="text-sm sm:text-base font-medium">
+              <p className="text-sm sm:text-base">
                 <span className="font-semibold">🚀 Coming Soon!</span>
                 {" "}
                 This is a preview of Kindly. All statistics and impact data shown are simulated examples of how our platform will work after launch.
