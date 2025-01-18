@@ -20,16 +20,25 @@ export function Hero() {
         <div className="hidden md:block absolute inset-0 w-full h-full overflow-hidden">
           <div className="absolute inset-0 bg-black/10" /> {/* Subtle dark overlay */}
           <div className="absolute inset-0 bg-black/65 z-[1]" />
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover z-0"
-          >
-            <source src="https://res.cloudinary.com/dvgf0xsjq/video/upload/v1736475895/6740283-uhd_3840_2160_30fps_1_cxjgs4.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <div className="absolute inset-0 w-full h-full">
+            <div style={{ position: 'relative', width: '100vw', height: '100%', overflow: 'hidden' }}>
+              <iframe
+                src="https://iframe.mediadelivery.net/embed/371157/eaf3d327-988e-41e6-a5d4-95fdc4d6b181?autoplay=true&loop=true&muted=true&preload=true"
+                style={{ 
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  width: '177.77777778vh', /* 16:9 aspect ratio */
+                  minWidth: '100%',
+                  minHeight: '56.25vw', /* 16:9 aspect ratio */
+                  transform: 'translate(-50%, -50%)',
+                  border: 'none'
+                }}
+                allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                allowFullScreen={true}
+              ></iframe>
+            </div>
+          </div>
         </div>
       )}
 
