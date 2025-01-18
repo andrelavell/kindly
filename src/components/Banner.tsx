@@ -7,7 +7,7 @@ export function Banner() {
     <motion.div
       initial={{ opacity: 0, y: 50, x: 50 }}
       animate={{ opacity: 1, y: 0, x: 0 }}
-      className="fixed bottom-4 right-4 z-50 max-w-sm bg-[#E7F3EF] rounded-2xl shadow-xl overflow-hidden"
+      className="fixed bottom-4 right-4 z-50 max-w-[320px] bg-[#E7F3EF] bg-opacity-95 backdrop-blur-[2px] rounded-2xl shadow-xl overflow-hidden"
     >
       <div className="p-6">
         <div className="flex items-start">

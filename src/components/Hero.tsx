@@ -37,7 +37,7 @@ export function Hero() {
               transition={{ duration: 0.8 }}
               className="max-w-[640px] mx-auto md:mx-0"
             >
-              <h1 className="text-[2.75rem] leading-[1.2] font-bold text-[#0B2742] mb-6">
+              <h1 className="text-[2.75rem] leading-[1.1] font-bold text-[#0B2742] mb-6">
                 Turn Everyday Shopping Into Life-Changing Acts of Kindness
               </h1>
               <p className="text-xl text-[#536B7D] mb-8">
