@@ -1,9 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, ShoppingBag, Shield, TrendingUp, Users, ArrowRight, CheckCircle, XCircle } from 'lucide-react';
-import Image from 'next/image';
 import Head from 'next/head';
-import { Button } from '../components/Button';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -29,17 +27,6 @@ export default function MerchantsPage() {
 
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800 text-white">
-        <div className="absolute inset-0 overflow-hidden">
-          <Image
-            src="/images/merchants/hero.jpg"
-            alt="Shopping with purpose"
-            fill
-            className="object-cover opacity-20"
-            priority
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/80" />
-        
         <div className="container mx-auto px-4 relative">
           <motion.div 
             className="max-w-4xl mx-auto text-center"
@@ -49,7 +36,7 @@ export default function MerchantsPage() {
           >
             <motion.div variants={fadeIn} className="mb-6">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-500/10 text-rose-300 text-sm font-medium">
-                <ShoppingBag className="w-4 h-4" />
+                <Heart className="w-4 h-4" fill="currentColor" />
                 For Merchants
               </span>
             </motion.div>
@@ -58,27 +45,27 @@ export default function MerchantsPage() {
               variants={fadeIn}
               className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300"
             >
-              Transform Shopping Into Purpose-Driven Impact
+              Turn Every Purchase Into Purpose
             </motion.h1>
             
             <motion.p 
               variants={fadeIn}
               className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto"
             >
-              Partner with Kindly to enable purpose-driven shopping while boosting conversion rates
+              Partner with Kindly to transform your customer transactions into meaningful impact while boosting conversion rates through our innovative platform.
             </motion.p>
             
             <motion.div 
               variants={fadeIn}
               className="flex flex-wrap gap-4 justify-center"
             >
-              <Button 
-                href="mailto:hello@joinkindly.org?subject=Partner%20with%20Kindly" 
+              <a 
+                href="/contact"
                 className="inline-flex items-center gap-2 bg-rose-500 text-white px-8 py-4 rounded-lg font-medium hover:bg-rose-600 transition-colors"
               >
                 Partner With Us
                 <ArrowRight className="w-5 h-5" />
-              </Button>
+              </a>
             </motion.div>
           </motion.div>
         </div>
@@ -233,13 +220,13 @@ export default function MerchantsPage() {
                   </p>
                   <div className="flex gap-3 justify-center mb-4">
                     <a 
-                      href="mailto:hello@joinkindly.org?subject=Partner%20with%20Kindly" 
+                      href="/contact"
                       className="px-4 py-2 bg-white text-gray-600 border border-rose-500 rounded-lg font-medium hover:bg-gray-50 transition-colors"
                     >
                       Support Creator
                     </a>
                     <a 
-                      href="mailto:hello@joinkindly.org?subject=Partner%20with%20Kindly" 
+                      href="/contact"
                       className="px-4 py-2 bg-rose-500 text-white border-none rounded-lg font-medium hover:bg-rose-600 transition-colors"
                     >
                       Donate to Charity
@@ -268,13 +255,15 @@ export default function MerchantsPage() {
             <p className="text-xl text-gray-600 mb-8">
               Join Kindly early to shape the future of purpose-driven shopping
             </p>
-            <Button 
-              href="mailto:hello@joinkindly.org?subject=Partner%20with%20Kindly"
-              className="inline-flex items-center gap-2 bg-rose-500 text-white px-8 py-4 rounded-lg font-medium hover:bg-rose-600 transition-colors"
-            >
-              Partner With Us
-              <ArrowRight className="w-5 h-5" />
-            </Button>
+            <div className="flex gap-3 justify-center">
+              <a 
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-rose-500 text-white px-8 py-4 rounded-lg font-medium hover:bg-rose-600 transition-colors"
+              >
+                Partner With Us
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
