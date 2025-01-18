@@ -44,6 +44,60 @@ run-awin  # Update AWIN merchants
 run-cj    # Update CJ merchants
 ```
 
+## Available Commands
+
+We have several commands to manage our affiliate merchant data:
+
+### Main Command
+
+- `update-merchants`: Updates all merchant data from every network and combines them into a single file
+  - Fetches latest merchants from CJ
+  - Fetches latest merchants from AWIN
+  - Combines CJ, AWIN, and direct merchants into `approved-merchants.json`
+
+### Individual Network Commands
+
+- `run-cj`: Updates only Commission Junction (CJ) merchants
+  - Fetches latest data from CJ's API
+  - Updates `cj-approved.json`
+  - Automatically updates the combined `approved-merchants.json`
+
+- `run-awin`: Updates only AWIN merchants
+  - Fetches latest data from AWIN's API
+  - Updates `awin-approved.json`
+  - Automatically updates the combined `approved-merchants.json`
+
+- `run-direct`: Updates master file with direct merchant changes
+  - No API calls (just combines existing files)
+  - Use after editing `direct-approved.json`
+  - Updates the combined `approved-merchants.json`
+
+### Output Files
+
+- `approved-merchants.json`: Master file containing all approved merchants from all networks
+- `cj-approved.json`: Commission Junction merchants only
+- `awin-approved.json`: AWIN merchants only
+- `direct-approved.json`: Direct affiliate relationships (e.g., Amazon, eBay)
+
+### Workflow
+
+1. To update all merchant data at once:
+```bash
+update-merchants
+```
+
+2. To update a specific network:
+```bash
+run-cj     # For CJ merchants only
+run-awin   # For AWIN merchants only
+run-direct # After editing direct-approved.json
+```
+
+3. For direct merchants (Amazon, eBay, etc.):
+   - Edit `direct-approved.json` manually
+   - Run `run-direct` to refresh the combined file
+   - Or run `update-merchants` to update everything
+
 ## Network-Specific Details
 
 ### AWIN

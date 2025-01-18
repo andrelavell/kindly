@@ -19,11 +19,109 @@
     "affiliateId": "kindly0e0-20",
     "affiliateLink": "https://www.amazon.com?tag=kindly0e0-20",
     "description": "The world's largest online retailer offering everything from A to Z.",
-    "regions": [
+    "commissions": [
       {
-        "name": "United States",
-        "domain": "amazon.com",
-        "tag": "kindly0e0-20"
+        "category": "Amazon Games",
+        "rate": "20%"
+      },
+      {
+        "category": "Luxury Beauty, Luxury Stores Beauty, Amazon Explore",
+        "rate": "10%"
+      },
+      {
+        "category": "Digital Music, Physical Music, Handmade, Digital Videos",
+        "rate": "5%"
+      },
+      {
+        "category": "Physical Books, Kitchen, Automotive",
+        "rate": "4.5%"
+      },
+      {
+        "category": "Amazon Fire Tablet Devices, Amazon Kindle Devices, Amazon Fashion Women's, Men's & Kids Private Label, Luxury Stores Fashion, Apparel, Amazon Cloud Cam Devices, Fire TV Edition Smart TVs, Amazon Fire TV Devices, Amazon Echo Devices, Ring Devices, Watches, Jewelry, Luggage, Shoes, and Handbags & Accessories",
+        "rate": "4%"
+      },
+      {
+        "category": "Toys, Furniture, Home, Home Improvement, Lawn & Garden, Pets Products, Headphones, Beauty, Musical Instruments, Business & Industrial Supplies, Outdoor, Tools, Sports, Baby Products",
+        "rate": "3%"
+      },
+      {
+        "category": "PCs, PC Components, DVD & Blu-Ray",
+        "rate": "2.5%"
+      },
+      {
+        "category": "Televisions, Digital Video Games",
+        "rate": "2%"
+      },
+      {
+        "category": "Amazon Fresh, Physical Video Games & Video Game Consoles, Grocery, Health & Personal Care",
+        "rate": "1%"
+      },
+      {
+        "category": "Gift Cards, Vehicles, Wireless Service Plans",
+        "rate": "0%"
+      }
+    ]
+  },
+  {
+    "id": "ebay",
+    "name": "eBay",
+    "network": "direct",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "ebay.com"
+      },
+      {
+        "domain": "*.ebay.com"
+      }
+    ],
+    "category": {
+      "parent": "Marketplace",
+      "child": ""
+    },
+    "affiliateId": "5339097019",
+    "affiliateLink": "https://www.ebay.com/?mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339097019&customid=&toolid=10001&mkevt=1",
+    "description": "The world's leading online marketplace for new and used goods.",
+    "commissions": [
+      {
+        "category": "Watches (New Only), Jewelry & Accessories",
+        "rate": "4%"
+      },
+      {
+        "category": "Collectibles, Art",
+        "rate": "3%"
+      },
+      {
+        "category": "Computers/Tablets & Networking, Cell Phones & Accessories",
+        "rate": "2.5%"
+      },
+      {
+        "category": "Fashion",
+        "rate": "2.4%"
+      },
+      {
+        "category": "Parts & Accessories",
+        "rate": "2.3%"
+      },
+      {
+        "category": "Home & Garden, Sporting Goods",
+        "rate": "2.2%"
+      },
+      {
+        "category": "Consumer Electronics",
+        "rate": "2.1%"
+      },
+      {
+        "category": "Books, Movies & TV, Music",
+        "rate": "2%"
+      },
+      {
+        "category": "Business & Industrial",
+        "rate": "1.8%"
+      },
+      {
+        "category": "Everything Else",
+        "rate": "1%"
       }
     ]
   }

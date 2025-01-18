@@ -4,6 +4,10 @@ import requests
 import time
 import os
 
+# Get the project root directory (parent of scripts directory)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CJ_APPROVED_FILE = os.path.join(PROJECT_ROOT, 'cj-approved.json')
+
 # CJ.com API configuration
 API_TOKEN = '6ay1sz7r3jq7j0g1egr9986pmx'
 BASE_URL = 'https://advertiser-lookup.api.cj.com/v2/advertiser-lookup'
@@ -18,11 +22,25 @@ def safe_find_text(element, path, default=''):
 def get_previous_merchants():
     """Get previously saved merchant data."""
     try:
-        with open('../cj-approved.json', 'r') as f:
+        with open(CJ_APPROVED_FILE, 'r') as f:
             data = json.load(f)
             return {m['id']: m['name'] for m in data}
     except FileNotFoundError:
         return {}
+
+def atomic_write_json(filepath, data):
+    """Write JSON data atomically using a temporary file."""
+    temp_file = filepath + '.tmp'
+    try:
+        with open(temp_file, 'w') as f:
+            json.dump(data, f, indent=2)
+        os.replace(temp_file, filepath)  # Atomic operation
+        return True
+    except Exception as e:
+        print(f"Error writing to {filepath}: {str(e)}")
+        if os.path.exists(temp_file):
+            os.remove(temp_file)
+        return False
 
 def clean_domain(url):
     """Clean a URL to get just the domain and create wildcard version."""
@@ -174,30 +192,44 @@ def fetch_advertisers():
 
 def main():
     """Main function to fetch and save CJ.com advertisers data."""
-    # Get previous merchant data
-    previous_merchants = get_previous_merchants()
-    
-    print("\nFetching advertisers from CJ.com API...")
-    advertisers = fetch_advertisers()
-    
-    # Track new merchants
-    new_merchants = []
-    for advertiser in advertisers:
-        if advertiser['id'] not in previous_merchants:
-            new_merchants.append(f"- {advertiser['name']} (ID: {advertiser['id']})")
-    
-    # Save the complete data
-    with open('../cj-approved.json', 'w') as f:
-        json.dump(advertisers, f, indent=2)
-    
-    # Print summary
-    if new_merchants:
-        print(f"\n{len(new_merchants)} new merchant(s) added:")
-        print("\n".join(new_merchants))
-    else:
-        print("\nNo new merchants added.")
-    
-    print(f"\nTotal merchants: {len(advertisers)}")
+    try:
+        # Get previous merchant data
+        previous_merchants = get_previous_merchants()
+        
+        print("\nFetching advertisers from CJ.com API...")
+        advertisers = fetch_advertisers()
+        
+        if not advertisers:
+            print("Error: No advertisers fetched from API")
+            return
+        
+        # Track new merchants
+        new_merchants = []
+        for advertiser in advertisers:
+            if advertiser['id'] not in previous_merchants:
+                new_merchants.append(f"- {advertiser['name']} (ID: {advertiser['id']})")
+        
+        # Save the complete data atomically
+        if atomic_write_json(CJ_APPROVED_FILE, advertisers):
+            print(f"Successfully wrote {len(advertisers)} merchants to file")
+            
+            # Print summary
+            if new_merchants:
+                print(f"\n{len(new_merchants)} new merchant(s) added:")
+                print("\n".join(new_merchants))
+            else:
+                print("\nNo new merchants added.")
+            
+            print(f"\nTotal merchants: {len(advertisers)}")
+            
+            # Update combined merchants file
+            import update_merchants
+            update_merchants.update_merchants()
+        else:
+            print("Failed to write merchants to file")
+            
+    except Exception as e:
+        print(f"Error in main function: {str(e)}")
 
 if __name__ == '__main__':
     main()
