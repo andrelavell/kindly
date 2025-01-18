@@ -34,8 +34,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Kindly - Shop & Support Causes You Care About</title>
-        <meta name="description" content="Transform your everyday shopping into meaningful support for causes you care about. Join Kindly and make every purchase count." />
+        <title>Kindly - Turn Shopping into Acts of Kindness</title>
+        <meta name="description" content="Shop at your favorite stores and support causes you care about, at no extra cost." />
         <meta property="og:title" content="Kindly - Shop & Support Causes You Care About" />
         <meta property="og:description" content="Transform your everyday shopping into meaningful support for causes you care about. Join Kindly and make every purchase count." />
         <meta property="og:type" content="website" />
@@ -46,21 +46,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://kindly.com" />
       </Head>
-
-      {/* Pre-launch Banner */}
-      <div className="sticky top-0 z-50 bg-[#E7F3EF] text-[#0B2742] px-4 py-3 shadow-md">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-center gap-x-3">
-            <div className="flex-1 text-center">
-              <p className="text-sm sm:text-base">
-                <span className="font-semibold">Coming Soon!</span>
-                {" "}
-                This is a preview of Kindly. All statistics and impact data shown are simulated examples of how our platform will work after launch.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <main>
         <Hero />

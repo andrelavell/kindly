@@ -1,22 +1,27 @@
 import React from 'react';
-import { getBrowserInfo } from '../utils/browserDetection';
-import { ArrowRight, X } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export function Banner() {
-  const onClose = () => {
-    // Add your close logic here
-  };
-
-  // Return null to completely hide the banner
   return (
-    <div>
-      <button
-        onClick={onClose}
-        className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-500"
-        aria-label="Close banner"
-      >
-        <X className="h-5 w-5" aria-hidden="true" />
-      </button>
-    </div>
+    <motion.div
+      initial={{ opacity: 0, y: 50, x: 50 }}
+      animate={{ opacity: 1, y: 0, x: 0 }}
+      className="fixed bottom-4 right-4 z-50 max-w-sm bg-[#E7F3EF] rounded-2xl shadow-xl overflow-hidden"
+    >
+      <div className="p-6">
+        <div className="flex items-start">
+          <div className="flex-1">
+            <div className="flex items-center gap-2 mb-2">
+              <Sparkles className="w-5 h-5 text-brand animate-pulse" />
+              <span className="font-semibold text-brand">Coming Soon!</span>
+            </div>
+            <p className="text-sm text-[#0B2742] leading-relaxed">
+              This is a preview of Kindly. All statistics and impact data shown are simulated examples of how our platform will work after launch.
+            </p>
+          </div>
+        </div>
+      </div>
+    </motion.div>
   );
 }

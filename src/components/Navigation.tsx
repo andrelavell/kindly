@@ -27,8 +27,9 @@ export function Navigation() {
     <nav className="relative z-50 py-4 border-b border-gray-100 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center gap-2">
+          <div className="flex justify-between items-center gap-x-8">
+            {/* Left side */}
+            <div className="flex items-center gap-2 flex-shrink-0">
               <div className="relative" ref={ref}>
                 <Heart className="w-[1.6rem] h-[1.6rem] text-brand" aria-hidden="true" />
                 <motion.div 
