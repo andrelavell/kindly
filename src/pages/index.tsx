@@ -53,7 +53,7 @@ export default function Home() {
           <div className="flex items-center justify-center gap-x-3">
             <div className="flex-1 text-center">
               <p className="text-sm sm:text-base">
-                <span className="font-semibold">🚀 Coming Soon!</span>
+                <span className="font-semibold">Coming Soon!</span>
                 {" "}
                 This is a preview of Kindly. All statistics and impact data shown are simulated examples of how our platform will work after launch.
               </p>
