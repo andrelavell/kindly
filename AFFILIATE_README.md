@@ -6,12 +6,14 @@ This tool automatically fetches and updates information about approved merchants
 ## File Structure
 ### Scripts
 - `fetch_awin_data.py` - Fetches AWIN merchant data
+- `fetch_awin_declined.py` - Fetches AWIN declined/rejected merchant data
 - `fetch_cj_data.py` - Fetches CJ Affiliate merchant data
 - `run-awin` - Command-line shortcut for AWIN updates
 - `run-cj` - Command-line shortcut for CJ updates
 
 ### Data Files
 - `awin-approved.json` - Processed AWIN merchant data
+- `awin-declined.json` - Processed AWIN declined merchant data
 - `cj-approved.json` - Processed CJ merchant data
 
 ## Merchant Data Structure
@@ -64,7 +66,7 @@ We have several commands to manage our affiliate merchant data:
 
 - `run-awin`: Updates only AWIN merchants
   - Fetches latest data from AWIN's API
-  - Updates `awin-approved.json`
+  - Updates `awin-approved.json` and `awin-declined.json`
   - Automatically updates the combined `approved-merchants.json`
 
 - `run-direct`: Updates master file with direct merchant changes
@@ -77,6 +79,7 @@ We have several commands to manage our affiliate merchant data:
 - `approved-merchants.json`: Master file containing all approved merchants from all networks
 - `cj-approved.json`: Commission Junction merchants only
 - `awin-approved.json`: AWIN merchants only
+- `awin-declined.json`: AWIN declined merchants only
 - `direct-approved.json`: Direct affiliate relationships (e.g., Amazon, eBay)
 
 ### Workflow

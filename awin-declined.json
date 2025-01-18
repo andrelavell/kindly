@@ -1,0 +1,1548 @@
+[
+  {
+    "id": "6220",
+    "name": "Etsy (US)",
+    "network": "awin",
+    "description": "Etsy's affiliate program offers content creators the opportunity to earn commission for sharing one-of-a-kind items from Etsy's global marketplace. Join the program today to get paid doing what you love!",
+    "displayUrl": "https://www.etsy.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/6220.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=6220&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Department Stores",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "*.etsy.com"
+      },
+      {
+        "domain": "*.etsy.me"
+      },
+      {
+        "domain": "www.etsy.com"
+      },
+      {
+        "domain": "etsy.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "6776",
+    "name": "Booking.com North America",
+    "network": "awin",
+    "description": "Booking.com is the world leader in booking accommodations online. Each day, over 1M room nights are reserved on Booking.com. Booking.com offers 29M listings worldwide and is available 24/7 in 45 languages and dialects.",
+    "displayUrl": "https://www.booking.com",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/6776.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=6776&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Hotels & Accommodation",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "*.booking.com"
+      },
+      {
+        "domain": "www.booking.com"
+      },
+      {
+        "domain": "booking.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "7874",
+    "name": "Qustodio",
+    "network": "awin",
+    "description": "Qustodio is the leading parental control app for families worldwide. Our solutions empower parents to have greater visibility into their kids\u2019 online activity. Join and start earning up to 20% commission! Team up with the biggest player in the market.",
+    "displayUrl": "https://www.qustodio.com",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/7874.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=7874&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Software Downloads",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "www.qustodio.com"
+      },
+      {
+        "domain": "*.qustodio.com"
+      },
+      {
+        "domain": "www.cleverbridge.com"
+      },
+      {
+        "domain": "qustodio.chargebee.com"
+      },
+      {
+        "domain": "qustodio-test.chargebee.com"
+      },
+      {
+        "domain": "qustodio.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "18120",
+    "name": "Booking.com Brazil",
+    "network": "awin",
+    "description": "Booking.com is the world leader in booking accommodations online. Each day, over 1M room nights are reserved on Booking.com. Booking.com offers 29M listings worldwide and is available 24/7 in 45 languages and dialects.",
+    "displayUrl": "https://www.booking.com/index.html",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/18120.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=18120&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Hotels & Accommodation",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "*.booking.com"
+      },
+      {
+        "domain": "www.booking.com"
+      },
+      {
+        "domain": "booking.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "18709",
+    "name": "Tiller Money (US)",
+    "network": "awin",
+    "description": "Tiller connects 21,000 banks to your spreadsheets and automatically updates them with your spending, balances, and net worth each day. Track everything in one place with flexible templates and no ads. Free 30-day trial!",
+    "displayUrl": "https://www.tillerhq.com",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/18709.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=18709&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Personal Banking",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "*.tillerhq.com"
+      },
+      {
+        "domain": "www.tillerhq.com"
+      },
+      {
+        "domain": "*.tillermoney.com"
+      },
+      {
+        "domain": "tillermoney.com"
+      },
+      {
+        "domain": "www.tiller.money.com"
+      },
+      {
+        "domain": "tillerhq.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "20746",
+    "name": "ScholarshipOwl (US)",
+    "network": "awin",
+    "description": "ScholarshipOwl is an innovative platform designed to dramatically speed up scholarship application time.  Unique scholarship search engine that matches students with the award opportunities that are based on their personality, grades, lifestyle, and more.",
+    "displayUrl": "https://scholarshipowl.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/20746.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=20746&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Lead Gen",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "*.scholarshipowl.com"
+      },
+      {
+        "domain": "scholarshipowl.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "30151",
+    "name": "Concept2 US",
+    "network": "awin",
+    "description": "Concept2 have made world class products since 1976. Our oars have become the oar of choice among the world\u2019s rowers, while the Concept2 RowErg is recognizable worldwide. Our product line now includes oars, RowErgs, the SkiErg and the Concept2 BikeErg.",
+    "displayUrl": "https://shop.concept2.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/30151.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=30151&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Sports Equipment",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "shop.concept2.com"
+      },
+      {
+        "domain": "*.shop.concept2.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "31906",
+    "name": "Mugsy Jeans (US)",
+    "network": "awin",
+    "description": "The best stretch fit apparel for men specializing in jeans and chinos.",
+    "displayUrl": "https://mugsyjeans.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/31906.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=31906&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Menswear",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "mugsyjeans.com"
+      },
+      {
+        "domain": "*.mugsyjeans.com"
+      },
+      {
+        "domain": "mugsy-2.myshopify.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "32843",
+    "name": "GOL Linhas Aereas (Global)",
+    "network": "awin",
+    "description": "A Gol \u00e9 a primeira companhia a\u00e9rea do Brasil a vender passagens de baixo custo e a empresa de avia\u00e7\u00e3o que mais transporta passageiros no pa\u00eds.",
+    "displayUrl": "https://www.voegol.com.br/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/32843.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=32843&id=1818430",
+    "currencyCode": "BRL",
+    "status": "Active",
+    "category": {
+      "parent": "Airlines",
+      "child": ""
+    },
+    "primaryRegion": "Brazil",
+    "validDomains": [
+      {
+        "domain": "voegol.com.br"
+      },
+      {
+        "domain": "*.voegol.com.br"
+      },
+      {
+        "domain": "*.b2c.voegol.com.br"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "47153",
+    "name": "Sunjoy Group (US)",
+    "network": "awin",
+    "description": "Market leader and innovator in the home and garden vertical, with a focus on beautiful, ready-to-assemble gazebos, pergolas, and furniture.  Additional categories include off-grid camping and overlanding accessories, and home decor.",
+    "displayUrl": "https://sunjoyshop.com",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/47153.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=47153&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "sunjoyshop.com"
+      },
+      {
+        "domain": "*.sunjoyshop.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "49127",
+    "name": "Generali Travel Insurance (US)",
+    "network": "awin",
+    "description": "Generali Travel Insurance is designed for consumers who want to #TravelSmarter. Our travel insurance plans include Trip Cancellation, Trip Interruption, Baggage, Emergency Medical, and more. Named one of the best companies by Forbes and TopTenReviews.com.",
+    "displayUrl": "https://www.generalitravelinsurance.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/49127.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=49127&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Insurance",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "generalitravelinsurance.com"
+      },
+      {
+        "domain": "*.generalitravelinsurance.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "49569",
+    "name": "ITA Airways (US)",
+    "network": "awin",
+    "description": "ITA Airways\u00a0 is a company\u00a0totally\u00a0owned by the\u00a0Italian\u00a0Ministry of Economy and Finance for the exercise of business in the air transport sector.\u00a0The\u00a0airline\u00a0has been active since November 2020.",
+    "displayUrl": "https://www.ita-airways.com/en_us/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/49569.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=49569&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Airlines",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "ita-airways.com"
+      },
+      {
+        "domain": "*.ita-airways.com"
+      },
+      {
+        "domain": "ad.doubleclick.net"
+      },
+      {
+        "domain": "*.ad.doubleclick.net"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "51597",
+    "name": "Revelry (US)",
+    "network": "awin",
+    "description": "Revelry is a direct-to-consumer wedding party attire brand, with home try-on before you buy. Most pieces are made-to-order, which allows us to offer hundreds of styles, colors and fabrics. We also offer sizes 0-36, with inclusivity at our core.",
+    "displayUrl": "https://shoprevelry.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/51597.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=51597&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Clothing",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "shoprevelry.com"
+      },
+      {
+        "domain": "*.shoprevelry.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "53273",
+    "name": "College Insights (US)",
+    "network": "awin",
+    "description": "College Insights specializes in personal and powerful college admissions support. We are starting our 8th year of supporting students from grades 8-12 in academic advising, financial aid and scholarship help, and applying to colleges.",
+    "displayUrl": "http://www.collegeinsights.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/53273.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=53273&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Savings & Investments",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "collegeinsights.com"
+      },
+      {
+        "domain": "*.collegeinsights.com"
+      },
+      {
+        "domain": "offer.collegeinsights.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "53581",
+    "name": "Brill US",
+    "network": "awin",
+    "description": "Brill\u2019s publications focus on the Humanities and Social Sciences, International Law and selected areas in the Sciences. Brill publications also include\u00a0several major imprints\u00a0with a distinguished history of publishing high quality and successful titles.",
+    "displayUrl": "https://brill.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/53581.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=53581&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Books & Subscriptions",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "brill.com"
+      },
+      {
+        "domain": "*.brill.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "53817",
+    "name": "Mood Fabrics (US)",
+    "network": "awin",
+    "description": "Discover the world's premier fashion fabric destination with the Mood Fabrics Affiliate Program! Sign up today and unlock lucrative commissions by promoting our unparalleled selection of premium, high-quality fabrics, buttons, trimmings and notions.",
+    "displayUrl": "http://www.moodfabrics.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/53817.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=53817&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "moodfabrics.com"
+      },
+      {
+        "domain": "*.moodfabrics.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "58339",
+    "name": "Waterford (US)",
+    "network": "awin",
+    "description": "Waterford is a leading provider of luxury home and lifestyle products sold worldwide. It is forever captivating with its timeless elegance.",
+    "displayUrl": "https://waterford.com/en-us/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/58339.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=58339&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "waterford.com"
+      },
+      {
+        "domain": "*.waterford.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "59063",
+    "name": "FRANZIS GmbH (US)",
+    "network": "awin",
+    "description": "FRANZIS\u00ae is a german publishing house and provides image-editing software for windows and mac to sharpen, denoise, cutout and improve photos with just one click. The award-winning tools can be used stand-alone or as Photoshop\u00ae  Lightroom\u00ae PlugIn",
+    "displayUrl": "https://www.projects-software.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/59063.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=59063&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Photography",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "projects-software.com"
+      },
+      {
+        "domain": "*.projects-software.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "60685",
+    "name": "AirFiltersDelivered (US)",
+    "network": "awin",
+    "description": "The mission of Air Filters Delivered is to make the world safer, healthier, and more productive. Join us as we journey toward this goal. Sign up now to become part of the transformation. Commission rate starts at 5%.",
+    "displayUrl": "http://www.airfiltersdelivered.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/60685.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=60685&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "airfiltersdelivered.com"
+      },
+      {
+        "domain": "*.airfiltersdelivered.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "60701",
+    "name": "boohooMAN (US & Canada)",
+    "network": "awin",
+    "description": "boohooMAN is fashions best kept secret in menswear. Focusing on clothing, footwear and accessories, like it's sister site there is an emphasis on choice, with new styles dropping every week.  Combining cutting edge design with an affordable price tag.",
+    "displayUrl": "https://www.boohooman.com/us/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/60701.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=60701&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Menswear",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "*.boohooman.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "60703",
+    "name": "boohoo (US & Canada)",
+    "network": "awin",
+    "description": "From Manchester\u2019s best-kept fashion secret to one of the fastest growing international online fashion retailers, boohoo.com has quickly become a global trendsetter of its generation.",
+    "displayUrl": "https://us.boohoo.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/60703.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=60703&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Clothing",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "boohoo.com"
+      },
+      {
+        "domain": "*.boohoo.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "63546",
+    "name": "Chef Paw (US)",
+    "network": "awin",
+    "description": "Introducing your revolutionary countertop pet food maker, simplifying the process of crafting fresh and highly-nutritional dog food right in your own home.",
+    "displayUrl": "https://www.chefpaw.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/63546.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=63546&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Pets & Pet Care",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "chefpaw.com"
+      },
+      {
+        "domain": "*.chefpaw.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "69024",
+    "name": "Awaken 180 Weight Loss (US)",
+    "network": "awin",
+    "description": "Awaken180\u00b0 Weightloss is a premium weight loss service with personalized, science-based nutrition plans and ongoing 1:1 coaching. We make losing weight easy with quick, long-lasting results allowing you to reclaim your life!",
+    "displayUrl": "https://awaken180weightloss.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/69024.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=69024&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "awaken180weightloss.com"
+      },
+      {
+        "domain": "*.awaken180weightloss.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "71165",
+    "name": "GE Professional Discounts (US)",
+    "network": "awin",
+    "description": "For more than 100 years, GE Appliances has been a trusted name, synonymous with quality and reliability. When you buy from us, you don't just get an appliance, you become a member of our family \u2014 a family you can rely on for the life of your appliance.",
+    "displayUrl": "https://www.myapstore.com/GEStore/idme/idmeout",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/71165.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=71165&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "geastore.com"
+      },
+      {
+        "domain": "*.geastore.com"
+      },
+      {
+        "domain": "myapstore.com"
+      },
+      {
+        "domain": "*.myapstore.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "71237",
+    "name": "Dr. Talbot\u2019s (US)",
+    "network": "awin",
+    "description": "Dr. Talbot\u2019s is a family wellness brand established in the United States in 2011. Our vision is to offer the best naturally inspired wellness products that help parents look after their children in better, more effective ways.",
+    "displayUrl": "https://drtalbots.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/71237.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=71237&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Baby & Toddler",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "drtalbots.com"
+      },
+      {
+        "domain": "*.drtalbots.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "76736",
+    "name": "iHerb ROW",
+    "network": "awin",
+    "description": "iHerb is a global health and wellness company selling over 50,000 vitamins, supplements, beauty, grocery, home goods, and more! Orders ship directly from our climate controlled warehouse to over 180 countries.",
+    "displayUrl": "https://iherb.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/76736.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=76736&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "iherb.com"
+      },
+      {
+        "domain": "*.iherb.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "77376",
+    "name": "McGee & Co. (US)",
+    "network": "awin",
+    "description": "McGee and Co. is an interior brand created by Studio McGee. Offering designer pieces that make the home look (and feel) truly beautiful, we have curated and designed every product in our catalogue alongside Shea McGee.",
+    "displayUrl": "https://www.mcgeeandco.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/77376.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=77376&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "mcgeeandco.com"
+      },
+      {
+        "domain": "*.mcgeeandco.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "78406",
+    "name": "Badgley Mischka (US & CA)",
+    "network": "awin",
+    "description": "Badgley Mischka defines timeless glamour that creates confidence and passion for over 35 years. They have styled timeless women such as Kate Winslet, Helen Mirren, Ashley Judd, and more.",
+    "displayUrl": "https://www.badgleymischka.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/78406.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=78406&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Clothing",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "badgleymischka.com"
+      },
+      {
+        "domain": "*.badgleymischka.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "78538",
+    "name": "Timeular (US)",
+    "network": "awin",
+    "description": "We\u2019ve invented the world's first physical time tracking device, bundled many easy time and leave tracking methods into one product, including automatic time tracking, and combined it with powerful reports, time saving automations, and smart integrations.",
+    "displayUrl": "https://www.timeular.com",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/78538.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=78538&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Business Services (B2B)",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "timeular.com"
+      },
+      {
+        "domain": "*.timeular.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "78540",
+    "name": "Zotter Chocolates LLC & Awin '24",
+    "network": "awin",
+    "description": "Handcrafted, bean-to-bar chocolates with wild flavors, focus on sustainability  organic ingredients! Promote Zotter and earn high commissions. www.zotterusa.com",
+    "displayUrl": "https://www.zotterusa.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/78540.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=78540&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "FMCG",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "zotterusa.com"
+      },
+      {
+        "domain": "*.zotterusa.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "80937",
+    "name": "Dreamfarm",
+    "network": "awin",
+    "description": "We design kitchen products that solve problems. All of our products have functional differences that make them work better than anything else on the planet. 30 Day tracking, 10% Commission.",
+    "displayUrl": "https://dreamfarm.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/80937.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=80937&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "dreamfarm.com"
+      },
+      {
+        "domain": "*.dreamfarm.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "82071",
+    "name": "Custom Song Gift",
+    "network": "awin",
+    "description": "THE MOST UNIQUE AFFILIATE OPPORTUNITY.  Customized Songs. Join our affiliate program. We are the only custom song company using affiliates. Custom Song Gift offers the most unique and special gift for any occasion - a personalized song.",
+    "displayUrl": "https://customsonggift.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/82071.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=82071&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Gifts & Flowers",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "customsonggift.com"
+      },
+      {
+        "domain": "*.customsonggift.com"
+      },
+      {
+        "domain": "a83a11-a0.myshopify.com"
+      },
+      {
+        "domain": "*.a83a11-a0.myshopify.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "82905",
+    "name": "Scala Hosting (US)",
+    "network": "awin",
+    "description": "ScalaHosting is a Dallas-based hosting provider with over 20 years of experience and a specific focus on managed cloud VPS technology. The #1 hosting company on Trustpilot and 5-star rated across any other major review platform.",
+    "displayUrl": "https://www.scalahosting.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/82905.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=82905&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Web Hosting",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "scalahosting.com"
+      },
+      {
+        "domain": "*.scalahosting.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "83783",
+    "name": "KeraFactor (US)",
+    "network": "awin",
+    "description": "Discover the KeraFactor Formula: Your Path to Healthier Hair and Scalp At KeraFactor, we've harnessed the power of innovation to create a groundbreaking formula that redefines hair and scalp care.",
+    "displayUrl": "https://shop.mykerafactor.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/83783.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=83783&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "shop.mykerafactor.com"
+      },
+      {
+        "domain": "*.shop.mykerafactor.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "84123",
+    "name": "Utoya (US)",
+    "network": "awin",
+    "description": "Luxury Hemp Derived THC, THCA, and More at Utoya OrganicsBuy Fresh THCA Flower, THC Gummies, THC Chocolate, Amanita, and so much more.",
+    "displayUrl": "https://utoya.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/84123.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=84123&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "utoya.com"
+      },
+      {
+        "domain": "*.utoya.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "84181",
+    "name": "Hatshopping.com US",
+    "network": "awin",
+    "description": "Hatshopping.com - Buy hats, caps and accessories online. Here you can find out everything about hats, caps and accessories. New collections and all the classics.",
+    "displayUrl": "https://www.hatshopping.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/84181.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=84181&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Clothing",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "hatshopping.com"
+      },
+      {
+        "domain": "*.hatshopping.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "86123",
+    "name": "HigherDOSE (US)",
+    "network": "awin",
+    "description": "HigherDOSE is a one-of-a-kind at home spa experience at the intersection of wellness, health, and beauty. HigherDOSE\u2019s line of infrared devices harness the most healing technologies available!",
+    "displayUrl": "http://www.higherdose.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/86123.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=86123&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "higherdose.com"
+      },
+      {
+        "domain": "*.higherdose.com"
+      },
+      {
+        "domain": "higherdose.myshopify.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "86303",
+    "name": "Shop Avara (US)",
+    "network": "awin",
+    "description": "Avara is the go-to brand for compliment-worthy clothing that allows women to celebrate all of life's moments with confidence and joy.",
+    "displayUrl": "https://shopavara.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/86303.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=86303&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Clothing",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "shopavara.com"
+      },
+      {
+        "domain": "*.shopavara.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "98655",
+    "name": "ITA Airways (CA)",
+    "network": "awin",
+    "description": "ITA Airways\u00a0 is a company\u00a0totally\u00a0owned by the\u00a0Italian\u00a0Ministry of Economy and Finance for the exercise of business in the air transport sector.\u00a0The\u00a0airline\u00a0has been active since November 2020.",
+    "displayUrl": "https://www.ita-airways.com/en_ca/offers/all-offers/offer-detail.html",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/98655.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=98655&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Airlines",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "ad.doubleclick.net"
+      },
+      {
+        "domain": "*.ad.doubleclick.net"
+      },
+      {
+        "domain": "ita-airways.com"
+      },
+      {
+        "domain": "*.ita-airways.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "99077",
+    "name": "Wood Furniture (US)",
+    "network": "awin",
+    "description": "Wood Furniture was created with the intention of offering you an array of certified sustainably sourced materials for wood furniture, lighting and decor. We strive to be as eco-friendly as possible and are a proud partner of the National Forest Foundation",
+    "displayUrl": "https://woodfurniture.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/99077.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=99077&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Furniture & Soft Furnishings",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "woodfurniture.com"
+      },
+      {
+        "domain": "*.woodfurniture.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "99445",
+    "name": "Renoun (US)",
+    "network": "awin",
+    "description": "Renoun, North America's first DTC ski brand, uses VibeStop\u2122 technology to reduce joint vibrations and enhance performance, making it the only ski you'll ever need to maximize your time on the mountain.",
+    "displayUrl": "https://renoun.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/99445.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=99445&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Sports Equipment",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "renoun.com"
+      },
+      {
+        "domain": "*.renoun.com"
+      },
+      {
+        "domain": "renoun.myshopify.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "101163",
+    "name": "Pan Pacific Hotel Group (US)",
+    "network": "awin",
+    "description": "Discover Pan Pacific Hotels Group. With almost 50 hotels, resorts and serviced suites across 29 cities under its Pan Pacific, PARKROYAL COLLECTION and PARKROYAL brands.",
+    "displayUrl": "https://www.panpacific.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/101163.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=101163&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Hotels & Accommodation",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "panpacific.com"
+      },
+      {
+        "domain": "*.panpacific.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "101935",
+    "name": "Meliora Cleaning Products US",
+    "network": "awin",
+    "description": "Meliora Cleaning Products is a Woman-Owned B Corp that manufactures eco-friendly cleaning and laundry products in Chicago, IL. We emphasize plastic-free products, ingredient safety and transparency, sustainable packaging, and refill options.",
+    "displayUrl": "https://meliorameansbetter.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/101935.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=101935&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Green (Eco friendly)",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "meliorameansbetter.com"
+      },
+      {
+        "domain": "*.meliorameansbetter.com"
+      },
+      {
+        "domain": "meliora-k.myshopify.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "102469",
+    "name": "Zingerman's Mail Order (US)",
+    "network": "awin",
+    "description": "The online shop for Zingerman\u2019s food, gifts and more. Zingerman's Mail Order sends extraordinary, traditionally made foods anywhere in America. Featuring hearth baked breads, handmade cheeses, estate bottled olive oils and customized professional gifts.",
+    "displayUrl": "https://www.zingermans.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/102469.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=102469&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Gifts & Flowers",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "zingermans.com"
+      },
+      {
+        "domain": "*.zingermans.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "102533",
+    "name": "Wondercide (US)",
+    "network": "awin",
+    "description": "As seen on Shark Tank, Wondercide is plant-powered, proven protection from bugs like ticks, fleas, mosquitoes, ants, and roaches. We innovate solutions for pets, people, and the places they roam, at home or on the go. Protect your pack\u00ae.",
+    "displayUrl": "https://www.wondercide.com",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/102533.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=102533&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Pets & Pet Care",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "wondercide.com"
+      },
+      {
+        "domain": "*.wondercide.com"
+      },
+      {
+        "domain": "wondercide.myshopify.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "104567",
+    "name": "LegalScout (US)",
+    "network": "awin",
+    "description": "Use our free AI to be matched with an ideal human lawyer, knowledgeable about your case and eager to help.",
+    "displayUrl": "https://www.legalscout.ai",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/104567.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=104567&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Lead Gen",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "legalscout.ai"
+      },
+      {
+        "domain": "*.legalscout.ai"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "104705",
+    "name": "MyCleanPC (US)",
+    "network": "awin",
+    "description": "MyCleanPC is a computer optimization software that finds and repairs adware and other items that can affect browser speed, security, and general system performance.",
+    "displayUrl": "https://www.mycleanpc.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/104705.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=104705&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Software Downloads",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "mycleanpc.com"
+      },
+      {
+        "domain": "*.mycleanpc.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "104879",
+    "name": "Kinto USA (US)",
+    "network": "awin",
+    "description": "KINTO creates thoughtful objects that bring comfort and inspiration to everyday life, encouraging warmth, balance and connection.",
+    "displayUrl": "https://kinto-usa.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/104879.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=104879&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "kinto-usa.com"
+      },
+      {
+        "domain": "*.kinto-usa.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "105335",
+    "name": "ABM Equipment (US)",
+    "network": "awin",
+    "description": "ABM designs and integrates systems for all sizes of companies, from small start-ups to large food companies like Tyson and Cargill, individual solutions to complete processing lines.",
+    "displayUrl": "https://abmequipment.com/shop/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/105335.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=105335&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "abmequipment.com"
+      },
+      {
+        "domain": "*.abmequipment.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "105561",
+    "name": "Bake Me A Wish!",
+    "network": "awin",
+    "description": "Bake Me A Wish! provides nationwide delivery service for gourmet gift cakes, pies, cookies, gift baskets and more. Perfect for birthdays or any other occasion!",
+    "displayUrl": "https://bakemeawish.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/105561.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=105561&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "FMCG",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "bakemeawish.com"
+      },
+      {
+        "domain": "*.bakemeawish.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "105889",
+    "name": "Helm & Oar (US)",
+    "network": "awin",
+    "description": "We Empower art lovers to design inspiring spaces with unique, ready-to-hang fine art delivered in just 10 business days. Crafted with premium Giclee Certified materials and packaging, our unmatched quality is backed with a 10-year warranty.",
+    "displayUrl": "https://helmandoar.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/105889.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=105889&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "helmandoar.com"
+      },
+      {
+        "domain": "*.helmandoar.com"
+      },
+      {
+        "domain": "brent-blossom-llc.myshopify.com"
+      },
+      {
+        "domain": "*.brent-blossom-llc.myshopify.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "106165",
+    "name": "VentaPak (US)",
+    "network": "awin",
+    "description": "The VentaPak backpack accessory creates major airflow and ventilation to reduce heat and sweat. It also improves backpack ergonomics and reduces back strain.",
+    "displayUrl": "https://www.ventapak.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/106165.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=106165&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Sports Equipment",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "ventapak.com"
+      },
+      {
+        "domain": "*.ventapak.com"
+      },
+      {
+        "domain": "ventbak.myshopify.com"
+      },
+      {
+        "domain": "*.ventbak.myshopify.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "106761",
+    "name": "bmiMD (US)",
+    "network": "awin",
+    "description": "Clinical weight loss, powered by Semaglutide  Tirzepatide, the same active ingredients as Wegovy\u00ae  Zepbound\u00ae, delivered to your door. Over 60K happy members enjoy affordable, seamless care with bmiMD\u2019s telehealth weight management programs. 4.9 \u2605 rating",
+    "displayUrl": "https://www.bmimd.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/106761.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=106761&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Pharmaceuticals",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "bmimd.com"
+      },
+      {
+        "domain": "*.bmimd.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "107097",
+    "name": "Custom Filters Direct (US)",
+    "network": "awin",
+    "description": "At Custom Filters Direct, we offer a variety of standard air filter sizes and shapes to fit every HVAC system.",
+    "displayUrl": "https://customfiltersdirect.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/107097.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=107097&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "customfiltersdirect.com"
+      },
+      {
+        "domain": "*.customfiltersdirect.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "108358",
+    "name": "Phantom Pickleball (US)",
+    "network": "awin",
+    "description": "Team Phantom is dedicated to creating premium pickleball paddles and products that combine power, precision and performance while focusing on the inclusive nature of our sport that revolves around fun and friendships.",
+    "displayUrl": "https://www.phantompickleball.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/108358.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=108358&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Sports Equipment",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "phantompickleball.com"
+      },
+      {
+        "domain": "*.phantompickleball.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  },
+  {
+    "id": "109408",
+    "name": "Mushroom Matrix (US)",
+    "network": "awin",
+    "description": "Mushroom Matrix is the leading producer of the highest quality certified 100% organic functional mushroom powders that support immune health, performance and recovery for horses, dogs and cats.",
+    "displayUrl": "https://mushroommatrix.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/109408.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=109408&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Pets & Pet Care",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "mushroommatrix.com"
+      },
+      {
+        "domain": "*.mushroommatrix.com"
+      }
+    ],
+    "declineReason": "",
+    "declinedDate": ""
+  }
+]
