@@ -59,13 +59,12 @@ export default function MerchantsPage() {
               variants={fadeIn}
               className="flex flex-wrap gap-4 justify-center"
             >
-              <a 
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-rose-500 text-white px-8 py-4 rounded-lg font-medium hover:bg-rose-600 transition-colors"
+              <div 
+                className="inline-flex items-center gap-2 bg-rose-500 text-white px-8 py-4 rounded-lg font-medium"
               >
                 Partner With Us
                 <ArrowRight className="w-5 h-5" />
-              </a>
+              </div>
             </motion.div>
           </motion.div>
         </div>
@@ -251,18 +250,16 @@ export default function MerchantsPage() {
                           We've detected another affiliate connected to your purchase, <strong>AnnasRecipes</strong>. This might support a website or creator you recently visited.
                         </p>
                         <div className="flex gap-3 justify-center mb-4">
-                          <a 
-                            href="/contact"
-                            className="px-4 py-2 bg-white text-gray-600 border border-rose-500 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+                          <div 
+                            className="px-4 py-2 bg-white text-gray-600 border border-rose-500 rounded-lg font-medium"
                           >
                             Support Creator
-                          </a>
-                          <a 
-                            href="/contact"
-                            className="px-4 py-2 bg-rose-500 text-white border-none rounded-lg font-medium hover:bg-rose-600 transition-colors"
+                          </div>
+                          <div 
+                            className="px-4 py-2 bg-rose-500 text-white border-none rounded-lg font-medium"
                           >
                             Donate to Charity
-                          </a>
+                          </div>
                         </div>
                         <p className="text-xs text-gray-500 bg-gray-50 p-3 rounded-lg">
                           If you choose to donate to charity, the affiliate commission from your purchase will be received by Kindly and donated to your selected cause.
@@ -291,13 +288,12 @@ export default function MerchantsPage() {
               Join Kindly early to shape the future of purpose-driven shopping
             </p>
             <div className="flex gap-3 justify-center">
-              <a 
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-rose-500 text-white px-8 py-4 rounded-lg font-medium hover:bg-rose-600 transition-colors"
+              <div 
+                className="inline-flex items-center gap-2 bg-rose-500 text-white px-8 py-4 rounded-lg font-medium"
               >
                 Partner With Us
                 <ArrowRight className="w-5 h-5" />
-              </a>
+              </div>
             </div>
           </motion.div>
         </div>
