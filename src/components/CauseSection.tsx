@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Heart, TrendingUp, Users, Calendar, Target, Gift, X, Minus, ArrowUpRight } from 'lucide-react';
 
 export function CauseSection() {
@@ -23,7 +22,7 @@ export function CauseSection() {
   return (
     <section className="py-12 md:py-24 relative overflow-hidden bg-white">
       {/* Diagonal background */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-white via-gray-50 to-brand/30 -skew-y-6 origin-top-left transform-gpu" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-white via-gray-50 to-brand/30 -skew-y-6 origin-top-left" />
       
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-[0.02]" style={{ 
@@ -35,15 +34,14 @@ export function CauseSection() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* Left side - Impact Summary */}
             <div>
-              <h2 className="text-lg font-medium text-brand mb-4">Make a Difference Today</h2>
+              <h2 className="text-lg font-medium text-brand mb-4">Choose Your Cause</h2>
               <h3 className="text-5xl font-bold text-gray-900 mb-6">
                 Support What Matters Most to You
               </h3>
               <p className="text-gray-600 mb-8 text-lg">
-                Whether it's supporting education, protecting the environment, or helping those in need,
-                you can make a difference with every purchase.
+                You choose exactly where your impact goes. Pick the specific charity or cause that means the most to you, and we'll ensure your purchases support that mission.
               </p>
-              <div className="inline-flex items-center gap-2 text-gray-600">
+              <div className="inline-flex items-center gap-2 text-brand">
                 <Heart className="w-5 h-5" />
                 <span className="font-medium">Over 1000+ verified charities to choose from</span>
               </div>

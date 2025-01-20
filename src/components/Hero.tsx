@@ -31,10 +31,7 @@ export function Hero() {
       <div className="container mx-auto px-4 relative z-[2]">
         <div className="flex min-h-[600px] items-center">
           <div className="ml-auto w-full md:w-[60%] md:pl-12 text-center md:text-left">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+            <div
               className="max-w-[640px] mx-auto md:mx-0"
             >
               <h1 className="text-[2.75rem] leading-[1.1] font-bold text-[#0B2742] mb-6">
@@ -55,7 +52,7 @@ export function Hero() {
                   <div>Chrome Store reviews</div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

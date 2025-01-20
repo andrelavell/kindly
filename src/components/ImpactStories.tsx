@@ -1,12 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { impactStories } from '../utils/impactStories';
-
-const storyVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 }
-};
 
 export function ImpactStories() {
   const [isInView, setIsInView] = useState(false);
@@ -28,12 +22,7 @@ export function ImpactStories() {
       <div className="container mx-auto px-4 relative">
         <div className="max-w-7xl mx-auto">
           {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-[640px] mb-16"
-          >
+          <div className="max-w-[640px] mb-16">
             <h2 className="brand font-medium mb-4">Impact Stories</h2>
             <h3 className="text-[2.75rem] leading-[1.2] font-bold text-[#0B2742] mb-6">
               See How Your Shopping Changes Lives
@@ -41,17 +30,13 @@ export function ImpactStories() {
             <p className="text-xl text-[#536B7D]">
               Every purchase you make contributes to real stories of transformation around the world
             </p>
-          </motion.div>
+          </div>
 
           {/* Stories Grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {impactStories.slice(0, 4).map((story, index) => (
-              <motion.div
+              <div
                 key={story.category}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
                 className="group relative overflow-hidden rounded-2xl"
               >
                 <div className="aspect-[4/3] relative">
@@ -67,7 +52,7 @@ export function ImpactStories() {
                     <h4 className="text-lg font-bold leading-snug">{story.title}</h4>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

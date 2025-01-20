@@ -482,6 +482,30 @@
     ]
   },
   {
+    "id": "12450",
+    "name": "EGO (US & Canada)",
+    "network": "awin",
+    "description": "EGO is the only online footwear brand that aims to get you lookin\u2019  feelin\u2019 fierce. Offering trend focused styles, Ego is a heaven for shoe lovers at affordable prices.",
+    "displayUrl": "https://egoshoes.com",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/12450.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=12450&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Shoes",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "*.egoshoes.com"
+      },
+      {
+        "domain": "egoshoes.com"
+      }
+    ]
+  },
+  {
     "id": "15528",
     "name": "Eatwith (US)",
     "network": "awin",
@@ -542,6 +566,36 @@
     ]
   },
   {
+    "id": "15820",
+    "name": "Denby (US & CA)",
+    "network": "awin",
+    "description": "Denby the UK\u2019s number 1 tableware brand is made for real people and real homes. Practical and stylish, with distinctive shapes and bold colors that give it real warmth, and an everyday toughness we all love!",
+    "displayUrl": "https://www.denbypottery.com/us",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/15820.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=15820&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "*.denbyusa.com"
+      },
+      {
+        "domain": "denbyusa.com"
+      },
+      {
+        "domain": "denbypottery.com"
+      },
+      {
+        "domain": "*.denbypottery.com"
+      }
+    ]
+  },
+  {
     "id": "17166",
     "name": "Short Par 4 (US)",
     "network": "awin",
@@ -592,6 +646,30 @@
       },
       {
         "domain": "clickinks.com"
+      }
+    ]
+  },
+  {
+    "id": "17940",
+    "name": "Alibaba US",
+    "network": "awin",
+    "description": "Alibaba.com provides more than 360 million products, including Consumer Electronics, Machinery, Apparel, Home & Garden, Automobiles & Motorcycles, Beauty & Personal Care, Health & Medical, Construction & Real Estate and more.",
+    "displayUrl": "https://www.alibaba.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/17940.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=17940&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Jewellery",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "alibaba.com"
+      },
+      {
+        "domain": "*.alibaba.com"
       }
     ]
   },
@@ -802,6 +880,30 @@
       },
       {
         "domain": "www.peoplefinders.com"
+      }
+    ]
+  },
+  {
+    "id": "20746",
+    "name": "ScholarshipOwl (US)",
+    "network": "awin",
+    "description": "ScholarshipOwl is an innovative platform designed to dramatically speed up scholarship application time.  Unique scholarship search engine that matches students with the award opportunities that are based on their personality, grades, lifestyle, and more.",
+    "displayUrl": "https://scholarshipowl.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/20746.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=20746&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Lead Gen",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "*.scholarshipowl.com"
+      },
+      {
+        "domain": "scholarshipowl.com"
       }
     ]
   },
@@ -2144,6 +2246,30 @@
     ]
   },
   {
+    "id": "31077",
+    "name": "My Magic Carpet (US)",
+    "network": "awin",
+    "description": "My Magic Carpet offers the world\u2019s most beautiful machine washable rugs at irresistible prices. As Seen On TV, QVC, our rugs are carried by the biggest home decor chains in the US & Canada!",
+    "displayUrl": "https://buymymagiccarpet.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/31077.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=31077&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "buymymagiccarpet.com"
+      },
+      {
+        "domain": "*.buymymagiccarpet.com"
+      }
+    ]
+  },
+  {
     "id": "31295",
     "name": "Tesoro Resorts (US)",
     "network": "awin",
@@ -2558,6 +2684,30 @@
     ]
   },
   {
+    "id": "35435",
+    "name": "Sunrider (US)",
+    "network": "awin",
+    "description": "Sunrider self-manufactures over 400 herbal-based products designed to support nearly every aspect of a healthy lifestyle. Product lines include foods and beverages, nutritional supplements, fitness and weight-management supplements, skincare and cosmetics",
+    "displayUrl": "https://home.sunrider.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/35435.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=35435&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "home.sunrider.com"
+      },
+      {
+        "domain": "*.home.sunrider.com"
+      }
+    ]
+  },
+  {
     "id": "36302",
     "name": "Dragonhawk (US)",
     "network": "awin",
@@ -2649,6 +2799,30 @@
       },
       {
         "domain": "*.insulation4us.com"
+      }
+    ]
+  },
+  {
+    "id": "37952",
+    "name": "LuggageHero (US)",
+    "network": "awin",
+    "description": "LuggageHero is a network of short-term luggage storage options in shops, cafes, hotels, and more. We are the only platform to offer hourly, day and multiple day charges and we are present in 210 cities spread across 53 countries. More at luggagehero.com",
+    "displayUrl": "https://luggagehero.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/37952.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=37952&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Hotels & Accommodation",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "luggagehero.com"
+      },
+      {
+        "domain": "*.luggagehero.com"
       }
     ]
   },
@@ -3051,6 +3225,30 @@
     ]
   },
   {
+    "id": "47153",
+    "name": "Sunjoy Group (US)",
+    "network": "awin",
+    "description": "Market leader and innovator in the home and garden vertical, with a focus on beautiful, ready-to-assemble gazebos, pergolas, and furniture.  Additional categories include off-grid camping and overlanding accessories, and home decor.",
+    "displayUrl": "https://sunjoyshop.com",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/47153.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=47153&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "sunjoyshop.com"
+      },
+      {
+        "domain": "*.sunjoyshop.com"
+      }
+    ]
+  },
+  {
     "id": "48151",
     "name": "Wiskii (US)",
     "network": "awin",
@@ -3075,6 +3273,54 @@
     ]
   },
   {
+    "id": "48737",
+    "name": "Drestige US",
+    "network": "awin",
+    "description": "Drestige is a marketplace specialized in the sale of high-end clothing, footwear and accessories for men and women from the best Italian and international fashion brands.",
+    "displayUrl": "https://drestige.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/48737.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=48737&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Clothing",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "drestige.com"
+      },
+      {
+        "domain": "*.drestige.com"
+      }
+    ]
+  },
+  {
+    "id": "51477",
+    "name": "Beauty The Shop US",
+    "network": "awin",
+    "description": "BeautyTheShop is a unique online destination for beauty lovers all over the world. We offer more than 12,000 products from some of the most prestigious brands in perfumery and professional cosmetics, with an easy and fast shopping experience.",
+    "displayUrl": "https://www.beautytheshop.com/us",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/51477.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=51477&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "beautytheshop.com"
+      },
+      {
+        "domain": "*.beautytheshop.com"
+      }
+    ]
+  },
+  {
     "id": "53171",
     "name": "Constructor (US)",
     "network": "awin",
@@ -3095,6 +3341,33 @@
       },
       {
         "domain": "*.constructor.tech"
+      }
+    ]
+  },
+  {
+    "id": "53273",
+    "name": "College Insights (US)",
+    "network": "awin",
+    "description": "College Insights specializes in personal and powerful college admissions support. We are starting our 8th year of supporting students from grades 8-12 in academic advising, financial aid and scholarship help, and applying to colleges.",
+    "displayUrl": "http://www.collegeinsights.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/53273.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=53273&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Savings & Investments",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "collegeinsights.com"
+      },
+      {
+        "domain": "*.collegeinsights.com"
+      },
+      {
+        "domain": "offer.collegeinsights.com"
       }
     ]
   },
@@ -3603,6 +3876,30 @@
     ]
   },
   {
+    "id": "71557",
+    "name": "Sport is good US",
+    "network": "awin",
+    "description": "Sport is good is a sales site for Clothing and Fashion Sport items. Find one of the largest catalogs available online. From soccer to running, from riding to indoor sports, find everything you need.",
+    "displayUrl": "https://sportisgood.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/71557.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=71557&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Sportswear",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "sportisgood.com"
+      },
+      {
+        "domain": "*.sportisgood.com"
+      }
+    ]
+  },
+  {
     "id": "71717",
     "name": "Elementor US Program",
     "network": "awin",
@@ -3623,6 +3920,30 @@
       },
       {
         "domain": "*.elementor.com"
+      }
+    ]
+  },
+  {
+    "id": "71951",
+    "name": "OWO Game US",
+    "network": "awin",
+    "description": "OWO is a haptic second skin that allows you to really feel your game both in VR and on PC or mobile. You can feel what happens to your character, shots, gun recoil, grab ropes, endless sensations and fully customized",
+    "displayUrl": "https://owogame.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/71951.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=71951&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Gadgets",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "owogame.com"
+      },
+      {
+        "domain": "*.owogame.com"
       }
     ]
   },
@@ -4209,6 +4530,36 @@
     ]
   },
   {
+    "id": "78998",
+    "name": "Agriframes Affiliate Program",
+    "network": "awin",
+    "description": "Agriframes have been specialists in creating stylish, high quality garden structures for over 50 years. With unrivalled experience as leading designers of classic garden structures we are experts in helping our customers create their perfect outdoor space",
+    "displayUrl": "https://www.agriframes.us/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/78998.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=78998&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "agriframes.us"
+      },
+      {
+        "domain": "*.agriframes.us"
+      },
+      {
+        "domain": "agriframesusa.myshopify.com"
+      },
+      {
+        "domain": "*.agriframesusa.myshopify.com"
+      }
+    ]
+  },
+  {
     "id": "79004",
     "name": "Yas Island Abu Dhabi (US)",
     "network": "awin",
@@ -4277,6 +4628,30 @@
       },
       {
         "domain": "*.getdvibe.com"
+      }
+    ]
+  },
+  {
+    "id": "79982",
+    "name": "Aspen Green (US)",
+    "network": "awin",
+    "description": "ASPEN GREEN is\u00a0on a mission to provide natural relief through pure, USDA Organic, full-spectrum Hemp  CBD products.  We are the only former Mayo Clinic Physician Formulated Hemp CBD products on the market offering Best in Class American Customer Service.",
+    "displayUrl": "https://www.aspengreen.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/79982.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=79982&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "aspengreen.com"
+      },
+      {
+        "domain": "*.aspengreen.com"
       }
     ]
   },
@@ -4476,6 +4851,30 @@
     ]
   },
   {
+    "id": "82089",
+    "name": "Fanttik (US)",
+    "network": "awin",
+    "description": "At Fanttik, we specialize in high-quality automotive tools, outdoor gear, home improvement tools, and personal care products designed to make your life easier and more enjoyable.",
+    "displayUrl": "https://fanttik.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/82089.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=82089&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Automotive",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "fanttik.com"
+      },
+      {
+        "domain": "*.fanttik.com"
+      }
+    ]
+  },
+  {
     "id": "82577",
     "name": "SuperJeweler.com Inc (US)",
     "network": "awin",
@@ -4500,6 +4899,30 @@
     ]
   },
   {
+    "id": "82905",
+    "name": "Scala Hosting (US)",
+    "network": "awin",
+    "description": "ScalaHosting is a Dallas-based hosting provider with over 20 years of experience and a specific focus on managed cloud VPS technology. The #1 hosting company on Trustpilot and 5-star rated across any other major review platform.",
+    "displayUrl": "https://www.scalahosting.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/82905.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=82905&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Web Hosting",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "scalahosting.com"
+      },
+      {
+        "domain": "*.scalahosting.com"
+      }
+    ]
+  },
+  {
     "id": "83077",
     "name": "SmoothSkin (US)",
     "network": "awin",
@@ -4520,6 +4943,30 @@
       },
       {
         "domain": "*.smoothskin.com"
+      }
+    ]
+  },
+  {
+    "id": "83783",
+    "name": "KeraFactor (US)",
+    "network": "awin",
+    "description": "Discover the KeraFactor Formula: Your Path to Healthier Hair and Scalp At KeraFactor, we've harnessed the power of innovation to create a groundbreaking formula that redefines hair and scalp care.",
+    "displayUrl": "https://shop.mykerafactor.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/83783.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=83783&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "shop.mykerafactor.com"
+      },
+      {
+        "domain": "*.shop.mykerafactor.com"
       }
     ]
   },
@@ -4649,6 +5096,30 @@
       },
       {
         "domain": "*.forminsoles.com"
+      }
+    ]
+  },
+  {
+    "id": "85605",
+    "name": "Foot-Store US",
+    "network": "awin",
+    "description": "Foot-Store: expertise in soccer products. The latest soccer products: soccer boots, shirts and official logos, balls and club products. Everything you need to be at your best on and off the pitch.",
+    "displayUrl": "https://foot-store.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/85605.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=85605&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Sportswear",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "foot-store.com"
+      },
+      {
+        "domain": "*.foot-store.com"
       }
     ]
   },
@@ -4799,6 +5270,30 @@
       },
       {
         "domain": "3dlasergifts.com"
+      }
+    ]
+  },
+  {
+    "id": "87189",
+    "name": "Mr Key Shop US",
+    "network": "awin",
+    "description": "Mr Key Shop is the TrustedShops and TrustPilot-guaranteed online store where you can buy software easily and securely, with a large catalog of original digital licenses at competitive prices, immediate e-mail delivery and free technical support.",
+    "displayUrl": "https://mrkeyshop.com/en/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/87189.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=87189&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Software Downloads",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "mrkeyshop.com"
+      },
+      {
+        "domain": "*.mrkeyshop.com"
       }
     ]
   },
@@ -5048,6 +5543,48 @@
       },
       {
         "domain": "lucasgift.myshopify.com"
+      }
+    ]
+  },
+  {
+    "id": "100613",
+    "name": "Turbopass US",
+    "network": "awin",
+    "description": "The must-have for city travelers: The City Passes from Turbopass offer free admission to museums and attractions as well as free travel on public transportation in Munich, Dubai, Athens, Barcelona, Hamburg, London, Mallorca, Naples, Paris, Rome, Venice...",
+    "displayUrl": "https://www.turbopass.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/100613.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=100613&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Tourism & Attractions",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "*.turbopass.com"
+      },
+      {
+        "domain": "turbopass.com"
+      },
+      {
+        "domain": "*.turbopass.fr"
+      },
+      {
+        "domain": "www.turbopass.fr"
+      },
+      {
+        "domain": "turbopass.fr"
+      },
+      {
+        "domain": "www.turbopass.de"
+      },
+      {
+        "domain": "*.turbopass.de"
+      },
+      {
+        "domain": "turbopass.de"
       }
     ]
   },
@@ -5610,6 +6147,36 @@
     ]
   },
   {
+    "id": "102887",
+    "name": "Heist Studios USA",
+    "network": "awin",
+    "description": "Heist is a shape and foundation wear brand and enjoys excellent reviews, customer ratings and brand awareness. This translates into higher conversions, AOV and commissions for our partners! We offer excellent support, join us today!",
+    "displayUrl": "https://www.heist-studios.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/102887.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=102887&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Clothing",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "https"
+      },
+      {
+        "domain": "*.https"
+      },
+      {
+        "domain": "heist-studios.com"
+      },
+      {
+        "domain": "*.heist-studios.com"
+      }
+    ]
+  },
+  {
     "id": "103091",
     "name": "Exam Edge (US)",
     "network": "awin",
@@ -5733,6 +6300,30 @@
     ]
   },
   {
+    "id": "104567",
+    "name": "LegalScout (US)",
+    "network": "awin",
+    "description": "Use our free AI to be matched with an ideal human lawyer, knowledgeable about your case and eager to help.",
+    "displayUrl": "https://www.legalscout.ai",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/104567.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=104567&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Lead Gen",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "legalscout.ai"
+      },
+      {
+        "domain": "*.legalscout.ai"
+      }
+    ]
+  },
+  {
     "id": "104695",
     "name": "Better Pickleball (US)",
     "network": "awin",
@@ -5829,6 +6420,30 @@
     ]
   },
   {
+    "id": "105335",
+    "name": "ABM Equipment (US)",
+    "network": "awin",
+    "description": "ABM designs and integrates systems for all sizes of companies, from small start-ups to large food companies like Tyson and Cargill, individual solutions to complete processing lines.",
+    "displayUrl": "https://abmequipment.com/shop/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/105335.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=105335&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "abmequipment.com"
+      },
+      {
+        "domain": "*.abmequipment.com"
+      }
+    ]
+  },
+  {
     "id": "105961",
     "name": "Tatti Lashes US",
     "network": "awin",
@@ -5901,6 +6516,60 @@
     ]
   },
   {
+    "id": "106165",
+    "name": "VentaPak (US)",
+    "network": "awin",
+    "description": "The VentaPak backpack accessory creates major airflow and ventilation to reduce heat and sweat. It also improves backpack ergonomics and reduces back strain.",
+    "displayUrl": "https://www.ventapak.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/106165.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=106165&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Sports Equipment",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "ventapak.com"
+      },
+      {
+        "domain": "*.ventapak.com"
+      },
+      {
+        "domain": "ventbak.myshopify.com"
+      },
+      {
+        "domain": "*.ventbak.myshopify.com"
+      }
+    ]
+  },
+  {
+    "id": "106339",
+    "name": "Sana Jardin",
+    "network": "awin",
+    "description": "Sana Jardin is a socially conscious, luxury fragrance house. Our vision is to use clean and sustainable perfume as a vehicle for social impact and the economic empowerment of women.",
+    "displayUrl": "https://us.sanajardin.com",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/106339.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=106339&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "us.sanajardin.com"
+      },
+      {
+        "domain": "*.us.sanajardin.com"
+      }
+    ]
+  },
+  {
     "id": "106349",
     "name": "Arrels Barcelona",
     "network": "awin",
@@ -5925,6 +6594,30 @@
     ]
   },
   {
+    "id": "107013",
+    "name": "Ecowise US",
+    "network": "awin",
+    "description": "EcoWise offers a natural, effective alternative to traditional creatine with our 100% natural gummies, featuring Creatine HCl for faster absorption and quicker recovery. Backed by clinical research, we combine performance, sustainability, and science.",
+    "displayUrl": "https://ecowisevitamins.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/107013.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=107013&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "ecowisevitamins.com"
+      },
+      {
+        "domain": "*.ecowisevitamins.com"
+      }
+    ]
+  },
+  {
     "id": "107095",
     "name": "Duman Home (US)",
     "network": "awin",
@@ -5945,6 +6638,33 @@
       },
       {
         "domain": "*.dumanhome.com"
+      }
+    ]
+  },
+  {
+    "id": "107225",
+    "name": "UNDONE US",
+    "network": "awin",
+    "description": "If you're looking for the next big opportunity in watches look no further, apply to join our program today, we're especially looking for influencers, bloggers, v-loggers and creators that we can support with generous payments and samples.",
+    "displayUrl": "https://undone.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/107225.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=107225&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Jewellery",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "undone.com"
+      },
+      {
+        "domain": "*.undone.com"
+      },
+      {
+        "domain": "undone-watches.myshopify.com"
       }
     ]
   },
@@ -6297,6 +7017,30 @@
     ]
   },
   {
+    "id": "108786",
+    "name": "Neatbond US",
+    "network": "awin",
+    "description": "All Kinds of Organizers and Bags Products",
+    "displayUrl": "https://www.neatbond.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/108786.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=108786&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "neatbond.com"
+      },
+      {
+        "domain": "*.neatbond.com"
+      }
+    ]
+  },
+  {
     "id": "108908",
     "name": "SZN Planner (US)",
     "network": "awin",
@@ -6470,6 +7214,36 @@
       },
       {
         "domain": "*.deusetron.com"
+      }
+    ]
+  },
+  {
+    "id": "110218",
+    "name": "Vitality Blueprint (US)",
+    "network": "awin",
+    "description": "At Vitality Blueprint, Uncover exactly what\u2019s going on inside. Test 100+ biomarkers and screen countless conditions tied to peak health and performance. Then drive improvement with personalized performance programming.",
+    "displayUrl": "https://www.vitalityblueprint.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/110218.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=110218&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "vitalitybp-copy.webflow.io"
+      },
+      {
+        "domain": "*.vitalitybp-copy.webflow.io"
+      },
+      {
+        "domain": "vitalityblueprint.com"
+      },
+      {
+        "domain": "*.vitalityblueprint.com"
       }
     ]
   },
