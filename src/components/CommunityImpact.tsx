@@ -92,8 +92,8 @@ export function CommunityImpact() {
         </div>
 
         <p className="text-base text-center text-gray-600">
-          Every purchase through Kindly lets you choose exactly where your impact goes. 
-          Your cause, your choice, real change.
+          Every purchase through Kindly lets you choose exactly where your impact goes, 
+          making real change happen with every click.
         </p>
       </div>
     </div>

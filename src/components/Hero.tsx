@@ -38,7 +38,7 @@ export function Hero() {
                 Turn Everyday Shopping Into Life-Changing Acts of Kindness
               </h1>
               <p className="text-xl text-[#536B7D] mb-8">
-                Imagine changing lives while you shop. Your everyday purchases could give a child their first book, protect endangered wildlife, or bring vital medicine to those in need—without costing you a single penny more.
+              Imagine changing lives while you shop. Your everyday purchases can support the causes you care about at no extra cost to you.
               </p>
               <div className="flex items-center gap-8">
                 <Button size="lg" variant="primary" className="bg-[#E07C52] hover:bg-[#c86c46] text-white px-8">
