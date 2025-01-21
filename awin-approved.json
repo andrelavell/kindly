@@ -5400,6 +5400,30 @@
     ]
   },
   {
+    "id": "99103",
+    "name": "Harbor Compliance (US)",
+    "network": "awin",
+    "description": "Since 2012, Harbor Compliance provides registered agent services, LLC formation services, business compliance services, and software to power over 40,000 businesses and nonprofits operating in the United States. Join our affiliate program today!",
+    "displayUrl": "http://www.harborcompliance.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/99103.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=99103&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Business Services (B2B)",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "harborcompliance.com"
+      },
+      {
+        "domain": "*.harborcompliance.com"
+      }
+    ]
+  },
+  {
     "id": "99187",
     "name": "Keego Blinds US",
     "network": "awin",
@@ -5720,6 +5744,30 @@
       },
       {
         "domain": "*.pdfreaderpro.com"
+      }
+    ]
+  },
+  {
+    "id": "100861",
+    "name": "MyBest Clinic",
+    "network": "awin",
+    "description": "At MyBest Clinic, our passion for innovation drives us to offer a unique blend of health, wellness, and beauty services. We\u2019re seeking Canadian creators who are enthusiastic about sharing skincare products with their audience whilst earning commission",
+    "displayUrl": "https://mybestclinic.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/100861.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=100861&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "mybestclinic.com"
+      },
+      {
+        "domain": "*.mybestclinic.com"
       }
     ]
   },
@@ -6594,6 +6642,30 @@
     ]
   },
   {
+    "id": "106761",
+    "name": "bmiMD (US)",
+    "network": "awin",
+    "description": "Clinical weight loss, powered by Semaglutide  Tirzepatide, the same active ingredients as Wegovy\u00ae  Zepbound\u00ae, delivered to your door. Over 60K happy members enjoy affordable, seamless care with bmiMD\u2019s telehealth weight management programs. 4.9 \u2605 rating",
+    "displayUrl": "https://www.bmimd.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/106761.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=106761&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Pharmaceuticals",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "bmimd.com"
+      },
+      {
+        "domain": "*.bmimd.com"
+      }
+    ]
+  },
+  {
     "id": "107013",
     "name": "Ecowise US",
     "network": "awin",
@@ -7037,6 +7109,30 @@
       },
       {
         "domain": "*.neatbond.com"
+      }
+    ]
+  },
+  {
+    "id": "108856",
+    "name": "Basic Honey (US)",
+    "network": "awin",
+    "description": "Basic Honey is a fourth-generation family-owned apiary specializing in premium, artisan honey. Known for award-winning monofloral honeys and sustainable practices, Basic Honey delivers unprocessed products rooted in tradition and quality.",
+    "displayUrl": "https://basichoney.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/108856.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=108856&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "basichoney.com"
+      },
+      {
+        "domain": "*.basichoney.com"
       }
     ]
   },

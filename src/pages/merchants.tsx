@@ -160,7 +160,7 @@ export default function MerchantsPage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold mb-8">Our Pro-Creator Commitment</h2>
               <p className="text-xl text-gray-300">
-                We're building a platform that supports both charitable causes and content creators. Unlike other platforms that automatically override affiliate links,
+                We've built a platform that supports both charitable causes and content creators. Unlike other platforms that automatically override affiliate links,
                 we've designed our system with creator protection as a foundation.
               </p>
             </div>

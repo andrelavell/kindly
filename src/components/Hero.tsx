@@ -40,16 +40,13 @@ export function Hero() {
               <p className="text-xl text-[#536B7D] mb-8">
               Imagine changing lives while you shop. Your everyday purchases can support the causes you care about at no extra cost to you.
               </p>
-              <div className="flex items-center gap-8">
+              <div className="flex flex-col items-center md:items-start gap-4">
                 <Button size="lg" variant="primary" className="bg-[#E07C52] hover:bg-[#c86c46] text-white px-8">
                   <Chrome className="w-5 h-5 mr-2" />
                   Add to Chrome – It's Free
                 </Button>
-                <div className="text-sm text-[#536B7D]">
-                  <div className="flex items-center">
-                    ★★★★★ <span className="ml-2">141,786</span>
-                  </div>
-                  <div>Chrome Store reviews</div>
+                <div className="text-sm text-[#536B7D] flex items-center gap-2">
+                  ★★★★★ <span>141,786</span> Chrome Store reviews
                 </div>
               </div>
             </div>

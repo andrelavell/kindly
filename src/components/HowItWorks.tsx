@@ -124,7 +124,7 @@ export function HowItWorks() {
                   <div className="w-3 h-3 rounded-full bg-green-400"></div>
                 </div>
                 <div className="flex-1 bg-white rounded-md px-4 py-1 text-sm text-gray-600">
-                  amazon.com
+                  <span className="select-none">amazon.com</span>
                 </div>
               </div>
             </div>
