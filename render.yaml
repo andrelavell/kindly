@@ -3,8 +3,13 @@ services:
     name: kindly
     env: node
     buildCommand: npm install && npm run build
-    startCommand: node server.js
+    startCommand: npm start
     nodeVersion: 18.x
+    staticPublishPath: .next
+    routes:
+      - type: rewrite
+        source: /_next/*
+        destination: /_next/*
     envVars:
       - key: NODE_ENV
         value: production
