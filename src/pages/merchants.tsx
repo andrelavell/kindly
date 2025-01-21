@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, ShoppingBag, Shield, TrendingUp, Users, ArrowRight, CheckCircle, XCircle } from 'lucide-react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -59,12 +60,14 @@ export default function MerchantsPage() {
               variants={fadeIn}
               className="flex flex-wrap gap-4 justify-center"
             >
-              <div 
-                className="inline-flex items-center gap-2 bg-rose-500 text-white px-8 py-4 rounded-lg font-medium"
-              >
-                Partner With Us
-                <ArrowRight className="w-5 h-5" />
-              </div>
+              <Link href="/contact">
+                <div 
+                  className="inline-flex items-center gap-2 bg-rose-500 text-white px-8 py-4 rounded-lg font-medium cursor-pointer"
+                >
+                  Partner With Us
+                  <ArrowRight className="w-5 h-5" />
+                </div>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
@@ -288,12 +291,14 @@ export default function MerchantsPage() {
               Join Kindly early to shape the future of purpose-driven shopping
             </p>
             <div className="flex gap-3 justify-center">
-              <div 
-                className="inline-flex items-center gap-2 bg-rose-500 text-white px-8 py-4 rounded-lg font-medium"
-              >
-                Partner With Us
-                <ArrowRight className="w-5 h-5" />
-              </div>
+              <Link href="/contact">
+                <div 
+                  className="inline-flex items-center gap-2 bg-rose-500 text-white px-8 py-4 rounded-lg font-medium cursor-pointer"
+                >
+                  Partner With Us
+                  <ArrowRight className="w-5 h-5" />
+                </div>
+              </Link>
             </div>
           </motion.div>
         </div>
