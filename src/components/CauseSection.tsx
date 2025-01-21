@@ -35,7 +35,7 @@ export function CauseSection() {
             {/* Left side - Impact Summary */}
             <div>
               <h2 className="text-lg font-medium text-brand mb-4">Choose Your Cause</h2>
-              <h3 className="text-5xl font-bold text-gray-900 mb-6">
+              <h3 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
                 Support What Matters Most to You
               </h3>
               <p className="text-gray-600 mb-8 text-lg">

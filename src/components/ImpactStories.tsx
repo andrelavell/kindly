@@ -24,7 +24,7 @@ export function ImpactStories() {
           {/* Content */}
           <div className="max-w-[640px] mb-16">
             <h2 className="brand font-medium mb-4">Impact Stories</h2>
-            <h3 className="text-[2.75rem] leading-[1.2] font-bold text-[#0B2742] mb-6">
+            <h3 className="text-3xl md:text-[2.75rem] leading-[1.2] font-bold text-[#0B2742] mb-6">
               See How Your Shopping Changes Lives
             </h3>
             <p className="text-xl text-[#536B7D]">

@@ -82,7 +82,7 @@ export function HowItWorks() {
               className="max-w-[640px]"
             >
               <h2 className="brand font-medium mb-4">How It Works</h2>
-              <h3 className="text-[2.75rem] leading-[1.2] font-bold text-[#0B2742] mb-12">
+              <h3 className="text-3xl md:text-[2.75rem] leading-[1.2] font-bold text-[#0B2742] mb-12">
                 Three Simple Steps to<br />Make a Difference
               </h3>
               
