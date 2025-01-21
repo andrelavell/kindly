@@ -46,7 +46,7 @@ export function Hero() {
                   Add to Chrome – It's Free
                 </Button>
                 <div className="text-sm text-[#536B7D] flex items-center gap-2">
-                  ★★★★★ <span>141,786</span> Chrome Store reviews
+                  ★★★★★ <span>141,786</span> Chrome Store Reviews
                 </div>
               </div>
             </div>

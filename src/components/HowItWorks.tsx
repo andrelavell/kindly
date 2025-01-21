@@ -221,7 +221,7 @@ export function HowItWorks() {
                         
                         <div className="relative">
                           {/* Cursor */}
-                          <div className="absolute right-4 z-20 pointer-events-none" style={{ top: '50%' }}>
+                          <div className="absolute right-4 z-20 pointer-events-none hidden md:block" style={{ top: '50%' }}>
                             <motion.div
                               animate={{ 
                                 x: cursorPosition.x,
