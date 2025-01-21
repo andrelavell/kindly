@@ -1,5 +1,6 @@
 import React from 'react';
 import { Heart, TrendingUp, Users, Calendar, Target, Gift, X, Minus, ArrowUpRight } from 'lucide-react';
+import { OptimizedImage } from './OptimizedImage';
 
 export function CauseSection() {
   const metrics = [
@@ -76,10 +77,12 @@ export function CauseSection() {
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-1.5 border border-gray-100">
-                        <img
+                        <OptimizedImage
                           src="/images/causes/save-the-children-logo.png"
                           alt="Save the Children"
-                          className="w-full h-full object-contain rounded-lg"
+                          width={40}
+                          height={40}
+                          imageType="logo"
                         />
                       </div>
                       <div>

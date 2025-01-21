@@ -2,10 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Globe, Users, Sparkles, ArrowRight, Chrome } from 'lucide-react';
 import { Button } from '../components/Button';
+import { OptimizedImage } from '../components/OptimizedImage';
 import { getBrowserInfo } from '../utils/browserDetection';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 
 export const getStaticProps: GetStaticProps = async () => {
   return {
@@ -53,11 +53,12 @@ export default function about() {
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0">
-          <Image 
+          <OptimizedImage 
             src="/images/about/hero.jpg"
             alt="People helping"
             fill
             className="object-cover"
+            priority
           />
           <div className="absolute inset-0 bg-black/60" />
         </div>
@@ -116,7 +117,7 @@ export default function about() {
               transition={{ duration: 0.6 }}
               className="relative h-[500px] rounded-2xl overflow-hidden"
             >
-              <Image 
+              <OptimizedImage 
                 src="/images/about/office.jpg"
                 alt="Impactful charity work"
                 fill
@@ -191,7 +192,7 @@ export default function about() {
               transition={{ duration: 0.5 }}
               className="relative rounded-2xl overflow-hidden group"
             >
-              <Image 
+              <OptimizedImage 
                 src="/images/about/team1.jpg"
                 alt="Education"
                 fill
@@ -212,7 +213,7 @@ export default function about() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="relative rounded-2xl overflow-hidden group"
             >
-              <Image 
+              <OptimizedImage 
                 src="/images/about/team2.jpg"
                 alt="Environment"
                 fill
@@ -233,7 +234,7 @@ export default function about() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="relative rounded-2xl overflow-hidden group"
             >
-              <Image 
+              <OptimizedImage 
                 src="/images/about/team3.jpg"
                 alt="Healthcare"
                 fill
