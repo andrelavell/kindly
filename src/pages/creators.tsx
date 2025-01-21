@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Shield, Users, CheckCircle2, XCircle, ArrowRight, Youtube, Instagram, Camera, EyeOff, Ban, Check, CheckCircle } from 'lucide-react';
-import { OptimizedImage } from '../components/OptimizedImage';
+import Image from 'next/image';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -23,7 +23,7 @@ export default function CreatorsPage() {
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800 text-white">
         <div className="absolute inset-0 overflow-hidden">
-          <OptimizedImage
+          <Image
             src="/images/creators/hero.jpg"
             alt="Creators working together"
             fill
@@ -99,15 +99,13 @@ export default function CreatorsPage() {
             {/* YouTuber Card */}
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 rounded-2xl opacity-60" />
-              <div className="relative h-[300px] md:h-[400px] overflow-hidden rounded-2xl">
-                <OptimizedImage
-                  src="/images/creators/feature1.jpg"
-                  alt="YouTuber creating content"
-                  imageType="feature"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+              <Image
+                src="/images/creators/feature1.jpg"
+                alt="YouTuber creating content"
+                width={400}
+                height={500}
+                className="w-full h-[400px] object-cover rounded-2xl"
+              />
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <div className="flex items-center gap-3 text-white mb-2">
                   <Youtube className="w-6 h-6" />
@@ -122,15 +120,13 @@ export default function CreatorsPage() {
             {/* Influencer Card */}
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 rounded-2xl opacity-60" />
-              <div className="relative h-[300px] md:h-[400px] overflow-hidden rounded-2xl">
-                <OptimizedImage
-                  src="/images/creators/feature2.jpg"
-                  alt="Social media influencer"
-                  imageType="feature"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+              <Image
+                src="/images/creators/feature2.jpg"
+                alt="Social media influencer"
+                width={400}
+                height={500}
+                className="w-full h-[400px] object-cover rounded-2xl"
+              />
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <div className="flex items-center gap-3 text-white mb-2">
                   <Instagram className="w-6 h-6" />
@@ -145,15 +141,13 @@ export default function CreatorsPage() {
             {/* Content Creator Card */}
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900 rounded-2xl opacity-60" />
-              <div className="relative h-[300px] md:h-[400px] overflow-hidden rounded-2xl">
-                <OptimizedImage
-                  src="/images/creators/feature3.jpg"
-                  alt="Blogger writing content"
-                  imageType="feature"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+              <Image
+                src="/images/creators/feature3.jpg"
+                alt="Blogger writing content"
+                width={400}
+                height={500}
+                className="w-full h-[400px] object-cover rounded-2xl"
+              />
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <div className="flex items-center gap-3 text-white mb-2">
                   <Camera className="w-6 h-6" />

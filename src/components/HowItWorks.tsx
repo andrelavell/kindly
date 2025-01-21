@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { OptimizedImage } from './OptimizedImage';
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getBrowserInfo } from '../utils/browserDetection';
@@ -132,13 +132,10 @@ export function HowItWorks() {
             <div className="aspect-[4/3] bg-white relative">
               {/* Amazon-like Header */}
               <div className="bg-[#232f3e] text-white px-4 py-2 flex items-center space-x-6">
-                <OptimizedImage
-                  src="/images/amazon-logo-white.png"
-                  alt="Amazon"
-                  width={120}
-                  height={40}
-                  imageType="logo"
-                  className="opacity-75 hover:opacity-100 transition-opacity"
+                <img 
+                  src="/images/amazon-logo-white.png" 
+                  alt="Amazon" 
+                  className="h-6 object-contain"
                 />
                 <div className="flex-1">
                   <div className="relative flex items-center bg-gray-100 rounded-lg px-4 py-2">
@@ -201,12 +198,13 @@ export function HowItWorks() {
                       <div className="p-6">
                         <div className="mb-6">
                           <div className="relative w-[80px] h-[80px] mx-auto mb-6">
-                            <OptimizedImage
+                            <Image 
                               src="/images/causes/susan-g-komen-logo.png"
-                              alt="Susan G. Komen"
-                              width={40}
-                              height={40}
-                              imageType="logo"
+                              alt="Susan G Komen"
+                              fill
+                              className="rounded-lg object-contain bg-white"
+                              sizes="80px"
+                              priority
                             />
                           </div>
                           <h3 className="text-[#2D3648] text-xl font-semibold text-center leading-tight mb-2">
@@ -288,12 +286,13 @@ export function HowItWorks() {
                       <div className="p-6">
                         <div className="mb-6">
                           <div className="relative w-[80px] h-[80px] mx-auto mb-6">
-                            <OptimizedImage
+                            <Image 
                               src="/images/causes/susan-g-komen-logo.png"
-                              alt="Susan G. Komen"
-                              width={40}
-                              height={40}
-                              imageType="logo"
+                              alt="Susan G Komen"
+                              fill
+                              className="rounded-lg object-contain bg-white"
+                              sizes="80px"
+                              priority
                             />
                           </div>
                           <motion.div

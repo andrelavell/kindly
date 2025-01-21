@@ -5,7 +5,7 @@ import { stores as storesList, categories, searchStores, getStoreLogo } from '..
 import { Store } from '../types';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
-import { OptimizedImage } from '../components/OptimizedImage';
+import Image from 'next/image';
 import { useDebouncedCallback } from 'use-debounce';
 import { useInView } from 'react-intersection-observer';
 
@@ -110,15 +110,13 @@ export default function stores() {
       {/* Hero Section */}
       <section className="relative py-32 overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800 text-white">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="relative h-[500px] md:h-[600px] overflow-hidden rounded-2xl">
-            <OptimizedImage
-              src="/images/stores/hero.jpg"
-              alt="Store hero"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+          <Image
+            src="/images/stores/hero.jpg"
+            alt="Shopping with purpose"
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/80" />
         

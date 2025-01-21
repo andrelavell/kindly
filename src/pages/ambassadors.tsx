@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Instagram, Youtube, Twitter, ChevronRight, Users, Sparkles, DollarSign } from 'lucide-react';
 import { Button } from '../components/Button';
-import { OptimizedImage } from '../components/OptimizedImage';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
 
 export const getStaticProps: GetStaticProps = async () => {
   return {
@@ -105,13 +105,13 @@ export default function ambassadors() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="relative aspect-square overflow-hidden rounded-xl group">
-              <OptimizedImage
+            <div className="relative rounded-2xl overflow-hidden h-[400px] group">
+              <Image 
                 src="/images/ambassadors/profile1.jpg"
-                alt="Ambassador 1"
-                imageType="profile"
-                fill
-                className="object-cover"
+                alt="Ambassador"
+                width={400}
+                height={400}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                 <div className="text-white">
@@ -123,13 +123,13 @@ export default function ambassadors() {
                 </div>
               </div>
             </div>
-            <div className="relative aspect-square overflow-hidden rounded-xl group">
-              <OptimizedImage
+            <div className="relative rounded-2xl overflow-hidden h-[400px] group">
+              <Image 
                 src="/images/ambassadors/profile2.jpg"
-                alt="Ambassador 2"
-                imageType="profile"
-                fill
-                className="object-cover"
+                alt="Ambassador"
+                width={400}
+                height={400}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                 <div className="text-white">
@@ -141,13 +141,13 @@ export default function ambassadors() {
                 </div>
               </div>
             </div>
-            <div className="relative aspect-square overflow-hidden rounded-xl group">
-              <OptimizedImage
+            <div className="relative rounded-2xl overflow-hidden h-[400px] group">
+              <Image 
                 src="/images/ambassadors/profile3.jpg"
-                alt="Ambassador 3"
-                imageType="profile"
-                fill
-                className="object-cover"
+                alt="Ambassador"
+                width={400}
+                height={400}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                 <div className="text-white">

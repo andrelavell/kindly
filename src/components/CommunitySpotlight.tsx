@@ -1,5 +1,4 @@
 import React from 'react';
-import { OptimizedImage } from './OptimizedImage';
 import Image from 'next/image';
 import { Sparkles } from 'lucide-react';
 
@@ -151,12 +150,12 @@ export function CommunitySpotlight() {
                   <div className="min-w-0 flex-auto">
                     <p className="text-base font-semibold leading-6 text-gray-900 flex items-center gap-2">
                       {donor.name}
-                      <OptimizedImage
+                      <Image 
                         src={`/images/flags/${donor.name.includes("Michael") ? "gb" : donor.name.includes("Emily") ? "ca" : "us"}.svg`}
-                        alt={`${donor.name}'s country flag`}
-                        width={20}
-                        height={20}
-                        imageType="logo"
+                        alt=""
+                        width={16}
+                        height={12}
+                        className="inline-block"
                       />
                     </p>
                     <p className="mt-2 text-sm leading-5 text-gray-500 font-medium">
