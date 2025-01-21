@@ -19,6 +19,11 @@ const nextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   output: 'standalone',
+  outputFileTracing: true,
+  experimental: {
+    outputStandalone: true,
+    outputFileTracingRoot: __dirname,
+  },
   poweredByHeader: false,
   typescript: {
     // Since extension code is not part of the Next.js build
