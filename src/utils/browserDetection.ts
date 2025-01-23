@@ -1,15 +1,21 @@
+import React, { useState, useEffect } from 'react';
 import { Chrome, Globe, Compass } from 'lucide-react';
 
+const defaultBrowserInfo = {
+  name: 'Chrome',
+  actionText: 'Add to Chrome',
+  icon: Chrome,
+  isChrome: true,
+  isSupported: true
+};
+
 export function getBrowserInfo() {
+  // Always return default during SSR to ensure consistent server rendering
   if (typeof window === 'undefined') {
-    return {
-      name: 'Chrome',
-      actionText: 'Add to Chrome',
-      icon: Chrome,
-      isSupported: true
-    };
+    return defaultBrowserInfo;
   }
 
+  // Only run browser detection on client side
   const userAgent = window.navigator.userAgent.toLowerCase();
   
   if (userAgent.includes('firefox')) {
@@ -17,6 +23,7 @@ export function getBrowserInfo() {
       name: 'Firefox',
       actionText: 'Add to Firefox',
       icon: Globe,
+      isChrome: false,
       isSupported: true
     };
   } else if (userAgent.includes('safari') && !userAgent.includes('chrome')) {
@@ -24,15 +31,26 @@ export function getBrowserInfo() {
       name: 'Safari',
       actionText: 'Add to Safari',
       icon: Compass,
+      isChrome: false,
       isSupported: true
     };
   } else {
-    // Default to Chrome/Chromium browsers
-    return {
-      name: 'Chrome',
-      actionText: 'Add to Chrome',
-      icon: Chrome,
-      isSupported: true
-    };
+    return defaultBrowserInfo;
   }
+}
+
+// Hook to handle browser detection with hydration
+export function useBrowserInfo() {
+  const [browserInfo, setBrowserInfo] = useState(defaultBrowserInfo);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    setBrowserInfo(getBrowserInfo());
+  }, []);
+
+  return {
+    ...browserInfo,
+    mounted
+  };
 }

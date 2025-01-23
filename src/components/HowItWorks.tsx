@@ -2,17 +2,17 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { getBrowserInfo } from '../utils/browserDetection';
+import { useBrowserInfo } from '../utils/browserDetection';
 import { ChevronDown, Heart, ExternalLink } from 'lucide-react';
 
 export function HowItWorks() {
-  const browserInfo = getBrowserInfo();
-  const [animationState, setAnimationState] = useState('initial');
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 60 }); // Start below button
-  const [isClicking, setIsClicking] = useState(false);
+  const browserInfo = useBrowserInfo();
+  const [animationState, setAnimationState] = React.useState('initial');
+  const [cursorPosition, setCursorPosition] = React.useState({ x: 0, y: 60 }); // Start below button
+  const [isClicking, setIsClicking] = React.useState(false);
 
   // Animation sequence with cleanup
-  useEffect(() => {
+  React.useEffect(() => {
     let isSubscribed = true;
 
     const sequence = async () => {
@@ -54,7 +54,7 @@ export function HowItWorks() {
   const steps = [
     {
       number: "01",
-      title: browserInfo.actionText,
+      title: browserInfo.mounted ? browserInfo.actionText : "Add to Chrome",
       description: "Install the Kindly extension in just one click. It’s free, quick, and easy!"
     },
     {

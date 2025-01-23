@@ -1,20 +1,24 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Heart, Menu, X } from 'lucide-react';
+import dynamic from 'next/dynamic';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import Link from 'next/link';
 import { Button } from './Button';
-import { getBrowserInfo } from '../utils/browserDetection';
+import { useBrowserInfo } from '../utils/browserDetection';
 import { useRouter } from 'next/router';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
-  const browserInfo = getBrowserInfo();
+  const browserInfo = useBrowserInfo();
   const ref = useRef(null);
   const router = useRouter();
   const inView = useInView(ref, {
     once: false,
     amount: 0.5
   });
+
+  useEffect(() => {
+  }, []);
 
   const navLinks = [
     { name: 'About', href: '/about' },
@@ -71,9 +75,9 @@ export function Navigation() {
                 rel="noopener noreferrer"
                 size="lg"
                 variant="primary"
-                icon={browserInfo.icon}
+                icon={browserInfo.mounted ? browserInfo.icon : null}
               >
-                {browserInfo.isChrome ? `${browserInfo.actionText} – It's Free` : "Add to Chrome"}
+                {browserInfo.mounted ? (browserInfo.isChrome ? `${browserInfo.actionText} – It's Free` : "Add to Chrome") : "Add to Chrome"}
               </Button>
             </nav>
 
@@ -123,9 +127,9 @@ export function Navigation() {
                     rel="noopener noreferrer"
                     size="lg"
                     variant="primary"
-                    icon={browserInfo.icon}
+                    icon={browserInfo.mounted ? browserInfo.icon : null}
                   >
-                    {browserInfo.isChrome ? `${browserInfo.actionText} – It's Free` : "Add to Chrome"}
+                    {browserInfo.mounted ? (browserInfo.isChrome ? `${browserInfo.actionText} – It's Free` : "Add to Chrome") : "Add to Chrome"}
                   </Button>
                 </div>
               </div>

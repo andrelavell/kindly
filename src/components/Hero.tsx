@@ -35,7 +35,7 @@ export function Hero() {
               className="max-w-[640px] mx-auto md:mx-0"
             >
               <h1 className="text-[2.75rem] leading-[1.1] font-bold text-[#0B2742] mb-6">
-                Turn Your Everyday Shopping Into Life-Changing Acts of Kindness
+                Turn <span className="hidden md:inline">Your</span> Everyday Shopping Into Life-Changing Acts of Kindness
               </h1>
               <p className="text-xl text-[#536B7D] mb-8">
               Imagine changing lives while you shop. Your everyday purchases can support the causes you care about at no extra cost to you.
