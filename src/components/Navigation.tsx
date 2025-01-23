@@ -1,9 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Heart, Menu, X } from 'lucide-react';
+import { Heart, Menu, X, Plus } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import Link from 'next/link';
-import { Button } from './Button';
 import { useBrowserInfo } from '../utils/browserDetection';
 import { useRouter } from 'next/router';
 
@@ -69,16 +68,15 @@ export function Navigation() {
                   {link.name}
                 </Link>
               ))}
-              <Button
+              <Link
                 href={browserInfo.isChrome ? "https://chrome.google.com/webstore/detail/your-extension-id" : "#"}
                 target="_blank"
                 rel="noopener noreferrer"
-                size="lg"
-                variant="primary"
-                icon={browserInfo.mounted ? browserInfo.icon : null}
+                className="text-sm font-medium text-brand hover:text-brand/80 inline-flex items-center gap-1"
               >
-                {browserInfo.mounted ? (browserInfo.isChrome ? `${browserInfo.actionText} – It's Free` : "Add to Chrome") : "Add to Chrome"}
-              </Button>
+                <Plus className="w-4 h-4" />
+                {browserInfo.mounted ? (browserInfo.isChrome ? browserInfo.actionText : "Add to Chrome") : "Add to Chrome"}
+              </Link>
             </nav>
 
             {/* Mobile menu button */}
@@ -121,16 +119,15 @@ export function Navigation() {
                   </Link>
                 ))}
                 <div className="mt-4 px-4">
-                  <Button
+                  <Link
                     href={browserInfo.isChrome ? "https://chrome.google.com/webstore/detail/your-extension-id" : "#"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    size="lg"
-                    variant="primary"
-                    icon={browserInfo.mounted ? browserInfo.icon : null}
+                    className="block text-base font-medium text-brand hover:text-brand/80 inline-flex items-center gap-1"
                   >
-                    {browserInfo.mounted ? (browserInfo.isChrome ? `${browserInfo.actionText} – It's Free` : "Add to Chrome") : "Add to Chrome"}
-                  </Button>
+                    <Plus className="w-4 h-4" />
+                    {browserInfo.mounted ? (browserInfo.isChrome ? browserInfo.actionText : "Add to Chrome") : "Add to Chrome"}
+                  </Link>
                 </div>
               </div>
             </div>
