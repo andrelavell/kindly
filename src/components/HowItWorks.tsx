@@ -60,7 +60,7 @@ export function HowItWorks() {
     {
       number: "02",
       title: "Shop at Partner Stores",
-      description: "Shop as usual, and we’ll notify you when you can support your cause at no extra cost to you"
+      description: "Shop as usual, and we’ll notify you when you can support your chosen charity at no extra cost to you."
     },
     {
       number: "03",

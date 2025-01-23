@@ -596,6 +596,30 @@
     ]
   },
   {
+    "id": "16673",
+    "name": "Maxpeedingrods US",
+    "network": "awin",
+    "description": "Maxpeedingrods is an online performance car parts business who has it's own research department, factory and professional racing team. We provide the high performance auto parts with competitive price, high quality tuning parts and best customer service.",
+    "displayUrl": "https://www.maxpeedingrods.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/16673.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=16673&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Automotive",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "www.maxpeedingrods.com"
+      },
+      {
+        "domain": "maxpeedingrods.com"
+      }
+    ]
+  },
+  {
     "id": "17166",
     "name": "Short Par 4 (US)",
     "network": "awin",
@@ -646,6 +670,36 @@
       },
       {
         "domain": "clickinks.com"
+      }
+    ]
+  },
+  {
+    "id": "17559",
+    "name": "mSpy (US)",
+    "network": "awin",
+    "description": "mSpy is a phone monitoring software that allows one to track GPS location, check calls, read messengers, media and much more on a target device which can be any iOS or Android smartphone.",
+    "displayUrl": "https://track.mspy.click/aff_c?offer_id=2&aff_id=9306",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/17559.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=17559&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Software Downloads",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "*.track.mspy.click"
+      },
+      {
+        "domain": "track.mspy.click"
+      },
+      {
+        "domain": "mspy.net"
+      },
+      {
+        "domain": "*.mspy.net"
       }
     ]
   },
@@ -880,6 +934,30 @@
       },
       {
         "domain": "www.peoplefinders.com"
+      }
+    ]
+  },
+  {
+    "id": "20744",
+    "name": "111Skin US",
+    "network": "awin",
+    "description": "111SKIN - inspired by the treatments used at 111 Harley Street. Developing innovative science-backed formulas since 2012, Dr Yannis and his team have created anti-ageing skincare that replicate in-clinic treatments to deliver unrivalled results.",
+    "displayUrl": "https://111skin.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/20744.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=20744&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "*.111skin.com"
+      },
+      {
+        "domain": "111skin.com"
       }
     ]
   },
@@ -1730,6 +1808,36 @@
     ]
   },
   {
+    "id": "28519",
+    "name": "Funwater (US & Canada)",
+    "network": "awin",
+    "description": "Funwater is a leading water sports brand. We focus on manufacturing high-quality, high-performance sup boards. WeMainly engaged in the production, design and development of outdoor products and operating through cross-border e-commerce platforms.",
+    "displayUrl": "https://www.funwaterboard.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/28519.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=28519&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Sports Equipment",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "funwaterboard.com"
+      },
+      {
+        "domain": "*.funwaterboard.com"
+      },
+      {
+        "domain": "funwaterisup.com"
+      },
+      {
+        "domain": "*.funwaterisup.com"
+      }
+    ]
+  },
+  {
     "id": "28621",
     "name": "Bagsmart (US)",
     "network": "awin",
@@ -2150,6 +2258,30 @@
     ]
   },
   {
+    "id": "30009",
+    "name": "Nadula (US)",
+    "network": "awin",
+    "description": "We are a professional 100% human hair product manufacturer and exporter. All of our human hair has expanded to over 30 countries including Europe, North America, and Africa.",
+    "displayUrl": "https://www.nadula.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/30009.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=30009&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "nadula.com"
+      },
+      {
+        "domain": "*.nadula.com"
+      }
+    ]
+  },
+  {
     "id": "30119",
     "name": "Butler Technik (US & Canada)",
     "network": "awin",
@@ -2266,6 +2398,30 @@
       },
       {
         "domain": "*.buymymagiccarpet.com"
+      }
+    ]
+  },
+  {
+    "id": "31207",
+    "name": "erank (US)",
+    "network": "awin",
+    "description": "eRank\u00ae is the leading Etsy SEO site. It has the most comprehensive suite of tools for keyword research, trend spotting, competitor analysis, and listing optimization.",
+    "displayUrl": "https://erank.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/31207.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=31207&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Jewellery",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "erank.com"
+      },
+      {
+        "domain": "*.erank.com"
       }
     ]
   },
@@ -2937,6 +3093,30 @@
     ]
   },
   {
+    "id": "40924",
+    "name": "Jonesbar (US)",
+    "network": "awin",
+    "description": "Jonesbar is a small batch energy bar company based in Manasquan, NJ. Our bars are made with only 4-5 Organic ingredients you know and trust. Taste and texture are everything to us, after one bite you will agree eating clean has never tasted so good.",
+    "displayUrl": "https://jonesbar.com",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/40924.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=40924&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "jonesbar.com"
+      },
+      {
+        "domain": "*.jonesbar.com"
+      }
+    ]
+  },
+  {
     "id": "42416",
     "name": "Hertz Mexico (US)",
     "network": "awin",
@@ -3297,6 +3477,36 @@
     ]
   },
   {
+    "id": "51475",
+    "name": "Belleek US",
+    "network": "awin",
+    "description": "Established in 1857, Belleek Pottery holds a very special place in Ireland's cultural and commercial heritage. Belleek produces homeware, jewelry, ornaments, and gifts that are perfect for those special people in your life!",
+    "displayUrl": "https://us.belleek.com",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/51475.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=51475&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "belleek.com"
+      },
+      {
+        "domain": "*.belleek.com"
+      },
+      {
+        "domain": "us.belleek.com"
+      },
+      {
+        "domain": "belleek-us.myshopify.com"
+      }
+    ]
+  },
+  {
     "id": "51477",
     "name": "Beauty The Shop US",
     "network": "awin",
@@ -3392,6 +3602,54 @@
       },
       {
         "domain": "*.smiler.co"
+      }
+    ]
+  },
+  {
+    "id": "54343",
+    "name": "Dmoose (US)",
+    "network": "awin",
+    "description": "Our mission is to help everyday people lead healthy, balanced lives by providing them with the vision, the motivation, and the tools they need to hit their fitness goals.",
+    "displayUrl": "https://www.dmoose.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/54343.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=54343&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Sports Equipment",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "dmoose.com"
+      },
+      {
+        "domain": "*.dmoose.com"
+      }
+    ]
+  },
+  {
+    "id": "55393",
+    "name": "Ourbus (US) (55393)",
+    "network": "awin",
+    "description": "We are a bus technology company providing bus tickets and serving more than 300+ destinations in US.",
+    "displayUrl": "https://www.ourbus.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/55393.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=55393&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Travel Agencies",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "ourbus.com"
+      },
+      {
+        "domain": "*.ourbus.com"
       }
     ]
   },
@@ -3828,6 +4086,30 @@
     ]
   },
   {
+    "id": "69996",
+    "name": "Yune Yoga US Program",
+    "network": "awin",
+    "description": "We make high quality, design oriented yoga products with eco friendly options in mind.Apply to join our program today, we're especially looking for influencers, bloggers, v-logger",
+    "displayUrl": "https://yuneyoga.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/69996.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=69996&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Sports Equipment",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "yuneyoga.com"
+      },
+      {
+        "domain": "*.yuneyoga.com"
+      }
+    ]
+  },
+  {
     "id": "70058",
     "name": "Mounteen",
     "network": "awin",
@@ -3872,6 +4154,54 @@
       },
       {
         "domain": "*.sweedbeauty.com"
+      }
+    ]
+  },
+  {
+    "id": "71411",
+    "name": "Prototype Group Limited",
+    "network": "awin",
+    "description": "We are PRO ANABOLICS.COM and sell legal anabolic dietary supplements shipping globally. Our dietary supplements are herbal with no side effects and used to help increase performance, muscle growth and reduce body fat for those who exercise.",
+    "displayUrl": "https://www.proanabolics.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/71411.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=71411&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "proanabolics.com"
+      },
+      {
+        "domain": "*.proanabolics.com"
+      }
+    ]
+  },
+  {
+    "id": "71555",
+    "name": "Selleriemae US",
+    "network": "awin",
+    "description": "La Sellerie de Ma\u00e9: your online saddlery for all equestrian and animal products: rider textile, riding boots, rugs, protection for horse and rider...Everything you need to pamper your horse and be at the top of your game!",
+    "displayUrl": "https://selleriemae.shop/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/71555.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=71555&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Sports Equipment",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "selleriemae.shop"
+      },
+      {
+        "domain": "*.selleriemae.shop"
       }
     ]
   },
@@ -4040,6 +4370,30 @@
       },
       {
         "domain": "*.aperturee.com"
+      }
+    ]
+  },
+  {
+    "id": "73624",
+    "name": "Biossance US",
+    "network": "awin",
+    "description": "CHANGING SKINCARE, THEN THE WORLD",
+    "displayUrl": "https://www.biossance.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/73624.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=73624&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "biossance.com"
+      },
+      {
+        "domain": "*.biossance.com"
       }
     ]
   },
@@ -4502,6 +4856,30 @@
       },
       {
         "domain": "*.speedo.com"
+      }
+    ]
+  },
+  {
+    "id": "78896",
+    "name": "CGK Linens (US)",
+    "network": "awin",
+    "description": "CGK Linens is an affordable luxury bedding company sold nationwide across Amazon, Target, Macy\u2019s, and other major retailers. We offer a wide variety of products, including sheets, pillowcases, comforters, and more.",
+    "displayUrl": "https://cgklinens.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/78896.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=78896&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "cgklinens.com"
+      },
+      {
+        "domain": "*.cgklinens.com"
       }
     ]
   },
@@ -4971,6 +5349,30 @@
     ]
   },
   {
+    "id": "83965",
+    "name": "Maree",
+    "network": "awin",
+    "description": "Join Mar\u00e9e\u2019s affiliate program and earn by promoting beauty products. Enjoy exclusive discounts, high commissions, and support a brand dedicated to sustainable, personalized skincare.",
+    "displayUrl": "https://imaree.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/83965.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=83965&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "imaree.com"
+      },
+      {
+        "domain": "*.imaree.com"
+      }
+    ]
+  },
+  {
     "id": "84457",
     "name": "Egyptian Linens (US)",
     "network": "awin",
@@ -5100,6 +5502,30 @@
     ]
   },
   {
+    "id": "85597",
+    "name": "Galop-Store US",
+    "network": "awin",
+    "description": "Galop-Store: your online saddlery for all equestrian and animal products: rider clothing, riding boots, rugs, protection for horse and rider... Everything you need to pamper your horse and be at the top of your game!",
+    "displayUrl": "https://gallop-store.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/85597.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=85597&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Sports Equipment",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "gallop-store.com"
+      },
+      {
+        "domain": "*.gallop-store.com"
+      }
+    ]
+  },
+  {
     "id": "85605",
     "name": "Foot-Store US",
     "network": "awin",
@@ -5124,6 +5550,84 @@
     ]
   },
   {
+    "id": "85729",
+    "name": "Spirited Paw (US)",
+    "network": "awin",
+    "description": "Spirited Paw pet supplements are made to support and enrich your pet\u2019s quality of life.  We believe that living a long and healthy life begins with good nutrition and the best source of nutrition comes from whole foods and nutrients found in nature.",
+    "displayUrl": "https://spiritedpaw.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/85729.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=85729&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Pets & Pet Care",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "spiritedpaw.com"
+      },
+      {
+        "domain": "*.spiritedpaw.com"
+      },
+      {
+        "domain": "spirited-paw.myshopify.com"
+      }
+    ]
+  },
+  {
+    "id": "85731",
+    "name": "LovedOnes.ai (US)",
+    "network": "awin",
+    "description": "EMOTIONAL WELLNESS is LovedOnes.ai a mobile app enabling users to create consoling speaking picture videos from pictures and cloned voices of deceased loved ones saying what the users remember, believe or wish the loved ones would say when they were alive",
+    "displayUrl": "https://lovedones.ai/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/85731.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=85731&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Mobile Downloads",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "lovedones.ai"
+      },
+      {
+        "domain": "*.lovedones.ai"
+      }
+    ]
+  },
+  {
+    "id": "85733",
+    "name": "Possible (US)",
+    "network": "awin",
+    "description": "POSSIBLE is a line of clean-label, whole food products that were created to supercharge performance. They\u2019re made with impeccable ingredients, formulated by nutritional experts, and designed to give you the energy you need to take on any challenge.",
+    "displayUrl": "https://www.mypossible.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/85733.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=85733&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "mypossible.com"
+      },
+      {
+        "domain": "*.mypossible.com"
+      },
+      {
+        "domain": "possible-foods.myshopify.com"
+      }
+    ]
+  },
+  {
     "id": "85831",
     "name": "Flykube ES",
     "network": "awin",
@@ -5144,6 +5648,33 @@
       },
       {
         "domain": "*.flykube.com"
+      }
+    ]
+  },
+  {
+    "id": "86123",
+    "name": "HigherDOSE (US)",
+    "network": "awin",
+    "description": "HigherDOSE is a one-of-a-kind at home spa experience at the intersection of wellness, health, and beauty. HigherDOSE\u2019s line of infrared devices harness the most healing technologies available!",
+    "displayUrl": "http://www.higherdose.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/86123.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=86123&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "higherdose.com"
+      },
+      {
+        "domain": "*.higherdose.com"
+      },
+      {
+        "domain": "higherdose.myshopify.com"
       }
     ]
   },
@@ -5318,6 +5849,33 @@
       },
       {
         "domain": "*.matchstat.com"
+      }
+    ]
+  },
+  {
+    "id": "87371",
+    "name": "Nanobebe (US)",
+    "network": "awin",
+    "description": "Nanob\u00e9b\u00e9 supports modern parents with modern products for baby feeding, nursing, soothing, and overall wellness. From bottles and pacifiers to nursing pads and milk storage bags, we're here to support families on their parenting journey.",
+    "displayUrl": "https://nanobebe.com",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/87371.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=87371&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Baby & Toddler",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "nanobebe.com"
+      },
+      {
+        "domain": "*.nanobebe.com"
+      },
+      {
+        "domain": "nano-bebe-usa.myshopify.com"
       }
     ]
   },
@@ -5520,6 +6078,33 @@
     ]
   },
   {
+    "id": "99445",
+    "name": "Renoun (US)",
+    "network": "awin",
+    "description": "Renoun, North America's first DTC ski brand, uses VibeStop\u2122 technology to reduce joint vibrations and enhance performance, making it the only ski you'll ever need to maximize your time on the mountain.",
+    "displayUrl": "https://renoun.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/99445.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=99445&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Sports Equipment",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "renoun.com"
+      },
+      {
+        "domain": "*.renoun.com"
+      },
+      {
+        "domain": "renoun.myshopify.com"
+      }
+    ]
+  },
+  {
     "id": "99625",
     "name": "Sweetnight (US)",
     "network": "awin",
@@ -5540,6 +6125,30 @@
       },
       {
         "domain": "*.sweetnight.com"
+      }
+    ]
+  },
+  {
+    "id": "100539",
+    "name": "Mr Tales US",
+    "network": "awin",
+    "description": "At MrTales, our passion is to nurture young minds with stories that do more than entertain. We craft personalized children's books with the aim of teaching valuable lessons on kindness, empathy, and environmental stewardship.",
+    "displayUrl": "https://mrtales.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/100539.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=100539&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Toys & Games",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "mrtales.com"
+      },
+      {
+        "domain": "*.mrtales.com"
       }
     ]
   },
@@ -6021,6 +6630,33 @@
     ]
   },
   {
+    "id": "102051",
+    "name": "Freddy US",
+    "network": "awin",
+    "description": "What are Freddy Pants? We reinvented jeans, taking comfort and fit to a whole new level. How? Through our patented Freddy WR.UP\u00ae technology designed to lift, boost and support you in all the right places!",
+    "displayUrl": "https://freddystore.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/102051.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=102051&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Womenswear",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "freddystore.com"
+      },
+      {
+        "domain": "*.freddystore.com"
+      },
+      {
+        "domain": "freddyshop-com.myshopify.com"
+      }
+    ]
+  },
+  {
     "id": "102107",
     "name": "Kindred Tales",
     "network": "awin",
@@ -6195,6 +6831,63 @@
     ]
   },
   {
+    "id": "102781",
+    "name": "Hume Health",
+    "network": "awin",
+    "description": "The Hume Health Body Pod is your ultimate tool for tracking and improving your health. This innovative device measures key health metrics such as body composition, metabolic rate, and more, helping you tailor your lifestyle for optimal performance.",
+    "displayUrl": "https://humehealth.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/102781.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=102781&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "myhumehealth.com"
+      },
+      {
+        "domain": "*.myhumehealth.com"
+      },
+      {
+        "domain": "hume-health.myshopify.com"
+      },
+      {
+        "domain": "humehealth.com"
+      },
+      {
+        "domain": "*.humehealth.com"
+      }
+    ]
+  },
+  {
+    "id": "102797",
+    "name": "Coushy US",
+    "network": "awin",
+    "description": "Coushy helps you transform the way you live, work and play through ergonomically designed products.",
+    "displayUrl": "https://coushy.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/102797.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=102797&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Furniture & Soft Furnishings",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "coushy.com"
+      },
+      {
+        "domain": "*.coushy.com"
+      }
+    ]
+  },
+  {
     "id": "102887",
     "name": "Heist Studios USA",
     "network": "awin",
@@ -6245,6 +6938,30 @@
       },
       {
         "domain": "*.examedge.com"
+      }
+    ]
+  },
+  {
+    "id": "103309",
+    "name": "Monfrere Fashion (US)",
+    "network": "awin",
+    "description": "MONFR\u00c8RE is a fashion brand that merges the refinement of storied designer houses with the effortless comfort of Los Angeles for pieces that define attainable luxury. Created by Sean Rudes and Steven Dann - brothers-in-law with acclaimed backgrounds.",
+    "displayUrl": "https://www.monfrerefashion.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/103309.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=103309&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Clothing",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "monfrerefashion.com"
+      },
+      {
+        "domain": "*.monfrerefashion.com"
       }
     ]
   },
@@ -6492,6 +7209,30 @@
     ]
   },
   {
+    "id": "105427",
+    "name": "EpicVin Inc. & Awin US '24",
+    "network": "awin",
+    "description": "EpicVIN is a leading provider of vehicle history reports. Dive into a high-demand market that values transparency in automotive transactions with us and earn up to $30 from a transaction!",
+    "displayUrl": "https://epicvin.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/105427.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=105427&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Automotive",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "epicvin.com"
+      },
+      {
+        "domain": "*.epicvin.com"
+      }
+    ]
+  },
+  {
     "id": "105961",
     "name": "Tatti Lashes US",
     "network": "awin",
@@ -6560,6 +7301,30 @@
       },
       {
         "domain": "*.joinlevity.com"
+      }
+    ]
+  },
+  {
+    "id": "106113",
+    "name": "Healthy Bud (US)",
+    "network": "awin",
+    "description": "Healthybud is an award-winning Canadian pet wellness brand helping dogs thrive through unique, superfood products.",
+    "displayUrl": "https://us.healthybud.co/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/106113.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=106113&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Pets & Pet Care",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "us.healthybud.co"
+      },
+      {
+        "domain": "*.us.healthybud.co"
       }
     ]
   },
@@ -6888,6 +7653,54 @@
     ]
   },
   {
+    "id": "107926",
+    "name": "Many Bidets US",
+    "network": "awin",
+    "description": "ManyBidets.com is a premier online retailer specializing in high-quality bidets. As a family-owned business, we pride ourselves on offering expert advice and exceptional customer service to help customers find the perfect bidet solution for their needs.",
+    "displayUrl": "https://www.manybidets.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/107926.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=107926&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "manybidets.com"
+      },
+      {
+        "domain": "*.manybidets.com"
+      }
+    ]
+  },
+  {
+    "id": "108154",
+    "name": "My Immunity US",
+    "network": "awin",
+    "description": "MyImmunity is on a mission to empower those with autoimmune conditions through natural, scientifically validated solutions for better health.",
+    "displayUrl": "https://getmyimmunity.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/108154.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=108154&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "getmyimmunity.com"
+      },
+      {
+        "domain": "*.getmyimmunity.com"
+      }
+    ]
+  },
+  {
     "id": "108252",
     "name": "Orbital Clothing Brand (US)",
     "network": "awin",
@@ -6911,6 +7724,33 @@
       },
       {
         "domain": "the-based-sigma.myshopify.com"
+      }
+    ]
+  },
+  {
+    "id": "108258",
+    "name": "Lenz Charging (US)",
+    "network": "awin",
+    "description": "LENZ Charging designs and manufactures safety tested and certified electric vehicle charging stations and adapters backed by a industry leading warranty and team obsessed with service.",
+    "displayUrl": "https://lenzcharging.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/108258.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=108258&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Automotive",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "lenzcharging.com"
+      },
+      {
+        "domain": "*.lenzcharging.com"
+      },
+      {
+        "domain": "lenz-ignition-coil.myshopify.com"
       }
     ]
   },
@@ -6942,6 +7782,30 @@
     ]
   },
   {
+    "id": "108284",
+    "name": "Obvi",
+    "network": "awin",
+    "description": "Obvi is reinventing the supplement experience by making products that feel as young, fun, and vibrant as the results they deliver.",
+    "displayUrl": "https://myobvi.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/108284.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=108284&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "myobvi.com"
+      },
+      {
+        "domain": "*.myobvi.com"
+      }
+    ]
+  },
+  {
     "id": "108596",
     "name": "Doft New York Skincare US",
     "network": "awin",
@@ -6962,6 +7826,36 @@
       },
       {
         "domain": "*.doftplasticsurgery.com"
+      }
+    ]
+  },
+  {
+    "id": "108608",
+    "name": "Tilos (US)",
+    "network": "awin",
+    "description": "Tilos is a leader in scuba diving and watersports gear. With over 350 products and distribution in 14 countries, we\u2019re known for innovation, quality, and customer satisfaction, continuously enhancing the diving experience with cutting-edge technology.",
+    "displayUrl": "https://tilos.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/108608.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=108608&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Clothing Accessories",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "tilos.com"
+      },
+      {
+        "domain": "*.tilos.com"
+      },
+      {
+        "domain": "tilos-inc.myshopify.com"
+      },
+      {
+        "domain": "tilos.myshopify.com"
       }
     ]
   },
@@ -7113,6 +8007,33 @@
     ]
   },
   {
+    "id": "108842",
+    "name": "Sundae School US",
+    "network": "awin",
+    "description": "Sundae School is a smokewear label born in Seoul, raised in California, and rooted in New York.",
+    "displayUrl": "https://sundae.school/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/108842.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=108842&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Clothing",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "sundae.school"
+      },
+      {
+        "domain": "*.sundae.school"
+      },
+      {
+        "domain": "sundae.school.myshopify.com"
+      }
+    ]
+  },
+  {
     "id": "108856",
     "name": "Basic Honey (US)",
     "network": "awin",
@@ -7181,6 +8102,54 @@
       },
       {
         "domain": "*.floraqueen.com"
+      }
+    ]
+  },
+  {
+    "id": "109518",
+    "name": "US Boot (US)",
+    "network": "awin",
+    "description": "Inspired by hardworking individuals who are passionate about their craft, US Boot work boots set the standard for safety and comfort. Our boots are designed to provide lasting protection and comfort.",
+    "displayUrl": "https://www.usboot.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/109518.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=109518&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Shoes",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "usboot.com"
+      },
+      {
+        "domain": "*.usboot.com"
+      }
+    ]
+  },
+  {
+    "id": "109798",
+    "name": "Olalily (US)",
+    "network": "awin",
+    "description": "At OlaLily we care about you and the environment, that's why our bikinis and swimwear are made with 0% Water, minimizing environmental impact, with Recycled Polyester Made with pet bottles, and Protection SPF50+ Avoid UV rays.",
+    "displayUrl": "https://olalily.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/109798.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=109798&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Womenswear",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "olalily.com"
+      },
+      {
+        "domain": "*.olalily.com"
       }
     ]
   },
@@ -7392,6 +8361,30 @@
     ]
   },
   {
+    "id": "110556",
+    "name": "Kailash Energy (US)",
+    "network": "awin",
+    "description": "KAILASH ENERGY is a handcrafted jewelry and ornament brand, founded in 2022 in Tibet, deeply inspired by the mystical allure of Mount Kailash. Established with the vision of bringing the positive energy of this sacred mountain into people's lives.",
+    "displayUrl": "https://kailashenergy.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/110556.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=110556&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Jewellery",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "kailashenergy.com"
+      },
+      {
+        "domain": "*.kailashenergy.com"
+      }
+    ]
+  },
+  {
     "id": "110562",
     "name": "Dainely Belts",
     "network": "awin",
@@ -7463,6 +8456,36 @@
       },
       {
         "domain": "*.baxinier.com"
+      }
+    ]
+  },
+  {
+    "id": "111224",
+    "name": "E-Consumer Pulse",
+    "network": "awin",
+    "description": "Join the eConsumer Pulse\u2122 Affiliate Program \u2013 Empower Businesses with Industry-Leading Insights!",
+    "displayUrl": "https://zuq3jr-ux.myshopify.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/111224.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=111224&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "FMCG",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "rybalskyconsulting.com"
+      },
+      {
+        "domain": "*.rybalskyconsulting.com"
+      },
+      {
+        "domain": "zuq3jr-ux.myshopify.com"
+      },
+      {
+        "domain": "*.zuq3jr-ux.myshopify.com"
       }
     ]
   }
