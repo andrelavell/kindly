@@ -404,6 +404,36 @@
     ]
   },
   {
+    "id": "8063",
+    "name": "Hotelopia (Global)",
+    "network": "awin",
+    "description": "Hotelopia is a leading online travel agency offering reservations of hotels, transfers and also activities\u2019 tickets.",
+    "displayUrl": "https://www.hotelopia.com",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/8063.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=8063&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Hotels & Accommodation",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "*.hotelopia.com"
+      },
+      {
+        "domain": "www.hotelopia.com"
+      },
+      {
+        "domain": "*.hotelopia.mobi"
+      },
+      {
+        "domain": "hotelopia.com"
+      }
+    ]
+  },
+  {
     "id": "9995",
     "name": "Oberoi Hotels (Global)",
     "network": "awin",
@@ -2428,6 +2458,30 @@
       },
       {
         "domain": "*.mylivlit.com"
+      }
+    ]
+  },
+  {
+    "id": "30589",
+    "name": "Krystal - Grupo Hotelero Santa Fe (US)",
+    "network": "awin",
+    "description": "Introducing you to Mexican Hotel Chain that belongs to Santa Fe Hotel Group. All the Krystal Hotels are located in the best destinations of Mexico: Acapulco, Mexico City, Canc\u00fan, Ixtapa - Zihuatanejo, Puerto Vallarta, Ciudad Ju\u00e1rez, Monterrey or Guadal",
+    "displayUrl": "https://www.krystal-hotels.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/30589.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=30589&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Hotels & Accommodation",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "krystal-hotels.com"
+      },
+      {
+        "domain": "*.krystal-hotels.com"
       }
     ]
   },
@@ -6789,6 +6843,30 @@
     ]
   },
   {
+    "id": "101163",
+    "name": "Pan Pacific Hotel Group (US)",
+    "network": "awin",
+    "description": "Discover Pan Pacific Hotels Group. With almost 50 hotels, resorts and serviced suites across 29 cities under its Pan Pacific, PARKROYAL COLLECTION and PARKROYAL brands.",
+    "displayUrl": "https://www.panpacific.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/101163.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=101163&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Hotels & Accommodation",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "panpacific.com"
+      },
+      {
+        "domain": "*.panpacific.com"
+      }
+    ]
+  },
+  {
     "id": "101325",
     "name": "ShinningU - US",
     "network": "awin",
@@ -8768,6 +8846,30 @@
       },
       {
         "domain": "*.jabees.com"
+      }
+    ]
+  },
+  {
+    "id": "110354",
+    "name": "TRAUM Fragrances",
+    "network": "awin",
+    "description": "TRAUM creates luxurious, hand-crafted candles featuring renowned perfumers, premium natural ingredients, and elegant ceramic vessels. Rooted in empowerment, TRAUM connects cherished memories with dreams, elevating your space with timeless sophistication.",
+    "displayUrl": "https://traumfragrances.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/110354.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=110354&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "traumfragrances.com"
+      },
+      {
+        "domain": "*.traumfragrances.com"
       }
     ]
   },
