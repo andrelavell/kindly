@@ -269,6 +269,33 @@
     ]
   },
   {
+    "id": "6743",
+    "name": "Casetify (Global)",
+    "network": "awin",
+    "description": "CASETiFY is the lifestyle brand for creativity and self-expression. With stylish tech accessories and customization for your case from A to Z, CASETiFY has got you covered. Show your colors with CASETiFY!",
+    "displayUrl": "https://www.casetify.com",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/6743.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=6743&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Electronic Accessories",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "*.casetify.com"
+      },
+      {
+        "domain": "www.casetify.com"
+      },
+      {
+        "domain": "casetify.com"
+      }
+    ]
+  },
+  {
     "id": "6988",
     "name": "Marley Spoon (US)",
     "network": "awin",
@@ -592,6 +619,33 @@
       },
       {
         "domain": "*.denbypottery.com"
+      }
+    ]
+  },
+  {
+    "id": "16561",
+    "name": "Inspire Uplift (US & Canada)",
+    "network": "awin",
+    "description": "Discover something creative from a small business or independent creator at Inspire Uplift Marketplace!",
+    "displayUrl": "https://www.inspireuplift.com",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/16561.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=16561&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "www.inspireuplift.com"
+      },
+      {
+        "domain": "*.inspireuplift.com"
+      },
+      {
+        "domain": "inspireuplift.com"
       }
     ]
   },
@@ -2153,6 +2207,30 @@
     ]
   },
   {
+    "id": "29717",
+    "name": "The Skin Deep (US)",
+    "network": "awin",
+    "description": "The Skin Deep\u2019s {THE AND} card games allow you to start asking bigger questions and get to know someone beyond the surface. With 11 decks from couples to co-workers and everything in between {THE AND} card games are a chance to dig a little deeper!",
+    "displayUrl": "https://shop.theskindeep.com",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/29717.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=29717&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Toys & Games",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "shop.theskindeep.com"
+      },
+      {
+        "domain": "*.shop.theskindeep.com"
+      }
+    ]
+  },
+  {
     "id": "29871",
     "name": "Hotels Viva (US)",
     "network": "awin",
@@ -2302,6 +2380,30 @@
       },
       {
         "domain": "*.butlertechnik.com"
+      }
+    ]
+  },
+  {
+    "id": "30341",
+    "name": "USAmerica Shop (US)",
+    "network": "awin",
+    "description": "USAMERICA.SHOP a marketplace with thousands of trending innovative products at an affordable price.",
+    "displayUrl": "https://usamerica.shop/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/30341.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=30341&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "usamerica.shop"
+      },
+      {
+        "domain": "*.usamerica.shop"
       }
     ]
   },
@@ -3048,6 +3150,36 @@
     ]
   },
   {
+    "id": "39940",
+    "name": "Sera Labs (US)",
+    "network": "awin",
+    "description": "SeraLabs is a trusted leader in wellness and beauty, offering products with cutting-edge technology, superior ingredients, and science-backed, proprietary formulations. We have two primary product lines Seraropical Revolution and Nutri-Strips.",
+    "displayUrl": "https://seralabshealth.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/39940.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=39940&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "seratopicalrevolution.com"
+      },
+      {
+        "domain": "*.seratopicalrevolution.com"
+      },
+      {
+        "domain": "seralabshealth.com"
+      },
+      {
+        "domain": "*.seralabshealth.com"
+      }
+    ]
+  },
+  {
     "id": "40342",
     "name": "ALLPOWERS (US & CA)",
     "network": "awin",
@@ -3555,6 +3687,30 @@
     ]
   },
   {
+    "id": "53271",
+    "name": "DrHouse Inc (US)",
+    "network": "awin",
+    "description": "DrHouse is a 24/7 on-demand telehealth and prescription delivery service, exclusively available through our user-friendly app. With DrHouse, users can start instant virtual visits with licensed doctors and experience affordable, quality healthcare.",
+    "displayUrl": "https://www.drhouse.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/53271.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=53271&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "drhouse.com"
+      },
+      {
+        "domain": "*.drhouse.com"
+      }
+    ]
+  },
+  {
     "id": "53273",
     "name": "College Insights (US)",
     "network": "awin",
@@ -3942,6 +4098,30 @@
     ]
   },
   {
+    "id": "62767",
+    "name": "Wallpaperdirect US",
+    "network": "awin",
+    "description": "Wallpaperdirect is the leading online wallcoverings store, offering over 20,000 product designs from a curated list of designer brands. Our the unique site has helped customers choose and buy wallpaper since online 1999.",
+    "displayUrl": "https://www.wallpaperdirect.com/us",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/62767.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=62767&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "wallpaperdirect.com"
+      },
+      {
+        "domain": "*.wallpaperdirect.com"
+      }
+    ]
+  },
+  {
     "id": "62998",
     "name": "SolaRosette",
     "network": "awin",
@@ -4082,6 +4262,33 @@
       },
       {
         "domain": "*.muslimaid.org"
+      }
+    ]
+  },
+  {
+    "id": "69992",
+    "name": "Audible (Canada)",
+    "network": "awin",
+    "description": "All the best audiobooks, originals, and podcasts are here on Audible. An awe-inspiring selection of audiobooks and podcasts awaits. Learn more at Audible.ca.",
+    "displayUrl": "https://audible.ca/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/69992.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=69992&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Books & Subscriptions",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "audible.ca"
+      },
+      {
+        "domain": "*.audible.ca"
+      },
+      {
+        "domain": "feature-preprod.audible.ca"
       }
     ]
   },
@@ -4986,6 +5193,63 @@
     ]
   },
   {
+    "id": "79372",
+    "name": "Mancrates (US)",
+    "network": "awin",
+    "description": "Man Crates delivers epic gifts for guys who love cool stuff. Promote our legendary gift crates and be the hero of any occasion. Partner with us and help your audience score unforgettable gifts while enjoying a top-notch affiliate gig!",
+    "displayUrl": "https://www.mancrates.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/79372.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=79372&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Gifts & Flowers",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "mancrates.com"
+      },
+      {
+        "domain": "*.mancrates.com"
+      },
+      {
+        "domain": "mancrates-gifting.myshopify.com"
+      }
+    ]
+  },
+  {
+    "id": "79374",
+    "name": "Thoughtfully (US)",
+    "network": "awin",
+    "description": "Thoughtfully is a global leader in gourmet specialty foods and gifts, specializing in modern food trends and unique flavors from around the world!",
+    "displayUrl": "https://www.thoughtfully.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/79374.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=79374&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Gifts & Flowers",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "thoughtfully.com"
+      },
+      {
+        "domain": "*.thoughtfully.com"
+      },
+      {
+        "domain": "thoughtfully.cloud"
+      },
+      {
+        "domain": "*.thoughtfully.cloud"
+      }
+    ]
+  },
+  {
     "id": "79742",
     "name": "Lio's world",
     "network": "awin",
@@ -5205,6 +5469,30 @@
     ]
   },
   {
+    "id": "81635",
+    "name": "Circle DNA (US)",
+    "network": "awin",
+    "description": "CircleDNA helps you discover what\u2019s most unique about you: your DNA. The CircleDNA Premium Test is a simple at-home test that uncovers 500+ reports about your personalised diet profiles, nutrient needs and optimal exercise routines.",
+    "displayUrl": "https://circledna.com/en",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/81635.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=81635&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "circledna.com"
+      },
+      {
+        "domain": "*.circledna.com"
+      }
+    ]
+  },
+  {
     "id": "81871",
     "name": "xbloom (US)",
     "network": "awin",
@@ -5373,6 +5661,30 @@
     ]
   },
   {
+    "id": "84087",
+    "name": "Season Journals",
+    "network": "awin",
+    "description": "Season Journals is a leader in the art of guided journaling for mindfulness, mental health, and relationship building. Their suite of products includes three comprehensive journals for momentous seasons of life: Engagement, Marriage, Pregnancy.",
+    "displayUrl": "https://seasonjournals.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/84087.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=84087&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Gifts & Flowers",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "seasonjournals.com"
+      },
+      {
+        "domain": "*.seasonjournals.com"
+      }
+    ]
+  },
+  {
     "id": "84457",
     "name": "Egyptian Linens (US)",
     "network": "awin",
@@ -5399,6 +5711,30 @@
       },
       {
         "domain": "*.egyptianlinens.myshopify.com"
+      }
+    ]
+  },
+  {
+    "id": "84573",
+    "name": "Breeze eSim US",
+    "network": "awin",
+    "description": "Breeze is the global eSIM affiliate platform that provides affordable, easy to use data packages in over 190 countries. Affiliate partners can connect customers with the best data plans and earn up to 20% commission on every sale and a 30 day referral win",
+    "displayUrl": "https://breezesim.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/84573.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=84573&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Mobile Broadband",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "breezesim.com"
+      },
+      {
+        "domain": "*.breezesim.com"
       }
     ]
   },
@@ -5624,6 +5960,30 @@
       },
       {
         "domain": "possible-foods.myshopify.com"
+      }
+    ]
+  },
+  {
+    "id": "85749",
+    "name": "DRYWORLD",
+    "network": "awin",
+    "description": "Dryworld is a performance athletic brand devoted to producing innovative, high-quality apparel and gear designed by leading athletes including Ronaldinho, Sara Rohel and more. Offering a wide range of products for men and women.",
+    "displayUrl": "https://www.dryworldshop.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/85749.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=85749&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Clothing",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "dryworldshop.com"
+      },
+      {
+        "domain": "*.dryworldshop.com"
       }
     ]
   },
@@ -6323,6 +6683,30 @@
       },
       {
         "domain": "6f66c6.myshopify.com"
+      }
+    ]
+  },
+  {
+    "id": "100847",
+    "name": "Bestia Dog Sport US",
+    "network": "awin",
+    "description": "Bestia Dog Sport specializes in durable gear, training accessories, and food supplements for active dogs and owners. Enjoy free shipping on orders over $100 and a satisfaction guarantee. Discover quality and support for your canine's active lifestyle.",
+    "displayUrl": "https://www.bestiadogsport.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/100847.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=100847&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Pets & Pet Care",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "bestiadogsport.com"
+      },
+      {
+        "domain": "*.bestiadogsport.com"
       }
     ]
   },
@@ -7233,6 +7617,30 @@
     ]
   },
   {
+    "id": "105881",
+    "name": "Nectar Collector (US)",
+    "network": "awin",
+    "description": "The Nectar Collector was conceived in the backwoods of Oregon as a tool to simplify the process of using concentrates in the rugged conditions of mountain life.",
+    "displayUrl": "https://nectarcollector.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/105881.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=105881&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Wine, Spirits & Tobacco",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "nectarcollector.com"
+      },
+      {
+        "domain": "*.nectarcollector.com"
+      }
+    ]
+  },
+  {
     "id": "105961",
     "name": "Tatti Lashes US",
     "network": "awin",
@@ -8126,6 +8534,33 @@
       },
       {
         "domain": "*.usboot.com"
+      }
+    ]
+  },
+  {
+    "id": "109598",
+    "name": "A.S.A.P - Always Say A Prayer (US)",
+    "network": "awin",
+    "description": "Discover ASAP-Always Say A Prayer, a faith-driven brand of streetwear and merchandise dedicated to inspiring hope and unity through prayer. Join our mission to spread positivity and strength - one prayer at a time. Celebrate faith, AlwaysSayAPrayer.com",
+    "displayUrl": "https://www.alwayssayaprayer.com",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/109598.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=109598&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Sportswear",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "alwayssayaprayer.com"
+      },
+      {
+        "domain": "*.alwayssayaprayer.com"
+      },
+      {
+        "domain": "7cdff4-81.myshopify.com"
       }
     ]
   },

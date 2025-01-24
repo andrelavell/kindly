@@ -1,14 +1,14 @@
 :root {
-  /* Primary brand color - rose-500 */
-  --brand-color: rgb(244 63 94);
+  /* Primary brand color - Accessible red that meets WCAG 2.1 AA standards */
+  --brand-color: #E11D48;
 }
 
 .brand {
-  color: rgb(244 63 94); /* rose-500 */
+  color: #E11D48; /* WCAG 2.1 AA compliant */
 }
 
 .bg-brand {
-  background-color: rgb(244 63 94); /* rose-500 */
+  background-color: #E11D48; /* WCAG 2.1 AA compliant */
 }
 
 /* Use with opacity utilities like: class="brand opacity-50" or "bg-brand opacity-10" */
