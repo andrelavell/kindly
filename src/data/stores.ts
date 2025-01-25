@@ -177,12 +177,6 @@ export const stores: Store[] = [
     "domain": "booking.com"
   },
   {
-    "name": "Airbnb",
-    "category": "Travel",
-    "popular": true,
-    "domain": "airbnb.com"
-  },
-  {
     "name": "Dell",
     "category": "Electronics & Tech",
     "popular": true,
@@ -1720,5 +1714,611 @@ export const stores: Store[] = [
     "name": "4moms",
     "category": "Baby & Kids",
     "domain": "4moms.com"
+  },
+  // Added from approved merchants
+  {
+    "name": "Revival Animal Health",
+    "category": "Pet Supplies",
+    "domain": "revivalanimal.com"
+  },
+  {
+    "name": "Rexing",
+    "category": "Electronics & Tech",
+    "domain": "rexingusa.com"
+  },
+  {
+    "name": "Love Scent Pheromone",
+    "category": "Health & Beauty",
+    "domain": "love-scent.com"
+  },
+  {
+    "name": "Lucasgift",
+    "category": "Gifts",
+    "domain": "lucasgift.com"
+  },
+  {
+    "name": "LuggageHero",
+    "category": "Travel",
+    "domain": "luggagehero.com"
+  },
+  {
+    "name": "LugLess",
+    "category": "Travel",
+    "domain": "lugless.com"
+  },
+  {
+    "name": "Mancrates",
+    "category": "Gifts",
+    "domain": "mancrates.com"
+  },
+  {
+    "name": "Market America",
+    "category": "Major Retailers",
+    "domain": "marketamerica.com"
+  },
+  {
+    "name": "Motives",
+    "category": "Health & Beauty",
+    "domain": "motives.com"
+  },
+  {
+    "name": "Isotonix Supplements",
+    "category": "Health & Beauty",
+    "domain": "isotonix.com"
+  },
+  {
+    "name": "Lummi Island Wild",
+    "category": "Food & Beverage",
+    "domain": "lummiislandwild.com"
+  },
+  {
+    "name": "Marley Spoon",
+    "category": "Food & Beverage",
+    "domain": "marleyspoon.com"
+  },
+  {
+    "name": "MediTac Kits",
+    "category": "Health & Beauty",
+    "domain": "meditac.com"
+  },
+  {
+    "name": "Mexico Grand Hotels",
+    "category": "Travel",
+    "domain": "mexicograndhotels.com"
+  },
+  {
+    "name": "minicabit",
+    "category": "Travel",
+    "domain": "minicabit.com"
+  },
+  {
+    "name": "MonthlyClubs.com",
+    "category": "Food & Beverage",
+    "domain": "monthlyclubs.com"
+  },
+  {
+    "name": "MPH Bank",
+    "category": "Major Retailers",
+    "domain": "mphbank.com"
+  },
+  {
+    "name": "Muslim Aid US",
+    "category": "Major Retailers",
+    "domain": "muslimaid.org"
+  },
+  {
+    "name": "Nadula",
+    "category": "Health & Beauty",
+    "domain": "nadula.com"
+  },
+  {
+    "name": "Nature's Skin And Body Food",
+    "category": "Health & Beauty",
+    "domain": "naturesskinandbodyfood.com"
+  },
+  {
+    "name": "Newspapers.com",
+    "category": "Books & Media",
+    "domain": "newspapers.com"
+  },
+  {
+    "name": "O&O Software",
+    "category": "Electronics & Tech",
+    "domain": "oo-software.com"
+  },
+  {
+    "name": "Olalily",
+    "category": "Fashion & Apparel",
+    "domain": "olalily.com"
+  },
+  {
+    "name": "OrlandoVacation.com",
+    "category": "Travel",
+    "domain": "orlandovacation.com"
+  },
+  {
+    "name": "OVAGO",
+    "category": "Travel",
+    "domain": "ovago.com"
+  },
+  {
+    "name": "PartnerBoost",
+    "category": "Major Retailers",
+    "domain": "partnerboost.com"
+  },
+  {
+    "name": "PeopleFinders",
+    "category": "Electronics & Tech",
+    "domain": "peoplefinders.com"
+  },
+  {
+    "name": "Piano Luxury Group",
+    "category": "Fashion & Apparel",
+    "domain": "pianoluxury.com"
+  },
+  {
+    "name": "Portals Parfums",
+    "category": "Health & Beauty",
+    "domain": "portalsparfums.com"
+  },
+  {
+    "name": "PRNVision",
+    "category": "Electronics & Tech",
+    "domain": "prnvision.com"
+  },
+  {
+    "name": "Pure & Cimple",
+    "category": "Health & Beauty",
+    "domain": "pureandcimple.com"
+  },
+  {
+    "name": "Reel Unlimited",
+    "category": "Electronics & Tech",
+    "domain": "reelunlimited.com"
+  },
+  {
+    "name": "Ribble Cycles",
+    "category": "Sports & Outdoors",
+    "domain": "ribblecycles.com"
+  },
+  {
+    "name": "Rug and Rugs",
+    "category": "Home & Garden",
+    "domain": "rugnrugs.com"
+  },
+  {
+    "name": "SA Aligners",
+    "category": "Health & Beauty",
+    "domain": "saaligners.com"
+  },
+  {
+    "name": "Scala Hosting",
+    "category": "Electronics & Tech",
+    "domain": "scalahosting.com"
+  },
+  {
+    "name": "Sera Labs",
+    "category": "Health & Beauty",
+    "domain": "seralabshealth.com"
+  },
+  {
+    "name": "Short Par 4",
+    "category": "Sports & Outdoors",
+    "domain": "shortpar4.com"
+  },
+  {
+    "name": "Skimpies",
+    "category": "Fashion & Apparel",
+    "domain": "skimpies.com"
+  },
+  {
+    "name": "SlumberPod",
+    "category": "Baby & Kids",
+    "domain": "slumberpod.com"
+  },
+  {
+    "name": "SoccerGarage.com",
+    "category": "Sports & Outdoors",
+    "domain": "soccergarage.com"
+  },
+  {
+    "name": "Somatchi",
+    "category": "Fashion & Apparel",
+    "domain": "somatchi.com"
+  },
+  {
+    "name": "Sport is good",
+    "category": "Sports & Outdoors",
+    "domain": "sportisgood.com"
+  },
+  {
+    "name": "Station Casinos",
+    "category": "Travel",
+    "domain": "stationcasinos.com"
+  },
+  {
+    "name": "StudentUniverse",
+    "category": "Travel",
+    "domain": "studentuniverse.com"
+  },
+  {
+    "name": "Sundae School",
+    "category": "Fashion & Apparel",
+    "domain": "sundae.school"
+  },
+  {
+    "name": "Swanwick Sleep",
+    "category": "Health & Beauty",
+    "domain": "swanwicksleep.com"
+  },
+  {
+    "name": "TAFER Hotels & Resorts",
+    "category": "Travel",
+    "domain": "taferresorts.com"
+  },
+  {
+    "name": "Tech For Less",
+    "category": "Electronics & Tech",
+    "domain": "techforless.com"
+  },
+  {
+    "name": "Tesoro Resorts",
+    "category": "Travel",
+    "domain": "tesororesorts.com"
+  },
+  {
+    "name": "The Private Gym",
+    "category": "Health & Beauty",
+    "domain": "theprivategym.com"
+  },
+  {
+    "name": "The Uptown Baby",
+    "category": "Baby & Kids",
+    "domain": "theuptownbaby.com"
+  },
+  {
+    "name": "TicketLiquidator",
+    "category": "Entertainment",
+    "domain": "ticketliquidator.com"
+  },
+  {
+    "name": "Tiqets",
+    "category": "Entertainment",
+    "domain": "tiqets.com"
+  },
+  {
+    "name": "Travelex Insurance",
+    "category": "Insurance",
+    "domain": "travelexinsurance.com"
+  },
+  {
+    "name": "Trina Turk",
+    "category": "Fashion & Apparel",
+    "domain": "trinaturk.com"
+  },
+  {
+    "name": "Turbopass",
+    "category": "Travel",
+    "domain": "turbopass.com"
+  },
+  {
+    "name": "KeraFactor (US)",
+    "category": "Health & Beauty",
+    "domain": "kerafactor.com"
+  },
+  {
+    "name": "Levity US",
+    "category": "Health & Beauty",
+    "domain": "joinlevity.com"
+  },
+  {
+    "name": "Little Paper Boat (US)",
+    "category": "Fashion & Apparel",
+    "domain": "littlepaperboat.com"
+  },
+  {
+    "name": "LovedOnes.ai (US)",
+    "category": "Electronics & Tech",
+    "domain": "lovedones.ai"
+  },
+  {
+    "name": "LUXE Bidet",
+    "category": "Home & Garden",
+    "domain": "luxebidet.com"
+  },
+  {
+    "name": "Magzter",
+    "category": "Entertainment",
+    "domain": "magzter.com"
+  },
+  {
+    "name": "Mancrates (US)",
+    "category": "Gifts",
+    "domain": "mancrates.com"
+  },
+  {
+    "name": "Market America Brands",
+    "category": "Major Retailers",
+    "domain": "shop.com"
+  },
+  {
+    "name": "Motives Cosmetics",
+    "category": "Health & Beauty",
+    "domain": "motivescosmetics.com"
+  },
+  {
+    "name": "Isotonix",
+    "category": "Health & Beauty",
+    "domain": "isotonix.com"
+  },
+  {
+    "name": "ABM Equipment (US)",
+    "category": "Industrial & Tools",
+    "domain": "abmequipment.com"
+  },
+  {
+    "name": "Adventures Vallarta (US)",
+    "category": "Travel",
+    "domain": "vallarta-adventures.com"
+  },
+  {
+    "name": "Allergy Test (US)",
+    "category": "Health & Beauty",
+    "domain": "allergytest.co"
+  },
+  {
+    "name": "AM Gadgets CPS - US",
+    "category": "Electronics & Tech",
+    "domain": "amgadgets.net"
+  },
+  {
+    "name": "Amazonliss (US)",
+    "category": "Health & Beauty",
+    "domain": "amazonliss.com"
+  },
+  {
+    "name": "Aniise (US)",
+    "category": "Health & Beauty",
+    "domain": "aniise.com"
+  },
+  {
+    "name": "Apex S1 affiliates",
+    "category": "Sports & Outdoors",
+    "domain": "rdrsports.com"
+  },
+  {
+    "name": "Arlo Australia",
+    "category": "Electronics & Tech",
+    "domain": "arlo.com"
+  },
+  {
+    "name": "Audible (Canada)",
+    "category": "Entertainment",
+    "domain": "audible.ca"
+  },
+  {
+    "name": "Awin (USD)",
+    "category": "Business Services",
+    "domain": "awin.com"
+  },
+  {
+    "name": "Baxinier (US)",
+    "category": "Fashion & Apparel",
+    "domain": "baxinier.com"
+  },
+  {
+    "name": "Belleek US",
+    "category": "Home & Garden",
+    "domain": "belleek.com"
+  },
+  {
+    "name": "Beyond Memories",
+    "category": "Gifts",
+    "domain": "beyondmemories.com"
+  },
+  {
+    "name": "BlackboxMeats (US)",
+    "category": "Food & Beverage",
+    "domain": "blackboxmeats.com"
+  },
+  {
+    "name": "Border Free Health US",
+    "category": "Health & Beauty",
+    "domain": "borderfreehealth.com"
+  },
+  {
+    "name": "Butler Technik (US & Canada)",
+    "category": "Industrial & Tools",
+    "domain": "butlertechnik.com"
+  },
+  {
+    "name": "Casemade US",
+    "category": "Electronics & Tech",
+    "domain": "casemade.com"
+  },
+  {
+    "name": "Check My Body Health (US)",
+    "category": "Health & Beauty",
+    "domain": "checkmybodyhealth.com"
+  },
+  {
+    "name": "Circle DNA (US)",
+    "category": "Health & Beauty",
+    "domain": "circledna.com"
+  },
+  {
+    "name": "College Insights (US)",
+    "category": "Education",
+    "domain": "collegeinsights.com"
+  },
+  {
+    "name": "Contact Lens King",
+    "category": "Health & Beauty",
+    "domain": "contactlensking.com"
+  },
+  {
+    "name": "Corel Corporation",
+    "category": "Software",
+    "domain": "corel.com"
+  },
+  {
+    "name": "Coushy US",
+    "category": "Home & Garden",
+    "domain": "coushy.com"
+  },
+  {
+    "name": "CRX - Car Rental Express (US)",
+    "category": "Travel",
+    "domain": "carrentalexpress.com"
+  },
+  {
+    "name": "Deborah Lippmann",
+    "category": "Health & Beauty",
+    "domain": "deborahlippmann.com"
+  },
+  {
+    "name": "Device Tracker Plus (US)",
+    "category": "Electronics & Tech",
+    "domain": "devicetrackerplus.com"
+  },
+  {
+    "name": "Dip'N Dive US",
+    "category": "Sports & Outdoors",
+    "domain": "dipndive.com"
+  },
+  {
+    "name": "Dmoose (US)",
+    "category": "Sports & Outdoors",
+    "domain": "dmoose.com"
+  },
+  {
+    "name": "DriveSafe Online",
+    "category": "Education",
+    "domain": "drivesafeonline.com"
+  },
+  {
+    "name": "Dusit Hotels & Resorts",
+    "category": "Travel",
+    "domain": "dusit.com"
+  },
+  {
+    "name": "Eatwith (US)",
+    "category": "Food & Beverage",
+    "domain": "eatwith.com"
+  },
+  {
+    "name": "Ecowise US",
+    "category": "Health & Beauty",
+    "domain": "ecowise.com"
+  },
+  {
+    "name": "Ela Lane (US)",
+    "category": "Home & Garden",
+    "domain": "elalane.com"
+  },
+  {
+    "name": "Enjoy the Wood",
+    "category": "Home & Garden",
+    "domain": "enjoythewood.com"
+  },
+  {
+    "name": "EpicVIN",
+    "category": "Automotive",
+    "domain": "epicvin.com"
+  },
+  {
+    "name": "Exam Edge (US)",
+    "category": "Education",
+    "domain": "examedge.com"
+  },
+  {
+    "name": "Ferrari World Abu Dhabi (US)",
+    "category": "Entertainment",
+    "domain": "ferrariworldabudhabi.com"
+  },
+  {
+    "name": "FOPOMonitor (US)",
+    "category": "Electronics & Tech",
+    "domain": "fopomonitor.com"
+  },
+  {
+    "name": "Freddy US",
+    "category": "Fashion & Apparel",
+    "domain": "freddystore.com"
+  },
+  {
+    "name": "FunnyFuzzy",
+    "category": "Pet Supplies",
+    "domain": "funnyfuzzy.com"
+  },
+  {
+    "name": "GameFly",
+    "category": "Entertainment",
+    "domain": "gamefly.com"
+  },
+  {
+    "name": "Golden Root (US)",
+    "category": "Food & Beverage",
+    "domain": "goldenroot.com"
+  },
+  {
+    "name": "H10 Hotels (US & Canada)",
+    "category": "Travel",
+    "domain": "h10hotels.com"
+  },
+  {
+    "name": "HealthyMale",
+    "category": "Health & Beauty",
+    "domain": "healthymale.com"
+  },
+  {
+    "name": "HigherDOSE (US)",
+    "category": "Health & Beauty",
+    "domain": "higherdose.com"
+  },
+  {
+    "name": "Humboldt Humidors (US)",
+    "category": "Lifestyle",
+    "domain": "humboldthumidors.com"
+  },
+  {
+    "name": "IHG Greater China",
+    "category": "Travel",
+    "domain": "ihg.com"
+  },
+  {
+    "name": "Insta Slim",
+    "category": "Fashion & Apparel",
+    "domain": "instaslim.com"
+  },
+  {
+    "name": "Iolo System Mechanic",
+    "category": "Software",
+    "domain": "iolo.com"
+  },
+  {
+    "name": "IPlay",
+    "category": "Toys & Games",
+    "domain": "iplaytoys.com"
+  },
+  {
+    "name": "John Boos & Co.",
+    "category": "Home & Garden",
+    "domain": "johnboos.com"
+  },
+  {
+    "name": "Kailash Energy (US)",
+    "category": "Jewelry",
+    "domain": "kailashenergy.com"
+  },
+  {
+    "name": "Kings Camo",
+    "category": "Sports & Outdoors",
+    "domain": "kingscamo.com"
+  },
+  {
+    "name": "LATAM Airlines (US)",
+    "category": "Travel",
+    "domain": "latam.com"
   }
 ];

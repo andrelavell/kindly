@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Change to the kindly directory where our files are located
+cd /Users/deandremoore/Desktop/kindly
+
+# Activate virtual environment and run the Python script
+source "/Users/deandremoore/Desktop/kindly/venv/bin/activate"
+python "/Users/deandremoore/Desktop/kindly/scripts/fetch_rakuten_data.py"
+deactivate

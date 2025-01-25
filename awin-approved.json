@@ -623,6 +623,30 @@
     ]
   },
   {
+    "id": "15596",
+    "name": "StackedSkincare",
+    "network": "awin",
+    "description": "StackedSkincare\u00ae created by award-winning aesthetician Kerry Benjamin, specializes in serums, peels, and cutting-edge tools, and the brand\u2019s formulations are made in small batches to ensure quality and efficacy.",
+    "displayUrl": "https://stackedskincare.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/15596.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=15596&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "*.stackedskincare.com"
+      },
+      {
+        "domain": "stackedskincare.com"
+      }
+    ]
+  },
+  {
     "id": "15820",
     "name": "Denby (US & CA)",
     "network": "awin",
@@ -1496,6 +1520,30 @@
     ]
   },
   {
+    "id": "24529",
+    "name": "Go2Africa (US)",
+    "network": "awin",
+    "description": "Go2Africa are Africa\u2019s Leading Luxury Tour Operator, with over 25 years in the business. We sell customized, all-inclusive packages to help our clients experience the very best the continent has to offer.",
+    "displayUrl": "https://www.go2africa.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/24529.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=24529&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Travel Agencies",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "*.go2africa.com"
+      },
+      {
+        "domain": "www.go2africa.com"
+      }
+    ]
+  },
+  {
     "id": "24562",
     "name": "Padel Market",
     "network": "awin",
@@ -1540,6 +1588,30 @@
       },
       {
         "domain": "www.shoplittlepaperboatco.com"
+      }
+    ]
+  },
+  {
+    "id": "24836",
+    "name": "Zupapa (US)",
+    "network": "awin",
+    "description": "Elevating Family Fun! Discover high-quality trampolines, climbers, hammocks, paddle boards, swings, and more. Join 300K+ satisfied families and nurture your child's physical and mental well-being. Experience the Zupapa magic today!",
+    "displayUrl": "https://www.zupapa.us/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/24836.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=24836&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Entertainment Superstore",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "*.zupapa.us"
+      },
+      {
+        "domain": "www.zupapa.us"
       }
     ]
   },
@@ -2438,6 +2510,30 @@
     ]
   },
   {
+    "id": "30479",
+    "name": "Lingo Kids (US)",
+    "network": "awin",
+    "description": "Lingokids is an educational app aimed at children aged 2 to 8 that is focused on the power of learning through play. Our family safe app has been designed to be used by both native and non native English speakers to enjoy the benefits of Playlearning\u2122",
+    "displayUrl": "https://app.lingokids.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/30479.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=30479&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Toys & Games",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "lingokids.com"
+      },
+      {
+        "domain": "*.lingokids.com"
+      }
+    ]
+  },
+  {
     "id": "30513",
     "name": "LIVLIT ORGANIC PADS & LINERS (US)",
     "network": "awin",
@@ -2602,6 +2698,30 @@
       },
       {
         "domain": "*.tesororesorts.com"
+      }
+    ]
+  },
+  {
+    "id": "31581",
+    "name": "ParagraphAI (US)",
+    "network": "awin",
+    "description": "Flawless Grammar. Effortless Writing. Instant Replies. ParagraphAI is a tiny AI productivity tool with big impact. Our free AI writing assistant will bring your content to the next level in a fraction of the time.",
+    "displayUrl": "https://paragraphai.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/31581.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=31581&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Lead Gen",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "paragraphai.com"
+      },
+      {
+        "domain": "*.paragraphai.com"
       }
     ]
   },
@@ -5328,6 +5448,33 @@
     ]
   },
   {
+    "id": "79772",
+    "name": "Incase (US)",
+    "network": "awin",
+    "description": "Founded in 1997, Incase is a brand driven by design. We design solutions centered on protection and mobility to meet the evolving demands of today's creatives. An ecosystem of bags, laptop, and mobile accessories.",
+    "displayUrl": "https://incase.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/79772.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=79772&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Electronic Accessories",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "incase.com"
+      },
+      {
+        "domain": "*.incase.com"
+      },
+      {
+        "domain": "onward-brands.myshopify.com"
+      }
+    ]
+  },
+  {
     "id": "79982",
     "name": "Aspen Green (US)",
     "network": "awin",
@@ -6714,6 +6861,30 @@
     ]
   },
   {
+    "id": "100751",
+    "name": "Breezy Golf (US)",
+    "network": "awin",
+    "description": "Breezy is a brand by us, the boys of Bob Does Sports, and it's driven by the philosophy that a round of golf is best enjoyed with the gang and a stiff drink in hand. We make golf gear that lets you play in comfort.",
+    "displayUrl": "https://breezygolf.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/100751.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=100751&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Menswear",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "breezygolf.com"
+      },
+      {
+        "domain": "*.breezygolf.com"
+      }
+    ]
+  },
+  {
     "id": "100831",
     "name": "Jartoo US",
     "network": "awin",
@@ -7119,30 +7290,6 @@
     ]
   },
   {
-    "id": "102107",
-    "name": "Kindred Tales",
-    "network": "awin",
-    "description": "Kindred Tales helps families preserve loved ones' life stories in a beautiful, custom-printed keepsake book. With weekly prompts and AI tools, capturing memories has never been easier. The perfect gift for parents and grandparents to treasure their legacy",
-    "displayUrl": "https://kindredtales.net",
-    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/102107.png",
-    "affiliateLink": "https://www.awin1.com/awclick.php?mid=102107&id=1818430",
-    "currencyCode": "USD",
-    "status": "Active",
-    "category": {
-      "parent": "Books & Subscriptions",
-      "child": ""
-    },
-    "primaryRegion": "United States of America",
-    "validDomains": [
-      {
-        "domain": "kindredtales.net"
-      },
-      {
-        "domain": "*.kindredtales.net"
-      }
-    ]
-  },
-  {
     "id": "102113",
     "name": "Serverbyt",
     "network": "awin",
@@ -7269,6 +7416,30 @@
     ]
   },
   {
+    "id": "102531",
+    "name": "Ketamine Clinics Los Angeles (US)",
+    "network": "awin",
+    "description": "Ketamine Clinics Los Angeles (KCLA) is a world-renowned mental health clinic that has revolutionized mental health care since 2014. KCLA specializes in Ketamine Infusion Therapy, Transcranial Magnetic Stimulation (TMS), and General Psychiatry.",
+    "displayUrl": "https://ketamineclinics.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/102531.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=102531&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "ketamineclinics.com"
+      },
+      {
+        "domain": "*.ketamineclinics.com"
+      }
+    ]
+  },
+  {
     "id": "102547",
     "name": "Woven Woven (US)",
     "network": "awin",
@@ -7376,6 +7547,39 @@
       },
       {
         "domain": "*.heist-studios.com"
+      }
+    ]
+  },
+  {
+    "id": "102889",
+    "name": "Mindfulness Exercises (US)",
+    "network": "awin",
+    "description": "Mindfulness Exercises was founded in 2015 by Sean Fargo with the goal of making mindfulness and meditation teaching simple and accessible for everyone. We envision a world where we all support each other in being present for each unfolding moment.",
+    "displayUrl": "https://mindfulnessexercises.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/102889.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=102889&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "mindfulnessexercises.com"
+      },
+      {
+        "domain": "*.mindfulnessexercises.com"
+      },
+      {
+        "domain": "mindful.samcart.com"
+      },
+      {
+        "domain": "shop.mindfulnessexercises.com"
+      },
+      {
+        "domain": "checkout.mindfulnessexercises.com"
       }
     ]
   },
@@ -7763,6 +7967,30 @@
       },
       {
         "domain": "*.breedologynutrition.com"
+      }
+    ]
+  },
+  {
+    "id": "106077",
+    "name": "AKT London (US)",
+    "network": "awin",
+    "description": "AKT is designed with efficacy, strong environmental ethics, and premium fragrances at its forefront. All our formulations are made in the UK and packed into our signature, vibrant, plastic-free packaging.",
+    "displayUrl": "https://us.aktlondon.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/106077.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=106077&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Health & Beauty",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "us.aktlondon.com"
+      },
+      {
+        "domain": "*.us.aktlondon.com"
       }
     ]
   },
@@ -8292,30 +8520,6 @@
     ]
   },
   {
-    "id": "108596",
-    "name": "Doft New York Skincare US",
-    "network": "awin",
-    "description": "Renowned Park Avenue plastic surgeon, Dr. Melissa Doft wanted to create for her clients innovative skincare formulas that challenge current concepts to combat and renew aging skin. Doft New York is her answer and your private consultation.",
-    "displayUrl": "https://www.doftplasticsurgery.com/skincare/",
-    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/108596.png",
-    "affiliateLink": "https://www.awin1.com/awclick.php?mid=108596&id=1818430",
-    "currencyCode": "USD",
-    "status": "Active",
-    "category": {
-      "parent": "Health & Beauty",
-      "child": ""
-    },
-    "primaryRegion": "United States of America",
-    "validDomains": [
-      {
-        "domain": "doftplasticsurgery.com"
-      },
-      {
-        "domain": "*.doftplasticsurgery.com"
-      }
-    ]
-  },
-  {
     "id": "108608",
     "name": "Tilos (US)",
     "network": "awin",
@@ -8592,6 +8796,30 @@
     ]
   },
   {
+    "id": "109364",
+    "name": "Printerval",
+    "network": "awin",
+    "description": "Printerval.com is an global online marketplace, where people come together to make, sell, buy, and collect unique items. There\u2019s no Printerval warehouse \u2013 just independent sellers selling the things they love.",
+    "displayUrl": "https://printerval.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/109364.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=109364&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Clothing",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "printerval.com"
+      },
+      {
+        "domain": "*.printerval.com"
+      }
+    ]
+  },
+  {
     "id": "109518",
     "name": "US Boot (US)",
     "network": "awin",
@@ -8687,6 +8915,30 @@
       },
       {
         "domain": "*.crownie.co"
+      }
+    ]
+  },
+  {
+    "id": "109942",
+    "name": "e-firstaidsupplies (US)",
+    "network": "awin",
+    "description": "Specializes in high-quality first aid kits and medical supplies, sewn and assembled in-house in Rochester, NY. Offering a wide range of standard and specialty first aid kits, with durable American-made bags since 2001.",
+    "displayUrl": "https://www.e-firstaidsupplies.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/109942.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=109942&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Sports Equipment",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "e-firstaidsupplies.com"
+      },
+      {
+        "domain": "*.e-firstaidsupplies.com"
       }
     ]
   },
@@ -8997,6 +9249,36 @@
     ]
   },
   {
+    "id": "111020",
+    "name": "Kuishi",
+    "network": "awin",
+    "description": "Kuishi is a leading provider of sustainable, design-led products that enhance modern spaces while prioritizing functionality and style. Specializing in Luxury soap dispensers and organizational solutions, Kuishi caters to hotels, business as well as homes",
+    "displayUrl": "https://kuishi.com",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/111020.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=111020&id=1818430",
+    "currencyCode": "GBP",
+    "status": "Active",
+    "category": {
+      "parent": "Home & Garden",
+      "child": ""
+    },
+    "primaryRegion": "United Kingdom",
+    "validDomains": [
+      {
+        "domain": "5049a1-cb.myshopify.com"
+      },
+      {
+        "domain": "*.5049a1-cb.myshopify.com"
+      },
+      {
+        "domain": "kuishi.com"
+      },
+      {
+        "domain": "*.kuishi.com"
+      }
+    ]
+  },
+  {
     "id": "111224",
     "name": "E-Consumer Pulse",
     "network": "awin",
@@ -9007,7 +9289,7 @@
     "currencyCode": "USD",
     "status": "Active",
     "category": {
-      "parent": "FMCG",
+      "parent": "Business Services (B2B)",
       "child": ""
     },
     "primaryRegion": "United States of America",
@@ -9023,6 +9305,60 @@
       },
       {
         "domain": "*.zuq3jr-ux.myshopify.com"
+      }
+    ]
+  },
+  {
+    "id": "111250",
+    "name": "Delta Spirits (US)",
+    "network": "awin",
+    "description": "Delta Spirits will \"Lift your spirits\" without the hangover.  Try our flavorful line of beverages boosted with a dose of hemp-derived Delta 9 THC.",
+    "displayUrl": "https://www.drinkdeltaspirits.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/111250.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=111250&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Wine, Spirits & Tobacco",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "drinkdeltaspirits.com"
+      },
+      {
+        "domain": "*.drinkdeltaspirits.com"
+      }
+    ]
+  },
+  {
+    "id": "111298",
+    "name": "Story Catcher",
+    "network": "awin",
+    "description": "Story Catcher is a new product developed by Valley Life Histories, a family-owned company whose mission to ensure your story is documented and read by centuries to come. Story Catcher was developed to make documenting your life story easy and fun.",
+    "displayUrl": "https://storycatcher.co/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/111298.png",
+    "affiliateLink": "https://www.awin1.com/awclick.php?mid=111298&id=1818430",
+    "currencyCode": "USD",
+    "status": "Active",
+    "category": {
+      "parent": "Gifts & Flowers",
+      "child": ""
+    },
+    "primaryRegion": "United States of America",
+    "validDomains": [
+      {
+        "domain": "https"
+      },
+      {
+        "domain": "*.https"
+      },
+      {
+        "domain": "storycatcher.co"
+      },
+      {
+        "domain": "*.storycatcher.co"
       }
     ]
   }

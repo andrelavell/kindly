@@ -1,40 +1,77 @@
 [
   {
-    "id": "293124",
-    "name": "Love Scent Pheromone",
+    "id": "231679",
+    "name": "Flowers Fast",
     "network": "cj",
     "status": "Active",
     "validDomains": [
       {
-        "domain": "love-scent.com"
+        "domain": "FlowersFast.com"
       },
       {
-        "domain": "*.love-scent.com"
+        "domain": "*.FlowersFast.com"
       }
     ],
     "category": {
-      "parent": "Beauty",
-      "child": "Fragrance"
+      "parent": "Gifts & Flowers",
+      "child": "Flowers"
     },
-    "seven_day_epc": "6.46",
-    "three_month_epc": "4.50",
+    "seven_day_epc": "50.32",
+    "three_month_epc": "33.47",
     "network_rank": "1",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "sale",
+        "id": "589",
+        "commission": {
+          "default": {
+            "value": "20.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-1035863-1736284146000"
+  },
+  {
+    "id": "79362",
+    "name": "Testclear.com",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "testclear.com"
+      },
+      {
+        "domain": "*.testclear.com"
+      }
+    ],
+    "category": {
+      "parent": "Health and Wellness",
+      "child": "Health Food"
+    },
+    "seven_day_epc": "17.30",
+    "three_month_epc": "27.84",
+    "network_rank": "2",
     "mobile_tracking": false,
     "cookieless_tracking": true,
     "actions": [
       {
         "name": "",
         "type": "sale",
-        "id": "1296",
+        "id": "234",
         "commission": {
           "default": {
-            "value": "25.00%",
+            "value": "12.00%",
             "type": "percentage"
           }
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-10926914-1697044562000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-12823089-1628189486000"
   },
   {
     "id": "304810",
@@ -53,7 +90,7 @@
       "parent": "Food & Drinks",
       "child": "Gourmet"
     },
-    "seven_day_epc": "7.66",
+    "seven_day_epc": "7.81",
     "three_month_epc": "13.01",
     "network_rank": "2",
     "mobile_tracking": false,
@@ -71,7 +108,44 @@
         }
       }
     ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-10575414-1730756957000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-10575414-1730756957000"
+  },
+  {
+    "id": "293124",
+    "name": "Love Scent Pheromone",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "love-scent.com"
+      },
+      {
+        "domain": "*.love-scent.com"
+      }
+    ],
+    "category": {
+      "parent": "Beauty",
+      "child": "Fragrance"
+    },
+    "seven_day_epc": "5.60",
+    "three_month_epc": "4.50",
+    "network_rank": "1",
+    "mobile_tracking": false,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "sale",
+        "id": "1296",
+        "commission": {
+          "default": {
+            "value": "25.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-10926914-1697044562000"
   },
   {
     "id": "684659",
@@ -90,7 +164,7 @@
       "parent": "Travel",
       "child": "Vacation"
     },
-    "seven_day_epc": "16.77",
+    "seven_day_epc": "15.47",
     "three_month_epc": "19.83",
     "network_rank": "3",
     "mobile_tracking": true,
@@ -120,7 +194,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-12540781-1682450192000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-12540781-1682450192000"
   },
   {
     "id": "729207",
@@ -139,7 +213,7 @@
       "parent": "Gifts & Flowers",
       "child": "Flowers"
     },
-    "seven_day_epc": "12.08",
+    "seven_day_epc": "11.66",
     "three_month_epc": "6.40",
     "network_rank": "1",
     "mobile_tracking": false,
@@ -157,7 +231,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-3885640-1730398681000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-3885640-1730398681000"
   },
   {
     "id": "857900",
@@ -194,7 +268,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-5656132-1730382282000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-5656132-1730382282000"
   },
   {
     "id": "965192",
@@ -214,7 +288,7 @@
       "child": "Vacation"
     },
     "seven_day_epc": "0.00",
-    "three_month_epc": "3.24",
+    "three_month_epc": "3.60",
     "network_rank": "1",
     "mobile_tracking": true,
     "cookieless_tracking": true,
@@ -242,7 +316,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-13096846-1722445981000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-13096846-1722445981000"
   },
   {
     "id": "998086",
@@ -261,7 +335,7 @@
       "parent": "Computer & Electronics",
       "child": "Computer SW"
     },
-    "seven_day_epc": "5.36",
+    "seven_day_epc": "5.86",
     "three_month_epc": "7.15",
     "network_rank": "3",
     "mobile_tracking": true,
@@ -298,7 +372,44 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-11130823-1719500233000"
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-11130823-1719500233000"
+  },
+  {
+    "id": "1124214",
+    "name": "zChocolat.com",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "zchocolat.com"
+      },
+      {
+        "domain": "*.zchocolat.com"
+      }
+    ],
+    "category": {
+      "parent": "Gifts & Flowers",
+      "child": "Gifts"
+    },
+    "seven_day_epc": "12.13",
+    "three_month_epc": "32.76",
+    "network_rank": "3",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "sale",
+        "id": "387917",
+        "commission": {
+          "default": {
+            "value": "20.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-12189399-1734363069000"
   },
   {
     "id": "1132500",
@@ -317,7 +428,7 @@
       "parent": "Games & Toys",
       "child": "Games"
     },
-    "seven_day_epc": "20.52",
+    "seven_day_epc": "19.02",
     "three_month_epc": "3.74",
     "network_rank": "3",
     "mobile_tracking": true,
@@ -346,265 +457,172 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15422087-1687282679000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15422087-1687282679000"
   },
   {
-    "id": "1124214",
-    "name": "zChocolat.com",
+    "id": "4747708",
+    "name": "Zinus",
     "network": "cj",
     "status": "Active",
     "validDomains": [
       {
-        "domain": "zchocolat.com"
+        "domain": "zinus.com"
       },
       {
-        "domain": "*.zchocolat.com"
-      }
-    ],
-    "category": {
-      "parent": "Gifts & Flowers",
-      "child": "Gifts"
-    },
-    "seven_day_epc": "23.77",
-    "three_month_epc": "32.76",
-    "network_rank": "3",
-    "mobile_tracking": true,
-    "cookieless_tracking": false,
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "387917",
-        "commission": {
-          "default": {
-            "value": "20.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-12189399-1734363069000"
-  },
-  {
-    "id": "1407656",
-    "name": "FlowerDelivery.com",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "flowerdelivery.com/affiliates"
-      },
-      {
-        "domain": "*.flowerdelivery.com/affiliates"
-      }
-    ],
-    "category": {
-      "parent": "Gifts & Flowers",
-      "child": "Flowers"
-    },
-    "seven_day_epc": "35.18",
-    "three_month_epc": "15.33",
-    "network_rank": "1",
-    "mobile_tracking": false,
-    "cookieless_tracking": false,
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "300556",
-        "commission": {
-          "default": {
-            "value": "22.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-10365198-1584378432000"
-  },
-  {
-    "id": "1457779",
-    "name": "Newspaper Subscriptions",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "discountednewspapers.com"
-      },
-      {
-        "domain": "*.discountednewspapers.com"
-      }
-    ],
-    "category": {
-      "parent": "Books/Media",
-      "child": "News"
-    },
-    "seven_day_epc": "13.20",
-    "three_month_epc": "6.14",
-    "network_rank": "1",
-    "mobile_tracking": false,
-    "cookieless_tracking": false,
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "301285",
-        "commission": {
-          "default": {
-            "value": "20.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15178904-1645137538000"
-  },
-  {
-    "id": "5357356",
-    "name": "Rexing",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "rexingusa.com"
-      },
-      {
-        "domain": "*.rexingusa.com"
-      }
-    ],
-    "category": {
-      "parent": "Automotive",
-      "child": "Cars & Trucks"
-    },
-    "seven_day_epc": "9.22",
-    "three_month_epc": "4.74",
-    "network_rank": "1",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "436469",
-        "commission": {
-          "default": {
-            "value": "10.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15009088-1735691648000"
-  },
-  {
-    "id": "5619253",
-    "name": "MelodySusie",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "melodysusie.com"
-      },
-      {
-        "domain": "*.melodysusie.com"
-      }
-    ],
-    "category": {
-      "parent": "Beauty",
-      "child": "Bath & Body"
-    },
-    "seven_day_epc": "58.81",
-    "three_month_epc": "13.10",
-    "network_rank": "2",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "425562",
-        "commission": {
-          "default": {
-            "value": "10.00%",
-            "type": "percentage"
-          },
-          "Gift Cards": {
-            "value": "USD 0.00",
-            "id": "44799"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-14445052-1652822958000"
-  },
-  {
-    "id": "5620015",
-    "name": "Weatherman Umbrella",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "weatherman.com"
-      },
-      {
-        "domain": "*.weatherman.com"
-      }
-    ],
-    "category": {
-      "parent": "Recreation & Leisure",
-      "child": "Outdoors"
-    },
-    "seven_day_epc": "16.31",
-    "three_month_epc": "17.74",
-    "network_rank": "2",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "429218",
-        "commission": {
-          "default": {
-            "value": "8.00%",
-            "type": "percentage"
-          },
-          "Non-commissionables": {
-            "value": "USD 0.00",
-            "id": "44730"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15612582-1693955210000"
-  },
-  {
-    "id": "5656292",
-    "name": "Rug Source",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "rugsource.com"
-      },
-      {
-        "domain": "*.rugsource.com"
+        "domain": "*.zinus.com"
       }
     ],
     "category": {
       "parent": "Home & Garden",
       "child": "Furniture"
     },
-    "seven_day_epc": "255.76",
-    "three_month_epc": "165.01",
+    "seven_day_epc": "91.88",
+    "three_month_epc": "54.29",
     "network_rank": "3",
+    "mobile_tracking": true,
+    "cookieless_tracking": false,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "416107",
+        "commission": {
+          "default": {
+            "value": "5.00%",
+            "type": "percentage"
+          },
+          "Zinus.com Test Skus": {
+            "value": "8.50%",
+            "id": "46435"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15603736-1692822486000"
+  },
+  {
+    "id": "4760897",
+    "name": "PRNVision.com",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "prnvision.com"
+      },
+      {
+        "domain": "*.prnvision.com"
+      }
+    ],
+    "category": {
+      "parent": "Health and Wellness",
+      "child": "Vision Care"
+    },
+    "seven_day_epc": "18.80",
+    "three_month_epc": "23.50",
+    "network_rank": "1",
     "mobile_tracking": true,
     "cookieless_tracking": true,
     "actions": [
       {
         "name": "",
         "type": "advanced sale",
-        "id": "425931",
+        "id": "386534",
+        "commission": {
+          "default": {
+            "value": "11.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-12938009-1713990228000"
+  },
+  {
+    "id": "4941187",
+    "name": "Frontier Communications",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "frontier.com"
+      },
+      {
+        "domain": "*.frontier.com"
+      }
+    ],
+    "category": {
+      "parent": "Online Services",
+      "child": "Internet Service Providers"
+    },
+    "seven_day_epc": "76.39",
+    "three_month_epc": "71.10",
+    "network_rank": "4",
+    "mobile_tracking": false,
+    "cookieless_tracking": false,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "397310",
+        "commission": {
+          "default": {
+            "value": "USD 75.00",
+            "type": "order-level"
+          }
+        }
+      },
+      {
+        "name": "",
+        "type": "advanced lead",
+        "id": "469472",
+        "commission": {
+          "default": {
+            "value": "USD 75.00",
+            "type": "order-level"
+          }
+        }
+      },
+      {
+        "name": "",
+        "type": "advanced lead",
+        "id": "474754",
+        "commission": {
+          "default": {
+            "value": "USD 75.00",
+            "type": "order-level"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-16945796-1735942114000"
+  },
+  {
+    "id": "5004983",
+    "name": "Sightseeing Pass",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "sightseeingpass.com"
+      },
+      {
+        "domain": "*.sightseeingpass.com"
+      }
+    ],
+    "category": {
+      "parent": "Travel",
+      "child": "Vacation"
+    },
+    "seven_day_epc": "72.21",
+    "three_month_epc": "120.02",
+    "network_rank": "4",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "401563",
         "commission": {
           "default": {
             "value": "10.00%",
@@ -612,226 +630,185 @@
           }
         }
       }
-    ]
+    ],
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15330430-1661964406000"
   },
   {
-    "id": "5694023",
-    "name": "MediTac Kits",
+    "id": "5018898",
+    "name": "StudentUniverse",
     "network": "cj",
     "status": "Active",
     "validDomains": [
       {
-        "domain": "meditackits.com"
+        "domain": "studentuniverse.com"
       },
       {
-        "domain": "*.meditackits.com"
+        "domain": "*.studentuniverse.com"
+      }
+    ],
+    "category": {
+      "parent": "Travel",
+      "child": "Air"
+    },
+    "seven_day_epc": "18.93",
+    "three_month_epc": "16.45",
+    "network_rank": "2",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "403923",
+        "commission": {
+          "default": {
+            "value": "USD 0.00",
+            "type": "item-level"
+          },
+          "hotels": {
+            "value": "USD 0.00",
+            "id": "35458"
+          },
+          "international": {
+            "value": "USD 0.00",
+            "id": "35459"
+          },
+          "domestic": {
+            "value": "USD 0.00",
+            "id": "35460"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15746962-1707748510000"
+  },
+  {
+    "id": "5052193",
+    "name": "Freebird Stores",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "freebirdstores.com"
+      },
+      {
+        "domain": "*.freebirdstores.com"
+      }
+    ],
+    "category": {
+      "parent": "Accessories",
+      "child": "Shoes"
+    },
+    "seven_day_epc": "42.96",
+    "three_month_epc": "25.50",
+    "network_rank": "4",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "427209",
+        "commission": {
+          "default": {
+            "value": "4.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-13970912-1732668833000"
+  },
+  {
+    "id": "5073755",
+    "name": "The SSL Store",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "thesslstore.com"
+      },
+      {
+        "domain": "*.thesslstore.com"
+      }
+    ],
+    "category": {
+      "parent": "Online Services",
+      "child": "Web Tools"
+    },
+    "seven_day_epc": "19.07",
+    "three_month_epc": "18.47",
+    "network_rank": "1",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "405222",
+        "commission": {
+          "default": {
+            "value": "5.00%",
+            "type": "percentage"
+          },
+          "Non-commissionable list": {
+            "value": "USD 0.00",
+            "id": "34966"
+          }
+        }
+      },
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "405223",
+        "commission": {
+          "default": {
+            "value": "5.00%",
+            "type": "percentage"
+          },
+          "Non-commissionable list": {
+            "value": "USD 0.00",
+            "id": "34966"
+          }
+        }
+      },
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "405711",
+        "commission": {
+          "default": {
+            "value": "5.00%",
+            "type": "percentage"
+          },
+          "Non-commissionable list": {
+            "value": "USD 0.00",
+            "id": "34966"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-13288049-1535577536000"
+  },
+  {
+    "id": "5091877",
+    "name": "AvaCare Medical",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "avacaremedical.com"
+      },
+      {
+        "domain": "*.avacaremedical.com"
       }
     ],
     "category": {
       "parent": "Health and Wellness",
       "child": "Equipment"
     },
-    "seven_day_epc": "23.30",
-    "three_month_epc": "13.78",
-    "network_rank": "1",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "426487",
-        "commission": {
-          "default": {
-            "value": "3.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15136488-1639744765000"
-  },
-  {
-    "id": "5725421",
-    "name": "Mobile Pixels",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "mobilepixels.us"
-      },
-      {
-        "domain": "*.mobilepixels.us"
-      }
-    ],
-    "category": {
-      "parent": "Computer & Electronics",
-      "child": "Consumer Electronics"
-    },
-    "seven_day_epc": "28.76",
-    "three_month_epc": "84.18",
-    "network_rank": "1",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "427188",
-        "commission": {
-          "default": {
-            "value": "7.00%",
-            "type": "percentage"
-          },
-          "Non-Commissionables": {
-            "value": "USD 0.00",
-            "id": "45413"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-14488332-1616781960000"
-  },
-  {
-    "id": "5755636",
-    "name": "Foreo",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "foreo.com"
-      },
-      {
-        "domain": "*.foreo.com"
-      }
-    ],
-    "category": {
-      "parent": "Beauty",
-      "child": "Cosmetics"
-    },
-    "seven_day_epc": "26.72",
-    "three_month_epc": "6.80",
-    "network_rank": "2",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "428096",
-        "commission": {
-          "default": {
-            "value": "3.50%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15520183-1682511921000"
-  },
-  {
-    "id": "5757681",
-    "name": "Amazfit US",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "amazfit.com/us"
-      },
-      {
-        "domain": "*.amazfit.com/us"
-      }
-    ],
-    "category": {
-      "parent": "Computer & Electronics",
-      "child": "Consumer Electronics"
-    },
-    "seven_day_epc": "6.05",
-    "three_month_epc": "15.65",
-    "network_rank": "2",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "427769",
-        "commission": {
-          "default": {
-            "value": "4.00%",
-            "type": "percentage"
-          },
-          "Non-Commissionable Items": {
-            "value": "USD 0.00",
-            "id": "45594"
-          },
-          "6% Commission Items": {
-            "value": "6.00%",
-            "id": "50868"
-          },
-          "5% Commission Items": {
-            "value": "5.00%",
-            "id": "50869"
-          },
-          "8% Commission Items": {
-            "value": "8.00%",
-            "id": "50871"
-          },
-          "10% Balance": {
-            "value": "10.00%",
-            "id": "58175"
-          }
-        }
-      },
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "430301",
-        "commission": {
-          "default": {
-            "value": "4.00%",
-            "type": "percentage"
-          },
-          "6% Commission Items": {
-            "value": "6.00%",
-            "id": "50868"
-          },
-          "5% Commission Items": {
-            "value": "5.00%",
-            "id": "50869"
-          },
-          "8% Commission Items": {
-            "value": "8.00%",
-            "id": "50871"
-          },
-          "10% Balance": {
-            "value": "10.00%",
-            "id": "58175"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15818020-1735942305000"
-  },
-  {
-    "id": "5766265",
-    "name": "Bob Ore Blue Collection",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "bobore.com"
-      },
-      {
-        "domain": "*.bobore.com"
-      }
-    ],
-    "category": {
-      "parent": "Accessories",
-      "child": "Handbags"
-    },
-    "seven_day_epc": "9.97",
-    "three_month_epc": "30.44",
+    "seven_day_epc": "18.35",
+    "three_month_epc": "15.17",
     "network_rank": "1",
     "mobile_tracking": true,
     "cookieless_tracking": false,
@@ -839,36 +816,251 @@
       {
         "name": "",
         "type": "advanced sale",
-        "id": "427935",
+        "id": "406442",
         "commission": {
           "default": {
-            "value": "10.00%",
+            "value": "5.00%",
             "type": "percentage"
           }
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15080196-1694639572000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-13364204-1666035128000"
   },
   {
-    "id": "5775818",
-    "name": "Sullen Clothing",
+    "id": "5174135",
+    "name": "Dyper",
     "network": "cj",
     "status": "Active",
     "validDomains": [
       {
-        "domain": "sullenclothing.com"
+        "domain": "dyper.com"
       },
       {
-        "domain": "*.sullenclothing.com"
+        "domain": "*.dyper.com"
       }
     ],
     "category": {
-      "parent": "Clothing/Apparel",
-      "child": "Men's"
+      "parent": "Family",
+      "child": "Babies"
     },
-    "seven_day_epc": "25.15",
-    "three_month_epc": "34.18",
+    "seven_day_epc": "0.00",
+    "three_month_epc": "20.08",
+    "network_rank": "1",
+    "mobile_tracking": true,
+    "cookieless_tracking": false,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "432454",
+        "commission": {
+          "default": {
+            "value": "USD 20.00",
+            "type": "order-level"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15902818-1728568471000"
+  },
+  {
+    "id": "5204688",
+    "name": "JibJab",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "jibjab.com"
+      },
+      {
+        "domain": "*.jibjab.com"
+      }
+    ],
+    "category": {
+      "parent": "Gifts & Flowers",
+      "child": "Greeting Cards"
+    },
+    "seven_day_epc": "19.46",
+    "three_month_epc": "18.68",
+    "network_rank": "3",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "sale",
+        "id": "432766",
+        "commission": {
+          "default": {
+            "value": "7.00%",
+            "type": "percentage"
+          }
+        }
+      },
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "433969",
+        "commission": {
+          "default": {
+            "value": "7.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-16987582-1733772755000"
+  },
+  {
+    "id": "5214471",
+    "name": "HealthLabs.com",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "healthlabs.com"
+      },
+      {
+        "domain": "*.healthlabs.com"
+      }
+    ],
+    "category": {
+      "parent": "Health and Wellness",
+      "child": "Wellness"
+    },
+    "seven_day_epc": "77.22",
+    "three_month_epc": "53.64",
+    "network_rank": "4",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "435191",
+        "commission": {
+          "default": {
+            "value": "30.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-13703026-1664302043000"
+  },
+  {
+    "id": "5273914",
+    "name": "TaxSlayer",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "taxslayer.com"
+      },
+      {
+        "domain": "*.taxslayer.com"
+      }
+    ],
+    "category": {
+      "parent": "Financial Services",
+      "child": "Tax Services"
+    },
+    "seven_day_epc": "8.11",
+    "three_month_epc": "5.18",
+    "network_rank": "0",
+    "mobile_tracking": false,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced lead",
+        "id": "429725",
+        "commission": {
+          "default": {
+            "value": "USD 0.00",
+            "type": "item-level"
+          }
+        }
+      },
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "429726",
+        "commission": {
+          "default": {
+            "value": "17.00%",
+            "type": "percentage"
+          },
+          "Free E-File": {
+            "value": "USD 3.00",
+            "id": "40656"
+          },
+          "Paid E-File": {
+            "value": "17.00%",
+            "id": "40657"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-14534152-1685664369000"
+  },
+  {
+    "id": "5280474",
+    "name": "Tungsten",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "tungstenautomation.com/eg/aff/productivity"
+      },
+      {
+        "domain": "*.tungstenautomation.com/eg/aff/productivity"
+      }
+    ],
+    "category": {
+      "parent": "Computer & Electronics",
+      "child": "Computer SW"
+    },
+    "seven_day_epc": "49.86",
+    "three_month_epc": "52.64",
+    "network_rank": "3",
+    "mobile_tracking": false,
+    "cookieless_tracking": false,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "417106",
+        "commission": {
+          "default": {
+            "value": "15.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-13983853-1711899552000"
+  },
+  {
+    "id": "5328205",
+    "name": "Miracle",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "miraclebrand.co"
+      },
+      {
+        "domain": "*.miraclebrand.co"
+      }
+    ],
+    "category": {
+      "parent": "Home & Garden",
+      "child": "Bed & Bath"
+    },
+    "seven_day_epc": "25.89",
+    "three_month_epc": "77.30",
     "network_rank": "3",
     "mobile_tracking": true,
     "cookieless_tracking": false,
@@ -876,7 +1068,18 @@
       {
         "name": "",
         "type": "advanced sale",
-        "id": "428164",
+        "id": "418374",
+        "commission": {
+          "default": {
+            "value": "4.00%",
+            "type": "percentage"
+          }
+        }
+      },
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "434986",
         "commission": {
           "default": {
             "value": "6.00%",
@@ -885,122 +1088,81 @@
         }
       }
     ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15357144-1732741945000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-14379852-1736381500000"
   },
   {
-    "id": "5779671",
-    "name": "Culinary Depot",
+    "id": "5942513",
+    "name": "Juvenon",
     "network": "cj",
     "status": "Active",
     "validDomains": [
       {
-        "domain": "culinarydepotinc.com"
+        "domain": "juvenon.com"
       },
       {
-        "domain": "*.culinarydepotinc.com"
+        "domain": "*.juvenon.com"
       }
     ],
     "category": {
-      "parent": "Home & Garden",
-      "child": "Kitchen"
+      "parent": "Health and Wellness",
+      "child": "Health Food"
     },
-    "seven_day_epc": "19.20",
-    "three_month_epc": "38.76",
-    "network_rank": "1",
-    "mobile_tracking": true,
-    "cookieless_tracking": false,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "428106",
-        "commission": {
-          "default": {
-            "value": "2.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-16962723-1731536009000"
-  },
-  {
-    "id": "5802848",
-    "name": "GraphicAudio",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "graphicaudio.net"
-      },
-      {
-        "domain": "*.graphicaudio.net"
-      }
-    ],
-    "category": {
-      "parent": "Books/Media",
-      "child": "Audio Books"
-    },
-    "seven_day_epc": "28.06",
-    "three_month_epc": "38.86",
-    "network_rank": "2",
-    "mobile_tracking": true,
-    "cookieless_tracking": false,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "428933",
-        "commission": {
-          "default": {
-            "value": "30.00%",
-            "type": "percentage"
-          },
-          "Non-Commissionable Items": {
-            "value": "USD 0.00",
-            "id": "45910"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-14572810-1625772377000"
-  },
-  {
-    "id": "5867225",
-    "name": "My Magic Carpet",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "BuyMyMagicCarpet.com"
-      },
-      {
-        "domain": "*.BuyMyMagicCarpet.com"
-      }
-    ],
-    "category": {
-      "parent": "Home & Garden",
-      "child": "Furniture"
-    },
-    "seven_day_epc": "9.30",
-    "three_month_epc": "4.42",
-    "network_rank": "0",
+    "seven_day_epc": "419.05",
+    "three_month_epc": "76.18",
+    "network_rank": "3",
     "mobile_tracking": true,
     "cookieless_tracking": true,
     "actions": [
       {
         "name": "",
         "type": "advanced sale",
-        "id": "429408",
+        "id": "430470",
         "commission": {
           "default": {
-            "value": "10.00%",
+            "value": "8.00%",
             "type": "percentage"
           }
         }
       }
     ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15001212-1709768026000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15206679-1652985373000"
+  },
+  {
+    "id": "6009556",
+    "name": "Heivy",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "heivy.com"
+      },
+      {
+        "domain": "*.heivy.com"
+      }
+    ],
+    "category": {
+      "parent": "Health and Wellness",
+      "child": "Nutritional Supplements"
+    },
+    "seven_day_epc": "3.24",
+    "three_month_epc": "33.70",
+    "network_rank": "1",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "431385",
+        "commission": {
+          "default": {
+            "value": "5.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-16950306-1730307087000"
   },
   {
     "id": "6031771",
@@ -1019,7 +1181,7 @@
       "parent": "Health and Wellness",
       "child": "Wellness"
     },
-    "seven_day_epc": "3.14",
+    "seven_day_epc": "0.00",
     "three_month_epc": "2.80",
     "network_rank": "1",
     "mobile_tracking": true,
@@ -1078,7 +1240,7 @@
       "parent": "Sports & Fitness",
       "child": "Equipment"
     },
-    "seven_day_epc": "34.12",
+    "seven_day_epc": "33.66",
     "three_month_epc": "31.53",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -1118,7 +1280,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-16944371-1729684520000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-16982429-1733158567000"
   },
   {
     "id": "6038649",
@@ -1188,7 +1350,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15228597-1650906562000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15228597-1650906562000"
   },
   {
     "id": "6060788",
@@ -1207,7 +1369,7 @@
       "parent": "Home & Garden",
       "child": "Pets"
     },
-    "seven_day_epc": "32.34",
+    "seven_day_epc": "35.52",
     "three_month_epc": "66.41",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -1225,7 +1387,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15399706-1724966272000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15399706-1724966272000"
   },
   {
     "id": "6067712",
@@ -1244,11 +1406,11 @@
       "parent": "Clothing/Apparel",
       "child": "Women's"
     },
-    "seven_day_epc": "21.61",
+    "seven_day_epc": "24.40",
     "three_month_epc": "11.05",
     "network_rank": "1",
     "mobile_tracking": true,
-    "cookieless_tracking": true,
+    "cookieless_tracking": false,
     "actions": [
       {
         "name": "",
@@ -1262,7 +1424,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15174997-1732005152000"
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15174997-1732005152000"
   },
   {
     "id": "6082640",
@@ -1281,7 +1443,7 @@
       "parent": "Business",
       "child": "Business-to-Business"
     },
-    "seven_day_epc": "24.94",
+    "seven_day_epc": "33.04",
     "three_month_epc": "11.97",
     "network_rank": "3",
     "mobile_tracking": true,
@@ -1329,7 +1491,7 @@
       "parent": "Home & Garden",
       "child": "Home Appliances"
     },
-    "seven_day_epc": "37.60",
+    "seven_day_epc": "27.55",
     "three_month_epc": "18.21",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -1347,7 +1509,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15326685-1708930692000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15326685-1708930692000"
   },
   {
     "id": "6100283",
@@ -1366,7 +1528,7 @@
       "parent": "Home & Garden",
       "child": "Home Appliances"
     },
-    "seven_day_epc": "3.52",
+    "seven_day_epc": "9.91",
     "three_month_epc": "44.53",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -1439,7 +1601,7 @@
       "parent": "Health and Wellness",
       "child": "Wellness"
     },
-    "seven_day_epc": "102.27",
+    "seven_day_epc": "71.52",
     "three_month_epc": "214.00",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -1460,32 +1622,32 @@
     "affiliateLink": "https://www.jdoqocy.com/click-101335466-15219649-1651086766000"
   },
   {
-    "id": "6130947",
-    "name": "Rave Sports",
+    "id": "6185946",
+    "name": "UntilGone",
     "network": "cj",
     "status": "Active",
     "validDomains": [
       {
-        "domain": "ravesports.com"
+        "domain": "untilgone.com"
       },
       {
-        "domain": "*.ravesports.com"
+        "domain": "*.untilgone.com"
       }
     ],
     "category": {
-      "parent": "Sports & Fitness",
-      "child": "Summer Sports"
+      "parent": "Department Stores/Malls",
+      "child": "Virtual Malls"
     },
-    "seven_day_epc": "14.41",
-    "three_month_epc": "39.92",
-    "network_rank": "2",
+    "seven_day_epc": "24.25",
+    "three_month_epc": "19.74",
+    "network_rank": "3",
     "mobile_tracking": true,
     "cookieless_tracking": true,
     "actions": [
       {
         "name": "",
         "type": "advanced sale",
-        "id": "433143",
+        "id": "434009",
         "commission": {
           "default": {
             "value": "5.00%",
@@ -1494,27 +1656,64 @@
         }
       }
     ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15272874-1720027386000"
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15292997-1666115478000"
   },
   {
-    "id": "6643404",
-    "name": "Arka",
+    "id": "6186988",
+    "name": "PickYourPlum",
     "network": "cj",
     "status": "Active",
     "validDomains": [
       {
-        "domain": "arka.com"
+        "domain": "PickYourPlum.com"
       },
       {
-        "domain": "*.arka.com"
+        "domain": "*.PickYourPlum.com"
       }
     ],
     "category": {
-      "parent": "Business",
-      "child": "Business-to-Business"
+      "parent": "Department Stores/Malls",
+      "child": "Virtual Malls"
     },
-    "seven_day_epc": "31.26",
-    "three_month_epc": "88.82",
+    "seven_day_epc": "8.39",
+    "three_month_epc": "12.93",
+    "network_rank": "1",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "434008",
+        "commission": {
+          "default": {
+            "value": "5.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-17009375-1736877948000"
+  },
+  {
+    "id": "6200412",
+    "name": "LUXE Bidet",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "luxebidet.com"
+      },
+      {
+        "domain": "*.luxebidet.com"
+      }
+    ],
+    "category": {
+      "parent": "Home & Garden",
+      "child": "Bed & Bath"
+    },
+    "seven_day_epc": "5.03",
+    "three_month_epc": "2.12",
     "network_rank": "1",
     "mobile_tracking": true,
     "cookieless_tracking": false,
@@ -1522,7 +1721,291 @@
       {
         "name": "",
         "type": "advanced sale",
-        "id": "445812",
+        "id": "434291",
+        "commission": {
+          "default": {
+            "value": "3.00%",
+            "type": "percentage"
+          },
+          "Item List - A": {
+            "value": "6.00%",
+            "id": "52098"
+          },
+          "Item List - B": {
+            "value": "7.00%",
+            "id": "52099"
+          },
+          "Item List - C": {
+            "value": "10.00%",
+            "id": "52100"
+          },
+          "Item List - D": {
+            "value": "6.00%",
+            "id": "53369"
+          },
+          "Item List - E": {
+            "value": "15.00%",
+            "id": "53370"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15314872-1661800842000"
+  },
+  {
+    "id": "6211245",
+    "name": "TP-Link USA",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "us.store.tp-link.com"
+      },
+      {
+        "domain": "*.us.store.tp-link.com"
+      }
+    ],
+    "category": {
+      "parent": "Computer & Electronics",
+      "child": "Consumer Electronics"
+    },
+    "seven_day_epc": "3.05",
+    "three_month_epc": "1.93",
+    "network_rank": "1",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "446218",
+        "commission": {
+          "default": {
+            "value": "10.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15624191-1695243347000"
+  },
+  {
+    "id": "6222071",
+    "name": "Social Catfish",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "socialcatfish.com"
+      },
+      {
+        "domain": "*.socialcatfish.com"
+      }
+    ],
+    "category": {
+      "parent": "Online Services",
+      "child": "Web Tools"
+    },
+    "seven_day_epc": "4.80",
+    "three_month_epc": "13.30",
+    "network_rank": "3",
+    "mobile_tracking": true,
+    "cookieless_tracking": false,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "434638",
+        "commission": {
+          "default": {
+            "value": "USD 12.00",
+            "type": "order-level"
+          }
+        }
+      },
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "434639",
+        "commission": {
+          "default": {
+            "value": "USD 0.00",
+            "type": "item-level"
+          },
+          "20% for anything less than $5": {
+            "value": "20.00%",
+            "id": "54335"
+          },
+          "30% $10.00 Plans": {
+            "value": "30.00%",
+            "id": "54336"
+          },
+          "35% Greater Than $29": {
+            "value": "35.00%",
+            "id": "54337"
+          },
+          "20% $22.00 Plans": {
+            "value": "20.00%",
+            "id": "54338"
+          },
+          "Exclusion List": {
+            "value": "USD 0.00",
+            "id": "54401"
+          }
+        }
+      },
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "434640",
+        "commission": {
+          "default": {
+            "value": "USD 85.00",
+            "type": "order-level"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15442126-1681314394000"
+  },
+  {
+    "id": "6225017",
+    "name": "MPH Bank",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "mph.bank"
+      },
+      {
+        "domain": "*.mph.bank"
+      }
+    ],
+    "category": {
+      "parent": "Financial Services",
+      "child": "Banking/Trading"
+    },
+    "seven_day_epc": "0.00",
+    "three_month_epc": "2.12",
+    "network_rank": "0",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "lead",
+        "id": "434921",
+        "commission": {
+          "default": {
+            "value": "USD 0.00",
+            "type": "item-level"
+          }
+        }
+      },
+      {
+        "name": "",
+        "type": "sale",
+        "id": "434922",
+        "commission": {
+          "default": {
+            "value": "USD 25.00",
+            "type": "item-level"
+          }
+        }
+      },
+      {
+        "name": "",
+        "type": "sale",
+        "id": "472352",
+        "commission": {
+          "default": {
+            "value": "USD 25.00",
+            "type": "item-level"
+          }
+        }
+      },
+      {
+        "name": "",
+        "type": "sale",
+        "id": "472353",
+        "commission": {
+          "default": {
+            "value": "USD 25.00",
+            "type": "item-level"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15381728-1711067001000"
+  },
+  {
+    "id": "6389374",
+    "name": "Clearly Filtered",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "clearlyfiltered.com"
+      },
+      {
+        "domain": "*.clearlyfiltered.com"
+      }
+    ],
+    "category": {
+      "parent": "Health and Wellness",
+      "child": "Health Food"
+    },
+    "seven_day_epc": "67.21",
+    "three_month_epc": "157.59",
+    "network_rank": "4",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "476352",
+        "commission": {
+          "default": {
+            "value": "6.00%",
+            "type": "percentage"
+          },
+          "Non-Commissionable": {
+            "value": "USD 0.00",
+            "id": "55166"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15758313-1709104323000"
+  },
+  {
+    "id": "6416572",
+    "name": "Contour Design",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "contourdesign.com"
+      },
+      {
+        "domain": "*.contourdesign.com"
+      }
+    ],
+    "category": {
+      "parent": "Computer & Electronics",
+      "child": "Peripherals"
+    },
+    "seven_day_epc": "49.33",
+    "three_month_epc": "72.23",
+    "network_rank": "1",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "437393",
         "commission": {
           "default": {
             "value": "5.00%",
@@ -1531,44 +2014,151 @@
         }
       }
     ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15758451-1709117750000"
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15512876-1682442925000"
   },
   {
-    "id": "6685294",
-    "name": "John Boos & Co.",
+    "id": "6874782",
+    "name": "ezTaxReturn.com",
     "network": "cj",
     "status": "Active",
     "validDomains": [
       {
-        "domain": "johnboos.com"
+        "domain": "eztaxreturn.com"
       },
       {
-        "domain": "*.johnboos.com"
+        "domain": "*.eztaxreturn.com"
       }
     ],
     "category": {
-      "parent": "Home & Garden",
-      "child": "Kitchen"
+      "parent": "Financial Services",
+      "child": "Tax Services"
     },
-    "seven_day_epc": "15.25",
-    "three_month_epc": "91.63",
-    "network_rank": "2",
+    "seven_day_epc": "29.62",
+    "three_month_epc": "20.55",
+    "network_rank": "0",
     "mobile_tracking": true,
     "cookieless_tracking": false,
     "actions": [
       {
         "name": "",
-        "type": "advanced sale",
-        "id": "448712",
+        "type": "lead",
+        "id": "455053",
         "commission": {
           "default": {
-            "value": "4.00%",
+            "value": "USD 0.00",
+            "type": "item-level"
+          }
+        }
+      },
+      {
+        "name": "",
+        "type": "sale",
+        "id": "455054",
+        "commission": {
+          "default": {
+            "value": "10.00%",
             "type": "percentage"
           }
         }
       }
     ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-16961380-1731484804000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15719582-1711574215000"
+  },
+  {
+    "id": "6880275",
+    "name": "OVAGO",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "ovago.com"
+      },
+      {
+        "domain": "*.ovago.com"
+      }
+    ],
+    "category": {
+      "parent": "Travel",
+      "child": "Air"
+    },
+    "seven_day_epc": "145.99",
+    "three_month_epc": "81.85",
+    "network_rank": "2",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "455953",
+        "commission": {
+          "default": {
+            "value": "USD 8.00",
+            "type": "item-level"
+          }
+        }
+      },
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "455954",
+        "commission": {
+          "default": {
+            "value": "USD 13.00",
+            "type": "item-level"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15796145-1717458993000"
+  },
+  {
+    "id": "6959068",
+    "name": "Ladders",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "theladders.com"
+      },
+      {
+        "domain": "*.theladders.com"
+      }
+    ],
+    "category": {
+      "parent": "Careers",
+      "child": "Employment"
+    },
+    "seven_day_epc": "89.67",
+    "three_month_epc": "203.60",
+    "network_rank": "3",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "sale",
+        "id": "459413",
+        "commission": {
+          "default": {
+            "value": "USD 75.00",
+            "type": "item-level"
+          }
+        }
+      },
+      {
+        "name": "",
+        "type": "lead",
+        "id": "459414",
+        "commission": {
+          "default": {
+            "value": "USD 0.00",
+            "type": "item-level"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15762154-1715010613000"
   },
   {
     "id": "6976198",
@@ -1587,7 +2177,7 @@
       "parent": "Home & Garden",
       "child": "Garden"
     },
-    "seven_day_epc": "52.45",
+    "seven_day_epc": "47.17",
     "three_month_epc": "106.11",
     "network_rank": "1",
     "mobile_tracking": true,
@@ -1605,7 +2195,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15817341-1716496579000"
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15817341-1716496579000"
   },
   {
     "id": "7016567",
@@ -1624,7 +2214,7 @@
       "parent": "Clothing/Apparel",
       "child": "Men's"
     },
-    "seven_day_epc": "52.10",
+    "seven_day_epc": "41.01",
     "three_month_epc": "102.10",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -1642,7 +2232,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15774549-1712351139000"
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15774549-1712351139000"
   },
   {
     "id": "7017782",
@@ -1679,7 +2269,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-16971474-1736455944000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-16971474-1736455944000"
   },
   {
     "id": "7028702",
@@ -1698,7 +2288,7 @@
       "parent": "Food & Drinks",
       "child": "Groceries"
     },
-    "seven_day_epc": "104.74",
+    "seven_day_epc": "212.57",
     "three_month_epc": "67.66",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -1738,7 +2328,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15859965-1721417851000"
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15859965-1721417851000"
   },
   {
     "id": "7035805",
@@ -1757,7 +2347,7 @@
       "parent": "Health and Wellness",
       "child": "Wellness"
     },
-    "seven_day_epc": "29.32",
+    "seven_day_epc": "26.04",
     "three_month_epc": "40.06",
     "network_rank": "1",
     "mobile_tracking": true,
@@ -1812,7 +2402,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-16961299-1731484802000"
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-16961299-1731484802000"
   },
   {
     "id": "7044830",
@@ -1831,7 +2421,7 @@
       "parent": "Sports & Fitness",
       "child": "Exercise & Health"
     },
-    "seven_day_epc": "64.44",
+    "seven_day_epc": "61.42",
     "three_month_epc": "62.12",
     "network_rank": "1",
     "mobile_tracking": true,
@@ -1849,7 +2439,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15808322-1715368023000"
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15808322-1715368023000"
   },
   {
     "id": "7052554",
@@ -1905,7 +2495,7 @@
       "parent": "Business",
       "child": "Productivity Tools"
     },
-    "seven_day_epc": "140.41",
+    "seven_day_epc": "173.29",
     "three_month_epc": "43.41",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -1945,7 +2535,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15835569-1735009417000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15835569-1735009417000"
   },
   {
     "id": "7081268",
@@ -1964,11 +2554,11 @@
       "parent": "Business",
       "child": "Business-to-Business"
     },
-    "seven_day_epc": "76.05",
+    "seven_day_epc": "108.91",
     "three_month_epc": "118.85",
     "network_rank": "1",
     "mobile_tracking": true,
-    "cookieless_tracking": false,
+    "cookieless_tracking": true,
     "actions": [
       {
         "name": "",
@@ -1982,7 +2572,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15879971-1726247596000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15879971-1726247596000"
   },
   {
     "id": "7096926",
@@ -2001,7 +2591,7 @@
       "parent": "Department Stores/Malls",
       "child": "Virtual Malls"
     },
-    "seven_day_epc": "7.17",
+    "seven_day_epc": "7.00",
     "three_month_epc": "5.25",
     "network_rank": "4",
     "mobile_tracking": true,
@@ -2021,6 +2611,43 @@
     ]
   },
   {
+    "id": "7111284",
+    "name": "SVP Worldwide",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "singer.com"
+      },
+      {
+        "domain": "*.singer.com"
+      }
+    ],
+    "category": {
+      "parent": "Home & Garden",
+      "child": "Home Appliances"
+    },
+    "seven_day_epc": "14.22",
+    "three_month_epc": "10.49",
+    "network_rank": "1",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "472533",
+        "commission": {
+          "default": {
+            "value": "4.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15910665-1736345864000"
+  },
+  {
     "id": "7112420",
     "name": "DriveSafe Online",
     "network": "cj",
@@ -2037,7 +2664,7 @@
       "parent": "Automotive",
       "child": "Cars & Trucks"
     },
-    "seven_day_epc": "74.19",
+    "seven_day_epc": "71.89",
     "three_month_epc": "69.34",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -2055,7 +2682,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15860876-1721163634000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15860876-1721163634000"
   },
   {
     "id": "7130536",
@@ -2092,7 +2719,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15872452-1723587427000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15872452-1723587427000"
   },
   {
     "id": "7136060",
@@ -2111,7 +2738,7 @@
       "parent": "Games & Toys",
       "child": "Electronic Games"
     },
-    "seven_day_epc": "5.68",
+    "seven_day_epc": "0.69",
     "three_month_epc": "4.53",
     "network_rank": "1",
     "mobile_tracking": true,
@@ -2129,7 +2756,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15913148-1728578211000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15913148-1728578211000"
   },
   {
     "id": "7138746",
@@ -2166,7 +2793,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15850264-1726060189000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15850264-1726060189000"
   },
   {
     "id": "7166676",
@@ -2185,7 +2812,7 @@
       "parent": "Family",
       "child": "Babies"
     },
-    "seven_day_epc": "14.63",
+    "seven_day_epc": "15.25",
     "three_month_epc": "9.42",
     "network_rank": "1",
     "mobile_tracking": true,
@@ -2214,24 +2841,108 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15861694-1730902212000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15861694-1730902212000"
   },
   {
-    "id": "7291165",
-    "name": "VivoForma",
+    "id": "7298676",
+    "name": "LilyAna Naturals Amazon Marketplace",
     "network": "cj",
     "status": "Active",
     "validDomains": [
       {
-        "domain": "vivoforma.com"
+        "domain": "amazon.com/stores/LilyAnaNaturals/Homepage/page/9481DDF3-335B-4DFB-B4B3-170F1CD85B30"
       },
       {
-        "domain": "*.vivoforma.com"
+        "domain": "*.amazon.com/stores/LilyAnaNaturals/Homepage/page/9481DDF3-335B-4DFB-B4B3-170F1CD85B30"
       }
     ],
     "category": {
-      "parent": "Home & Garden",
-      "child": "Furniture"
+      "parent": "Beauty",
+      "child": "Bath & Body"
+    },
+    "seven_day_epc": "New",
+    "three_month_epc": "New",
+    "network_rank": "New",
+    "mobile_tracking": true,
+    "cookieless_tracking": false,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "479952",
+        "commission": {
+          "default": {
+            "value": "20.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "7298678",
+    "name": "AV Access",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "avaccess.com"
+      },
+      {
+        "domain": "*.avaccess.com"
+      }
+    ],
+    "category": {
+      "parent": "Computer & Electronics",
+      "child": "Computer HW"
+    },
+    "seven_day_epc": "New",
+    "three_month_epc": "New",
+    "network_rank": "New",
+    "mobile_tracking": true,
+    "cookieless_tracking": false,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "482352",
+        "commission": {
+          "default": {
+            "value": "10.00%",
+            "type": "percentage"
+          }
+        }
+      },
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "482353",
+        "commission": {
+          "default": {
+            "value": "10.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-16987838-1736821736000"
+  },
+  {
+    "id": "7303706",
+    "name": "Portals Parfums",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "portalsparfums.com"
+      },
+      {
+        "domain": "*.portalsparfums.com"
+      }
+    ],
+    "category": {
+      "parent": "Beauty",
+      "child": "Fragrance"
     },
     "seven_day_epc": "New",
     "three_month_epc": "New",
@@ -2242,90 +2953,125 @@
       {
         "name": "",
         "type": "advanced sale",
-        "id": "479512",
+        "id": "480792",
         "commission": {
           "default": {
-            "value": "4.00%",
+            "value": "6.00%",
             "type": "percentage"
           }
         }
       }
     ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-16957401-1731095744000"
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-16965525-1731966709000"
   },
   {
-    "id": "79362",
-    "name": "Testclear.com",
+    "id": "7304564",
+    "name": "Corro",
     "network": "cj",
     "status": "Active",
     "validDomains": [
       {
-        "domain": "testclear.com"
+        "domain": "corroshop.com"
       },
       {
-        "domain": "*.testclear.com"
+        "domain": "*.corroshop.com"
       }
     ],
     "category": {
-      "parent": "Health and Wellness",
-      "child": "Health Food"
+      "parent": "Sports & Fitness",
+      "child": "Apparel"
     },
-    "seven_day_epc": "17.46",
-    "three_month_epc": "27.84",
-    "network_rank": "2",
-    "mobile_tracking": false,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "234",
-        "commission": {
-          "default": {
-            "value": "12.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-12823089-1628189486000"
-  },
-  {
-    "id": "231679",
-    "name": "Flowers Fast",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "FlowersFast.com"
-      },
-      {
-        "domain": "*.FlowersFast.com"
-      }
-    ],
-    "category": {
-      "parent": "Gifts & Flowers",
-      "child": "Flowers"
-    },
-    "seven_day_epc": "44.05",
-    "three_month_epc": "33.47",
-    "network_rank": "1",
+    "seven_day_epc": "New",
+    "three_month_epc": "New",
+    "network_rank": "New",
     "mobile_tracking": true,
     "cookieless_tracking": true,
     "actions": [
       {
         "name": "",
-        "type": "sale",
-        "id": "589",
+        "type": "advanced sale",
+        "id": "481953",
         "commission": {
           "default": {
-            "value": "20.00%",
+            "value": "5.00%",
             "type": "percentage"
           }
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-1035863-1736284146000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-16982182-1733839122000"
+  },
+  {
+    "id": "7327296",
+    "name": "Natural Nutra - Amazon Marketplace",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "amazon.com/stores/NaturalNutra/page/505B06C0-13AB-496C-86BF-42554A40B863?ref_=ast_bln"
+      },
+      {
+        "domain": "*.amazon.com/stores/NaturalNutra/page/505B06C0-13AB-496C-86BF-42554A40B863?ref_=ast_bln"
+      }
+    ],
+    "category": {
+      "parent": "Health and Wellness",
+      "child": "Nutritional Supplements"
+    },
+    "seven_day_epc": "New",
+    "three_month_epc": "New",
+    "network_rank": "New",
+    "mobile_tracking": true,
+    "cookieless_tracking": false,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "483012",
+        "commission": {
+          "default": {
+            "value": "15.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "7357174",
+    "name": "Berkel - Amazon Marketplace",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "amazon.com/stores/Berkel/Homepage/page/CE9A6B50-C330-416E-8788-3E2C65FA8DED"
+      },
+      {
+        "domain": "*.amazon.com/stores/Berkel/Homepage/page/CE9A6B50-C330-416E-8788-3E2C65FA8DED"
+      }
+    ],
+    "category": {
+      "parent": "Home & Garden",
+      "child": "Kitchen"
+    },
+    "seven_day_epc": "New",
+    "three_month_epc": "New",
+    "network_rank": "New",
+    "mobile_tracking": true,
+    "cookieless_tracking": false,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "484392",
+        "commission": {
+          "default": {
+            "value": "6.50%",
+            "type": "percentage"
+          }
+        }
+      }
+    ]
   },
   {
     "id": "129899",
@@ -2344,7 +3090,7 @@
       "parent": "Books/Media",
       "child": "Books"
     },
-    "seven_day_epc": "3.69",
+    "seven_day_epc": "4.06",
     "three_month_epc": "11.18",
     "network_rank": "4",
     "mobile_tracking": false,
@@ -2366,7 +3112,81 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-17009407-1736882488000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-17009407-1736882488000"
+  },
+  {
+    "id": "1407656",
+    "name": "FlowerDelivery.com",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "flowerdelivery.com/affiliates"
+      },
+      {
+        "domain": "*.flowerdelivery.com/affiliates"
+      }
+    ],
+    "category": {
+      "parent": "Gifts & Flowers",
+      "child": "Flowers"
+    },
+    "seven_day_epc": "32.48",
+    "three_month_epc": "15.33",
+    "network_rank": "1",
+    "mobile_tracking": false,
+    "cookieless_tracking": false,
+    "actions": [
+      {
+        "name": "",
+        "type": "sale",
+        "id": "300556",
+        "commission": {
+          "default": {
+            "value": "22.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-10365198-1584378432000"
+  },
+  {
+    "id": "1457779",
+    "name": "Newspaper Subscriptions",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "discountednewspapers.com"
+      },
+      {
+        "domain": "*.discountednewspapers.com"
+      }
+    ],
+    "category": {
+      "parent": "Books/Media",
+      "child": "News"
+    },
+    "seven_day_epc": "17.99",
+    "three_month_epc": "6.14",
+    "network_rank": "1",
+    "mobile_tracking": false,
+    "cookieless_tracking": false,
+    "actions": [
+      {
+        "name": "",
+        "type": "sale",
+        "id": "301285",
+        "commission": {
+          "default": {
+            "value": "20.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15178904-1645137538000"
   },
   {
     "id": "1525519",
@@ -2385,7 +3205,7 @@
       "parent": "Computer & Electronics",
       "child": "Computer SW"
     },
-    "seven_day_epc": "194.84",
+    "seven_day_epc": "172.78",
     "three_month_epc": "157.38",
     "network_rank": "4",
     "mobile_tracking": false,
@@ -2610,7 +3430,7 @@
       "parent": "Accessories",
       "child": "Shoes"
     },
-    "seven_day_epc": "31.35",
+    "seven_day_epc": "30.00",
     "three_month_epc": "47.85",
     "network_rank": "3",
     "mobile_tracking": false,
@@ -2639,43 +3459,6 @@
     "affiliateLink": "https://www.anrdoezrs.net/click-101335466-13671585-1668736915000"
   },
   {
-    "id": "1723937",
-    "name": "Botanic Choice",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "botanicchoice.com"
-      },
-      {
-        "domain": "*.botanicchoice.com"
-      }
-    ],
-    "category": {
-      "parent": "Health and Wellness",
-      "child": "Nutritional Supplements"
-    },
-    "seven_day_epc": "4.35",
-    "three_month_epc": "4.93",
-    "network_rank": "1",
-    "mobile_tracking": true,
-    "cookieless_tracking": false,
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "305744",
-        "commission": {
-          "default": {
-            "value": "8.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-13566323-1705437777000"
-  },
-  {
     "id": "1693636",
     "name": "Pyramyd Air",
     "network": "cj",
@@ -2692,7 +3475,7 @@
       "parent": "Sports & Fitness",
       "child": "Sports"
     },
-    "seven_day_epc": "14.77",
+    "seven_day_epc": "13.38",
     "three_month_epc": "9.36",
     "network_rank": "3",
     "mobile_tracking": true,
@@ -2713,6 +3496,43 @@
     "affiliateLink": "https://www.kqzyfj.com/click-101335466-10671044-1725494478000"
   },
   {
+    "id": "1723937",
+    "name": "Botanic Choice",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "botanicchoice.com"
+      },
+      {
+        "domain": "*.botanicchoice.com"
+      }
+    ],
+    "category": {
+      "parent": "Health and Wellness",
+      "child": "Nutritional Supplements"
+    },
+    "seven_day_epc": "6.39",
+    "three_month_epc": "4.93",
+    "network_rank": "1",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "sale",
+        "id": "305744",
+        "commission": {
+          "default": {
+            "value": "8.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-13566323-1705437777000"
+  },
+  {
     "id": "1775620",
     "name": "CoutureCandy.com",
     "network": "cj",
@@ -2729,7 +3549,7 @@
       "parent": "Clothing/Apparel",
       "child": "Women's"
     },
-    "seven_day_epc": "0.00",
+    "seven_day_epc": "1.22",
     "three_month_epc": "0.00",
     "network_rank": "0",
     "mobile_tracking": false,
@@ -2747,7 +3567,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-12661803-1689274167000"
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-12661803-1689274167000"
   },
   {
     "id": "1826017",
@@ -2766,7 +3586,7 @@
       "parent": "Computer & Electronics",
       "child": "Consumer Electronics"
     },
-    "seven_day_epc": "10.40",
+    "seven_day_epc": "11.72",
     "three_month_epc": "6.40",
     "network_rank": "1",
     "mobile_tracking": false,
@@ -2862,7 +3682,7 @@
       "parent": "Computer & Electronics",
       "child": "Computer SW"
     },
-    "seven_day_epc": "2.88",
+    "seven_day_epc": "0.00",
     "three_month_epc": "1.58",
     "network_rank": "1",
     "mobile_tracking": false,
@@ -2917,7 +3737,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-13206157-1724956064000"
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-13206157-1724956064000"
   },
   {
     "id": "1880835",
@@ -2936,7 +3756,7 @@
       "parent": "Beauty",
       "child": "Bath & Body"
     },
-    "seven_day_epc": "22.27",
+    "seven_day_epc": "19.11",
     "three_month_epc": "12.68",
     "network_rank": "2",
     "mobile_tracking": false,
@@ -2954,7 +3774,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-11459398-1697116479000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-11459398-1697116479000"
   },
   {
     "id": "1983932",
@@ -2973,7 +3793,7 @@
       "parent": "Computer & Electronics",
       "child": "Computer SW"
     },
-    "seven_day_epc": "8.92",
+    "seven_day_epc": "14.72",
     "three_month_epc": "11.75",
     "network_rank": "3",
     "mobile_tracking": false,
@@ -3013,7 +3833,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-11052124-1720791843000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-11052124-1720791843000"
   },
   {
     "id": "1989180",
@@ -3032,7 +3852,7 @@
       "parent": "Clothing/Apparel",
       "child": "Women's"
     },
-    "seven_day_epc": "22.84",
+    "seven_day_epc": "26.30",
     "three_month_epc": "3.83",
     "network_rank": "1",
     "mobile_tracking": false,
@@ -3050,7 +3870,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-10471851-1666140789000"
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-10471851-1666140789000"
   },
   {
     "id": "2000046",
@@ -3069,7 +3889,7 @@
       "parent": "Recreation & Leisure",
       "child": "Matchmaking"
     },
-    "seven_day_epc": "0.00",
+    "seven_day_epc": "5.72",
     "three_month_epc": "1.79",
     "network_rank": "1",
     "mobile_tracking": false,
@@ -3087,7 +3907,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-10472479-1535663637000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-10472479-1535663637000"
   },
   {
     "id": "2030865",
@@ -3106,7 +3926,7 @@
       "parent": "Books/Media",
       "child": "Books"
     },
-    "seven_day_epc": "13.14",
+    "seven_day_epc": "12.63",
     "three_month_epc": "13.58",
     "network_rank": "3",
     "mobile_tracking": true,
@@ -3124,7 +3944,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15915445-1727706148000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15915467-1727706696000"
   },
   {
     "id": "2061630",
@@ -3161,7 +3981,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-10479717-1702507172000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-10479717-1702507172000"
   },
   {
     "id": "2121915",
@@ -3217,7 +4037,7 @@
       "parent": "Books/Media",
       "child": "Books"
     },
-    "seven_day_epc": "27.55",
+    "seven_day_epc": "14.38",
     "three_month_epc": "45.24",
     "network_rank": "1",
     "mobile_tracking": false,
@@ -3235,7 +4055,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-11089436-1545083566000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-11089436-1545083566000"
   },
   {
     "id": "2218454",
@@ -3254,11 +4074,11 @@
       "parent": "Computer & Electronics",
       "child": "Consumer Electronics"
     },
-    "seven_day_epc": "31.22",
+    "seven_day_epc": "34.96",
     "three_month_epc": "32.40",
     "network_rank": "4",
     "mobile_tracking": true,
-    "cookieless_tracking": true,
+    "cookieless_tracking": false,
     "actions": [
       {
         "name": "",
@@ -3302,7 +4122,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15908780-1726778838000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15908780-1726778838000"
   },
   {
     "id": "2220199",
@@ -3339,7 +4159,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-10517875-1579626265000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-10517875-1579626265000"
   },
   {
     "id": "2234018",
@@ -3358,7 +4178,7 @@
       "parent": "Home & Garden",
       "child": "Pets"
     },
-    "seven_day_epc": "14.62",
+    "seven_day_epc": "12.52",
     "three_month_epc": "22.24",
     "network_rank": "2",
     "mobile_tracking": false,
@@ -3376,7 +4196,44 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-12184894-1722534104000"
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-12184894-1722534104000"
+  },
+  {
+    "id": "2288710",
+    "name": "TicketNetwork",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "ticketnetwork.com"
+      },
+      {
+        "domain": "*.ticketnetwork.com"
+      }
+    ],
+    "category": {
+      "parent": "Entertainment",
+      "child": "Events"
+    },
+    "seven_day_epc": "8.39",
+    "three_month_epc": "11.46",
+    "network_rank": "3",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "sale",
+        "id": "422559",
+        "commission": {
+          "default": {
+            "value": "12.50%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-10535486-1660325710000"
   },
   {
     "id": "2326712",
@@ -3413,44 +4270,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-10552430-1692204100000"
-  },
-  {
-    "id": "2288710",
-    "name": "TicketNetwork",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "ticketnetwork.com"
-      },
-      {
-        "domain": "*.ticketnetwork.com"
-      }
-    ],
-    "category": {
-      "parent": "Entertainment",
-      "child": "Events"
-    },
-    "seven_day_epc": "7.86",
-    "three_month_epc": "11.46",
-    "network_rank": "3",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "422559",
-        "commission": {
-          "default": {
-            "value": "12.50%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15534728-1684180382000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-10552430-1692204100000"
   },
   {
     "id": "2346375",
@@ -3469,11 +4289,11 @@
       "parent": "Food & Drinks",
       "child": "Gourmet"
     },
-    "seven_day_epc": "32.97",
+    "seven_day_epc": "26.05",
     "three_month_epc": "36.61",
     "network_rank": "4",
     "mobile_tracking": true,
-    "cookieless_tracking": true,
+    "cookieless_tracking": false,
     "actions": [
       {
         "name": "",
@@ -3506,7 +4326,7 @@
       "parent": "Games & Toys",
       "child": "Toys"
     },
-    "seven_day_epc": "19.73",
+    "seven_day_epc": "22.91",
     "three_month_epc": "15.48",
     "network_rank": "3",
     "mobile_tracking": false,
@@ -3524,7 +4344,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-11665233-1689875194000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-11665233-1689875194000"
   },
   {
     "id": "2362700",
@@ -3543,7 +4363,7 @@
       "parent": "Education",
       "child": "Children"
     },
-    "seven_day_epc": "118.63",
+    "seven_day_epc": "116.43",
     "three_month_epc": "202.83",
     "network_rank": "3",
     "mobile_tracking": false,
@@ -3580,7 +4400,7 @@
       "parent": "Computer & Electronics",
       "child": "Computer SW"
     },
-    "seven_day_epc": "2.87",
+    "seven_day_epc": "0.00",
     "three_month_epc": "4.62",
     "network_rank": "1",
     "mobile_tracking": false,
@@ -3621,7 +4441,7 @@
       "parent": "Gifts & Flowers",
       "child": "Gifts"
     },
-    "seven_day_epc": "20.21",
+    "seven_day_epc": "20.18",
     "three_month_epc": "23.30",
     "network_rank": "4",
     "mobile_tracking": false,
@@ -3661,7 +4481,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15263744-1654274212000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15263744-1654274212000"
   },
   {
     "id": "2387410",
@@ -3680,7 +4500,7 @@
       "parent": "Travel",
       "child": "Car"
     },
-    "seven_day_epc": "9.39",
+    "seven_day_epc": "10.85",
     "three_month_epc": "8.54",
     "network_rank": "1",
     "mobile_tracking": false,
@@ -3698,7 +4518,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-10553833-1685390818000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-10553810-1685390849000"
   },
   {
     "id": "2397857",
@@ -3717,7 +4537,7 @@
       "parent": "Food & Drinks",
       "child": "Gourmet"
     },
-    "seven_day_epc": "24.32",
+    "seven_day_epc": "9.96",
     "three_month_epc": "8.47",
     "network_rank": "3",
     "mobile_tracking": false,
@@ -3786,7 +4606,7 @@
       "parent": "Health and Wellness",
       "child": "Wellness"
     },
-    "seven_day_epc": "19.38",
+    "seven_day_epc": "13.69",
     "three_month_epc": "15.51",
     "network_rank": "1",
     "mobile_tracking": true,
@@ -3804,7 +4624,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15150839-1652118908000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15150839-1652118908000"
   },
   {
     "id": "2522716",
@@ -3823,7 +4643,7 @@
       "parent": "Home & Garden",
       "child": "Furniture"
     },
-    "seven_day_epc": "76.01",
+    "seven_day_epc": "70.51",
     "three_month_epc": "98.99",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -3841,7 +4661,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-11326560-1712118676000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-11326560-1712118676000"
   },
   {
     "id": "2603623",
@@ -3860,7 +4680,7 @@
       "parent": "Gifts & Flowers",
       "child": "Gifts"
     },
-    "seven_day_epc": "49.74",
+    "seven_day_epc": "51.92",
     "three_month_epc": "66.07",
     "network_rank": "3",
     "mobile_tracking": true,
@@ -3878,7 +4698,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-16961340-1731484800000"
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-16961340-1731484800000"
   },
   {
     "id": "2678016",
@@ -3897,7 +4717,7 @@
       "parent": "Buying and Selling",
       "child": "Classifieds"
     },
-    "seven_day_epc": "19.03",
+    "seven_day_epc": "17.90",
     "three_month_epc": "22.51",
     "network_rank": "1",
     "mobile_tracking": false,
@@ -3926,7 +4746,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-10688086-1693238613000"
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-10688086-1693238613000"
   },
   {
     "id": "2679058",
@@ -3945,7 +4765,7 @@
       "parent": "Clothing/Apparel",
       "child": "Malls"
     },
-    "seven_day_epc": "1.70",
+    "seven_day_epc": "1.79",
     "three_month_epc": "0.33",
     "network_rank": "1",
     "mobile_tracking": true,
@@ -3974,7 +4794,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-10686048-1674505820000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-10686048-1674505820000"
   },
   {
     "id": "2750761",
@@ -3993,7 +4813,7 @@
       "parent": "Health and Wellness",
       "child": "Nutritional Supplements"
     },
-    "seven_day_epc": "32.69",
+    "seven_day_epc": "24.40",
     "three_month_epc": "15.53",
     "network_rank": "1",
     "mobile_tracking": false,
@@ -4029,7 +4849,7 @@
       "parent": "Travel",
       "child": "Vacation"
     },
-    "seven_day_epc": "39.52",
+    "seven_day_epc": "36.01",
     "three_month_epc": "116.68",
     "network_rank": "4",
     "mobile_tracking": true,
@@ -4063,7 +4883,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-12630514-1629826599000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-12630514-1629826599000"
   },
   {
     "id": "2871603",
@@ -4082,7 +4902,7 @@
       "parent": "Gifts & Flowers",
       "child": "Gifts"
     },
-    "seven_day_epc": "11.48",
+    "seven_day_epc": "13.38",
     "three_month_epc": "21.19",
     "network_rank": "2",
     "mobile_tracking": false,
@@ -4144,7 +4964,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-10753028-1730499030000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-10753028-1730499030000"
   },
   {
     "id": "2898768",
@@ -4163,7 +4983,7 @@
       "parent": "Business",
       "child": "Marketing"
     },
-    "seven_day_epc": "4.43",
+    "seven_day_epc": "0.00",
     "three_month_epc": "1.12",
     "network_rank": "1",
     "mobile_tracking": false,
@@ -4192,7 +5012,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-10754746-1534879214000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-10754746-1534879214000"
   },
   {
     "id": "2916100",
@@ -4211,7 +5031,7 @@
       "parent": "Entertainment",
       "child": "Events"
     },
-    "seven_day_epc": "2.10",
+    "seven_day_epc": "2.62",
     "three_month_epc": "2.01",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -4259,7 +5079,7 @@
       "parent": "Health and Wellness",
       "child": "Nutritional Supplements"
     },
-    "seven_day_epc": "5.22",
+    "seven_day_epc": "5.35",
     "three_month_epc": "4.82",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -4418,7 +5238,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-17005916-1736281800000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-17005916-1736281800000"
   },
   {
     "id": "3056145",
@@ -4437,11 +5257,11 @@
       "parent": "Sports & Fitness",
       "child": "Equipment"
     },
-    "seven_day_epc": "6.65",
+    "seven_day_epc": "1.32",
     "three_month_epc": "37.97",
     "network_rank": "2",
     "mobile_tracking": false,
-    "cookieless_tracking": true,
+    "cookieless_tracking": false,
     "actions": [
       {
         "name": "",
@@ -4455,7 +5275,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-13824793-1568141682000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-13824793-1568141682000"
   },
   {
     "id": "3131357",
@@ -4474,7 +5294,7 @@
       "parent": "Business",
       "child": "Marketing"
     },
-    "seven_day_epc": "38.76",
+    "seven_day_epc": "19.88",
     "three_month_epc": "56.69",
     "network_rank": "1",
     "mobile_tracking": false,
@@ -4492,7 +5312,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-11671343-1647357684000"
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-11671343-1647357684000"
   },
   {
     "id": "3297514",
@@ -4511,11 +5331,11 @@
       "parent": "Computer & Electronics",
       "child": "Consumer Electronics"
     },
-    "seven_day_epc": "3.57",
+    "seven_day_epc": "3.23",
     "three_month_epc": "13.02",
     "network_rank": "2",
     "mobile_tracking": true,
-    "cookieless_tracking": true,
+    "cookieless_tracking": false,
     "actions": [
       {
         "name": "",
@@ -4529,7 +5349,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-11463073-1608316710000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-11463073-1608316710000"
   },
   {
     "id": "3427850",
@@ -4548,7 +5368,7 @@
       "parent": "Financial Services",
       "child": "Banking/Trading"
     },
-    "seven_day_epc": "12.65",
+    "seven_day_epc": "13.22",
     "three_month_epc": "39.64",
     "network_rank": "2",
     "mobile_tracking": false,
@@ -4566,7 +5386,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-10931233-1539876561000"
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-10931233-1539876561000"
   },
   {
     "id": "3476017",
@@ -4585,7 +5405,7 @@
       "parent": "Health and Wellness",
       "child": "Vision Care"
     },
-    "seven_day_epc": "2.07",
+    "seven_day_epc": "1.84",
     "three_month_epc": "17.30",
     "network_rank": "2",
     "mobile_tracking": false,
@@ -4603,7 +5423,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-10968162-1734136551000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-10968162-1734136551000"
   },
   {
     "id": "3547065",
@@ -4622,7 +5442,7 @@
       "parent": "Home & Garden",
       "child": "Real Estate"
     },
-    "seven_day_epc": "11.10",
+    "seven_day_epc": "8.28",
     "three_month_epc": "12.66",
     "network_rank": "1",
     "mobile_tracking": false,
@@ -4640,7 +5460,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-10989232-1737069587000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-10989232-1737069587000"
   },
   {
     "id": "3721279",
@@ -4659,7 +5479,7 @@
       "parent": "Clothing/Apparel",
       "child": "Men's"
     },
-    "seven_day_epc": "5.84",
+    "seven_day_epc": "8.70",
     "three_month_epc": "6.51",
     "network_rank": "1",
     "mobile_tracking": false,
@@ -4677,7 +5497,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-13269305-1671728084000"
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-13269305-1671728084000"
   },
   {
     "id": "3743656",
@@ -4696,7 +5516,7 @@
       "parent": "Computer & Electronics",
       "child": "Computer SW"
     },
-    "seven_day_epc": "19.73",
+    "seven_day_epc": "16.68",
     "three_month_epc": "15.61",
     "network_rank": "3",
     "mobile_tracking": true,
@@ -4744,7 +5564,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-12580492-1699365687000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-12580492-1699365687000"
   },
   {
     "id": "3812192",
@@ -4763,7 +5583,7 @@
       "parent": "Online Services",
       "child": "Web Hosting/Servers"
     },
-    "seven_day_epc": "0.00",
+    "seven_day_epc": "0.91",
     "three_month_epc": "0.64",
     "network_rank": "1",
     "mobile_tracking": false,
@@ -4781,7 +5601,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-11145908-1689264942000"
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-11145908-1689264942000"
   },
   {
     "id": "3850067",
@@ -4800,8 +5620,8 @@
       "parent": "Home & Garden",
       "child": "Home Appliances"
     },
-    "seven_day_epc": "151.50",
-    "three_month_epc": "91.42",
+    "seven_day_epc": "138.10",
+    "three_month_epc": "91.47",
     "network_rank": "3",
     "mobile_tracking": false,
     "cookieless_tracking": true,
@@ -4822,7 +5642,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-11922931-1588775679000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-11922931-1588775679000"
   },
   {
     "id": "3874186",
@@ -4841,7 +5661,7 @@
       "parent": "Accessories",
       "child": "Jewelry"
     },
-    "seven_day_epc": "5.03",
+    "seven_day_epc": "3.96",
     "three_month_epc": "36.16",
     "network_rank": "2",
     "mobile_tracking": false,
@@ -4859,7 +5679,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-11260343-1708102762000"
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-11260343-1708102762000"
   },
   {
     "id": "3956402",
@@ -4878,7 +5698,7 @@
       "parent": "Business",
       "child": "Business-to-Business"
     },
-    "seven_day_epc": "32.86",
+    "seven_day_epc": "36.90",
     "three_month_epc": "38.71",
     "network_rank": "1",
     "mobile_tracking": false,
@@ -4918,7 +5738,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-12807669-1677865738000"
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-12807669-1677865738000"
   },
   {
     "id": "3982297",
@@ -4937,7 +5757,7 @@
       "parent": "Recreation & Leisure",
       "child": "Tobacco"
     },
-    "seven_day_epc": "14.87",
+    "seven_day_epc": "8.23",
     "three_month_epc": "17.19",
     "network_rank": "1",
     "mobile_tracking": true,
@@ -4955,7 +5775,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15785358-1712226477000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15785358-1712226477000"
   },
   {
     "id": "4014359",
@@ -4974,7 +5794,7 @@
       "parent": "Gifts & Flowers",
       "child": "Greeting Cards"
     },
-    "seven_day_epc": "97.58",
+    "seven_day_epc": "72.78",
     "three_month_epc": "373.10",
     "network_rank": "4",
     "mobile_tracking": false,
@@ -5022,7 +5842,7 @@
       "parent": "Gifts & Flowers",
       "child": "Gifts"
     },
-    "seven_day_epc": "1.41",
+    "seven_day_epc": "1.34",
     "three_month_epc": "1.45",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -5074,7 +5894,7 @@
       "parent": "Insurance",
       "child": "Personal Insurance"
     },
-    "seven_day_epc": "511.00",
+    "seven_day_epc": "505.99",
     "three_month_epc": "349.44",
     "network_rank": "4",
     "mobile_tracking": false,
@@ -5114,7 +5934,55 @@
         }
       }
     ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-11485740-1651601375000"
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-11485740-1651601375000"
+  },
+  {
+    "id": "4060503",
+    "name": "Newspapers.com",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "newspapers.com"
+      },
+      {
+        "domain": "*.newspapers.com"
+      }
+    ],
+    "category": {
+      "parent": "Online Services",
+      "child": "Web Tools"
+    },
+    "seven_day_epc": "2.57",
+    "three_month_epc": "4.17",
+    "network_rank": "3",
+    "mobile_tracking": false,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "364194",
+        "commission": {
+          "default": {
+            "value": "20.00%",
+            "type": "percentage"
+          }
+        }
+      },
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "364195",
+        "commission": {
+          "default": {
+            "value": "20.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-11455311-1536608207000"
   },
   {
     "id": "4057800",
@@ -5133,7 +6001,7 @@
       "parent": "Entertainment",
       "child": "Discounts"
     },
-    "seven_day_epc": "3.79",
+    "seven_day_epc": "18.38",
     "three_month_epc": "10.44",
     "network_rank": "1",
     "mobile_tracking": true,
@@ -5197,55 +6065,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15894797-1725028567000"
-  },
-  {
-    "id": "4060503",
-    "name": "Newspapers.com",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "newspapers.com"
-      },
-      {
-        "domain": "*.newspapers.com"
-      }
-    ],
-    "category": {
-      "parent": "Online Services",
-      "child": "Web Tools"
-    },
-    "seven_day_epc": "2.66",
-    "three_month_epc": "4.17",
-    "network_rank": "3",
-    "mobile_tracking": false,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "364194",
-        "commission": {
-          "default": {
-            "value": "20.00%",
-            "type": "percentage"
-          }
-        }
-      },
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "364195",
-        "commission": {
-          "default": {
-            "value": "20.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-11455311-1536608207000"
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15894797-1725028567000"
   },
   {
     "id": "4186290",
@@ -5264,7 +6084,7 @@
       "parent": "Health and Wellness",
       "child": "Wellness"
     },
-    "seven_day_epc": "215.51",
+    "seven_day_epc": "235.47",
     "three_month_epc": "171.08",
     "network_rank": "4",
     "mobile_tracking": true,
@@ -5282,7 +6102,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-12558191-1685010504000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-12558191-1685010504000"
   },
   {
     "id": "4389797",
@@ -5301,7 +6121,7 @@
       "parent": "Computer & Electronics",
       "child": "Consumer Electronics"
     },
-    "seven_day_epc": "1.98",
+    "seven_day_epc": "31.77",
     "three_month_epc": "19.13",
     "network_rank": "1",
     "mobile_tracking": true,
@@ -5319,7 +6139,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15454163-1678397461000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15454163-1678397461000"
   },
   {
     "id": "4390377",
@@ -5338,8 +6158,8 @@
       "parent": "Travel",
       "child": "Hotel"
     },
-    "seven_day_epc": "67.76",
-    "three_month_epc": "104.18",
+    "seven_day_epc": "52.55",
+    "three_month_epc": "104.09",
     "network_rank": "3",
     "mobile_tracking": true,
     "cookieless_tracking": true,
@@ -5411,7 +6231,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-13869925-1644868899000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-13869925-1644868899000"
   },
   {
     "id": "4441453",
@@ -5430,7 +6250,7 @@
       "parent": "Food & Drinks",
       "child": "Gourmet"
     },
-    "seven_day_epc": "19.06",
+    "seven_day_epc": "22.52",
     "three_month_epc": "14.87",
     "network_rank": "2",
     "mobile_tracking": false,
@@ -5452,7 +6272,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-12807880-1707421776000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-12807880-1707421776000"
   },
   {
     "id": "4521626",
@@ -5471,7 +6291,7 @@
       "parent": "Clothing/Apparel",
       "child": "Men's"
     },
-    "seven_day_epc": "9.02",
+    "seven_day_epc": "10.13",
     "three_month_epc": "35.34",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -5489,7 +6309,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-12254770-1666884847000"
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-12254770-1666884847000"
   },
   {
     "id": "4579683",
@@ -5508,7 +6328,7 @@
       "parent": "Home & Garden",
       "child": "Pets"
     },
-    "seven_day_epc": "65.28",
+    "seven_day_epc": "71.70",
     "three_month_epc": "91.63",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -5537,7 +6357,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15167292-1645196268000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15167292-1645196268000"
   },
   {
     "id": "4593144",
@@ -5556,7 +6376,7 @@
       "parent": null,
       "child": "Insurance"
     },
-    "seven_day_epc": "14.51",
+    "seven_day_epc": "28.35",
     "three_month_epc": "17.49",
     "network_rank": "3",
     "mobile_tracking": true,
@@ -5574,590 +6394,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-12343542-1713979465000"
-  },
-  {
-    "id": "4747708",
-    "name": "Zinus",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "zinus.com"
-      },
-      {
-        "domain": "*.zinus.com"
-      }
-    ],
-    "category": {
-      "parent": "Home & Garden",
-      "child": "Furniture"
-    },
-    "seven_day_epc": "90.12",
-    "three_month_epc": "54.29",
-    "network_rank": "3",
-    "mobile_tracking": true,
-    "cookieless_tracking": false,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "416107",
-        "commission": {
-          "default": {
-            "value": "5.00%",
-            "type": "percentage"
-          },
-          "Zinus.com Test Skus": {
-            "value": "8.50%",
-            "id": "46435"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-17010973-1737071091000"
-  },
-  {
-    "id": "4760897",
-    "name": "PRNVision.com",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "prnvision.com"
-      },
-      {
-        "domain": "*.prnvision.com"
-      }
-    ],
-    "category": {
-      "parent": "Health and Wellness",
-      "child": "Vision Care"
-    },
-    "seven_day_epc": "14.24",
-    "three_month_epc": "23.50",
-    "network_rank": "1",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "386534",
-        "commission": {
-          "default": {
-            "value": "11.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-12938009-1713990228000"
-  },
-  {
-    "id": "4941187",
-    "name": "Frontier Communications",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "frontier.com"
-      },
-      {
-        "domain": "*.frontier.com"
-      }
-    ],
-    "category": {
-      "parent": "Online Services",
-      "child": "Internet Service Providers"
-    },
-    "seven_day_epc": "79.10",
-    "three_month_epc": "71.10",
-    "network_rank": "4",
-    "mobile_tracking": false,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "397310",
-        "commission": {
-          "default": {
-            "value": "USD 75.00",
-            "type": "order-level"
-          }
-        }
-      },
-      {
-        "name": "",
-        "type": "advanced lead",
-        "id": "469472",
-        "commission": {
-          "default": {
-            "value": "USD 75.00",
-            "type": "order-level"
-          }
-        }
-      },
-      {
-        "name": "",
-        "type": "advanced lead",
-        "id": "474754",
-        "commission": {
-          "default": {
-            "value": "USD 75.00",
-            "type": "order-level"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-16945796-1735942114000"
-  },
-  {
-    "id": "5004983",
-    "name": "Sightseeing Pass",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "sightseeingpass.com"
-      },
-      {
-        "domain": "*.sightseeingpass.com"
-      }
-    ],
-    "category": {
-      "parent": "Travel",
-      "child": "Vacation"
-    },
-    "seven_day_epc": "68.94",
-    "three_month_epc": "120.02",
-    "network_rank": "4",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "401563",
-        "commission": {
-          "default": {
-            "value": "10.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15330430-1661964406000"
-  },
-  {
-    "id": "5018898",
-    "name": "StudentUniverse",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "studentuniverse.com"
-      },
-      {
-        "domain": "*.studentuniverse.com"
-      }
-    ],
-    "category": {
-      "parent": "Travel",
-      "child": "Air"
-    },
-    "seven_day_epc": "22.08",
-    "three_month_epc": "16.45",
-    "network_rank": "2",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "403923",
-        "commission": {
-          "default": {
-            "value": "USD 0.00",
-            "type": "item-level"
-          },
-          "hotels": {
-            "value": "USD 0.00",
-            "id": "35458"
-          },
-          "international": {
-            "value": "USD 0.00",
-            "id": "35459"
-          },
-          "domestic": {
-            "value": "USD 0.00",
-            "id": "35460"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15746962-1707748510000"
-  },
-  {
-    "id": "5052193",
-    "name": "Freebird Stores",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "freebirdstores.com"
-      },
-      {
-        "domain": "*.freebirdstores.com"
-      }
-    ],
-    "category": {
-      "parent": "Accessories",
-      "child": "Shoes"
-    },
-    "seven_day_epc": "46.07",
-    "three_month_epc": "25.50",
-    "network_rank": "4",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "427209",
-        "commission": {
-          "default": {
-            "value": "4.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-13970912-1732668833000"
-  },
-  {
-    "id": "5073755",
-    "name": "The SSL Store",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "thesslstore.com"
-      },
-      {
-        "domain": "*.thesslstore.com"
-      }
-    ],
-    "category": {
-      "parent": "Online Services",
-      "child": "Web Tools"
-    },
-    "seven_day_epc": "26.53",
-    "three_month_epc": "18.47",
-    "network_rank": "1",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "405222",
-        "commission": {
-          "default": {
-            "value": "5.00%",
-            "type": "percentage"
-          },
-          "Non-commissionable list": {
-            "value": "USD 0.00",
-            "id": "34966"
-          }
-        }
-      },
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "405223",
-        "commission": {
-          "default": {
-            "value": "5.00%",
-            "type": "percentage"
-          },
-          "Non-commissionable list": {
-            "value": "USD 0.00",
-            "id": "34966"
-          }
-        }
-      },
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "405711",
-        "commission": {
-          "default": {
-            "value": "5.00%",
-            "type": "percentage"
-          },
-          "Non-commissionable list": {
-            "value": "USD 0.00",
-            "id": "34966"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-13288049-1535577536000"
-  },
-  {
-    "id": "5091877",
-    "name": "AvaCare Medical",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "avacaremedical.com"
-      },
-      {
-        "domain": "*.avacaremedical.com"
-      }
-    ],
-    "category": {
-      "parent": "Health and Wellness",
-      "child": "Equipment"
-    },
-    "seven_day_epc": "27.99",
-    "three_month_epc": "15.17",
-    "network_rank": "1",
-    "mobile_tracking": true,
-    "cookieless_tracking": false,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "406442",
-        "commission": {
-          "default": {
-            "value": "5.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-13364204-1666035128000"
-  },
-  {
-    "id": "5174135",
-    "name": "Dyper",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "dyper.com"
-      },
-      {
-        "domain": "*.dyper.com"
-      }
-    ],
-    "category": {
-      "parent": "Family",
-      "child": "Babies"
-    },
-    "seven_day_epc": "0.00",
-    "three_month_epc": "20.08",
-    "network_rank": "1",
-    "mobile_tracking": true,
-    "cookieless_tracking": false,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "432454",
-        "commission": {
-          "default": {
-            "value": "USD 20.00",
-            "type": "order-level"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15902818-1728568471000"
-  },
-  {
-    "id": "5204688",
-    "name": "JibJab",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "jibjab.com"
-      },
-      {
-        "domain": "*.jibjab.com"
-      }
-    ],
-    "category": {
-      "parent": "Gifts & Flowers",
-      "child": "Greeting Cards"
-    },
-    "seven_day_epc": "19.47",
-    "three_month_epc": "18.68",
-    "network_rank": "3",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "432766",
-        "commission": {
-          "default": {
-            "value": "7.00%",
-            "type": "percentage"
-          }
-        }
-      },
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "433969",
-        "commission": {
-          "default": {
-            "value": "7.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-16987582-1733772755000"
-  },
-  {
-    "id": "5214471",
-    "name": "HealthLabs.com",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "healthlabs.com"
-      },
-      {
-        "domain": "*.healthlabs.com"
-      }
-    ],
-    "category": {
-      "parent": "Health and Wellness",
-      "child": "Wellness"
-    },
-    "seven_day_epc": "88.06",
-    "three_month_epc": "53.64",
-    "network_rank": "4",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "435191",
-        "commission": {
-          "default": {
-            "value": "30.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-13703026-1664302043000"
-  },
-  {
-    "id": "5273914",
-    "name": "TaxSlayer",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "taxslayer.com"
-      },
-      {
-        "domain": "*.taxslayer.com"
-      }
-    ],
-    "category": {
-      "parent": "Financial Services",
-      "child": "Tax Services"
-    },
-    "seven_day_epc": "5.03",
-    "three_month_epc": "5.18",
-    "network_rank": "0",
-    "mobile_tracking": false,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced lead",
-        "id": "429725",
-        "commission": {
-          "default": {
-            "value": "USD 0.00",
-            "type": "item-level"
-          }
-        }
-      },
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "429726",
-        "commission": {
-          "default": {
-            "value": "17.00%",
-            "type": "percentage"
-          },
-          "Free E-File": {
-            "value": "USD 3.00",
-            "id": "40656"
-          },
-          "Paid E-File": {
-            "value": "17.00%",
-            "id": "40657"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-14534152-1685664369000"
-  },
-  {
-    "id": "5280474",
-    "name": "Tungsten",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "tungstenautomation.com/eg/aff/productivity"
-      },
-      {
-        "domain": "*.tungstenautomation.com/eg/aff/productivity"
-      }
-    ],
-    "category": {
-      "parent": "Computer & Electronics",
-      "child": "Computer SW"
-    },
-    "seven_day_epc": "41.62",
-    "three_month_epc": "52.64",
-    "network_rank": "3",
-    "mobile_tracking": false,
-    "cookieless_tracking": false,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "417106",
-        "commission": {
-          "default": {
-            "value": "15.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-13983853-1711899552000"
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-12343542-1713979465000"
   },
   {
     "id": "5289012",
@@ -6176,7 +6413,7 @@
       "parent": "Beauty",
       "child": "Cosmetics"
     },
-    "seven_day_epc": "8.12",
+    "seven_day_epc": "6.60",
     "three_month_epc": "20.15",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -6194,7 +6431,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15583476-1726064516000"
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15583476-1726064516000"
   },
   {
     "id": "5305397",
@@ -6213,7 +6450,7 @@
       "parent": "Books/Media",
       "child": "Magazines"
     },
-    "seven_day_epc": "29.68",
+    "seven_day_epc": "28.95",
     "three_month_epc": "19.49",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -6246,7 +6483,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-14458439-1613025950000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-14458439-1613025950000"
   },
   {
     "id": "5305691",
@@ -6265,7 +6502,7 @@
       "parent": "Home & Garden",
       "child": "Bed & Bath"
     },
-    "seven_day_epc": "32.82",
+    "seven_day_epc": "33.62",
     "three_month_epc": "18.39",
     "network_rank": "1",
     "mobile_tracking": true,
@@ -6283,7 +6520,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-13814471-1657122824000"
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-13814471-1657122824000"
   },
   {
     "id": "5331920",
@@ -6302,7 +6539,7 @@
       "parent": "Online Services",
       "child": "Web Tools"
     },
-    "seven_day_epc": "8.35",
+    "seven_day_epc": "11.85",
     "three_month_epc": "3.82",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -6386,7 +6623,44 @@
         }
       }
     ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-13942196-1579538317000"
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-13942196-1579538317000"
+  },
+  {
+    "id": "5357356",
+    "name": "Rexing",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "rexingusa.com"
+      },
+      {
+        "domain": "*.rexingusa.com"
+      }
+    ],
+    "category": {
+      "parent": "Automotive",
+      "child": "Cars & Trucks"
+    },
+    "seven_day_epc": "8.53",
+    "three_month_epc": "4.74",
+    "network_rank": "1",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "436469",
+        "commission": {
+          "default": {
+            "value": "10.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15009088-1735691648000"
   },
   {
     "id": "5372369",
@@ -6405,7 +6679,7 @@
       "parent": "Health and Wellness",
       "child": "Nutritional Supplements"
     },
-    "seven_day_epc": "8.32",
+    "seven_day_epc": "10.14",
     "three_month_epc": "9.73",
     "network_rank": "1",
     "mobile_tracking": true,
@@ -6435,7 +6709,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-14315222-1701713274000"
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-14315222-1701713274000"
   },
   {
     "id": "5378637",
@@ -6454,7 +6728,7 @@
       "parent": "Health and Wellness",
       "child": "Wellness"
     },
-    "seven_day_epc": "4.50",
+    "seven_day_epc": "3.95",
     "three_month_epc": "5.75",
     "network_rank": "1",
     "mobile_tracking": true,
@@ -6476,7 +6750,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15852725-1720009898000"
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15852725-1720009898000"
   },
   {
     "id": "5384937",
@@ -6495,11 +6769,11 @@
       "parent": "Beauty",
       "child": "Cosmetics"
     },
-    "seven_day_epc": "13.76",
+    "seven_day_epc": "15.88",
     "three_month_epc": "18.18",
     "network_rank": "4",
     "mobile_tracking": true,
-    "cookieless_tracking": true,
+    "cookieless_tracking": false,
     "actions": [
       {
         "name": "",
@@ -6532,7 +6806,7 @@
       "parent": "Home & Garden",
       "child": "Home Appliances"
     },
-    "seven_day_epc": "59.01",
+    "seven_day_epc": "53.50",
     "three_month_epc": "95.30",
     "network_rank": "3",
     "mobile_tracking": true,
@@ -6554,7 +6828,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15506116-1680717071000"
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15506116-1680717071000"
   },
   {
     "id": "5424192",
@@ -6573,7 +6847,7 @@
       "parent": "Health and Wellness",
       "child": "Nutritional Supplements"
     },
-    "seven_day_epc": "14.28",
+    "seven_day_epc": "16.01",
     "three_month_epc": "22.76",
     "network_rank": "1",
     "mobile_tracking": true,
@@ -6591,7 +6865,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-14073022-1625770424000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-14073022-1625770424000"
   },
   {
     "id": "5434019",
@@ -6610,7 +6884,7 @@
       "parent": "Home & Garden",
       "child": "Furniture"
     },
-    "seven_day_epc": "22.04",
+    "seven_day_epc": "26.94",
     "three_month_epc": "38.48",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -6643,7 +6917,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-14319532-1731698362000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-14319532-1731698362000"
   },
   {
     "id": "5465624",
@@ -6702,7 +6976,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-14436301-1727455092000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-14436301-1727455092000"
   },
   {
     "id": "5533470",
@@ -6721,7 +6995,7 @@
       "parent": "Business",
       "child": "Travel"
     },
-    "seven_day_epc": "56.31",
+    "seven_day_epc": "57.15",
     "three_month_epc": "73.08",
     "network_rank": "3",
     "mobile_tracking": true,
@@ -6758,7 +7032,7 @@
       "parent": "Clothing/Apparel",
       "child": "Men's"
     },
-    "seven_day_epc": "27.70",
+    "seven_day_epc": "30.76",
     "three_month_epc": "34.37",
     "network_rank": "4",
     "mobile_tracking": true,
@@ -6795,11 +7069,11 @@
       "parent": "Clothing/Apparel",
       "child": "Men's"
     },
-    "seven_day_epc": "41.56",
+    "seven_day_epc": "36.22",
     "three_month_epc": "33.24",
     "network_rank": "3",
     "mobile_tracking": true,
-    "cookieless_tracking": false,
+    "cookieless_tracking": true,
     "actions": [
       {
         "name": "",
@@ -6813,7 +7087,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15799295-1728324190000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15799290-1737179512000"
   },
   {
     "id": "5565195",
@@ -6832,7 +7106,7 @@
       "parent": "Clothing/Apparel",
       "child": "Women's"
     },
-    "seven_day_epc": "53.18",
+    "seven_day_epc": "53.83",
     "three_month_epc": "70.92",
     "network_rank": "4",
     "mobile_tracking": true,
@@ -6854,7 +7128,513 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15107103-1704729077000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15107103-1704729077000"
+  },
+  {
+    "id": "5619253",
+    "name": "MelodySusie",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "melodysusie.com"
+      },
+      {
+        "domain": "*.melodysusie.com"
+      }
+    ],
+    "category": {
+      "parent": "Beauty",
+      "child": "Bath & Body"
+    },
+    "seven_day_epc": "58.35",
+    "three_month_epc": "13.10",
+    "network_rank": "2",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "425562",
+        "commission": {
+          "default": {
+            "value": "10.00%",
+            "type": "percentage"
+          },
+          "Gift Cards": {
+            "value": "USD 0.00",
+            "id": "44799"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-14445052-1652822958000"
+  },
+  {
+    "id": "5620015",
+    "name": "Weatherman Umbrella",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "weatherman.com"
+      },
+      {
+        "domain": "*.weatherman.com"
+      }
+    ],
+    "category": {
+      "parent": "Recreation & Leisure",
+      "child": "Outdoors"
+    },
+    "seven_day_epc": "14.46",
+    "three_month_epc": "17.74",
+    "network_rank": "2",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "429218",
+        "commission": {
+          "default": {
+            "value": "8.00%",
+            "type": "percentage"
+          },
+          "Non-commissionables": {
+            "value": "USD 0.00",
+            "id": "44730"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15612582-1693955210000"
+  },
+  {
+    "id": "5656292",
+    "name": "Rug Source",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "rugsource.com"
+      },
+      {
+        "domain": "*.rugsource.com"
+      }
+    ],
+    "category": {
+      "parent": "Home & Garden",
+      "child": "Furniture"
+    },
+    "seven_day_epc": "240.92",
+    "three_month_epc": "165.01",
+    "network_rank": "3",
+    "mobile_tracking": true,
+    "cookieless_tracking": false,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "425931",
+        "commission": {
+          "default": {
+            "value": "10.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "5694023",
+    "name": "MediTac Kits",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "meditackits.com"
+      },
+      {
+        "domain": "*.meditackits.com"
+      }
+    ],
+    "category": {
+      "parent": "Health and Wellness",
+      "child": "Equipment"
+    },
+    "seven_day_epc": "12.45",
+    "three_month_epc": "13.78",
+    "network_rank": "1",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "426487",
+        "commission": {
+          "default": {
+            "value": "3.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15136488-1639744765000"
+  },
+  {
+    "id": "5725421",
+    "name": "Mobile Pixels",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "mobilepixels.us"
+      },
+      {
+        "domain": "*.mobilepixels.us"
+      }
+    ],
+    "category": {
+      "parent": "Computer & Electronics",
+      "child": "Consumer Electronics"
+    },
+    "seven_day_epc": "27.99",
+    "three_month_epc": "84.18",
+    "network_rank": "1",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "427188",
+        "commission": {
+          "default": {
+            "value": "7.00%",
+            "type": "percentage"
+          },
+          "Non-Commissionables": {
+            "value": "USD 0.00",
+            "id": "45413"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-14488332-1616781960000"
+  },
+  {
+    "id": "5755636",
+    "name": "Foreo",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "foreo.com"
+      },
+      {
+        "domain": "*.foreo.com"
+      }
+    ],
+    "category": {
+      "parent": "Beauty",
+      "child": "Cosmetics"
+    },
+    "seven_day_epc": "34.85",
+    "three_month_epc": "6.80",
+    "network_rank": "2",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "sale",
+        "id": "428096",
+        "commission": {
+          "default": {
+            "value": "3.50%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15520183-1682511921000"
+  },
+  {
+    "id": "5757681",
+    "name": "Amazfit US",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "amazfit.com/us"
+      },
+      {
+        "domain": "*.amazfit.com/us"
+      }
+    ],
+    "category": {
+      "parent": "Computer & Electronics",
+      "child": "Consumer Electronics"
+    },
+    "seven_day_epc": "7.57",
+    "three_month_epc": "15.65",
+    "network_rank": "2",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "427769",
+        "commission": {
+          "default": {
+            "value": "4.00%",
+            "type": "percentage"
+          },
+          "Non-Commissionable Items": {
+            "value": "USD 0.00",
+            "id": "45594"
+          },
+          "6% Commission Items": {
+            "value": "6.00%",
+            "id": "50868"
+          },
+          "5% Commission Items": {
+            "value": "5.00%",
+            "id": "50869"
+          },
+          "8% Commission Items": {
+            "value": "8.00%",
+            "id": "50871"
+          },
+          "10% Balance": {
+            "value": "10.00%",
+            "id": "58175"
+          }
+        }
+      },
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "430301",
+        "commission": {
+          "default": {
+            "value": "4.00%",
+            "type": "percentage"
+          },
+          "6% Commission Items": {
+            "value": "6.00%",
+            "id": "50868"
+          },
+          "5% Commission Items": {
+            "value": "5.00%",
+            "id": "50869"
+          },
+          "8% Commission Items": {
+            "value": "8.00%",
+            "id": "50871"
+          },
+          "10% Balance": {
+            "value": "10.00%",
+            "id": "58175"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15818020-1735942305000"
+  },
+  {
+    "id": "5766265",
+    "name": "Bob Ore Blue Collection",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "bobore.com"
+      },
+      {
+        "domain": "*.bobore.com"
+      }
+    ],
+    "category": {
+      "parent": "Accessories",
+      "child": "Handbags"
+    },
+    "seven_day_epc": "4.51",
+    "three_month_epc": "30.44",
+    "network_rank": "1",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "427935",
+        "commission": {
+          "default": {
+            "value": "10.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15080196-1694639572000"
+  },
+  {
+    "id": "5775818",
+    "name": "Sullen Clothing",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "sullenclothing.com"
+      },
+      {
+        "domain": "*.sullenclothing.com"
+      }
+    ],
+    "category": {
+      "parent": "Clothing/Apparel",
+      "child": "Men's"
+    },
+    "seven_day_epc": "31.31",
+    "three_month_epc": "34.18",
+    "network_rank": "3",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "428164",
+        "commission": {
+          "default": {
+            "value": "6.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15357144-1732741945000"
+  },
+  {
+    "id": "5779671",
+    "name": "Culinary Depot",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "culinarydepotinc.com"
+      },
+      {
+        "domain": "*.culinarydepotinc.com"
+      }
+    ],
+    "category": {
+      "parent": "Home & Garden",
+      "child": "Kitchen"
+    },
+    "seven_day_epc": "12.68",
+    "three_month_epc": "38.76",
+    "network_rank": "1",
+    "mobile_tracking": true,
+    "cookieless_tracking": false,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "428106",
+        "commission": {
+          "default": {
+            "value": "2.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-16962723-1731536009000"
+  },
+  {
+    "id": "5802848",
+    "name": "GraphicAudio",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "graphicaudio.net"
+      },
+      {
+        "domain": "*.graphicaudio.net"
+      }
+    ],
+    "category": {
+      "parent": "Books/Media",
+      "child": "Audio Books"
+    },
+    "seven_day_epc": "24.71",
+    "three_month_epc": "38.86",
+    "network_rank": "2",
+    "mobile_tracking": true,
+    "cookieless_tracking": false,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "428933",
+        "commission": {
+          "default": {
+            "value": "30.00%",
+            "type": "percentage"
+          },
+          "Non-Commissionable Items": {
+            "value": "USD 0.00",
+            "id": "45910"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-14572810-1625772377000"
+  },
+  {
+    "id": "5867225",
+    "name": "My Magic Carpet",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "BuyMyMagicCarpet.com"
+      },
+      {
+        "domain": "*.BuyMyMagicCarpet.com"
+      }
+    ],
+    "category": {
+      "parent": "Home & Garden",
+      "child": "Furniture"
+    },
+    "seven_day_epc": "13.58",
+    "three_month_epc": "4.42",
+    "network_rank": "0",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "429408",
+        "commission": {
+          "default": {
+            "value": "10.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15001212-1709768026000"
   },
   {
     "id": "5901708",
@@ -6873,11 +7653,11 @@
       "parent": "Beauty",
       "child": "Cosmetics"
     },
-    "seven_day_epc": "7.60",
+    "seven_day_epc": "7.40",
     "three_month_epc": "10.34",
     "network_rank": "1",
     "mobile_tracking": true,
-    "cookieless_tracking": false,
+    "cookieless_tracking": true,
     "actions": [
       {
         "name": "",
@@ -6895,7 +7675,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15041448-1631827830000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-17006400-1736353813000"
   },
   {
     "id": "5903675",
@@ -6914,7 +7694,7 @@
       "parent": "Food & Drinks",
       "child": "Gourmet"
     },
-    "seven_day_epc": "18.98",
+    "seven_day_epc": "17.35",
     "three_month_epc": "41.20",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -6936,7 +7716,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-16946578-1731102850000"
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-16946578-1731102850000"
   },
   {
     "id": "5908550",
@@ -6955,7 +7735,7 @@
       "parent": "Home & Garden",
       "child": "Home Appliances"
     },
-    "seven_day_epc": "243.55",
+    "seven_day_epc": "243.48",
     "three_month_epc": "321.16",
     "network_rank": "3",
     "mobile_tracking": true,
@@ -6973,7 +7753,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-16961308-1731484804000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-16961308-1731484804000"
   },
   {
     "id": "5914613",
@@ -6992,11 +7772,11 @@
       "parent": "Seasonal",
       "child": "Halloween"
     },
-    "seven_day_epc": "0.28",
+    "seven_day_epc": "0.82",
     "three_month_epc": "8.22",
     "network_rank": "1",
     "mobile_tracking": true,
-    "cookieless_tracking": false,
+    "cookieless_tracking": true,
     "actions": [
       {
         "name": "",
@@ -7014,7 +7794,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15513679-1681753080000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15513679-1681753080000"
   },
   {
     "id": "5920303",
@@ -7033,7 +7813,7 @@
       "parent": "Online Services",
       "child": "Web Hosting/Servers"
     },
-    "seven_day_epc": "7.48",
+    "seven_day_epc": "8.95",
     "three_month_epc": "9.03",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -7077,7 +7857,7 @@
       "parent": "Clothing/Apparel",
       "child": "Women's"
     },
-    "seven_day_epc": "37.13",
+    "seven_day_epc": "33.39",
     "three_month_epc": "54.96",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -7099,72 +7879,35 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15723261-1705513543000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15723261-1705513543000"
   },
   {
-    "id": "5942513",
-    "name": "Juvenon",
+    "id": "6130947",
+    "name": "Rave Sports",
     "network": "cj",
     "status": "Active",
     "validDomains": [
       {
-        "domain": "juvenon.com"
+        "domain": "ravesports.com"
       },
       {
-        "domain": "*.juvenon.com"
+        "domain": "*.ravesports.com"
       }
     ],
     "category": {
-      "parent": "Health and Wellness",
-      "child": "Health Food"
+      "parent": "Sports & Fitness",
+      "child": "Summer Sports"
     },
-    "seven_day_epc": "444.30",
-    "three_month_epc": "76.18",
-    "network_rank": "3",
+    "seven_day_epc": "11.67",
+    "three_month_epc": "39.92",
+    "network_rank": "2",
     "mobile_tracking": true,
     "cookieless_tracking": true,
     "actions": [
       {
         "name": "",
         "type": "advanced sale",
-        "id": "430470",
-        "commission": {
-          "default": {
-            "value": "8.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15206679-1652985373000"
-  },
-  {
-    "id": "6009556",
-    "name": "Heivy",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "heivy.com"
-      },
-      {
-        "domain": "*.heivy.com"
-      }
-    ],
-    "category": {
-      "parent": "Health and Wellness",
-      "child": "Nutritional Supplements"
-    },
-    "seven_day_epc": "1.73",
-    "three_month_epc": "33.70",
-    "network_rank": "1",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "431385",
+        "id": "433143",
         "commission": {
           "default": {
             "value": "5.00%",
@@ -7173,324 +7916,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-16950306-1730307087000"
-  },
-  {
-    "id": "6185946",
-    "name": "UntilGone",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "untilgone.com"
-      },
-      {
-        "domain": "*.untilgone.com"
-      }
-    ],
-    "category": {
-      "parent": "Department Stores/Malls",
-      "child": "Virtual Malls"
-    },
-    "seven_day_epc": "26.12",
-    "three_month_epc": "19.74",
-    "network_rank": "3",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "434009",
-        "commission": {
-          "default": {
-            "value": "5.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-17006452-1736359843000"
-  },
-  {
-    "id": "6186988",
-    "name": "PickYourPlum",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "PickYourPlum.com"
-      },
-      {
-        "domain": "*.PickYourPlum.com"
-      }
-    ],
-    "category": {
-      "parent": "Department Stores/Malls",
-      "child": "Virtual Malls"
-    },
-    "seven_day_epc": "9.36",
-    "three_month_epc": "12.93",
-    "network_rank": "1",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "434008",
-        "commission": {
-          "default": {
-            "value": "5.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-17001123-1735077601000"
-  },
-  {
-    "id": "6200412",
-    "name": "LUXE Bidet",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "luxebidet.com"
-      },
-      {
-        "domain": "*.luxebidet.com"
-      }
-    ],
-    "category": {
-      "parent": "Home & Garden",
-      "child": "Bed & Bath"
-    },
-    "seven_day_epc": "4.39",
-    "three_month_epc": "2.12",
-    "network_rank": "1",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "434291",
-        "commission": {
-          "default": {
-            "value": "3.00%",
-            "type": "percentage"
-          },
-          "Item List - A": {
-            "value": "6.00%",
-            "id": "52098"
-          },
-          "Item List - B": {
-            "value": "7.00%",
-            "id": "52099"
-          },
-          "Item List - C": {
-            "value": "10.00%",
-            "id": "52100"
-          },
-          "Item List - D": {
-            "value": "6.00%",
-            "id": "53369"
-          },
-          "Item List - E": {
-            "value": "15.00%",
-            "id": "53370"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15314872-1661800842000"
-  },
-  {
-    "id": "6211245",
-    "name": "TP-Link USA",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "us.store.tp-link.com"
-      },
-      {
-        "domain": "*.us.store.tp-link.com"
-      }
-    ],
-    "category": {
-      "parent": "Computer & Electronics",
-      "child": "Consumer Electronics"
-    },
-    "seven_day_epc": "2.20",
-    "three_month_epc": "1.93",
-    "network_rank": "1",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "446218",
-        "commission": {
-          "default": {
-            "value": "10.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15641047-1697150101000"
-  },
-  {
-    "id": "6222071",
-    "name": "Social Catfish",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "socialcatfish.com"
-      },
-      {
-        "domain": "*.socialcatfish.com"
-      }
-    ],
-    "category": {
-      "parent": "Online Services",
-      "child": "Web Tools"
-    },
-    "seven_day_epc": "4.98",
-    "three_month_epc": "13.30",
-    "network_rank": "3",
-    "mobile_tracking": true,
-    "cookieless_tracking": false,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "434638",
-        "commission": {
-          "default": {
-            "value": "USD 12.00",
-            "type": "order-level"
-          }
-        }
-      },
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "434639",
-        "commission": {
-          "default": {
-            "value": "USD 0.00",
-            "type": "item-level"
-          },
-          "20% for anything less than $5": {
-            "value": "20.00%",
-            "id": "54335"
-          },
-          "30% $10.00 Plans": {
-            "value": "30.00%",
-            "id": "54336"
-          },
-          "35% Greater Than $29": {
-            "value": "35.00%",
-            "id": "54337"
-          },
-          "20% $22.00 Plans": {
-            "value": "20.00%",
-            "id": "54338"
-          },
-          "Exclusion List": {
-            "value": "USD 0.00",
-            "id": "54401"
-          }
-        }
-      },
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "434640",
-        "commission": {
-          "default": {
-            "value": "USD 85.00",
-            "type": "order-level"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15442126-1681314394000"
-  },
-  {
-    "id": "6225017",
-    "name": "MPH Bank",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "mph.bank"
-      },
-      {
-        "domain": "*.mph.bank"
-      }
-    ],
-    "category": {
-      "parent": "Financial Services",
-      "child": "Banking/Trading"
-    },
-    "seven_day_epc": "0.00",
-    "three_month_epc": "2.12",
-    "network_rank": "0",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "lead",
-        "id": "434921",
-        "commission": {
-          "default": {
-            "value": "USD 0.00",
-            "type": "item-level"
-          }
-        }
-      },
-      {
-        "name": "",
-        "type": "sale",
-        "id": "434922",
-        "commission": {
-          "default": {
-            "value": "USD 25.00",
-            "type": "item-level"
-          }
-        }
-      },
-      {
-        "name": "",
-        "type": "sale",
-        "id": "472352",
-        "commission": {
-          "default": {
-            "value": "USD 25.00",
-            "type": "item-level"
-          }
-        }
-      },
-      {
-        "name": "",
-        "type": "sale",
-        "id": "472353",
-        "commission": {
-          "default": {
-            "value": "USD 25.00",
-            "type": "item-level"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15381728-1711067001000"
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15272874-1720027386000"
   },
   {
     "id": "6271057",
@@ -7509,11 +7935,11 @@
       "parent": "Computer & Electronics",
       "child": "Computer SW"
     },
-    "seven_day_epc": "79.65",
+    "seven_day_epc": "73.77",
     "three_month_epc": "230.66",
     "network_rank": "3",
     "mobile_tracking": true,
-    "cookieless_tracking": false,
+    "cookieless_tracking": true,
     "actions": [
       {
         "name": "",
@@ -7543,7 +7969,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15448271-1733163793000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15448271-1733163793000"
   },
   {
     "id": "6276548",
@@ -7562,7 +7988,7 @@
       "parent": "Clothing/Apparel",
       "child": "Men's"
     },
-    "seven_day_epc": "85.48",
+    "seven_day_epc": "73.66",
     "three_month_epc": "38.51",
     "network_rank": "3",
     "mobile_tracking": false,
@@ -7580,7 +8006,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15892036-1724876450000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15642268-1697335289000"
   },
   {
     "id": "6278463",
@@ -7599,7 +8025,7 @@
       "parent": "Food & Drinks",
       "child": "Gourmet"
     },
-    "seven_day_epc": "76.39",
+    "seven_day_epc": "127.10",
     "three_month_epc": "96.67",
     "network_rank": "3",
     "mobile_tracking": true,
@@ -7617,7 +8043,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15435244-1672710855000"
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15435244-1672710855000"
   },
   {
     "id": "6282423",
@@ -7636,7 +8062,7 @@
       "parent": "Computer & Electronics",
       "child": "Consumer Electronics"
     },
-    "seven_day_epc": "59.94",
+    "seven_day_epc": "64.67",
     "three_month_epc": "80.70",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -7654,7 +8080,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15823331-1717004209000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15823331-1717004209000"
   },
   {
     "id": "6284903",
@@ -7673,7 +8099,7 @@
       "parent": "Accessories",
       "child": "Shoes"
     },
-    "seven_day_epc": "49.36",
+    "seven_day_epc": "54.74",
     "three_month_epc": "40.70",
     "network_rank": "3",
     "mobile_tracking": true,
@@ -7691,44 +8117,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15664510-1699426662000"
-  },
-  {
-    "id": "6284907",
-    "name": "GeorgiaBoot.com",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "GeorgiaBoot.com"
-      },
-      {
-        "domain": "*.GeorgiaBoot.com"
-      }
-    ],
-    "category": {
-      "parent": "Accessories",
-      "child": "Shoes"
-    },
-    "seven_day_epc": "30.44",
-    "three_month_epc": "68.56",
-    "network_rank": "3",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "435572",
-        "commission": {
-          "default": {
-            "value": "6.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-17009534-1736900692000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15905444-1726256114000"
   },
   {
     "id": "6284905",
@@ -7747,7 +8136,7 @@
       "parent": "Accessories",
       "child": "Shoes"
     },
-    "seven_day_epc": "23.89",
+    "seven_day_epc": "18.34",
     "three_month_epc": "45.86",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -7765,7 +8154,44 @@
         }
       }
     ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-16947902-1730150481000"
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-16947902-1730150481000"
+  },
+  {
+    "id": "6284907",
+    "name": "GeorgiaBoot.com",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "GeorgiaBoot.com"
+      },
+      {
+        "domain": "*.GeorgiaBoot.com"
+      }
+    ],
+    "category": {
+      "parent": "Accessories",
+      "child": "Shoes"
+    },
+    "seven_day_epc": "34.54",
+    "three_month_epc": "68.56",
+    "network_rank": "3",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "sale",
+        "id": "435572",
+        "commission": {
+          "default": {
+            "value": "6.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15664501-1725921841000"
   },
   {
     "id": "6305438",
@@ -7784,7 +8210,7 @@
       "parent": "Accessories",
       "child": "Shoes"
     },
-    "seven_day_epc": "47.26",
+    "seven_day_epc": "6.12",
     "three_month_epc": "30.12",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -7806,7 +8232,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15484413-1679512754000"
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15484413-1679512754000"
   },
   {
     "id": "6349251",
@@ -7825,11 +8251,11 @@
       "parent": "Home & Garden",
       "child": "Bed & Bath"
     },
-    "seven_day_epc": "43.99",
+    "seven_day_epc": "69.63",
     "three_month_epc": "49.10",
     "network_rank": "1",
     "mobile_tracking": true,
-    "cookieless_tracking": true,
+    "cookieless_tracking": false,
     "actions": [
       {
         "name": "",
@@ -7847,7 +8273,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15469347-1680282878000"
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15469347-1680282878000"
   },
   {
     "id": "6375213",
@@ -7917,7 +8343,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15538692-1727718673000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15538692-1727718673000"
   },
   {
     "id": "6378167",
@@ -7936,7 +8362,7 @@
       "parent": "Health and Wellness",
       "child": "Nutritional Supplements"
     },
-    "seven_day_epc": "97.99",
+    "seven_day_epc": "109.60",
     "three_month_epc": "155.65",
     "network_rank": "4",
     "mobile_tracking": true,
@@ -7973,7 +8399,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15483311-1678398704000"
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15483311-1678398704000"
   },
   {
     "id": "6387535",
@@ -7992,11 +8418,11 @@
       "parent": "Clothing/Apparel",
       "child": "Women's"
     },
-    "seven_day_epc": "18.26",
+    "seven_day_epc": "44.22",
     "three_month_epc": "27.11",
     "network_rank": "1",
     "mobile_tracking": true,
-    "cookieless_tracking": true,
+    "cookieless_tracking": false,
     "actions": [
       {
         "name": "",
@@ -8017,84 +8443,6 @@
     "affiliateLink": "https://www.jdoqocy.com/click-101335466-15913838-1727394283000"
   },
   {
-    "id": "6389374",
-    "name": "Clearly Filtered",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "clearlyfiltered.com"
-      },
-      {
-        "domain": "*.clearlyfiltered.com"
-      }
-    ],
-    "category": {
-      "parent": "Health and Wellness",
-      "child": "Health Food"
-    },
-    "seven_day_epc": "56.07",
-    "three_month_epc": "157.59",
-    "network_rank": "4",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "476352",
-        "commission": {
-          "default": {
-            "value": "6.00%",
-            "type": "percentage"
-          },
-          "Non-Commissionable": {
-            "value": "USD 0.00",
-            "id": "55166"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15758313-1709104323000"
-  },
-  {
-    "id": "6416572",
-    "name": "Contour Design",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "contourdesign.com"
-      },
-      {
-        "domain": "*.contourdesign.com"
-      }
-    ],
-    "category": {
-      "parent": "Computer & Electronics",
-      "child": "Peripherals"
-    },
-    "seven_day_epc": "30.71",
-    "three_month_epc": "72.23",
-    "network_rank": "1",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "437393",
-        "commission": {
-          "default": {
-            "value": "5.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15512876-1682442925000"
-  },
-  {
     "id": "6427594",
     "name": "Atlantic Luggage",
     "network": "cj",
@@ -8111,7 +8459,7 @@
       "parent": "Travel",
       "child": "Luggage"
     },
-    "seven_day_epc": "0.00",
+    "seven_day_epc": "5.66",
     "three_month_epc": "6.39",
     "network_rank": "1",
     "mobile_tracking": true,
@@ -8129,7 +8477,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15531559-1697217711000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15531559-1697217711000"
   },
   {
     "id": "6430913",
@@ -8148,7 +8496,7 @@
       "parent": "Health and Wellness",
       "child": "Nutritional Supplements"
     },
-    "seven_day_epc": "73.84",
+    "seven_day_epc": "67.82",
     "three_month_epc": "40.10",
     "network_rank": "4",
     "mobile_tracking": true,
@@ -8166,7 +8514,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15745823-1710350579000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15745823-1710350579000"
   },
   {
     "id": "6454979",
@@ -8185,7 +8533,7 @@
       "parent": "Health and Wellness",
       "child": "Self Help"
     },
-    "seven_day_epc": "288.74",
+    "seven_day_epc": "449.74",
     "three_month_epc": "265.94",
     "network_rank": "2",
     "mobile_tracking": false,
@@ -8222,7 +8570,7 @@
       "parent": "Health and Wellness",
       "child": "Wellness"
     },
-    "seven_day_epc": "14.66",
+    "seven_day_epc": "13.54",
     "three_month_epc": "12.10",
     "network_rank": "1",
     "mobile_tracking": true,
@@ -8240,7 +8588,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15587295-1690520436000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15587295-1690520436000"
   },
   {
     "id": "6493506",
@@ -8259,7 +8607,7 @@
       "parent": "Home & Garden",
       "child": "Home Appliances"
     },
-    "seven_day_epc": "5.50",
+    "seven_day_epc": "0.00",
     "three_month_epc": "8.82",
     "network_rank": "1",
     "mobile_tracking": true,
@@ -8281,7 +8629,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15578046-1695237806000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15578046-1695237806000"
   },
   {
     "id": "6616496",
@@ -8300,7 +8648,7 @@
       "parent": "Department Stores/Malls",
       "child": "Virtual Malls"
     },
-    "seven_day_epc": "8.02",
+    "seven_day_epc": "7.62",
     "three_month_epc": "19.39",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -8318,7 +8666,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15591372-1691095919000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15591372-1691095919000"
   },
   {
     "id": "6620027",
@@ -8337,7 +8685,7 @@
       "parent": "Health and Wellness",
       "child": "Wellness"
     },
-    "seven_day_epc": "13.35",
+    "seven_day_epc": "10.79",
     "three_month_epc": "7.94",
     "network_rank": "1",
     "mobile_tracking": true,
@@ -8359,7 +8707,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15823390-1717004993000"
+    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15823390-1717004993000"
   },
   {
     "id": "6623148",
@@ -8426,7 +8774,7 @@
       "parent": "Computer & Electronics",
       "child": "Computer HW"
     },
-    "seven_day_epc": "107.95",
+    "seven_day_epc": "90.48",
     "three_month_epc": "73.40",
     "network_rank": "3",
     "mobile_tracking": true,
@@ -8447,6 +8795,80 @@
     "affiliateLink": "https://www.tkqlhce.com/click-101335466-16978869-1732733613000"
   },
   {
+    "id": "6643404",
+    "name": "Arka",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "arka.com"
+      },
+      {
+        "domain": "*.arka.com"
+      }
+    ],
+    "category": {
+      "parent": "Business",
+      "child": "Business-to-Business"
+    },
+    "seven_day_epc": "53.19",
+    "three_month_epc": "88.82",
+    "network_rank": "1",
+    "mobile_tracking": true,
+    "cookieless_tracking": false,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "445812",
+        "commission": {
+          "default": {
+            "value": "5.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15758451-1709117750000"
+  },
+  {
+    "id": "6685294",
+    "name": "John Boos & Co.",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "johnboos.com"
+      },
+      {
+        "domain": "*.johnboos.com"
+      }
+    ],
+    "category": {
+      "parent": "Home & Garden",
+      "child": "Kitchen"
+    },
+    "seven_day_epc": "16.43",
+    "three_month_epc": "91.63",
+    "network_rank": "2",
+    "mobile_tracking": true,
+    "cookieless_tracking": false,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "448712",
+        "commission": {
+          "default": {
+            "value": "4.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-16961380-1731484804000"
+  },
+  {
     "id": "6756445",
     "name": "Xplora ",
     "network": "cj",
@@ -8463,7 +8885,7 @@
       "parent": "Telecommunications",
       "child": "Telephone Services"
     },
-    "seven_day_epc": "1.72",
+    "seven_day_epc": "1.78",
     "three_month_epc": "10.60",
     "network_rank": "1",
     "mobile_tracking": true,
@@ -8481,7 +8903,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15638745-1697722090000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15638745-1697722090000"
   },
   {
     "id": "6776953",
@@ -8529,7 +8951,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15836245-1726770305000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15836245-1726770305000"
   },
   {
     "id": "6806019",
@@ -8577,103 +8999,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15764591-1711131785000"
-  },
-  {
-    "id": "6874782",
-    "name": "ezTaxReturn.com",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "eztaxreturn.com"
-      },
-      {
-        "domain": "*.eztaxreturn.com"
-      }
-    ],
-    "category": {
-      "parent": "Financial Services",
-      "child": "Tax Services"
-    },
-    "seven_day_epc": "28.87",
-    "three_month_epc": "20.55",
-    "network_rank": "0",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "lead",
-        "id": "455053",
-        "commission": {
-          "default": {
-            "value": "USD 0.00",
-            "type": "item-level"
-          }
-        }
-      },
-      {
-        "name": "",
-        "type": "sale",
-        "id": "455054",
-        "commission": {
-          "default": {
-            "value": "10.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15719582-1711574215000"
-  },
-  {
-    "id": "6880275",
-    "name": "OVAGO",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "ovago.com"
-      },
-      {
-        "domain": "*.ovago.com"
-      }
-    ],
-    "category": {
-      "parent": "Travel",
-      "child": "Air"
-    },
-    "seven_day_epc": "103.45",
-    "three_month_epc": "81.85",
-    "network_rank": "2",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "455953",
-        "commission": {
-          "default": {
-            "value": "USD 8.00",
-            "type": "item-level"
-          }
-        }
-      },
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "455954",
-        "commission": {
-          "default": {
-            "value": "USD 13.00",
-            "type": "item-level"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15796145-1717458993000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15764591-1711131785000"
   },
   {
     "id": "6926085",
@@ -8692,7 +9018,7 @@
       "parent": "Computer & Electronics",
       "child": "Consumer Electronics"
     },
-    "seven_day_epc": "3.22",
+    "seven_day_epc": "5.57",
     "three_month_epc": "7.54",
     "network_rank": "1",
     "mobile_tracking": true,
@@ -8729,7 +9055,7 @@
       "parent": "Home & Garden",
       "child": "Furniture"
     },
-    "seven_day_epc": "55.03",
+    "seven_day_epc": "55.24",
     "three_month_epc": "43.02",
     "network_rank": "3",
     "mobile_tracking": true,
@@ -8751,55 +9077,44 @@
         }
       }
     ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-17012062-1737179903000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-17012062-1737179903000"
   },
   {
-    "id": "6959068",
-    "name": "Ladders",
+    "id": "7211160",
+    "name": "WillWork Jewelry",
     "network": "cj",
     "status": "Active",
     "validDomains": [
       {
-        "domain": "theladders.com"
+        "domain": "willworkjewelry.com"
       },
       {
-        "domain": "*.theladders.com"
+        "domain": "*.willworkjewelry.com"
       }
     ],
     "category": {
-      "parent": "Careers",
-      "child": "Employment"
+      "parent": "Accessories",
+      "child": "Jewelry"
     },
-    "seven_day_epc": "92.38",
-    "three_month_epc": "203.60",
-    "network_rank": "3",
+    "seven_day_epc": "118.35",
+    "three_month_epc": "29.63",
+    "network_rank": "1",
     "mobile_tracking": true,
     "cookieless_tracking": true,
     "actions": [
       {
         "name": "",
-        "type": "sale",
-        "id": "459413",
+        "type": "advanced sale",
+        "id": "473292",
         "commission": {
           "default": {
-            "value": "USD 75.00",
-            "type": "item-level"
-          }
-        }
-      },
-      {
-        "name": "",
-        "type": "lead",
-        "id": "459414",
-        "commission": {
-          "default": {
-            "value": "USD 0.00",
-            "type": "item-level"
+            "value": "5.00%",
+            "type": "percentage"
           }
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-15762154-1715010613000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15896949-1726624636000"
   },
   {
     "id": "7212336",
@@ -8818,7 +9133,7 @@
       "parent": "Automotive",
       "child": "Parts & Accessories"
     },
-    "seven_day_epc": "177.02",
+    "seven_day_epc": "197.58",
     "three_month_epc": "102.24",
     "network_rank": "1",
     "mobile_tracking": true,
@@ -8869,44 +9184,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15888180-1726794386000"
-  },
-  {
-    "id": "7211160",
-    "name": "WillWork Jewelry",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "willworkjewelry.com"
-      },
-      {
-        "domain": "*.willworkjewelry.com"
-      }
-    ],
-    "category": {
-      "parent": "Accessories",
-      "child": "Jewelry"
-    },
-    "seven_day_epc": "33.03",
-    "three_month_epc": "29.63",
-    "network_rank": "1",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "473292",
-        "commission": {
-          "default": {
-            "value": "5.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15896949-1726624636000"
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-15888180-1726794386000"
   },
   {
     "id": "7213579",
@@ -8943,7 +9221,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15916186-1731451462000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-15916186-1731451462000"
   },
   {
     "id": "7227612",
@@ -8962,7 +9240,7 @@
       "parent": "Health and Wellness",
       "child": "Equipment"
     },
-    "seven_day_epc": "106.92",
+    "seven_day_epc": "94.24",
     "three_month_epc": "90.59",
     "network_rank": "2",
     "mobile_tracking": true,
@@ -8980,7 +9258,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.kqzyfj.com/click-101335466-15887082-1724866726000"
+    "affiliateLink": "https://www.dpbolvw.net/click-101335466-15887082-1724866726000"
   },
   {
     "id": "7267933",
@@ -9017,7 +9295,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-16955478-1731632472000"
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-16955478-1731632472000"
   },
   {
     "id": "7268655",
@@ -9054,7 +9332,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-16948047-1731097206000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-16948047-1731097206000"
   },
   {
     "id": "7268812",
@@ -9073,9 +9351,9 @@
       "parent": "Home & Garden",
       "child": "Home Appliances"
     },
-    "seven_day_epc": "New",
-    "three_month_epc": "New",
-    "network_rank": "New",
+    "seven_day_epc": "0.00",
+    "three_month_epc": "N/A",
+    "network_rank": "0",
     "mobile_tracking": true,
     "cookieless_tracking": true,
     "actions": [
@@ -9172,7 +9450,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-16955121-1736982219000"
+    "affiliateLink": "https://www.tkqlhce.com/click-101335466-16955121-1736982219000"
   },
   {
     "id": "7279081",
@@ -9209,7 +9487,7 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-16962743-1732125398000"
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-16962743-1732125398000"
   },
   {
     "id": "7287203",
@@ -9228,8 +9506,8 @@
       "parent": "Beauty",
       "child": "Fragrance"
     },
-    "seven_day_epc": "New",
-    "three_month_epc": "New",
+    "seven_day_epc": "29.19",
+    "three_month_epc": "24.24",
     "network_rank": "2",
     "mobile_tracking": true,
     "cookieless_tracking": true,
@@ -9246,7 +9524,44 @@
         }
       }
     ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-16942202-1729629435000"
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-16942202-1729629435000"
+  },
+  {
+    "id": "7291165",
+    "name": "VivoForma",
+    "network": "cj",
+    "status": "Active",
+    "validDomains": [
+      {
+        "domain": "vivoforma.com"
+      },
+      {
+        "domain": "*.vivoforma.com"
+      }
+    ],
+    "category": {
+      "parent": "Home & Garden",
+      "child": "Furniture"
+    },
+    "seven_day_epc": "New",
+    "three_month_epc": "New",
+    "network_rank": "New",
+    "mobile_tracking": true,
+    "cookieless_tracking": true,
+    "actions": [
+      {
+        "name": "",
+        "type": "advanced sale",
+        "id": "479512",
+        "commission": {
+          "default": {
+            "value": "4.00%",
+            "type": "percentage"
+          }
+        }
+      }
+    ],
+    "affiliateLink": "https://www.kqzyfj.com/click-101335466-16957401-1731095744000"
   },
   {
     "id": "7296596",
@@ -9283,236 +9598,6 @@
         }
       }
     ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-16951821-1732140221000"
-  },
-  {
-    "id": "7298676",
-    "name": "LilyAna Naturals Amazon Marketplace",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "amazon.com/stores/LilyAnaNaturals/Homepage/page/9481DDF3-335B-4DFB-B4B3-170F1CD85B30"
-      },
-      {
-        "domain": "*.amazon.com/stores/LilyAnaNaturals/Homepage/page/9481DDF3-335B-4DFB-B4B3-170F1CD85B30"
-      }
-    ],
-    "category": {
-      "parent": "Beauty",
-      "child": "Bath & Body"
-    },
-    "seven_day_epc": "New",
-    "three_month_epc": "New",
-    "network_rank": "New",
-    "mobile_tracking": true,
-    "cookieless_tracking": false,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "479952",
-        "commission": {
-          "default": {
-            "value": "20.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "id": "7298678",
-    "name": "AV Access",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "avaccess.com"
-      },
-      {
-        "domain": "*.avaccess.com"
-      }
-    ],
-    "category": {
-      "parent": "Computer & Electronics",
-      "child": "Computer HW"
-    },
-    "seven_day_epc": "New",
-    "three_month_epc": "New",
-    "network_rank": "New",
-    "mobile_tracking": true,
-    "cookieless_tracking": false,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "482352",
-        "commission": {
-          "default": {
-            "value": "10.00%",
-            "type": "percentage"
-          }
-        }
-      },
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "482353",
-        "commission": {
-          "default": {
-            "value": "10.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.jdoqocy.com/click-101335466-16987838-1736821736000"
-  },
-  {
-    "id": "7303706",
-    "name": "Portals Parfums",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "portalsparfums.com"
-      },
-      {
-        "domain": "*.portalsparfums.com"
-      }
-    ],
-    "category": {
-      "parent": "Beauty",
-      "child": "Fragrance"
-    },
-    "seven_day_epc": "New",
-    "three_month_epc": "New",
-    "network_rank": "New",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "480792",
-        "commission": {
-          "default": {
-            "value": "6.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.tkqlhce.com/click-101335466-16965525-1731966709000"
-  },
-  {
-    "id": "7304564",
-    "name": "Corro",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "corroshop.com"
-      },
-      {
-        "domain": "*.corroshop.com"
-      }
-    ],
-    "category": {
-      "parent": "Sports & Fitness",
-      "child": "Apparel"
-    },
-    "seven_day_epc": "New",
-    "three_month_epc": "New",
-    "network_rank": "New",
-    "mobile_tracking": true,
-    "cookieless_tracking": true,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "481953",
-        "commission": {
-          "default": {
-            "value": "5.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ],
-    "affiliateLink": "https://www.dpbolvw.net/click-101335466-16982182-1733839122000"
-  },
-  {
-    "id": "7327296",
-    "name": "Natural Nutra - Amazon Marketplace",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "amazon.com/stores/NaturalNutra/page/505B06C0-13AB-496C-86BF-42554A40B863?ref_=ast_bln"
-      },
-      {
-        "domain": "*.amazon.com/stores/NaturalNutra/page/505B06C0-13AB-496C-86BF-42554A40B863?ref_=ast_bln"
-      }
-    ],
-    "category": {
-      "parent": "Health and Wellness",
-      "child": "Nutritional Supplements"
-    },
-    "seven_day_epc": "New",
-    "three_month_epc": "New",
-    "network_rank": "New",
-    "mobile_tracking": true,
-    "cookieless_tracking": false,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "483012",
-        "commission": {
-          "default": {
-            "value": "15.00%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
-  },
-  {
-    "id": "7357174",
-    "name": "Berkel - Amazon Marketplace",
-    "network": "cj",
-    "status": "Active",
-    "validDomains": [
-      {
-        "domain": "amazon.com/stores/Berkel/Homepage/page/CE9A6B50-C330-416E-8788-3E2C65FA8DED"
-      },
-      {
-        "domain": "*.amazon.com/stores/Berkel/Homepage/page/CE9A6B50-C330-416E-8788-3E2C65FA8DED"
-      }
-    ],
-    "category": {
-      "parent": "Home & Garden",
-      "child": "Kitchen"
-    },
-    "seven_day_epc": "New",
-    "three_month_epc": "New",
-    "network_rank": "New",
-    "mobile_tracking": true,
-    "cookieless_tracking": false,
-    "actions": [
-      {
-        "name": "",
-        "type": "advanced sale",
-        "id": "484392",
-        "commission": {
-          "default": {
-            "value": "6.50%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "affiliateLink": "https://www.anrdoezrs.net/click-101335466-16951821-1732140221000"
   }
 ]
