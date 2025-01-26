@@ -26,7 +26,7 @@ def get_previous_merchants():
     try:
         with open(AWIN_APPROVED_FILE, 'r') as f:
             data = json.load(f)
-            return {m['id']: m['name'] for m in data}
+            return {m['id']: m['merchant'] for m in data}
     except FileNotFoundError:
         return {}
 
@@ -43,6 +43,42 @@ def atomic_write_json(filepath, data):
         if os.path.exists(temp_file):
             os.remove(temp_file)
         return False
+
+def parse_commission_data(commission_data):
+    """Parse commission data to get the commission value and type."""
+    if not commission_data:
+        return '', ''
+    
+    try:
+        # Get commission groups from the response
+        commission_groups = commission_data.get('commissionGroups', [])
+        if not commission_groups:
+            return '', ''
+        
+        # Find the highest commission for each type
+        highest_percentage = 0
+        highest_fixed = 0
+        
+        for group in commission_groups:
+            commission_type = group.get('type', '')
+            
+            if commission_type == 'percentage':
+                percentage = group.get('percentage', 0)
+                highest_percentage = max(highest_percentage, percentage)
+            elif commission_type == 'fix':
+                amount = group.get('amount', 0)
+                highest_fixed = max(highest_fixed, amount)
+        
+        # Return the highest commission found (prefer percentage if both exist)
+        if highest_percentage > 0:
+            return f"{highest_percentage:.2f}%", 'percentage'
+        elif highest_fixed > 0:
+            return f"${highest_fixed:.2f}", 'fixed'
+                
+    except Exception as e:
+        print(f"Error parsing commission data: {str(e)}")
+    
+    return '', ''
 
 access_token = "2d212bf1-ca95-4540-8c50-8e90b8261c69"
 
@@ -66,24 +102,22 @@ for advertiser in advertisers:
             new_merchants.append(f"- {advertiser['name']} (ID: {advertiser_id})")
         
         commission_data = get_commission_rates(advertiser_id, access_token)
+        commission_value, commission_type = parse_commission_data(commission_data)
         
         # Add commission data to the advertiser info
         advertiser_info = {
             'id': str(advertiser_id),  # Convert to string to match CJ format
-            'name': advertiser['name'],
+            'merchant': advertiser['name'],
             'network': 'awin',
-            'description': advertiser.get('description', ''),
-            'displayUrl': advertiser.get('displayUrl', ''),
-            'logoUrl': advertiser.get('logoUrl', ''),
-            'affiliateLink': advertiser.get('clickThroughUrl', ''),
-            'currencyCode': advertiser.get('currencyCode', ''),
             'status': advertiser.get('status', ''),
-            'category': {
-                'parent': advertiser.get('primarySector', ''),
-                'child': ''  # AWIN doesn't provide subcategories
-            },
-            'primaryRegion': advertiser.get('primaryRegion', {}).get('name', ''),
-            'validDomains': advertiser.get('validDomains', [])
+            'domain': advertiser.get('displayUrl', '').lower().replace('www.', '').replace('http://', '').replace('https://', '').rstrip('/') if advertiser.get('displayUrl') else '',
+            'category': advertiser.get('primarySector', ''),
+            'childCategory': '',  # AWIN doesn't provide subcategories
+            'currency': advertiser.get('currencyCode', ''),
+            'region': 'United States' if advertiser.get('primaryRegion', {}).get('name') == 'United States of America' else advertiser.get('primaryRegion', {}).get('name', ''),
+            'commissionValue': commission_value,
+            'commissionType': commission_type,
+            'affiliateLink': advertiser.get('clickThroughUrl', '')
         }
         complete_data.append(advertiser_info)
     except Exception as e:

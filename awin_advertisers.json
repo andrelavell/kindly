@@ -1556,6 +1556,29 @@
     ]
   },
   {
+    "description": "To help the people we touch live healthily and independently, OasisSpace teamed up with a group of enthusiasts to bring in Household & Health Care products including stand-up walkers, knee scooters, rollator walkers, bathroom safety, and bedroom safety.",
+    "displayUrl": "https://www.oasisspace.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/24888.png",
+    "clickThroughUrl": "https://www.awin1.com/awclick.php?mid=24888&id=1818430",
+    "id": 24888,
+    "name": "Oasis Space (US)",
+    "currencyCode": "USD",
+    "primaryRegion": {
+      "name": "United States of America",
+      "countryCode": "US"
+    },
+    "status": "Active",
+    "primarySector": "Gadgets",
+    "validDomains": [
+      {
+        "domain": "oasisspace.com"
+      },
+      {
+        "domain": "*.oasisspace.com"
+      }
+    ]
+  },
+  {
     "description": "Welcome to Golden Root! Our caffeine-free turmeric latte mixes are organic, non-GMO, and vegan! Made with simple ingredients to help you fight inflammation, build immunity, and feel your best. Golden Root is female owned and small batch made.",
     "displayUrl": "https://www.goldenroot.co/",
     "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/24996.png",
@@ -2480,6 +2503,29 @@
       },
       {
         "domain": "*.krystal-hotels.com"
+      }
+    ]
+  },
+  {
+    "description": "Luxury online store based in Paris. Worlwide express delivery. Established since 1982. Saint Laurent, Valentino, Jacquemus, Dior, Gucci, Jimmy Choo, Golden Goose, Prada, Dsquared2 and more... at the best prices!",
+    "displayUrl": "https://modadiandrea.com/en/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/30595.png",
+    "clickThroughUrl": "https://www.awin1.com/awclick.php?mid=30595&id=1818430",
+    "id": 30595,
+    "name": "Moda Di Andrea (US)",
+    "currencyCode": "USD",
+    "primaryRegion": {
+      "name": "United States of America",
+      "countryCode": "US"
+    },
+    "status": "Active",
+    "primarySector": "Shoes",
+    "validDomains": [
+      {
+        "domain": "modadiandrea.com"
+      },
+      {
+        "domain": "*.modadiandrea.com"
       }
     ]
   },
@@ -7568,6 +7614,29 @@
     ]
   },
   {
+    "description": "Pyramyd AIR is a superior outdoor shopping destination with unique product selection and custom services available only from true ambassadors of outdoors.",
+    "displayUrl": "https://www.pyramydair.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/105285.png",
+    "clickThroughUrl": "https://www.awin1.com/awclick.php?mid=105285&id=1818430",
+    "id": 105285,
+    "name": "Pyramyd AIR (US)",
+    "currencyCode": "USD",
+    "primaryRegion": {
+      "name": "United States of America",
+      "countryCode": "US"
+    },
+    "status": "Active",
+    "primarySector": "Sports Equipment",
+    "validDomains": [
+      {
+        "domain": "pyramydair.com"
+      },
+      {
+        "domain": "*.pyramydair.com"
+      }
+    ]
+  },
+  {
     "description": "ABM designs and integrates systems for all sizes of companies, from small start-ups to large food companies like Tyson and Cargill, individual solutions to complete processing lines.",
     "displayUrl": "https://abmequipment.com/shop/",
     "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/105335.png",
@@ -7610,6 +7679,29 @@
       },
       {
         "domain": "*.epicvin.com"
+      }
+    ]
+  },
+  {
+    "description": "juju + stitch offers custom embroidered apparel  accessories for babies, kids,  adults. our product makes great gifts for new moms, bridal parties, sibling matching sets  more! each piece is custom embroidered with your unique text.",
+    "displayUrl": "https://www.jujustitch.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/105879.png",
+    "clickThroughUrl": "https://www.awin1.com/awclick.php?mid=105879&id=1818430",
+    "id": 105879,
+    "name": "JuJu + Stitch",
+    "currencyCode": "USD",
+    "primaryRegion": {
+      "name": "United States of America",
+      "countryCode": "US"
+    },
+    "status": "Active",
+    "primarySector": "Clothing",
+    "validDomains": [
+      {
+        "domain": "jujustitch.com"
+      },
+      {
+        "domain": "*.jujustitch.com"
       }
     ]
   },

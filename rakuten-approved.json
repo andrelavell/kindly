@@ -1,1160 +1,646 @@
 [
   {
     "id": "560",
-    "name": "Rakuten Advertising Welcome Program",
+    "merchant": "Rakuten Advertising Welcome Program",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [],
-    "links": [],
-    "description": "",
-    "logoUrl": "",
+    "domain": "",
+    "category": "Other, Other Products/Services",
+    "childCategory": "Services",
+    "currency": "USD",
+    "region": "United States",
     "affiliateLink": "",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "210",
-      "child": "146"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "0%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "commissionValue": "0%",
+    "commissionType": "percentage"
   },
   {
     "id": "815",
-    "name": "Sharper Image",
+    "merchant": "Sharper Image",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [],
-    "links": [
-      {
-        "clickURL": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1429613.10000942&type=3",
-        "landURL": "",
-        "text": "Shop at Sharper Image"
-      }
-    ],
-    "description": "",
-    "logoUrl": "",
+    "domain": "",
+    "category": "Home & Living",
+    "childCategory": "Garden",
+    "currency": "USD",
+    "region": "United States",
     "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1429613.10000942&type=3",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "11",
-      "child": "132"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "2%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "commissionValue": "2%",
+    "commissionType": "percentage"
   },
   {
     "id": "2856",
-    "name": "onehanesplace.com (Hanesbrands Inc.)",
+    "merchant": "onehanesplace.com (Hanesbrands Inc.)",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [],
-    "links": [],
-    "description": "",
-    "logoUrl": "",
-    "affiliateLink": "",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "210",
-      "child": "14"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "1%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "domain": "onehanesplace.com",
+    "category": "Other, Other Products/Services",
+    "childCategory": "Sports & Fitness",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1242780.10004108&type=3",
+    "commissionValue": "1%",
+    "commissionType": "percentage"
+  },
+  {
+    "id": "3088",
+    "merchant": "Thrifty Rent-A-Car System, Inc.",
+    "network": "rakuten",
+    "status": "Active",
+    "domain": "thrifty.com",
+    "category": "Car",
+    "childCategory": "Auto",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=171424.10000907&type=3",
+    "commissionValue": "1%",
+    "commissionType": "percentage"
   },
   {
     "id": "3156",
-    "name": "Champion.com (Hanesbrands Inc.)",
+    "merchant": "Champion.com (Hanesbrands Inc.)",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [
-      {
-        "domain": "champion.com"
-      }
-    ],
-    "links": [
-      {
-        "clickURL": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1242774.10002932&type=3",
-        "landURL": "https://www.champion.com/customer/account/create/",
-        "text": "Get 15% off your first order plus Free Shipping on every order when you join Club Champion loyalty. Join for free"
-      }
-    ],
-    "description": "",
-    "logoUrl": "",
-    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1242774.10002932&type=3",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "14",
-      "child": "3"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "1%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "domain": "champion.com",
+    "category": "Sports & Fitness",
+    "childCategory": "Clothing & Accessories",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1242774.10002968&type=3",
+    "commissionValue": "1%",
+    "commissionType": "percentage"
   },
   {
     "id": "13581",
-    "name": "Flower.com Flowers",
+    "merchant": "Flower.com Flowers",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [
-      {
-        "domain": "flower.com"
-      }
-    ],
-    "links": [
-      {
-        "clickURL": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=102910.10000079&type=3",
-        "landURL": "https://www.flower.com/flowers.asp?",
-        "text": "Flowers"
-      }
-    ],
-    "description": "",
-    "logoUrl": "",
+    "domain": "flower.com",
+    "category": "Home & Living",
+    "childCategory": "Gifts",
+    "currency": "USD",
+    "region": "United States",
     "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=102910.10000079&type=3",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "11",
-      "child": "154"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "20%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "commissionValue": "20%",
+    "commissionType": "percentage"
   },
   {
     "id": "24274",
-    "name": "Rakuten Marketing UK",
+    "merchant": "Rakuten Marketing UK",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [],
-    "links": [],
-    "description": "",
-    "logoUrl": "",
-    "affiliateLink": "",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "150",
-      "child": ""
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "0%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "domain": "rakutenadvertising.com",
+    "category": "B-to-B",
+    "childCategory": "",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=475725.10000140&type=3",
+    "commissionValue": "0%",
+    "commissionType": "percentage"
   },
   {
     "id": "24366",
-    "name": "Hanes.com",
+    "merchant": "Hanes.com",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [],
-    "links": [],
-    "description": "",
-    "logoUrl": "",
-    "affiliateLink": "",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "14",
-      "child": "3"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "1%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "domain": "hanes.com",
+    "category": "Sports & Fitness",
+    "childCategory": "Clothing & Accessories",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1242778.10005071&type=3",
+    "commissionValue": "1%",
+    "commissionType": "percentage"
+  },
+  {
+    "id": "35267",
+    "merchant": "Dollar Rent-a-Car, Inc.",
+    "network": "rakuten",
+    "status": "Active",
+    "domain": "dollar.com",
+    "category": "Car",
+    "childCategory": "Auto",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=171423.10000706&type=3",
+    "commissionValue": "1%",
+    "commissionType": "percentage"
   },
   {
     "id": "36310",
-    "name": "Dyson Inc.",
+    "merchant": "Dyson Inc.",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [
-      {
-        "domain": "dyson.com"
-      }
-    ],
-    "links": [
-      {
-        "clickURL": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=959502.10002195&type=3",
-        "landURL": "https://www.dyson.com/air-treatment/air-purifier-heaters/purifier-hot-cool-formaldehyde-hp09/white-gold",
-        "text": "Shop Dyson's Purifier Hot+Cool Formaldehyde purifying fan heater. Purifies and heats\u2076 the whole room\u2078."
-      }
-    ],
-    "description": "",
-    "logoUrl": "",
-    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=959502.10002195&type=3",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "11",
-      "child": "155"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "2%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "domain": "dyson.com",
+    "category": "Home & Living",
+    "childCategory": "Home",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=959502.10002614&type=3",
+    "commissionValue": "2%",
+    "commissionType": "percentage"
   },
   {
     "id": "36327",
-    "name": "American National Standards Institute Inc.",
+    "merchant": "American National Standards Institute Inc.",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [
-      {
-        "domain": "webstore.ansi.org"
-      }
-    ],
-    "links": [
-      {
-        "clickURL": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=208750.10000115&type=3",
-        "landURL": "https://webstore.ansi.org/standards/asme/asmeb31pipingpackage?source=linkshare",
-        "text": "ASME B31. Piping Package"
-      }
-    ],
-    "description": "",
-    "logoUrl": "",
-    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=208750.10000115&type=3",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "13",
-      "child": "211"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "10%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "domain": "webstore.ansi.org",
+    "category": "Office",
+    "childCategory": "Equipment",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=208750.10000040&type=3",
+    "commissionValue": "10%",
+    "commissionType": "percentage"
   },
   {
     "id": "38726",
-    "name": "FlowerShopping.com",
+    "merchant": "FlowerShopping.com",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [],
-    "links": [
-      {
-        "clickURL": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=801368&type=3",
-        "landURL": "",
-        "text": "Shop at FlowerShopping.com"
-      }
-    ],
-    "description": "",
-    "logoUrl": "",
+    "domain": "",
+    "category": "Gifts",
+    "childCategory": "Gifts",
+    "currency": "USD",
+    "region": "United States",
     "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=801368&type=3",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "154",
-      "child": "125"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "1%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "commissionValue": "1%",
+    "commissionType": "percentage"
+  },
+  {
+    "id": "39467",
+    "merchant": "Simply Wholesale",
+    "network": "rakuten",
+    "status": "Active",
+    "domain": "",
+    "category": "Garden",
+    "childCategory": "Consumer",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "",
+    "commissionValue": "5%",
+    "commissionType": "percentage"
+  },
+  {
+    "id": "39563",
+    "merchant": "PandaHall",
+    "network": "rakuten",
+    "status": "Active",
+    "domain": "pandahall.com",
+    "category": "Gifts",
+    "childCategory": "Clothing & Accessories",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1518542.2770&type=3",
+    "commissionValue": "2%",
+    "commissionType": "percentage"
   },
   {
     "id": "39866",
-    "name": "Canadapetcare",
+    "merchant": "Canadapetcare",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [
-      {
-        "domain": "canadapetcare.com"
-      }
-    ],
-    "links": [
-      {
-        "clickURL": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=354333.1350&type=3",
-        "landURL": "https://www.canadapetcare.com/dogs-heartwormers-treatment-108.aspx?utm_source=lstext&utm_campaign=Winter-25&coupon_no=CPCWIN15",
-        "text": "January Saving: Get 15% Off Pick Dog Supplies + Free Shipping"
-      }
-    ],
-    "description": "",
-    "logoUrl": "",
-    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=354333.1350&type=3",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "11",
-      "child": "132"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "10%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "domain": "canadapetcare.com",
+    "category": "Home & Living",
+    "childCategory": "Garden",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=354333.723&type=3",
+    "commissionValue": "10%",
+    "commissionType": "percentage"
   },
   {
     "id": "40380",
-    "name": "Rakuten Kobo Brazil",
+    "merchant": "Rakuten Kobo Brazil",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [],
-    "links": [],
-    "description": "",
-    "logoUrl": "",
+    "domain": "",
+    "category": "2578",
+    "childCategory": "2522",
+    "currency": "USD",
+    "region": "United States",
     "affiliateLink": "",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "2578",
-      "child": "2522"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "5%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "commissionValue": "5%",
+    "commissionType": "percentage"
+  },
+  {
+    "id": "41626",
+    "merchant": "Costway",
+    "network": "rakuten",
+    "status": "Active",
+    "domain": "costway.com",
+    "category": "Home & Living",
+    "childCategory": "Garden",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=963958.389&type=3",
+    "commissionValue": "4%",
+    "commissionType": "percentage"
   },
   {
     "id": "42536",
-    "name": "Edureka",
+    "merchant": "Edureka",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [
-      {
-        "domain": "edureka.co"
-      }
-    ],
-    "links": [
-      {
-        "clickURL": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=742306.681&type=3",
-        "landURL": "https://www.edureka.co/search",
-        "text": "Mid Month Madness - Flat 30% on all live and Master courses"
-      }
-    ],
-    "description": "",
-    "logoUrl": "",
-    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=742306.681&type=3",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "123",
-      "child": "113"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "sale : 0-5000 15%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "domain": "edureka.co",
+    "category": "Educational",
+    "childCategory": "Books/Magazines",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=742306.350&type=3",
+    "commissionValue": "sale : 0-5000 15%",
+    "commissionType": "percentage"
   },
   {
     "id": "43460",
-    "name": "Garrett Wade",
+    "merchant": "Garrett Wade",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [
-      {
-        "domain": "garrettwade.com"
-      }
-    ],
-    "links": [
-      {
-        "clickURL": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1100756.212&type=3",
-        "landURL": "https://garrettwade.com/",
-        "text": "Free Shipping on All Orders $150 or Over! Use Code FREESHIP150 at Checkout"
-      }
-    ],
-    "description": "",
-    "logoUrl": "",
-    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1100756.212&type=3",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "11",
-      "child": "132"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "sale : 0-2000 3.5%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "domain": "garrettwade.com",
+    "category": "Home & Living",
+    "childCategory": "Garden",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1100756.162&type=3",
+    "commissionValue": "sale : 0-2000 3.5%",
+    "commissionType": "percentage"
   },
   {
     "id": "43954",
-    "name": "Maidenform",
+    "merchant": "Maidenform",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [],
-    "links": [],
-    "description": "",
-    "logoUrl": "",
-    "affiliateLink": "",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "3",
-      "child": "128"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "1%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "domain": "maidenform.com",
+    "category": "Clothing & Accessories",
+    "childCategory": "Bath/Body",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1242784.597&type=3",
+    "commissionValue": "1%",
+    "commissionType": "percentage"
+  },
+  {
+    "id": "44029",
+    "merchant": "Vince Unfold",
+    "network": "rakuten",
+    "status": "Active",
+    "domain": "vinceunfold.com",
+    "category": "Mature/Adult",
+    "childCategory": "Other, Other Products/Services",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=661566.12&type=3",
+    "commissionValue": "$20",
+    "commissionType": "fixed"
+  },
+  {
+    "id": "44574",
+    "merchant": "Organic Baby Food GmbH",
+    "network": "rakuten",
+    "status": "Active",
+    "domain": "organicbabyfood24.de",
+    "category": "Baby",
+    "childCategory": "Family",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=694734.6&type=3",
+    "commissionValue": "10%",
+    "commissionType": "percentage"
+  },
+  {
+    "id": "44622",
+    "merchant": "Dower & Hall",
+    "network": "rakuten",
+    "status": "Active",
+    "domain": "dowerandhall.com",
+    "category": "Jewelry",
+    "childCategory": "Jewelry",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1748224.21&type=3",
+    "commissionValue": "7%",
+    "commissionType": "percentage"
   },
   {
     "id": "44881",
-    "name": "Rent Cars",
+    "merchant": "Rent Cars",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [],
-    "links": [],
-    "description": "",
-    "logoUrl": "",
-    "affiliateLink": "",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "2546",
-      "child": "2522"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "flat : 0 and above 7",
-            "type": "fixed"
-          }
-        }
-      }
-    ]
+    "domain": "rentcars.com",
+    "category": "2546",
+    "childCategory": "2522",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1699516.3&type=3",
+    "commissionValue": "$7",
+    "commissionType": "fixed"
+  },
+  {
+    "id": "45407",
+    "merchant": "Tienda Fensa",
+    "network": "rakuten",
+    "status": "Active",
+    "domain": "tiendafensa.cl",
+    "category": "2536",
+    "childCategory": "2624",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1659758.3&type=3",
+    "commissionValue": "2.2%",
+    "commissionType": "percentage"
   },
   {
     "id": "45460",
-    "name": "Oxygen Clothing",
+    "merchant": "Oxygen Clothing",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [],
-    "links": [],
-    "description": "",
-    "logoUrl": "",
-    "affiliateLink": "",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "107",
-      "child": "108"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "7.5%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "domain": "oxygenclothing.co.uk",
+    "category": "Accessories",
+    "childCategory": "Men",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1068147.4&type=3",
+    "commissionValue": "7.5%",
+    "commissionType": "percentage"
   },
   {
     "id": "45502",
-    "name": "Lily & Roo",
+    "merchant": "Lily & Roo",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [],
-    "links": [],
-    "description": "",
-    "logoUrl": "",
-    "affiliateLink": "",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "154",
-      "child": "246"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "6%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "domain": "lilyandroo.com",
+    "category": "Gifts",
+    "childCategory": "Jewelry",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=756237.18&type=3",
+    "commissionValue": "6%",
+    "commissionType": "percentage"
   },
   {
     "id": "46392",
-    "name": "Bali Bras",
+    "merchant": "Bali Bras",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [],
-    "links": [],
-    "description": "",
-    "logoUrl": "",
-    "affiliateLink": "",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "3",
-      "child": "128"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "1%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "domain": "balibras.com",
+    "category": "Clothing & Accessories",
+    "childCategory": "Bath/Body",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1242789.371&type=3",
+    "commissionValue": "1%",
+    "commissionType": "percentage"
+  },
+  {
+    "id": "47381",
+    "merchant": "Muru",
+    "network": "rakuten",
+    "status": "Active",
+    "domain": "murujewellery.com",
+    "category": "Gifts",
+    "childCategory": "Jewelry",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=972951.996&type=3",
+    "commissionValue": "8%",
+    "commissionType": "percentage"
   },
   {
     "id": "48158",
-    "name": "Atlantis Sleep",
+    "merchant": "Atlantis Sleep",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [
-      {
-        "domain": "atlantissleep.com.au"
-      }
-    ],
-    "links": [
-      {
-        "clickURL": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1106515.14&type=3",
-        "landURL": "https://atlantissleep.com.au/products/atlantis-mattress",
-        "text": "Discover the Atlantis Mattress. Designed For Your Comfort."
-      }
-    ],
-    "description": "",
-    "logoUrl": "",
-    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1106515.14&type=3",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "155",
-      "child": "232"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "6%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "domain": "atlantissleep.com.au",
+    "category": "Home",
+    "childCategory": "Improvement",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1106515.12&type=3",
+    "commissionValue": "6%",
+    "commissionType": "percentage"
   },
   {
     "id": "49115",
-    "name": "Kent Brushes",
+    "merchant": "Kent Brushes",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [],
-    "links": [],
-    "description": "",
-    "logoUrl": "",
-    "affiliateLink": "",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "128",
-      "child": "107"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "7%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "domain": "kentbrushes.com",
+    "category": "Bath/Body",
+    "childCategory": "Accessories",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1132403.7&type=3",
+    "commissionValue": "7%",
+    "commissionType": "percentage"
+  },
+  {
+    "id": "50016",
+    "merchant": "WJD Exclusives",
+    "network": "rakuten",
+    "status": "Active",
+    "domain": "",
+    "category": "Clothing & Accessories",
+    "childCategory": "Jewelry",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1723354.3&type=3",
+    "commissionValue": "13%",
+    "commissionType": "percentage"
   },
   {
     "id": "50407",
-    "name": "ChicMe US",
+    "merchant": "ChicMe US",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [],
-    "links": [
-      {
-        "clickURL": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1329800&type=3",
-        "landURL": "",
-        "text": "Shop at ChicMe US"
-      }
-    ],
-    "description": "",
-    "logoUrl": "",
+    "domain": "",
+    "category": "Sports & Fitness",
+    "childCategory": "Clothing & Accessories",
+    "currency": "USD",
+    "region": "United States",
     "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1329800&type=3",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "14",
-      "child": "3"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "12%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "commissionValue": "12%",
+    "commissionType": "percentage"
   },
   {
     "id": "50411",
-    "name": "Hotel Collection",
+    "merchant": "Hotel Collection",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [
-      {
-        "domain": "hotelcollection.com"
-      }
-    ],
-    "links": [
-      {
-        "clickURL": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1693637.52&type=3",
-        "landURL": "https://www.hotelcollection.com/collections/hotel-collection-scent-diffusers",
-        "text": "Scent Diffuser + Oil as low as $109 Today!"
-      }
-    ],
-    "description": "",
-    "logoUrl": "",
-    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1693637.52&type=3",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "11",
-      "child": "121"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "17%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "domain": "hotelcollection.com",
+    "category": "Home & Living",
+    "childCategory": "Wine",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1693637.86&type=3",
+    "commissionValue": "17%",
+    "commissionType": "percentage"
+  },
+  {
+    "id": "50632",
+    "merchant": "beautyblender",
+    "network": "rakuten",
+    "status": "Active",
+    "domain": "beautyblender.com",
+    "category": "Clothing & Accessories",
+    "childCategory": "Cosmetics",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1536634.3&type=3",
+    "commissionValue": "10%",
+    "commissionType": "percentage"
   },
   {
     "id": "50744",
-    "name": "Remodel Your Home",
+    "merchant": "Remodel Your Home",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [
-      {
-        "domain": "lp.remodelyourhome.net"
-      }
-    ],
-    "links": [
-      {
-        "clickURL": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1710424.2&type=3",
-        "landURL": "https://lp.remodelyourhome.net/?c=782&lp=23",
-        "text": "BUY ONE WINDOW, GET ONE 20% OFF"
-      }
-    ],
-    "description": "",
-    "logoUrl": "",
+    "domain": "lp.remodelyourhome.net",
+    "category": "Home & Living",
+    "childCategory": "Garden",
+    "currency": "USD",
+    "region": "United States",
     "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1710424.2&type=3",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "11",
-      "child": "132"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "flat : 0 and above 120",
-            "type": "fixed"
-          }
-        }
-      }
-    ]
+    "commissionValue": "$120",
+    "commissionType": "fixed"
   },
   {
     "id": "50832",
-    "name": "Aroma360",
+    "merchant": "Aroma360",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [
-      {
-        "domain": "aroma360.com"
-      }
-    ],
-    "links": [
-      {
-        "clickURL": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1693633.93&type=3",
-        "landURL": "https://aroma360.com/pages/family-plan-wireless-pro",
-        "text": "Family Plan - Free Diffuser with Oil Subscription"
-      }
-    ],
-    "description": "",
-    "logoUrl": "",
-    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1693633.93&type=3",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "154",
-      "child": "155"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "17%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "domain": "aroma360.com",
+    "category": "Gifts",
+    "childCategory": "Home",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1693633.4&type=3",
+    "commissionValue": "17%",
+    "commissionType": "percentage"
+  },
+  {
+    "id": "52893",
+    "merchant": "Prozis",
+    "network": "rakuten",
+    "status": "Active",
+    "domain": "prozis.com",
+    "category": "Clothing & Accessories",
+    "childCategory": "Food & Drink",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1546161.2&type=3",
+    "commissionValue": "6%",
+    "commissionType": "percentage"
   },
   {
     "id": "53289",
-    "name": "Carpetstore LX",
+    "merchant": "Carpetstore LX",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [
-      {
-        "domain": "carpetstorelx.fi"
-      }
-    ],
-    "links": [
-      {
-        "clickURL": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1675937.96&type=3",
-        "landURL": "https://www.carpetstorelx.fi/tuotteet/merkit/louis-de-poortere",
-        "text": "Tutustu Louis De Poorteren laatumattokokoelmiin. Ilmainen toimitus."
-      }
-    ],
-    "description": "",
-    "logoUrl": "",
+    "domain": "carpetstorelx.fi",
+    "category": "Gifts",
+    "childCategory": "Home",
+    "currency": "USD",
+    "region": "United States",
     "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1675937.96&type=3",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "154",
-      "child": "155"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "8%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "commissionValue": "8%",
+    "commissionType": "percentage"
   },
   {
     "id": "53291",
-    "name": "310 Nutrition",
+    "merchant": "310 Nutrition",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [
-      {
-        "domain": "310nutrition.com"
-      }
-    ],
-    "links": [
-      {
-        "clickURL": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1643399.4&type=3",
-        "landURL": "https://310nutrition.com/products/wildberry-hydration",
-        "text": "Quenches your thirst with a mouth-watering fusion of incredibly tart and slightly salty with a mixed berry flavor that is irresistibly addictive."
-      }
-    ],
-    "description": "",
-    "logoUrl": "",
-    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1643399.4&type=3",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "128",
-      "child": "130"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "10%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "domain": "310nutrition.com",
+    "category": "Bath/Body",
+    "childCategory": "Vitamins",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1643399.16&type=3",
+    "commissionValue": "10%",
+    "commissionType": "percentage"
+  },
+  {
+    "id": "53422",
+    "merchant": "Deskimo",
+    "network": "rakuten",
+    "status": "Active",
+    "domain": "deskimo.com",
+    "category": "Other, Other Products/Services",
+    "childCategory": "Services",
+    "currency": "USD",
+    "region": "United States",
+    "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1691460.2&type=3",
+    "commissionValue": "5%",
+    "commissionType": "percentage"
   },
   {
     "id": "53508",
-    "name": "Marky's",
+    "merchant": "Marky's",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [
-      {
-        "domain": "markys.com"
-      }
-    ],
-    "links": [
-      {
-        "clickURL": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1748148.2&type=3",
-        "landURL": "https://www.markys.com/",
-        "text": "Shop Marky\u2019s Caviar"
-      }
-    ],
-    "description": "",
-    "logoUrl": "",
+    "domain": "markys.com",
+    "category": "Home & Living",
+    "childCategory": "Kitchen",
+    "currency": "USD",
+    "region": "United States",
     "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1748148.2&type=3",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "11",
-      "child": "133"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "3%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "commissionValue": "3%",
+    "commissionType": "percentage"
   },
   {
     "id": "53521",
-    "name": "Greenworks Tools",
+    "merchant": "Greenworks Tools",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [
-      {
-        "domain": "greenworkstools.com"
-      }
-    ],
-    "links": [
-      {
-        "clickURL": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1744035.4&type=3",
-        "landURL": "https://www.greenworkstools.com/",
-        "text": "Shop Greenworks Tools"
-      }
-    ],
-    "description": "",
-    "logoUrl": "",
+    "domain": "greenworkstools.com",
+    "category": "Home & Living",
+    "childCategory": "Garden",
+    "currency": "USD",
+    "region": "United States",
     "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1744035.4&type=3",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "11",
-      "child": "132"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "3%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "commissionValue": "3%",
+    "commissionType": "percentage"
   },
   {
     "id": "53539",
-    "name": "Malone Souliers",
+    "merchant": "Malone Souliers",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [
-      {
-        "domain": "malonesouliers.com"
-      }
-    ],
-    "links": [
-      {
-        "clickURL": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1746031.4&type=3",
-        "landURL": "https://malonesouliers.com/",
-        "text": "Luxury Women's Footwear. Shop New Season Shoes and Bags."
-      }
-    ],
-    "description": "",
-    "logoUrl": "",
+    "domain": "malonesouliers.com",
+    "category": "Accessories",
+    "childCategory": "Women",
+    "currency": "USD",
+    "region": "United States",
     "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1746031.4&type=3",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "107",
-      "child": "109"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "5%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "commissionValue": "5%",
+    "commissionType": "percentage"
   },
   {
     "id": "53540",
-    "name": "Hydroxie",
+    "merchant": "Hydroxie",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [
-      {
-        "domain": "hydroxie.com"
-      }
-    ],
-    "links": [
-      {
-        "clickURL": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1738479.3&type=3",
-        "landURL": "https://hydroxie.com/",
-        "text": "Shop Hydroxie's Premium Alkaloid Products!"
-      }
-    ],
-    "description": "",
-    "logoUrl": "",
+    "domain": "hydroxie.com",
+    "category": "Mature/Adult",
+    "childCategory": "Other, Other Products/Services",
+    "currency": "USD",
+    "region": "United States",
     "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1738479.3&type=3",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "12",
-      "child": "210"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "20%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "commissionValue": "20%",
+    "commissionType": "percentage"
   },
   {
     "id": "53560",
-    "name": "Araco Interiors",
+    "merchant": "Araco Interiors",
     "network": "rakuten",
     "status": "Active",
-    "validDomains": [
-      {
-        "domain": "aracointeriors.co.uk"
-      }
-    ],
-    "links": [
-      {
-        "clickURL": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1743328.3&type=3",
-        "landURL": "https://aracointeriors.co.uk/",
-        "text": "Enjoy 10% off your first order and free shipping"
-      }
-    ],
-    "description": "",
-    "logoUrl": "",
+    "domain": "aracointeriors.co.uk",
+    "category": "Home",
+    "childCategory": "Improvement",
+    "currency": "USD",
+    "region": "United States",
     "affiliateLink": "https://click.linksynergy.com/fs-bin/click?id=zfJlPkCWHLQ&offerid=1743328.3&type=3",
-    "currencyCode": "USD",
-    "primaryRegion": "United States",
-    "category": {
-      "parent": "155",
-      "child": "232"
-    },
-    "actions": [
-      {
-        "name": "",
-        "type": "sale",
-        "id": "1",
-        "commission": {
-          "default": {
-            "value": "5%",
-            "type": "percentage"
-          }
-        }
-      }
-    ]
+    "commissionValue": "5%",
+    "commissionType": "percentage"
   }
 ]

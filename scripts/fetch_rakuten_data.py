@@ -12,6 +12,7 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAKUTEN_APPROVED_FILE = os.path.join(PROJECT_ROOT, 'rakuten-approved.json')
 APPROVED_MERCHANTS_FILE = os.path.join(PROJECT_ROOT, 'approved-merchants.json')
 RAKUTEN_ADVERTISERS_FILE = os.path.join(PROJECT_ROOT, 'rakuten_advertisers.json')
+RAKUTEN_CATEGORIES_FILE = os.path.join(PROJECT_ROOT, 'rakuten_categories.json')
 
 # Rakuten API configuration
 CLIENT_ID = 'zHPPHp6Vn4uvTeEWuVzOPJb1M5MAc8N8'
@@ -85,7 +86,7 @@ def get_previous_merchants():
     try:
         with open(RAKUTEN_APPROVED_FILE, 'r') as f:
             data = json.load(f)
-            return {m['id']: m['name'] for m in data}
+            return {m['id']: m['merchant'] for m in data}
     except FileNotFoundError:
         return {}
 
@@ -200,7 +201,10 @@ def get_advertiser_links(advertiser_id):
     if str(advertiser_id) in MANUAL_AFFILIATE_LINKS:
         return [{'clickURL': MANUAL_AFFILIATE_LINKS[str(advertiser_id)]['link'], 'landURL': '', 'text': 'Shop at ' + get_advertiser_details(advertiser_id)['name']}]
     
-    url = f"{BASE_URL}/getTextLinks/{advertiser_id}/-1/01012020/01012030/-1/1"
+    # Get today's date in MMDDYYYY format for the API
+    today = datetime.datetime.now().strftime('%m%d%Y')
+    
+    url = f"{BASE_URL}/getTextLinks/{advertiser_id}/-1/01012015/{today}/-1/1"
     headers = {
         'Authorization': f'Bearer {ACCESS_TOKEN}',
         'Accept': 'application/xml'
@@ -240,6 +244,16 @@ def get_advertiser_links(advertiser_id):
         print(f"Error fetching advertiser links: {str(e)}")
         return None
 
+def get_category_mappings():
+    """Load category mappings from the JSON file."""
+    try:
+        with open(RAKUTEN_CATEGORIES_FILE, 'r') as f:
+            data = json.load(f)
+            return data.get('networks', {}).get('US', {}).get('categories', {})
+    except Exception as e:
+        print(f"Warning: Could not load category mappings: {str(e)}")
+        return {}
+
 def update_approved_merchants(rakuten_data):
     """Update the approved-merchants.json file with the latest data."""
     try:
@@ -256,17 +270,26 @@ def update_approved_merchants(rakuten_data):
         metadata['total_merchants'] = sum(network_counts.values())
         metadata['last_updated'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         
-        # Remove old Rakuten merchants
-        data = [item for item in data if not isinstance(item, dict) or item.get('network') != 'rakuten']
+        # Keep metadata and update direct merchants to new format
+        new_data = [data[0]]
+        
+        # Add all non-Rakuten merchants
+        for item in data[1:]:
+            if item.get('network') == 'direct':
+                # Update direct merchants to new format if they haven't been updated yet
+                if 'name' in item:
+                    item['merchant'] = item.pop('name')
+            if item.get('network') != 'rakuten':
+                new_data.append(item)
         
         # Add new Rakuten merchants
-        data.extend(rakuten_data)
+        new_data.extend(rakuten_data)
         
-        # Sort by name (case-insensitive)
-        data = [data[0]] + sorted(data[1:], key=lambda x: x['name'].lower())
+        # Sort by merchant name (case-insensitive)
+        new_data = [new_data[0]] + sorted(new_data[1:], key=lambda x: x.get('merchant', '').lower())
         
         # Write updated data
-        if atomic_write_json(APPROVED_MERCHANTS_FILE, data):
+        if atomic_write_json(APPROVED_MERCHANTS_FILE, new_data):
             print("Successfully updated approved-merchants.json")
         else:
             print("Failed to update approved-merchants.json")
@@ -288,6 +311,7 @@ def main():
     print(f"Processing {len(advertisers)} merchants...")
     complete_data = []
     new_merchants = []
+    missing_links = []
     
     for advertiser in advertisers:
         try:
@@ -303,6 +327,7 @@ def main():
             links = get_advertiser_links(advertiser_id)
             
             if not links:
+                missing_links.append(advertiser['name'])
                 links = []
             
             # Get primary link (either manual or first API link)
@@ -322,83 +347,83 @@ def main():
                 if domain.startswith('www.'):
                     domain = domain[4:]
 
-            # Prepare merchant data
+            # Get category mappings
+            category_mappings = get_category_mappings()
+            
+            # Format merchant data
             merchant_data = {
                 'id': advertiser_id,
-                'name': advertiser['name'],
+                'merchant': advertiser['name'],
                 'network': 'rakuten',
                 'status': 'Active',  # All merchants we get are approved/active
-                'validDomains': [{'domain': domain}] if domain else [],
-                'links': [{
-                    'clickURL': primary_link['clickURL'] if primary_link else '',
-                    'landURL': primary_link['landURL'] if primary_link else '',
-                    'text': primary_link['text'] if primary_link else ''
-                }] if primary_link else [],
-                'description': '',  # Not provided by Rakuten
-                'logoUrl': '',  # Not provided by Rakuten
-                'affiliateLink': primary_link['clickURL'] if primary_link else '',
-                'currencyCode': 'USD',
-                'primaryRegion': 'United States'
+                'domain': domain,
+                'category': details.get('categories', '').split()[0] if details.get('categories') else '',
+                'childCategory': details.get('categories', '').split()[1] if details.get('categories', '').split()[1:] else '',
+                'currency': 'USD',
+                'region': 'United States',
+                'affiliateLink': primary_link['clickURL'] if primary_link else ''
             }
-            
-            if advertiser_id not in previous_merchants:
-                new_merchants.append(f"- {advertiser['name']} (ID: {advertiser_id})")
-            
-            # Extract category parent and child
-            categories = details.get('categories', '').split()
-            parent_category = categories[0] if categories else None
-            child_category = categories[1] if len(categories) > 1 else ''
+
+            # Map category names if available
+            category = str(merchant_data['category'])
+            child_category = str(merchant_data['childCategory'])
+            if category in category_mappings:
+                merchant_data['category'] = category_mappings[category]
+            if child_category in category_mappings:
+                merchant_data['childCategory'] = category_mappings[child_category]
             
             # Format commission data
             commission = details.get('offer', {}).get('commission', '')
             if commission:
-                commission = {
-                    'name': '',
-                    'type': 'sale',
-                    'id': '1',
-                    'commission': {
-                        'default': {
-                            'value': commission.split('%')[0].split('above')[-1].strip() + '%' if '%' in commission else commission,
-                            'type': 'percentage' if '%' in commission else 'fixed'
-                        }
-                    }
-                }
+                if '%' in commission:
+                    value = commission.split('%')[0].split('above')[-1].strip()
+                    merchant_data['commissionValue'] = f"{value}%"
+                    merchant_data['commissionType'] = 'percentage'
+                elif 'flat' in commission.lower():
+                    # Extract the flat commission amount
+                    value = commission.split('above')[-1].strip().split()[0]
+                    merchant_data['commissionValue'] = f"${value}"
+                    merchant_data['commissionType'] = 'fixed'
+                else:
+                    value = commission.strip('$').strip()
+                    merchant_data['commissionValue'] = f"${value}"
+                    merchant_data['commissionType'] = 'fixed'
+            else:
+                merchant_data['commissionValue'] = ''
+                merchant_data['commissionType'] = ''
+            
+            if advertiser_id not in previous_merchants:
+                new_merchants.append(f"- {advertiser['name']} (ID: {advertiser_id})")
                 
-            merchant_data.update({
-                'category': {
-                    'parent': parent_category,
-                    'child': child_category
-                }
-            })
-            
-            # Add optional fields that match CJ format
-            if commission:
-                merchant_data['actions'] = [commission]
-            
             complete_data.append(merchant_data)
             
             # Sleep briefly to avoid rate limiting
             time.sleep(1)
             
         except Exception as e:
-            print(f"Error processing merchant {advertiser.get('name', 'Unknown')}: {str(e)}")
+            print(f"Error processing merchant {advertiser['name']}: {str(e)}")
+            continue
     
-    print(f"Successfully processed {len(complete_data)} merchants")
-    
-    # Save the complete data atomically
+    # Write data to file
     if atomic_write_json(RAKUTEN_APPROVED_FILE, complete_data):
-        print(f"Successfully wrote {len(complete_data)} merchants to file")
-        # Update approved-merchants.json
-        update_approved_merchants(complete_data)
+        print(f"\nSuccessfully processed {len(complete_data)} merchants")
+        print("Successfully wrote", len(complete_data), "merchants to file")
     else:
         print("Failed to write merchants to file")
+        return
+        
+    # Update approved merchants
+    update_approved_merchants(complete_data)
     
-    # Print summary of new merchants
+    if missing_links:
+        print("\nMerchants missing affiliate links:")
+        for name in missing_links:
+            print(f"- {name}")
+    
     if new_merchants:
         print("\nNew merchants found:")
-        print("\n".join(new_merchants))
-    else:
-        print("\nNo new merchants found")
+        for merchant in new_merchants:
+            print(merchant)
 
 if __name__ == '__main__':
     main()

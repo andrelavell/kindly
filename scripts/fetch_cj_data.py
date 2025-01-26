@@ -24,7 +24,7 @@ def get_previous_merchants():
     try:
         with open(CJ_APPROVED_FILE, 'r') as f:
             data = json.load(f)
-            return {m['id']: m['name'] for m in data}
+            return {m['id']: m['merchant'] for m in data}
     except FileNotFoundError:
         return {}
 
@@ -118,59 +118,51 @@ def fetch_advertisers():
                 
             # Extract advertiser data
             for advertiser in advertisers_on_page:
+                # Get the domain from program-url
+                program_url = safe_find_text(advertiser, 'program-url')
+                domain = program_url.replace('https://', '').replace('http://', '').replace('www.', '').rstrip('/').lower()
+                
+                # Get affiliate link
+                advertiser_id = safe_find_text(advertiser, 'advertiser-id')
+                affiliate_link = get_affiliate_link(advertiser_id)
+                
                 advertiser_data = {
-                    'id': safe_find_text(advertiser, 'advertiser-id'),
-                    'name': safe_find_text(advertiser, 'advertiser-name'),
+                    'id': advertiser_id,
+                    'merchant': safe_find_text(advertiser, 'advertiser-name'),
                     'network': 'cj',
                     'status': safe_find_text(advertiser, 'account-status'),
-                    'validDomains': clean_domain(safe_find_text(advertiser, 'program-url')),
-                    'category': {
-                        'parent': safe_find_text(advertiser, 'primary-category/parent'),
-                        'child': safe_find_text(advertiser, 'primary-category/child')
-                    },
-                    'seven_day_epc': safe_find_text(advertiser, 'seven-day-epc'),
-                    'three_month_epc': safe_find_text(advertiser, 'three-month-epc'),
-                    'network_rank': safe_find_text(advertiser, 'network-rank'),
-                    'mobile_tracking': safe_find_text(advertiser, 'mobile-tracking-certified') == 'true',
-                    'cookieless_tracking': safe_find_text(advertiser, 'cookieless-tracking-enabled') == 'true',
-                    'actions': []
+                    'domain': domain,
+                    'category': safe_find_text(advertiser, 'primary-category/parent'),
+                    'childCategory': safe_find_text(advertiser, 'primary-category/child'),
+                    'currency': 'USD',  # CJ operates in USD
+                    'region': 'United States',  # CJ's primary region
+                    'commissionValue': '',  # Will be set when processing actions
+                    'commissionType': '',  # Will be set when processing actions
+                    'affiliateLink': affiliate_link if affiliate_link else ''
                 }
-                
-                # Get affiliate link for this advertiser
-                affiliate_link = get_affiliate_link(advertiser_data['id'])
-                if affiliate_link:
-                    advertiser_data['affiliateLink'] = affiliate_link
                 
                 # Extract commission actions
                 actions = advertiser.find('actions')
                 if actions is not None:
                     for action in actions.findall('action'):
-                        action_data = {
-                            'name': safe_find_text(action, 'n'),
-                            'type': safe_find_text(action, 'type'),
-                            'id': safe_find_text(action, 'id'),
-                            'commission': {}
-                        }
-                        
-                        # Extract commission details
                         commission = action.find('commission')
                         if commission is not None:
                             default = commission.find('default')
                             if default is not None:
-                                action_data['commission']['default'] = {
-                                    'value': default.text,
-                                    'type': default.get('type', 'percentage')
-                                }
-                            
-                            # Extract item-specific commissions
-                            for item in commission.findall('itemlist'):
-                                if item.text and item.get('name'):
-                                    action_data['commission'][item.get('name')] = {
-                                        'value': item.text,
-                                        'id': item.get('id')
-                                    }
-                        
-                        advertiser_data['actions'].append(action_data)
+                                commission_type = default.get('type', '')
+                                value = default.text.strip() if default.text else ''
+                                
+                                # If value ends with % and no explicit type, it's a percentage
+                                if value.endswith('%'):
+                                    advertiser_data['commissionValue'] = value
+                                    advertiser_data['commissionType'] = 'percentage'
+                                # If type is item-level or order-level, it's a fixed amount
+                                elif commission_type in ['item-level', 'order-level'] and value:
+                                    # Extract just the number, handling various currency formats
+                                    amount = ''.join(c for c in value.split()[-1] if c.isdigit() or c == '.')
+                                    advertiser_data['commissionValue'] = f"${amount}"
+                                    advertiser_data['commissionType'] = 'fixed'
+                                break  # Use the first default commission we find
                 
                 all_advertisers.append(advertiser_data)
             
@@ -193,43 +185,38 @@ def fetch_advertisers():
 def main():
     """Main function to fetch and save CJ.com advertisers data."""
     try:
-        # Get previous merchant data
-        previous_merchants = get_previous_merchants()
-        
         print("\nFetching advertisers from CJ.com API...")
         advertisers = fetch_advertisers()
+        print(f"\nSuccessfully wrote {len(advertisers)} merchants to file\n")
         
-        if not advertisers:
-            print("Error: No advertisers fetched from API")
-            return
+        # Get previously saved merchant data
+        previous_merchants = get_previous_merchants()
         
-        # Track new merchants
+        # Check for new merchants
         new_merchants = []
         for advertiser in advertisers:
             if advertiser['id'] not in previous_merchants:
-                new_merchants.append(f"- {advertiser['name']} (ID: {advertiser['id']})")
+                new_merchants.append(f"- {advertiser['merchant']} (ID: {advertiser['id']})")
         
         # Save the complete data atomically
         if atomic_write_json(CJ_APPROVED_FILE, advertisers):
-            print(f"Successfully wrote {len(advertisers)} merchants to file")
-            
-            # Print summary
             if new_merchants:
-                print(f"\n{len(new_merchants)} new merchant(s) added:")
-                print("\n".join(new_merchants))
+                print("New merchants added:")
+                print('\n'.join(new_merchants))
+                print()
             else:
-                print("\nNo new merchants added.")
+                print("No new merchants added.\n")
             
-            print(f"\nTotal merchants: {len(advertisers)}")
-            
-            # Update combined merchants file
+            # Update the combined merchants file
             import update_merchants
             update_merchants.update_merchants()
+            
         else:
-            print("Failed to write merchants to file")
+            print("Error: Failed to write to file")
             
     except Exception as e:
         print(f"Error in main function: {str(e)}")
+        raise
 
 if __name__ == '__main__':
     main()
