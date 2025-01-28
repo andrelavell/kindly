@@ -1,39 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import { MessageCircle, Mail, Send } from 'lucide-react';
 
 export default function Contact() {
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus('submitting');
-
     const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      subject: formData.get('subject'),
-      message: formData.get('message'),
-      to: 'hello@joinkindly.org'
-    };
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (!response.ok) throw new Error('Failed to send message');
-      
-      setStatus('success');
-      e.currentTarget.reset();
-    } catch (error) {
-      setStatus('error');
-    }
+    const subject = formData.get('subject');
+    const message = formData.get('message');
+    const email = formData.get('email');
+    const name = formData.get('name');
+    
+    window.location.href = `mailto:hello@joinkindly.org?subject=${encodeURIComponent(subject as string)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
   };
 
   return (
@@ -122,18 +100,11 @@ export default function Contact() {
                     </div>
                     <button
                       type="submit"
-                      disabled={status === 'submitting'}
-                      className="w-full bg-brand text-white py-3 px-6 rounded-xl hover:opacity-90 transition-opacity duration-200 flex items-center justify-center gap-2 disabled:opacity-50"
+                      className="w-full bg-brand text-white py-3 px-6 rounded-xl hover:opacity-90 transition-opacity duration-200 flex items-center justify-center gap-2"
                     >
                       <Send className="w-4 h-4" />
-                      {status === 'submitting' ? 'Sending...' : 'Send Message'}
+                      Send Message
                     </button>
-                    {status === 'success' && (
-                      <p className="text-green-600 text-sm text-center">Message sent successfully!</p>
-                    )}
-                    {status === 'error' && (
-                      <p className="text-red-600 text-sm text-center">Failed to send message. Please try again.</p>
-                    )}
                   </form>
                 </div>
 
