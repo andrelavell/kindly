@@ -285,6 +285,35 @@
     ]
   },
   {
+    "description": "A vibrant young footwear brand, taking the social-mediasphere by storm! Offering the latest trends at fantastic value with prices starting from $14.99.",
+    "displayUrl": "https://us.publicdesire.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/6825.png",
+    "clickThroughUrl": "https://www.awin1.com/awclick.php?mid=6825&id=1818430",
+    "id": 6825,
+    "name": "Public Desire (US & Canada)",
+    "currencyCode": "USD",
+    "primaryRegion": {
+      "name": "United States of America",
+      "countryCode": "US"
+    },
+    "status": "Active",
+    "primarySector": "Shoes",
+    "validDomains": [
+      {
+        "domain": "*.publicdesire.com"
+      },
+      {
+        "domain": "www.publicdesire.com"
+      },
+      {
+        "domain": "publicdesire.com"
+      },
+      {
+        "domain": "us.publicdesire.com"
+      }
+    ]
+  },
+  {
     "description": "Marley Spoon sends pre-portioned, seasonal ingredients and Martha Stewart's trusted recipes directly to your door.",
     "displayUrl": "https://marleyspoon.com/",
     "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/6988.png",
@@ -801,6 +830,29 @@
       },
       {
         "domain": "*.alibaba.com"
+      }
+    ]
+  },
+  {
+    "description": "BoletosExpress works directly with venues, promoters  artists as the primary ticket seller to sell tickets to the hottest Latin/Latino/Hispanic shows within the United States. BoletosExpress covers concerts of all genres!",
+    "displayUrl": "https://www.BOLETOSEXPRESS.COM",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/18734.png",
+    "clickThroughUrl": "https://www.awin1.com/awclick.php?mid=18734&id=1818430",
+    "id": 18734,
+    "name": "BOLETOS EXPRESS (US)",
+    "currencyCode": "USD",
+    "primaryRegion": {
+      "name": "United States of America",
+      "countryCode": "US"
+    },
+    "status": "Active",
+    "primarySector": "Tickets",
+    "validDomains": [
+      {
+        "domain": "*.BOLETOSEXPRESS.COM"
+      },
+      {
+        "domain": "www.BOLETOSEXPRESS.COM"
       }
     ]
   },
@@ -4218,6 +4270,29 @@
       },
       {
         "domain": "*.bigwalldecor.com"
+      }
+    ]
+  },
+  {
+    "description": "Particula-Tech.com revive new Phygital life to the classic games and toys, powering them with powerful technology into the digital era.",
+    "displayUrl": "https://particula-tech.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/65968.png",
+    "clickThroughUrl": "https://www.awin1.com/awclick.php?mid=65968&id=1818430",
+    "id": 65968,
+    "name": "Particula-Tech (US)",
+    "currencyCode": "USD",
+    "primaryRegion": {
+      "name": "United States of America",
+      "countryCode": "US"
+    },
+    "status": "Active",
+    "primarySector": "Toys & Games",
+    "validDomains": [
+      {
+        "domain": "particula-tech.com"
+      },
+      {
+        "domain": "*.particula-tech.com"
       }
     ]
   },
@@ -8567,6 +8642,29 @@
     ]
   },
   {
+    "description": "Welcome to Kustomz.co, where creativity meets individuality, and the ordinary transforms into extraordinary! With a rich legacy spanning two decades in the dynamic realm of digital design, we proudly present a unique venture that reflects our passion.",
+    "displayUrl": "https://kustomz.co/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/109216.png",
+    "clickThroughUrl": "https://www.awin1.com/awclick.php?mid=109216&id=1818430",
+    "id": 109216,
+    "name": "Kustomz (US)",
+    "currencyCode": "USD",
+    "primaryRegion": {
+      "name": "United States of America",
+      "countryCode": "US"
+    },
+    "status": "Active",
+    "primarySector": "Gifts & Flowers",
+    "validDomains": [
+      {
+        "domain": "kustomz.co"
+      },
+      {
+        "domain": "*.kustomz.co"
+      }
+    ]
+  },
+  {
     "description": "Printerval.com is an global online marketplace, where people come together to make, sell, buy, and collect unique items. There\u2019s no Printerval warehouse \u2013 just independent sellers selling the things they love.",
     "displayUrl": "https://printerval.com/",
     "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/109364.png",
@@ -8998,6 +9096,29 @@
       },
       {
         "domain": "*.baxinier.com"
+      }
+    ]
+  },
+  {
+    "description": "Nuuvo Haircare was born from a deep understanding of hair health and a desire for truly effective hair products.",
+    "displayUrl": "https://nuuvohaircare.com/",
+    "logoUrl": "https://ui.awin.com/images/upload/merchant/profile/110986.png",
+    "clickThroughUrl": "https://www.awin1.com/awclick.php?mid=110986&id=1818430",
+    "id": 110986,
+    "name": "Nuuvo Haircare",
+    "currencyCode": "USD",
+    "primaryRegion": {
+      "name": "United States of America",
+      "countryCode": "US"
+    },
+    "status": "Active",
+    "primarySector": "Health & Beauty",
+    "validDomains": [
+      {
+        "domain": "nuuvohaircare.com"
+      },
+      {
+        "domain": "*.nuuvohaircare.com"
       }
     ]
   },

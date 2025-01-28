@@ -112,13 +112,13 @@ export default function Contact() {
                             <p className="text-gray-600 mt-1">
                               For general inquiries:{' '}
                               <a href="mailto:hello@kindly.com" className="brand hover:opacity-90">
-                                hello@kindly.com
+                                hello@joinkindly.org
                               </a>
                             </p>
                             <p className="text-gray-600">
                               For partnerships:{' '}
                               <a href="mailto:partners@kindly.com" className="brand hover:opacity-90">
-                                partners@kindly.com
+                                natalie@joinkindly.org
                               </a>
                             </p>
                           </div>
