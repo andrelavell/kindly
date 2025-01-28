@@ -1,8 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import { MessageCircle, Mail, Send } from 'lucide-react';
 
 export default function Contact() {
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus('submitting');
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      subject: formData.get('subject'),
+      message: formData.get('message'),
+      to: 'hello@joinkindly.org'
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) throw new Error('Failed to send message');
+      
+      setStatus('success');
+      e.currentTarget.reset();
+    } catch (error) {
+      setStatus('error');
+    }
+  };
+
   return (
     <>
       <Head>
@@ -38,7 +71,7 @@ export default function Contact() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
                 {/* Contact Form */}
                 <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-sm border border-gray-100">
-                  <form className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                         Your Name
@@ -89,11 +122,18 @@ export default function Contact() {
                     </div>
                     <button
                       type="submit"
-                      className="w-full bg-brand text-white py-3 px-6 rounded-xl hover:opacity-90 transition-opacity duration-200 flex items-center justify-center gap-2"
+                      disabled={status === 'submitting'}
+                      className="w-full bg-brand text-white py-3 px-6 rounded-xl hover:opacity-90 transition-opacity duration-200 flex items-center justify-center gap-2 disabled:opacity-50"
                     >
                       <Send className="w-4 h-4" />
-                      Send Message
+                      {status === 'submitting' ? 'Sending...' : 'Send Message'}
                     </button>
+                    {status === 'success' && (
+                      <p className="text-green-600 text-sm text-center">Message sent successfully!</p>
+                    )}
+                    {status === 'error' && (
+                      <p className="text-red-600 text-sm text-center">Failed to send message. Please try again.</p>
+                    )}
                   </form>
                 </div>
 
@@ -111,13 +151,13 @@ export default function Contact() {
                             <h4 className="font-medium">Email Us</h4>
                             <p className="text-gray-600 mt-1">
                               For general inquiries:{' '}
-                              <a href="mailto:hello@kindly.com" className="brand hover:opacity-90">
+                              <a href="mailto:hello@joinkindly.org" className="brand hover:opacity-90">
                                 hello@joinkindly.org
                               </a>
                             </p>
                             <p className="text-gray-600">
                               For partnerships:{' '}
-                              <a href="mailto:partners@kindly.com" className="brand hover:opacity-90">
+                              <a href="mailto:natalie@joinkindly.org" className="brand hover:opacity-90">
                                 natalie@joinkindly.org
                               </a>
                             </p>
