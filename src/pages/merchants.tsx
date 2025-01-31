@@ -275,7 +275,7 @@ export default function MerchantsPage() {
                           
                           <div className="p-6">
                             <div className="mb-6">
-                              <div className="relative w-[80px] h-[80px] mx-auto mb-6">
+                              <div className="relative w-[80px] h-[80px] mx-auto mb-4">
                                 <Image 
                                   src="/images/causes/susan-g-komen-logo.png"
                                   alt="Susan G Komen"
@@ -285,10 +285,10 @@ export default function MerchantsPage() {
                                   priority
                                 />
                               </div>
-                              <h3 className="text-2xl font-semibold text-[#2D3648] mb-2">
+                              <h3 className="text-[#2D3648] text-xl font-semibold text-center leading-tight mb-2">
                                 Get up to 2.6% donated to Susan G Komen
                               </h3>
-                              <p className="text-[#2D3648]/70 text-sm">
+                              <p className="text-[#2D3648]/70 text-sm text-center">
                                 For Breast Cancer Research
                               </p>
                               <button className="text-brand hover:text-brand text-sm font-medium mt-2 mx-auto flex items-center justify-center gap-1 transition-colors">
@@ -366,10 +366,10 @@ export default function MerchantsPage() {
                               <div className="w-16 h-16 mx-auto mb-4 bg-emerald-100 rounded-full flex items-center justify-center">
                                 <CheckCircle className="w-8 h-8 text-emerald-500" />
                               </div>
-                              <h3 className="text-2xl font-semibold text-[#2D3648] mb-2">
+                              <h3 className="text-[#2D3648] text-xl font-semibold text-center leading-tight mb-2">
                                 Donation Activated!
                               </h3>
-                              <p className="text-[#2D3648]/70 text-sm">
+                              <p className="text-[#2D3648]/70 text-sm text-center">
                                 Purchases will now generate up to a 2.6% donation to Susan G Komen for Breast Cancer Research.
                               </p>
                             </div>
