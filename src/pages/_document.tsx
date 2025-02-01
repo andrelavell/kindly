@@ -20,7 +20,7 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
-        <script type="text/javascript" src="https://s.skimresources.com/js/276473X1762555.skimlinks.js"></script>
+        <script type="text/javascript" src="http://classic.avantlink.com/affiliate_app_confirm.php?mode=js&authResponse=6439007f0190f13611576ae704fcc18e0ff5f420"></script>
       </body>
     </Html>
   )
