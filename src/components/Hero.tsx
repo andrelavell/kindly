@@ -17,10 +17,10 @@ export function Hero() {
       {/* Left side - Image */}
       <div className="absolute left-0 top-0 w-[40%] h-full overflow-hidden hidden md:block">
         <img 
-          src="https://res.cloudinary.com/dvgf0xsjq/image/upload/f_auto,q_auto,w_1200,c_fill/v1737647589/idgevel92wqhdgeerygp.jpg"
-          srcSet="https://res.cloudinary.com/dvgf0xsjq/image/upload/f_auto,q_auto,w_800,c_fill/v1737647589/idgevel92wqhdgeerygp.jpg 800w,
-                  https://res.cloudinary.com/dvgf0xsjq/image/upload/f_auto,q_auto,w_1200,c_fill/v1737647589/idgevel92wqhdgeerygp.jpg 1200w,
-                  https://res.cloudinary.com/dvgf0xsjq/image/upload/f_auto,q_auto,w_1600,c_fill/v1737647589/idgevel92wqhdgeerygp.jpg 1600w"
+          src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          srcSet="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 800w,
+                  https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 1200w,
+                  https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D 1600w"
           sizes="(max-width: 768px) 100vw, 40vw"
           alt="People volunteering and helping others"
           className="object-cover w-full h-full"
