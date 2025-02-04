@@ -1,16 +1,95 @@
-// Content script for Amazon detection and popup injection
+// Content script for merchant detection and popup injection
 import './content.css';
+import { isLoggedIn } from './auth';
+import { createAuthForm } from './auth-form';
 
 console.log('Kindly: Content script loaded');
 
-const AMAZON_DOMAIN = 'amazon.com';
+const MERCHANTS_URL = 'https://kindly-merchant-data.s3.us-east-2.amazonaws.com/merchants.json';
 const KINDLY_AFFILIATE_ID = 'kindly123';
 
-// Check if we're on Amazon
-const isAmazonSite = () => {
-  const isAmazon = window.location.hostname.includes(AMAZON_DOMAIN);
-  console.log('Kindly: Is Amazon site?', isAmazon, window.location.hostname);
-  return isAmazon;
+interface Merchant {
+  domain: string;
+  merchant: string;
+  network: string;
+  affiliateLink: string;
+  commissionType: string;
+  commissionValue: string;
+}
+
+let merchantsData: Merchant[] = [];
+
+// Calculate donation percentage (half of commission value)
+const getDonationPercentage = (merchant: Merchant): string => {
+  // Remove any % sign and convert to number
+  const commissionNum = parseFloat(merchant.commissionValue.replace('%', ''));
+  // Calculate half and format to at most 2 decimal places
+  const donationNum = (commissionNum / 2).toFixed(2);
+  return `${donationNum}%`;
+};
+
+// Fetch merchants data
+const fetchMerchants = async () => {
+  console.log('Kindly DEBUG: Starting fetchMerchants');
+  try {
+    // Use the background script to fetch the data
+    console.log('Kindly DEBUG: Sending FETCH_MERCHANTS message to background');
+    const data = await chrome.runtime.sendMessage({ type: 'FETCH_MERCHANTS' });
+    console.log('Kindly DEBUG: Received response from background:', data);
+    
+    if (data && Array.isArray(data)) {
+      // Check if first item is metadata
+      console.log('Kindly DEBUG: First item in data:', data[0]);
+      if (data[0]?.metadata) {
+        console.log('Kindly DEBUG: Found metadata, slicing array');
+        merchantsData = data.slice(1);
+      } else {
+        console.log('Kindly DEBUG: No metadata found, using full array');
+        merchantsData = data;
+      }
+      console.log('Kindly DEBUG: Merchant data sample:', merchantsData[0]);
+      console.log('Kindly: Loaded', merchantsData.length, 'merchants');
+    } else {
+      console.error('Kindly: Invalid merchants data received:', data);
+    }
+  } catch (error) {
+    console.error('Kindly DEBUG: Error in fetchMerchants:', error);
+    console.error('Kindly DEBUG: Error stack:', error.stack);
+  }
+};
+
+// Check if we're on a supported merchant site
+const isSupportedMerchant = () => {
+  console.log('Kindly DEBUG: Starting isSupportedMerchant check');
+  const currentDomain = window.location.hostname.replace('www.', '');
+  console.log('Kindly DEBUG: Current domain after www removal:', currentDomain);
+  console.log('Kindly DEBUG: Original hostname:', window.location.hostname);
+  console.log('Kindly DEBUG: Full URL:', window.location.href);
+  console.log('Kindly DEBUG: Number of merchants to check:', merchantsData.length);
+  
+  if (!merchantsData.length) {
+    console.error('Kindly DEBUG: No merchant data available!');
+    return false;
+  }
+  
+  console.log('Kindly DEBUG: First few merchants:', merchantsData.slice(0, 3));
+  
+  const merchant = merchantsData.find(m => {
+    if (!m.domain) {
+      console.error('Kindly DEBUG: Merchant missing domain:', m);
+      return false;
+    }
+    const matches = currentDomain.includes(m.domain);
+    console.log('Kindly DEBUG: Checking merchant:', {
+      merchantDomain: m.domain,
+      currentDomain,
+      matches
+    });
+    return matches;
+  });
+  
+  console.log('Kindly DEBUG: Merchant match result:', merchant);
+  return merchant !== undefined;
 };
 
 // Get current affiliate tag from URL only
@@ -49,8 +128,110 @@ const isKindlyActive = () => {
   return false;
 };
 
+// Show processing state
+const ACTIVATION_STORAGE_KEY = 'kindly_domain_activations';
+
+const getDomainActivations = (): Record<string, number> => {
+  const stored = localStorage.getItem(ACTIVATION_STORAGE_KEY);
+  return stored ? JSON.parse(stored) : {};
+};
+
+const setDomainActivation = (domain: string) => {
+  const activations = getDomainActivations();
+  activations[domain] = Date.now();
+  localStorage.setItem(ACTIVATION_STORAGE_KEY, JSON.stringify(activations));
+};
+
+const isDomainActivated = (domain: string): boolean => {
+  const activations = getDomainActivations();
+  const lastActivation = activations[domain];
+  if (!lastActivation) return false;
+  
+  const hoursSinceActivation = (Date.now() - lastActivation) / (1000 * 60 * 60);
+  return hoursSinceActivation < 24;
+};
+
+const showProcessingState = () => {
+  // Remove the original popup
+  document.getElementById('kindly-popup')?.remove();
+  const popup = document.createElement('div');
+  popup.id = 'kindly-processing-popup';
+  popup.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 360px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    border: 1px solid #E5E7EB;
+    z-index: 999999;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    overflow: hidden;
+  `;
+
+  popup.innerHTML = `
+    <!-- Extension Header -->
+    <div style="background: #e11d48; color: white; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; align-items: center; gap: 6px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        </svg>
+        <span style="font-weight: 600; font-size: 15px !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;">KINDLY</span>
+      </div>
+      <button id="kindly-close-processing" style="color: white; padding: 4px; line-height: 0; border: none; background: none; cursor: pointer;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Content -->
+    <div style="padding: 16px;">
+      <div style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 16px;
+      ">
+        <svg width="24" height="24" viewBox="0 0 24 24" style="animation: spin 1s linear infinite;">
+          <style>
+            @keyframes spin {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+          </style>
+          <circle cx="12" cy="12" r="10" stroke="#e11d48" stroke-width="2" fill="none" opacity="0.25"/>
+          <path d="M12 2a10 10 0 0 1 10 10" stroke="#e11d48" stroke-width="2" fill="none"/>
+        </svg>
+        <span style="
+          font-size: 15px !important;
+          color: #6B7280;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        ">Processing...</span>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(popup);
+
+  // Add event listener for close button
+  document.getElementById('kindly-close-processing')?.addEventListener('click', () => {
+    popup.remove();
+  });
+
+  return popup;
+};
+
 // Show success state popup
-const showSuccessState = () => {
+const showSuccessState = (merchant: Merchant) => {
+  // Record domain activation
+  setDomainActivation(window.location.hostname);
+  // Remove any existing popups
+  document.getElementById('kindly-popup')?.remove();
+  document.getElementById('kindly-processing-popup')?.remove();
+
   const popup = document.createElement('div');
   popup.id = 'kindly-success-popup';
   popup.style.cssText = `
@@ -59,36 +240,28 @@ const showSuccessState = () => {
     right: 20px;
     width: 360px;
     background: white;
-    border-radius: 12px;
+    border-radius: 10px;
     box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
     border: 1px solid #E5E7EB;
     z-index: 999999;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    overflow: hidden;
   `;
 
   popup.innerHTML = `
     <!-- Extension Header -->
-    <div style="
-      background: #f1f3f4;
-      border-top-left-radius: 12px;
-      border-top-right-radius: 12px;
-      border-bottom: 1px solid #E5E7EB;
-    ">
-      <div style="
-        display: flex;
-        align-items: center;
-        padding: 12px 16px;
-        gap: 8px;
-      ">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #4B5563;">
+    <div style="background: #e11d48; color: white; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; align-items: center; gap: 6px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2">
           <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
         </svg>
-        <span style="
-          font-size: 16px;
-          font-weight: 500;
-          color: #4B5563;
-        ">Kindly</span>
+        <span style="font-weight: 600; font-size: 15px !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;">KINDLY</span>
       </div>
+      <button id="kindly-close-success" style="color: white; padding: 4px; line-height: 0; border: none; background: none; cursor: pointer;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6L6 18M6 6l12 12"></path>
+        </svg>
+      </button>
     </div>
 
     <!-- Content -->
@@ -105,122 +278,33 @@ const showSuccessState = () => {
         </svg>
         <div>
           <div style="
-            font-size: 14px;
-            font-weight: 500;
+            font-size: 16px !important;
+            font-weight: 500 !important;
             color: #16A34A;
             margin-bottom: 4px;
-          ">Donation Activated!</div>
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+          ">Offer Activated!</div>
           <div style="
-            font-size: 13px;
+            font-size: 15px !important;
             color: #6B7280;
             line-height: 1.4;
-          ">Up to 2.6% of your purchases will go to your selected cause below.</div>
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+          ">Purchases will now generate up to a ${getDonationPercentage(merchant)} donation to Susan G Komen</div>
         </div>
       </div>
 
-      <!-- Selected Cause -->
-      <div style="
-        background: #F9FAFB;
-        border: 1px solid #E5E7EB;
-        border-radius: 8px;
-        padding: 12px;
-        margin-bottom: 16px;
-      ">
-        <div style="
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: 8px;
-        ">
-          <span style="
-            font-size: 13px;
-            font-weight: 500;
-            color: #6B7280;
-          ">Your Selected Cause</span>
-        </div>
-        <div style="
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        ">
-          <div style="
-            display: flex;
-            align-items: center;
-            gap: 8px;
-          ">
-            <div style="
-              width: 32px;
-              height: 32px;
-              background: #F43F5E;
-              border-radius: 6px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            ">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-              </svg>
-            </div>
-            <div>
-              <div style="
-                font-size: 14px;
-                font-weight: 500;
-                color: #111827;
-              ">Save the Children</div>
-              <div style="
-                font-size: 12px;
-                color: #6B7280;
-              ">Children's Rights</div>
-            </div>
-          </div>
-          <button id="kindly-change-cause-success" style="
-            padding: 6px 12px;
-            background: white;
-            border: 1px solid #E5E7EB;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 500;
-            color: #4B5563;
-            cursor: pointer;
-            transition: all 0.2s;
-          ">Change</button>
-        </div>
-      </div>
 
-      <!-- Close button -->
-      <button id="kindly-close-success" style="
-        width: 100%;
-        padding: 8px;
-        background: #F3F4F6;
-        border: none;
-        border-radius: 6px;
-        font-size: 13px;
-        font-weight: 500;
-        color: #4B5563;
-        cursor: pointer;
-        transition: all 0.2s;
-      ">Close</button>
     </div>
   `;
 
   document.body.appendChild(popup);
 
-  // Add event listeners
+  // Add event listener
   document.getElementById('kindly-close-success')?.addEventListener('click', () => {
     popup.remove();
   });
 
-  document.getElementById('kindly-change-cause-success')?.addEventListener('click', () => {
-    chrome.runtime.sendMessage({ type: 'OPEN_CAUSE_SELECTOR' });
-  });
 
-  // Auto-hide after 5 seconds
-  setTimeout(() => {
-    if (document.body.contains(popup)) {
-      popup.style.animation = 'fadeOut 0.3s ease-out';
-      popup.addEventListener('animationend', () => popup.remove());
-    }
-  }, 5000);
 };
 
 // Create and inject the affiliate choice dialog
@@ -259,7 +343,7 @@ const createAffiliateChoiceDialog = (affiliateTag: string) => {
           color: #4B5563;
           border: 1px solid #F43F5E;
           border-radius: 8px;
-          font-weight: 500;
+          font-weight: 500 !important;
           cursor: pointer;
           transition: all 0.2s;
         ">Support Creator</button>
@@ -269,7 +353,7 @@ const createAffiliateChoiceDialog = (affiliateTag: string) => {
           color: white;
           border: none;
           border-radius: 8px;
-          font-weight: 500;
+          font-weight: 500 !important;
           cursor: pointer;
           transition: background-color 0.2s;
         ">Donate to Charity</button>
@@ -323,7 +407,25 @@ const createAffiliateChoiceDialog = (affiliateTag: string) => {
 };
 
 // Create and inject the popup
-const createDonationPopup = () => {
+const createDonationPopup = async () => {
+  // Check if domain is already activated
+  if (isDomainActivated(window.location.hostname)) {
+    return;
+  }
+
+  // Check if user is logged in
+  const loggedIn = await isLoggedIn();
+  if (!loggedIn) {
+    console.log('Kindly: User not logged in');
+  }
+  // Find the current merchant
+  const currentDomain = window.location.hostname.replace('www.', '');
+  const currentMerchant = merchantsData.find(m => currentDomain.includes(m.domain));
+  
+  if (!currentMerchant) {
+    console.error('Kindly: Could not find merchant data for popup');
+    return;
+  }
   console.log('Kindly: Creating popup');
   // Remove existing popup if any
   const existingPopup = document.getElementById('kindly-popup');
@@ -343,12 +445,12 @@ const createDonationPopup = () => {
     border-radius: 8px;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     z-index: 999999;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
   `;
 
   // Add popup content
   container.innerHTML = `
-    <div style="background: #f43f5e; color: white; padding: 12px 16px; border-radius: 8px 8px 0 0; display: flex; justify-content: space-between; align-items: center;">
+    <div style="background: #e11d48; color: white; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center;">
       <div style="display: flex; align-items: center; gap: 6px;">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2">
           <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
@@ -363,46 +465,51 @@ const createDonationPopup = () => {
     </div>
     <div style="padding: 24px;">
       <div style="text-align: center; margin-bottom: 24px;">
-        <div style="width: 80px; height: 80px; margin: 0 auto 24px;">
-          <img 
-            src="https://joinkindly.org/_next/image?url=%2Fimages%2Fcauses%2Fsusan-g-komen-logo.png&w=128&q=75"
-            alt="Susan G Komen"
-            style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px; background: white;"
-          />
+        ${loggedIn ? `
+          <div style="width: 80px; height: 80px; margin: 0 auto 24px;">
+            <img 
+              src="https://joinkindly.org/_next/image?url=%2Fimages%2Fcauses%2Fsusan-g-komen-logo.png&w=128&q=75"
+              alt="Susan G Komen"
+              style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px; background: white;"
+            />
+          </div>
+          <h3 style="color: #2D3648; font-size: 20px !important; font-weight: 600 !important; margin-bottom: 8px; line-height: 1.2 !important; letter-spacing: normal !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;">
+            Get up to ${getDonationPercentage(currentMerchant)} donated to Susan G Komen
+          </h3>
+          <p style="color: rgba(45, 54, 72, 0.7); font-size: 14px !important; letter-spacing: normal !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;">
+            For Breast Cancer Research
+          </p>
         </div>
-        <h3 style="color: #2D3648; font-size: 20px; font-weight: 600; margin-bottom: 8px; line-height: 1.2;">
-          Get up to 2.6% donated to Susan G Komen
-        </h3>
-        <p style="color: rgba(45, 54, 72, 0.7); font-size: 14px;">
-          For Breast Cancer Research
-        </p>
-      </div>
-      <button id="kindly-activate" style="
-        width: 100%;
-        background: #f43f5e;
-        color: white;
-        padding: 12px;
-        border-radius: 6px;
-        font-weight: 600;
-        font-size: 14px;
-        border: none;
-        cursor: pointer;
-      ">
-        Activate Donation
-      </button>
-      <button id="kindly-change-cause" style="
-        width: 100%;
-        color: #f43f5e;
-        padding: 8px;
-        font-weight: 500;
-        font-size: 14px;
-        border: none;
-        background: none;
-        cursor: pointer;
-        margin-top: 8px;
-      ">
-        Change cause
-      </button>
+        <button id="kindly-activate" style="
+          width: 100%;
+          background: #e11d48;
+          color: white;
+          padding: 12px;
+          border-radius: 6px;
+          font-weight: 600 !important;
+          font-size: 14px !important;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+          border: none;
+          cursor: pointer;
+        ">
+          Activate Donation
+        </button>
+        <button id="kindly-change-cause" style="
+          width: 100%;
+          color: #e11d48;
+          padding: 8px;
+          font-weight: 500 !important;
+          font-size: 14px !important;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+          border: none;
+          background: none;
+          cursor: pointer;
+          margin-top: 8px;
+        ">
+          Change cause
+        </button>
+      ` : createAuthForm().html}
+
     </div>
   `;
 
@@ -417,92 +524,90 @@ const createDonationPopup = () => {
     chrome.storage.local.set({ popupClosed: Date.now() });
   });
 
-  document.getElementById('kindly-activate')?.addEventListener('click', handleActivateClick);
-
-  document.getElementById('kindly-change-cause')?.addEventListener('click', (e) => {
-    e.preventDefault();
-    // Open popup for cause selection
-    chrome.runtime.sendMessage({ type: 'OPEN_CAUSE_SELECTOR' });
-  });
+  if (loggedIn) {
+    document.getElementById('kindly-activate')?.addEventListener('click', handleActivateClick);
+    document.getElementById('kindly-change-cause')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      chrome.runtime.sendMessage({ type: 'openOptionsPage' });
+    });
+  } else {
+    createAuthForm().setupListeners(container);
+  }
 };
 
 // Handle activate button click
 const handleActivateClick = async (e?: Event) => {
   e?.preventDefault();
   
-  const affiliateTag = getCurrentAffiliateTag();
-  console.log('Kindly: Handling activate click, affiliate tag:', affiliateTag);
+  // Get current merchant
+  const currentDomain = window.location.hostname.replace('www.', '');
+  const currentMerchant = merchantsData.find(m => currentDomain.includes(m.domain));
+  
+  if (!currentMerchant) {
+    console.error('Kindly: Could not find merchant data for activation');
+    return;
+  }
 
-  if (affiliateTag) {
-    createAffiliateChoiceDialog(affiliateTag);
-  } else {
-    // No existing affiliate, set cookie using a new tab
-    console.log('Kindly: No existing affiliate, setting cookie via new tab');
+  console.log('Kindly: Activating for merchant:', currentMerchant);
+  
+  try {
+    // Show processing state
+    showProcessingState();
     
-    // Create URL with our affiliate tag
-    const currentUrl = new URL(window.location.href);
-    currentUrl.searchParams.set('tag', KINDLY_AFFILIATE_ID);
-    
-    try {
-      // Open new tab with our affiliate tag
-      const tab = await chrome.tabs.create({ 
-        url: currentUrl.toString(),
-        active: false // Open in background
-      });
+    // Ask background script to open affiliate link
+    const response = await chrome.runtime.sendMessage({
+      type: 'OPEN_AFFILIATE_LINK',
+      url: currentMerchant.affiliateLink
+    });
 
-      // Wait for the tab to finish loading
-      chrome.tabs.onUpdated.addListener(function listener(tabId, info) {
-        if (tabId === tab.id && info.status === 'complete') {
-          // Remove the listener
-          chrome.tabs.onUpdated.removeListener(listener);
-          
-          // Close the tab after a short delay to ensure cookie is set
-          setTimeout(() => {
-            chrome.tabs.remove(tab.id!);
-            
-            // Update local storage and show success state
-            chrome.storage.local.set({ donationActive: true });
-            showSuccessState();
-          }, 1000);
-        }
-      });
-    } catch (error) {
-      console.error('Kindly: Error setting affiliate cookie:', error);
+    if (response?.success) {
+      // Update local storage and show success state
+      chrome.storage.local.set({ donationActive: true });
+      showSuccessState(currentMerchant);
     }
+  } catch (error) {
+    console.error('Kindly: Error opening affiliate tab:', error);
   }
 };
 
 // Initialize
 console.log('Kindly: Starting initialization');
-if (isAmazonSite()) {
-  console.log('Kindly: On Amazon, checking state');
-  
-  // Check if Kindly is already active
-  if (isKindlyActive()) {
-    console.log('Kindly: Already active, showing success state');
-    showSuccessState();
-  } else {
-    // Check if donation is active or popup was recently closed
-    chrome.storage.local.get(['donationActive', 'popupClosed'], (result) => {
-      console.log('Kindly: Storage state:', result);
-      
-      if (result.donationActive) {
-        console.log('Kindly: Donation active in storage, showing success state');
-        showSuccessState();
-      } else {
-        const now = Date.now();
-        const showAfter = result.popupClosed ? result.popupClosed + (24 * 60 * 60 * 1000) : 0;
 
-        if (!result.popupClosed || now > showAfter) {
-          console.log('Kindly: Showing popup');
-          setTimeout(createDonationPopup, 1000);
+// Fetch merchants first
+fetchMerchants().then(() => {
+  console.log('Kindly: Merchants fetched, checking if supported site');
+  if (isSupportedMerchant()) {
+    console.log('Kindly: On supported merchant site, checking state');
+    
+    // Check if Kindly is already active
+    if (isKindlyActive()) {
+      console.log('Kindly: Already active, showing success state');
+      showSuccessState();
+    } else {
+      // Check if donation is active or popup was recently closed
+      chrome.storage.local.get(['donationActive', 'popupClosed'], (result) => {
+        console.log('Kindly: Storage state:', result);
+        
+        if (result.donationActive) {
+          console.log('Kindly: Donation active in storage, showing success state');
+          showSuccessState();
         } else {
-          console.log('Kindly: Popup recently closed, not showing');
+          const now = Date.now();
+          const showAfter = result.popupClosed ? result.popupClosed + (24 * 60 * 60 * 1000) : 0;
+
+          if (!result.popupClosed || now > showAfter) {
+            console.log('Kindly: Showing popup');
+            setTimeout(createDonationPopup, 1000);
+          } else {
+            console.log('Kindly: Popup recently closed, not showing');
+          }
         }
-      }
-    });
+      });
+    }
+  } else {
+    console.log('Kindly: Not a supported merchant site');
   }
-}
+});
 
 // Listen for messages from background script
 chrome.runtime.onMessage.addListener((message) => {

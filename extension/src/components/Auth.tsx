@@ -1,174 +1,166 @@
 import React, { useState } from 'react';
-import { useAuth } from '../contexts/AuthContext';
-import { ResetPassword } from './ResetPassword';
-import { UpdatePassword } from './UpdatePassword';
-import { Welcome } from './Welcome';
+import { authStore } from '../stores/authStore';
 
-export function Auth() {
-  const [isSignUp, setIsSignUp] = useState(false);
-  const [isResetPassword, setIsResetPassword] = useState(false);
-  const [showWelcome, setShowWelcome] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [error, setError] = useState<string | null>(null);
-  const { signIn, signUp, loading: authLoading } = useAuth();
+interface AuthProps {
+  onSuccess?: () => void;
+}
 
-  // Check if we're on the update password page
-  const isUpdatePassword = window.location.hash === '#update-password';
-  if (isUpdatePassword) {
-    return <UpdatePassword />;
-  }
-
-  if (isResetPassword) {
-    return <ResetPassword onBack={() => setIsResetPassword(false)} />;
-  }
-
-  if (showWelcome) {
-    return <Welcome />;
-  }
-
-  if (authLoading) {
-    return (
-      <div className="min-h-[600px] bg-gradient-to-br from-blue-500 to-purple-600 p-6 flex flex-col items-center justify-center text-white">
-        <div className="text-center">
-          <h2 className="text-xl font-semibold mb-2">Loading...</h2>
-        </div>
-      </div>
-    );
-  }
+export function Auth({ onSuccess }: AuthProps) {
+  const [isLogin, setIsLogin] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [form, setForm] = useState({
+    email: '',
+    password: '',
+    name: ''
+  });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError(null);
+    setError('');
+    setLoading(true);
 
     try {
-      if (isSignUp) {
-        if (password.length < 6) {
-          throw new Error('Password must be at least 6 characters long');
-        }
-        
-        console.log('Starting signup process...');
-        console.log('Form data:', { 
-          email, 
-          firstName, 
-          lastName,
-          passwordLength: password.length 
-        });
-
-        await signUp(email, password, firstName, lastName);
-        console.log('Signup successful');
-        setShowWelcome(true);
+      if (isLogin) {
+        await authStore.login(form.email, form.password);
       } else {
-        console.log('Starting signin process...');
-        await signIn(email, password);
-        console.log('Signin successful');
+        await authStore.register(form.email, form.password, form.name);
       }
-    } catch (err) {
-      console.error('Auth error:', err);
-      setError(err instanceof Error ? err.message : 'An error occurred');
+      onSuccess?.();
+    } catch (err: any) {
+      setError(err.message || 'An error occurred');
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div className="min-h-[600px] bg-gradient-to-br from-blue-500 to-purple-600 p-6 flex flex-col items-center justify-center text-white">
-      <div className="w-full max-w-md space-y-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold mb-2">
-            {isSignUp ? 'Create Account' : 'Welcome Back'}
-          </h2>
-          <p className="text-gray-200">
-            {isSignUp
-              ? 'Sign up to start making a difference'
-              : 'Sign in to continue your impact'}
-          </p>
+    <div style={{ padding: '24px' }}>
+      <h2 style={{
+        fontSize: '20px',
+        fontWeight: 600,
+        marginBottom: '16px',
+        color: '#2D3648',
+        textAlign: 'center',
+        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+      }}>
+        {isLogin ? 'Welcome Back' : 'Create Account'}
+      </h2>
+
+      <form onSubmit={handleSubmit}>
+        {!isLogin && (
+          <div style={{ marginBottom: '12px' }}>
+            <input
+              type="text"
+              placeholder="Name"
+              value={form.name}
+              onChange={e => setForm({ ...form, name: e.target.value })}
+              required={!isLogin}
+              style={{
+                width: '100%',
+                padding: '8px 12px',
+                border: '1px solid #E5E7EB',
+                borderRadius: '6px',
+                fontSize: '14px',
+                fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+              }}
+            />
+          </div>
+        )}
+
+        <div style={{ marginBottom: '12px' }}>
+          <input
+            type="email"
+            placeholder="Email"
+            value={form.email}
+            onChange={e => setForm({ ...form, email: e.target.value })}
+            required
+            style={{
+              width: '100%',
+              padding: '8px 12px',
+              border: '1px solid #E5E7EB',
+              borderRadius: '6px',
+              fontSize: '14px',
+              fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+            }}
+          />
+        </div>
+
+        <div style={{ marginBottom: '16px' }}>
+          <input
+            type="password"
+            placeholder="Password"
+            value={form.password}
+            onChange={e => setForm({ ...form, password: e.target.value })}
+            required
+            style={{
+              width: '100%',
+              padding: '8px 12px',
+              border: '1px solid #E5E7EB',
+              borderRadius: '6px',
+              fontSize: '14px',
+              fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+            }}
+          />
         </div>
 
         {error && (
-          <div className="bg-red-500/20 border border-red-500 text-white px-4 py-2 rounded-lg">
+          <div style={{
+            color: '#e11d48',
+            fontSize: '14px',
+            marginBottom: '16px',
+            textAlign: 'center',
+            fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+          }}>
             {error}
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          {isSignUp && (
-            <>
-              <div>
-                <label className="block text-sm font-medium mb-1">First Name</label>
-                <input
-                  type="text"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  required
-                  className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 text-white placeholder-white/50"
-                  placeholder="John"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-1">Last Name</label>
-                <input
-                  type="text"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                  required
-                  className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 text-white placeholder-white/50"
-                  placeholder="Doe"
-                />
-              </div>
-            </>
-          )}
+        <button
+          type="submit"
+          disabled={loading}
+          style={{
+            width: '100%',
+            background: '#e11d48',
+            color: 'white',
+            padding: '12px',
+            borderRadius: '6px',
+            border: 'none',
+            fontSize: '14px',
+            fontWeight: 600,
+            cursor: loading ? 'not-allowed' : 'pointer',
+            opacity: loading ? 0.7 : 1,
+            fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+          }}
+        >
+          {loading ? 'Loading...' : (isLogin ? 'Sign In' : 'Create Account')}
+        </button>
 
-          <div>
-            <label className="block text-sm font-medium mb-1">Email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 text-white placeholder-white/50"
-              placeholder="you@example.com"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium mb-1">Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-white/50 text-white placeholder-white/50"
-              placeholder="••••••••"
-            />
-          </div>
-
+        <div style={{
+          marginTop: '16px',
+          textAlign: 'center',
+          fontSize: '14px',
+          color: '#6B7280',
+          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+        }}>
+          {isLogin ? "Don't have an account? " : 'Already have an account? '}
           <button
-            type="submit"
-            disabled={authLoading}
-            className="w-full bg-white text-purple-600 py-2 px-4 rounded-lg font-medium hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-white/50 disabled:opacity-50 disabled:cursor-not-allowed"
+            type="button"
+            onClick={() => setIsLogin(!isLogin)}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: '#e11d48',
+              cursor: 'pointer',
+              padding: 0,
+              font: 'inherit',
+              fontWeight: 500
+            }}
           >
-            {authLoading ? 'Loading...' : isSignUp ? 'Create Account' : 'Sign In'}
+            {isLogin ? 'Sign Up' : 'Sign In'}
           </button>
-        </form>
-
-        <div className="text-center">
-          <button
-            onClick={() => setIsSignUp(!isSignUp)}
-            className="text-white/80 hover:text-white"
-          >
-            {isSignUp ? 'Already have an account? Sign in' : "Don't have an account? Sign up"}
-          </button>
-          {!isSignUp && (
-            <button
-              onClick={() => setIsResetPassword(true)}
-              className="block mx-auto mt-2 text-white/80 hover:text-white"
-            >
-              Forgot password?
-            </button>
-          )}
         </div>
-      </div>
+      </form>
     </div>
   );
 }
