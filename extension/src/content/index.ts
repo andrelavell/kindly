@@ -1,7 +1,10 @@
 // Content script for merchant detection and popup injection
-import './content.css';
+
 import { isLoggedIn } from './auth';
 import { createAuthForm } from './auth-form';
+import { authService } from '../services/auth';
+import { auth } from '../utils/firebase';
+import { signOut, onAuthStateChanged, sendEmailVerification } from 'firebase/auth';
 
 console.log('Kindly: Content script loaded');
 
@@ -19,13 +22,21 @@ interface Merchant {
 
 let merchantsData: Merchant[] = [];
 
-// Calculate donation percentage (half of commission value)
+// Calculate donation amount (half of commission value)
 const getDonationPercentage = (merchant: Merchant): string => {
-  // Remove any % sign and convert to number
-  const commissionNum = parseFloat(merchant.commissionValue.replace('%', ''));
-  // Calculate half and format to at most 2 decimal places
-  const donationNum = (commissionNum / 2).toFixed(2);
-  return `${donationNum}%`;
+  if (merchant.commissionType === 'fixed') {
+    // For fixed commission, extract the number from the string (e.g. "$100.00" -> 100.00)
+    const commissionNum = parseFloat(merchant.commissionValue.replace(/[^0-9.]/g, ''));
+    // Calculate half and format with dollar sign
+    const donationNum = (commissionNum / 2).toFixed(2);
+    return `$${donationNum}`;
+  } else {
+    // For percentage commission
+    const commissionNum = parseFloat(merchant.commissionValue.replace('%', ''));
+    // Calculate half and format to at most 2 decimal places
+    const donationNum = (commissionNum / 2).toFixed(2);
+    return `${donationNum}%`;
+  }
 };
 
 // Fetch merchants data
@@ -34,31 +45,41 @@ const fetchMerchants = async () => {
   try {
     // Use the background script to fetch the data
     console.log('Kindly DEBUG: Sending FETCH_MERCHANTS message to background');
-    const data = await chrome.runtime.sendMessage({ type: 'FETCH_MERCHANTS' });
-    console.log('Kindly DEBUG: Received response from background:', data);
-    
-    if (data && Array.isArray(data)) {
-      // Check if first item is metadata
-      console.log('Kindly DEBUG: First item in data:', data[0]);
-      if (data[0]?.metadata) {
-        console.log('Kindly DEBUG: Found metadata, slicing array');
-        merchantsData = data.slice(1);
-      } else {
-        console.log('Kindly DEBUG: No metadata found, using full array');
-        merchantsData = data;
-      }
-      console.log('Kindly DEBUG: Merchant data sample:', merchantsData[0]);
-      console.log('Kindly: Loaded', merchantsData.length, 'merchants');
-    } else {
-      console.error('Kindly: Invalid merchants data received:', data);
+    const data = await new Promise((resolve, reject) => {
+      chrome.runtime.sendMessage({ type: 'FETCH_MERCHANTS' }, response => {
+        if (chrome.runtime.lastError) {
+          console.error('Kindly DEBUG: Runtime error:', chrome.runtime.lastError);
+          reject(chrome.runtime.lastError);
+          return;
+        }
+        if (response && response.error) {
+          console.error('Kindly DEBUG: Fetch error:', response.error);
+          reject(new Error(response.error));
+          return;
+        }
+        resolve(response);
+      });
+    });
+
+    if (!data || !Array.isArray(data)) {
+      console.error('Kindly DEBUG: Invalid data format:', data);
+      return false;
     }
+    
+    merchantsData = data;
+    console.log('Kindly DEBUG: Merchant data loaded:', {
+      count: merchantsData.length,
+      sample: merchantsData.slice(0, 3)
+    });
+    return true;
   } catch (error) {
     console.error('Kindly DEBUG: Error in fetchMerchants:', error);
     console.error('Kindly DEBUG: Error stack:', error.stack);
+    return false;
   }
 };
 
-// Check if we're on a supported merchant site
+// Check if we're on a supported merchant site and return the merchant data
 const isSupportedMerchant = () => {
   console.log('Kindly DEBUG: Starting isSupportedMerchant check');
   const currentDomain = window.location.hostname.replace('www.', '');
@@ -69,7 +90,7 @@ const isSupportedMerchant = () => {
   
   if (!merchantsData.length) {
     console.error('Kindly DEBUG: No merchant data available!');
-    return false;
+    return null;
   }
   
   console.log('Kindly DEBUG: First few merchants:', merchantsData.slice(0, 3));
@@ -80,16 +101,18 @@ const isSupportedMerchant = () => {
       return false;
     }
     const matches = currentDomain.includes(m.domain);
-    console.log('Kindly DEBUG: Checking merchant:', {
-      merchantDomain: m.domain,
-      currentDomain,
-      matches
-    });
+    // Only log when there's a match
+    if (matches) {
+      console.log('Kindly DEBUG: Found matching merchant:', {
+        merchantDomain: m.domain,
+        currentDomain
+      });
+    }
     return matches;
   });
   
   console.log('Kindly DEBUG: Merchant match result:', merchant);
-  return merchant !== undefined;
+  return merchant || null;
 };
 
 // Get current affiliate tag from URL only
@@ -128,27 +151,64 @@ const isKindlyActive = () => {
   return false;
 };
 
-// Show processing state
+// Storage keys for tracking popup state
 const ACTIVATION_STORAGE_KEY = 'kindly_domain_activations';
+const MANUAL_CLOSE_KEY = 'kindly_manual_closes';
 
-const getDomainActivations = (): Record<string, number> => {
-  const stored = localStorage.getItem(ACTIVATION_STORAGE_KEY);
-  return stored ? JSON.parse(stored) : {};
+const getDomainActivations = async (): Promise<Record<string, number>> => {
+  return new Promise((resolve) => {
+    chrome.storage.local.get([ACTIVATION_STORAGE_KEY], (result) => {
+      resolve(result[ACTIVATION_STORAGE_KEY] || {});
+    });
+  });
 };
 
-const setDomainActivation = (domain: string) => {
-  const activations = getDomainActivations();
+const getManualCloses = async (): Promise<Record<string, number>> => {
+  return new Promise((resolve) => {
+    chrome.storage.local.get([MANUAL_CLOSE_KEY], (result) => {
+      resolve(result[MANUAL_CLOSE_KEY] || {});
+    });
+  });
+};
+
+const setDomainActivation = async (domain: string) => {
+  const activations = await getDomainActivations();
   activations[domain] = Date.now();
-  localStorage.setItem(ACTIVATION_STORAGE_KEY, JSON.stringify(activations));
+  chrome.storage.local.set({ [ACTIVATION_STORAGE_KEY]: activations });
 };
 
-const isDomainActivated = (domain: string): boolean => {
-  const activations = getDomainActivations();
+const setManualClose = async (domain: string) => {
+  const closes = await getManualCloses();
+  closes[domain] = Date.now();
+  chrome.storage.local.set({ [MANUAL_CLOSE_KEY]: closes });
+};
+
+const shouldShowPopup = async (domain: string): Promise<boolean> => {
+  // Don't show on non-merchant sites
+  if (!isSupportedMerchant()) return false;
+
+  const [activations, manualCloses] = await Promise.all([
+    getDomainActivations(),
+    getManualCloses()
+  ]);
+
   const lastActivation = activations[domain];
-  if (!lastActivation) return false;
-  
-  const hoursSinceActivation = (Date.now() - lastActivation) / (1000 * 60 * 60);
-  return hoursSinceActivation < 24;
+  const lastClose = manualCloses[domain];
+  const now = Date.now();
+  const HOURS_24 = 24 * 60 * 60 * 1000;
+
+  // If there's an active donation, don't show popup
+  if (lastActivation && (now - lastActivation) < HOURS_24) {
+    return false;
+  }
+
+  // If manually closed within 24 hours, don't show popup
+  if (lastClose && (now - lastClose) < HOURS_24) {
+    return false;
+  }
+
+  // Show popup in all other cases
+  return true;
 };
 
 const showProcessingState = () => {
@@ -156,76 +216,57 @@ const showProcessingState = () => {
   document.getElementById('kindly-popup')?.remove();
   const popup = document.createElement('div');
   popup.id = 'kindly-processing-popup';
-  popup.style.cssText = `
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 360px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    border: 1px solid #E5E7EB;
-    z-index: 999999;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-    overflow: hidden;
-  `;
+  popup.className = 'kindly-popup';
 
   popup.innerHTML = `
-    <!-- Extension Header -->
-    <div style="background: #e11d48; color: white; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center;">
-      <div style="display: flex; align-items: center; gap: 6px;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2">
-          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-        </svg>
-        <span style="font-weight: 600; font-size: 15px !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;">KINDLY</span>
-      </div>
-      <button id="kindly-close-processing" style="color: white; padding: 4px; line-height: 0; border: none; background: none; cursor: pointer;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M18 6L6 18M6 6l12 12"></path>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Content -->
-    <div style="padding: 16px;">
-      <div style="
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-        margin-bottom: 16px;
-      ">
-        <svg width="24" height="24" viewBox="0 0 24 24" style="animation: spin 1s linear infinite;">
-          <style>
-            @keyframes spin {
-              0% { transform: rotate(0deg); }
-              100% { transform: rotate(360deg); }
-            }
-          </style>
-          <circle cx="12" cy="12" r="10" stroke="#e11d48" stroke-width="2" fill="none" opacity="0.25"/>
-          <path d="M12 2a10 10 0 0 1 10 10" stroke="#e11d48" stroke-width="2" fill="none"/>
-        </svg>
-        <span style="
-          font-size: 15px !important;
-          color: #6B7280;
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-        ">Processing...</span>
+    ${createKindlyHeader()}
+    <div class="kindly-content">
+      <div style="text-align: center;">
+        <div style="display: flex; justify-content: center; margin-bottom: 16px;">
+          <div style="width: 45px; height: 45px; display: flex; align-items: center; justify-content: center;">
+            <svg class="kindly-spinner" viewBox="0 0 50 50" style="width: 45px; height: 45px;">
+              <circle cx="25" cy="25" r="20" fill="none" stroke="#e11d48" stroke-width="5" stroke-linecap="round" />
+            </svg>
+          </div>
+        </div>
+        <h2 class="kindly-headline" style="margin-bottom: 5px;">
+          Processing...
+        </h2>
+        <p style="color: #222 !important; font-family: Inter, sans-serif !important; font-size: 15px !important; text-align: center; line-height: 1.5em !important; margin-bottom: 24px !important;">
+          Please wait while we activate your donation
+        </p>
       </div>
     </div>
   `;
+
+  // Add the spinner animation styles
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes kindly-spinner {
+      0% { stroke-dasharray: 1, 150; stroke-dashoffset: 0; }
+      50% { stroke-dasharray: 90, 150; stroke-dashoffset: -35; }
+      100% { stroke-dasharray: 90, 150; stroke-dashoffset: -124; }
+    }
+    .kindly-spinner circle {
+      animation: kindly-spinner 1.4s ease-in-out infinite;
+      transform-origin: center;
+    }
+  `;
+  document.head.appendChild(style);
 
   document.body.appendChild(popup);
 
   // Add event listener for close button
   document.getElementById('kindly-close-processing')?.addEventListener('click', () => {
     popup.remove();
+    style.remove();
   });
 
   return popup;
 };
 
 // Show success state popup
-const showSuccessState = (merchant: Merchant) => {
+export const showSuccessState = (merchant: Merchant) => {
   // Record domain activation
   setDomainActivation(window.location.hostname);
   // Remove any existing popups
@@ -234,66 +275,27 @@ const showSuccessState = (merchant: Merchant) => {
 
   const popup = document.createElement('div');
   popup.id = 'kindly-success-popup';
-  popup.style.cssText = `
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 360px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    border: 1px solid #E5E7EB;
-    z-index: 999999;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-    overflow: hidden;
-  `;
+  popup.className = 'kindly-popup';
 
   popup.innerHTML = `
-    <!-- Extension Header -->
-    <div style="background: #e11d48; color: white; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center;">
-      <div style="display: flex; align-items: center; gap: 6px;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2">
-          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-        </svg>
-        <span style="font-weight: 600; font-size: 15px !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;">KINDLY</span>
-      </div>
-      <button id="kindly-close-success" style="color: white; padding: 4px; line-height: 0; border: none; background: none; cursor: pointer;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M18 6L6 18M6 6l12 12"></path>
-        </svg>
-      </button>
-    </div>
-
+    ${createKindlyHeader()}
     <!-- Content -->
-    <div style="padding: 16px;">
-      <!-- Success Message -->
-      <div style="
-        display: flex;
-        align-items: flex-start;
-        gap: 8px;
-        margin-bottom: 16px;
-      ">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #16A34A; flex-shrink: 0; margin-top: 2px;">
-          <path d="M20 6L9 17l-5-5"></path>
-        </svg>
-        <div>
-          <div style="
-            font-size: 16px !important;
-            font-weight: 500 !important;
-            color: #16A34A;
-            margin-bottom: 4px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-          ">Offer Activated!</div>
-          <div style="
-            font-size: 15px !important;
-            color: #6B7280;
-            line-height: 1.4;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-          ">Purchases will now generate up to a ${getDonationPercentage(merchant)} donation to Susan G Komen</div>
+    <div class="kindly-content">
+      <div style="text-align: center;">
+        <div style="display: flex; justify-content: center; margin-bottom: 16px;">
+          <div style="background: #6EB352; width: 45px; height: 45px; border-radius: 28px; display: flex; align-items: center; justify-content: center;">
+            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 6L9 17L4 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
         </div>
+        <h2 class="kindly-headline" style="margin-bottom: 5px;">
+          Donation Activated!
+        </h2>
+        <p style="color: #222 !important; font-family: Inter, sans-serif !important; font-size: 15px !important; text-align: center; line-height: 1.5em !important; margin-bottom: 24px !important;">
+          Purchases will now generate up to a ${getDonationPercentage(merchant)} donation to Susan G Komen
+        </p>
       </div>
-
-
     </div>
   `;
 
@@ -304,69 +306,56 @@ const showSuccessState = (merchant: Merchant) => {
     popup.remove();
   });
 
+  // Add logout event listener
+  document.getElementById('kindly-logout')?.addEventListener('click', async () => {
+    try {
+      await signOut(auth);
+      window.location.reload();
+    } catch (error) {
+      console.error('Kindly: Error during logout:', error);
+    }
+  });
 
+  // Add resend verification email listener
+  document.getElementById('resend-verification')?.addEventListener('click', async () => {
+    try {
+      if (auth.currentUser) {
+        await sendEmailVerification(auth.currentUser);
+      }
+      const button = document.getElementById('resend-verification');
+      if (button) {
+        button.textContent = 'Verification email sent!';
+        button.className = 'kindly-button text-green-600 p-0 cursor-default';
+        button.disabled = true;
+      }
+    } catch (error) {
+      console.error('Kindly: Error sending verification email:', error);
+    }
+  });
 };
 
 // Create and inject the affiliate choice dialog
 const createAffiliateChoiceDialog = (affiliateTag: string) => {
   const dialog = document.createElement('div');
   dialog.id = 'kindly-affiliate-dialog';
-  dialog.style.cssText = `
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    padding: 24px;
-    border-radius: 12px;
-    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    z-index: 1000000;
-    width: 400px;
-    max-width: 90vw;
-  `;
+  dialog.className = 'kindly-popup kindly-dialog';
 
   dialog.innerHTML = `
     <div class="text-center">
-      <div style="margin-bottom: 16px;">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin: 0 auto; color: #F43F5E;">
+      <div class="mb-4">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="mx-auto text-rose-500">
           <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
         </svg>
       </div>
-      <h3 style="font-size: 18px; font-weight: 600; color: #111827; margin-bottom: 8px;">We've detected another affiliate</h3>
-      <p style="color: #4B5563; margin-bottom: 20px;">
+      <h3 class="text-lg font-semibold text-gray-900 mb-2">We've detected another affiliate</h3>
+      <p class="text-gray-600 mb-5">
         We've detected another affiliate connected to your purchase (${affiliateTag}). This might support a website or creator you recently visited.
       </p>
-      <div style="display: flex; gap: 12px; justify-content: center; margin-bottom: 16px;">
-        <button id="kindly-support-creator" style="
-          padding: 8px 16px;
-          background: white;
-          color: #4B5563;
-          border: 1px solid #F43F5E;
-          border-radius: 8px;
-          font-weight: 500 !important;
-          cursor: pointer;
-          transition: all 0.2s;
-        ">Support Creator</button>
-        <button id="kindly-support-charity" style="
-          padding: 8px 16px;
-          background: #F43F5E;
-          color: white;
-          border: none;
-          border-radius: 8px;
-          font-weight: 500 !important;
-          cursor: pointer;
-          transition: background-color 0.2s;
-        ">Donate to Charity</button>
+      <div class="flex gap-3 justify-center mb-4">
+        <button id="kindly-support-creator" class="kindly-button">Support Creator</button>
+        <button id="kindly-support-charity" class="kindly-button kindly-button-primary">Donate to Charity</button>
       </div>
-      <p style="
-        font-size: 12px;
-        color: #6B7280;
-        line-height: 1.4;
-        margin-top: 16px;
-        padding: 12px;
-        background: #F9FAFB;
-        border-radius: 6px;
-      ">
+      <p class="text-xs text-gray-500 leading-relaxed mt-4 p-3 bg-gray-50 rounded-md">
         If you choose to donate to charity, the affiliate commission from your purchase will be received by Kindly and donated to your selected cause.
       </p>
     </div>
@@ -374,15 +363,7 @@ const createAffiliateChoiceDialog = (affiliateTag: string) => {
 
   // Add overlay
   const overlay = document.createElement('div');
-  overlay.style.cssText = `
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999999;
-  `;
+  overlay.className = 'kindly-overlay';
 
   document.body.appendChild(overlay);
   document.body.appendChild(dialog);
@@ -406,18 +387,25 @@ const createAffiliateChoiceDialog = (affiliateTag: string) => {
   });
 };
 
+// Create a consistent header for all popups
+const createKindlyHeader = () => `
+  <div class="kindly-header">
+    <div class="kindly-logo">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+      </svg>
+      <span>KINDLY</span>
+    </div>
+    <button id="kindly-close" class="kindly-close-button">×</button>
+  </div>
+`;
+
 // Create and inject the popup
-const createDonationPopup = async () => {
-  // Check if domain is already activated
-  if (isDomainActivated(window.location.hostname)) {
-    return;
-  }
+export const createDonationPopup = async () => {
 
   // Check if user is logged in
   const loggedIn = await isLoggedIn();
-  if (!loggedIn) {
-    console.log('Kindly: User not logged in');
-  }
+  console.log('Kindly: User login status:', loggedIn);
   // Find the current merchant
   const currentDomain = window.location.hostname.replace('www.', '');
   const currentMerchant = merchantsData.find(m => currentDomain.includes(m.domain));
@@ -436,78 +424,51 @@ const createDonationPopup = async () => {
   // Create container for the popup
   const container = document.createElement('div');
   container.id = 'kindly-popup';
-  container.style.cssText = `
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 320px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    z-index: 999999;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  `;
+  container.className = 'kindly-popup';
 
   // Add popup content
   container.innerHTML = `
-    <div style="background: #e11d48; color: white; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center;">
-      <div style="display: flex; align-items: center; gap: 6px;">
+    <div class="kindly-header">
+      <div class="kindly-logo">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2">
           <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
         </svg>
-        <span style="font-weight: 600;">KINDLY</span>
+        <span>KINDLY</span>
       </div>
-      <button id="kindly-close" style="color: white; padding: 4px; line-height: 0; border: none; background: none; cursor: pointer;">
+      <button id="kindly-close" class="kindly-close-button">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M18 6L6 18M6 6l12 12" />
         </svg>
       </button>
     </div>
-    <div style="padding: 24px;">
-      <div style="text-align: center; margin-bottom: 24px;">
+    <div class="kindly-content">
+      <div style="text-align: center; margin: 0;">
         ${loggedIn ? `
-          <div style="width: 80px; height: 80px; margin: 0 auto 24px;">
+          <div style="display: flex; justify-content: center; margin-bottom: 10px;">
             <img 
-              src="https://joinkindly.org/_next/image?url=%2Fimages%2Fcauses%2Fsusan-g-komen-logo.png&w=128&q=75"
+              src="https://joinkindly.org/images/causes/susan-g-komen-logo.png"
               alt="Susan G Komen"
-              style="width: 100%; height: 100%; object-fit: contain; border-radius: 8px; background: white;"
+              style="width: 75px; height: 75px; object-fit: contain; border-radius: 8px; background: white;"
             />
           </div>
-          <h3 style="color: #2D3648; font-size: 20px !important; font-weight: 600 !important; margin-bottom: 8px; line-height: 1.2 !important; letter-spacing: normal !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;">
+          <h2 class="kindly-headline" style="margin-bottom: 5px;">
             Get up to ${getDonationPercentage(currentMerchant)} donated to Susan G Komen
-          </h3>
-          <p style="color: rgba(45, 54, 72, 0.7); font-size: 14px !important; letter-spacing: normal !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;">
+          </h2>
+          <p style="color: #222 !important; font-family: Inter, sans-serif !important; font-size: 15px !important; text-align: center !important; margin: 0 0 10px 0 !important;">
             For Breast Cancer Research
           </p>
         </div>
-        <button id="kindly-activate" style="
-          width: 100%;
-          background: #e11d48;
-          color: white;
-          padding: 12px;
-          border-radius: 6px;
-          font-weight: 600 !important;
-          font-size: 14px !important;
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-          border: none;
-          cursor: pointer;
-        ">
+        <button id="kindly-activate" class="kindly-button kindly-button-primary" style="margin-top: 15px !important; border-radius: 20px !important; height: 45px;">
           Activate Donation
         </button>
-        <button id="kindly-change-cause" style="
-          width: 100%;
-          color: #e11d48;
-          padding: 8px;
-          font-weight: 500 !important;
-          font-size: 14px !important;
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-          border: none;
-          background: none;
-          cursor: pointer;
-          margin-top: 8px;
-        ">
-          Change cause
-        </button>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 16px; margin-top: 0;">
+          <a href="https://kindly.ai/causes" target="_blank" style="font-family: Inter, sans-serif; font-size: 15px; letter-spacing: 0; text-align: center; color: #e11d48; text-decoration: none;">
+            Change Cause
+          </a>
+          <a href="#" id="kindly-logout" class="kindly-text-link">
+            Logout
+          </a>
+        </div>
       ` : createAuthForm().html}
 
     </div>
@@ -522,6 +483,41 @@ const createDonationPopup = async () => {
     container.remove();
     // Store that user has closed the popup
     chrome.storage.local.set({ popupClosed: Date.now() });
+  });
+
+  // Add logout handler
+  document.getElementById('kindly-logout')?.addEventListener('click', async (e) => {
+    e.preventDefault();
+    try {
+      // Logout from Supabase
+      await signOut(auth);
+      // Send message to background script to clear state
+      await chrome.runtime.sendMessage({ type: 'LOGOUT' });
+      // Show auth form with success message
+      const header = `
+        <div class="kindly-header">
+          <div class="kindly-logo">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            <span>KINDLY</span>
+          </div>
+          <button id="kindly-close" class="kindly-close">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      `;
+      container.innerHTML = header + createAuthForm('Successfully logged out').html;
+      createAuthForm().setupListeners(container);
+      // Add close button handler
+      document.getElementById('kindly-close')?.addEventListener('click', () => {
+        container.remove();
+      });
+    } catch (error) {
+      console.error('Kindly: Error during logout:', error);
+    }
   });
 
   if (loggedIn) {
@@ -562,8 +558,13 @@ const handleActivateClick = async (e?: Event) => {
 
     if (response?.success) {
       // Update local storage and show success state
-      chrome.storage.local.set({ donationActive: true });
-      showSuccessState(currentMerchant);
+      const currentDomain = window.location.hostname;
+      chrome.storage.local.get(['domainDonations'], (result) => {
+        const domainDonations = result.domainDonations || {};
+        domainDonations[currentDomain] = Date.now(); // Store timestamp instead of boolean
+        chrome.storage.local.set({ domainDonations });
+        showSuccessState(currentMerchant);
+      });
     }
   } catch (error) {
     console.error('Kindly: Error opening affiliate tab:', error);
@@ -573,47 +574,258 @@ const handleActivateClick = async (e?: Event) => {
 // Initialize
 console.log('Kindly: Starting initialization');
 
-// Fetch merchants first
-fetchMerchants().then(() => {
-  console.log('Kindly: Merchants fetched, checking if supported site');
-  if (isSupportedMerchant()) {
-    console.log('Kindly: On supported merchant site, checking state');
-    
-    // Check if Kindly is already active
-    if (isKindlyActive()) {
-      console.log('Kindly: Already active, showing success state');
-      showSuccessState();
-    } else {
-      // Check if donation is active or popup was recently closed
-      chrome.storage.local.get(['donationActive', 'popupClosed'], (result) => {
-        console.log('Kindly: Storage state:', result);
-        
-        if (result.donationActive) {
-          console.log('Kindly: Donation active in storage, showing success state');
-          showSuccessState();
-        } else {
-          const now = Date.now();
-          const showAfter = result.popupClosed ? result.popupClosed + (24 * 60 * 60 * 1000) : 0;
-
-          if (!result.popupClosed || now > showAfter) {
-            console.log('Kindly: Showing popup');
-            setTimeout(createDonationPopup, 1000);
-          } else {
-            console.log('Kindly: Popup recently closed, not showing');
-          }
-        }
-      });
-    }
-  } else {
-    console.log('Kindly: Not a supported merchant site');
+// Check login state and show appropriate UI
+export const initialize = async () => {
+  // First fetch merchants and check if we're on a supported site
+  const merchantsLoaded = await fetchMerchants();
+  if (!merchantsLoaded) {
+    console.error('Kindly: Failed to load merchant data');
+    return;
   }
-});
+
+  const currentDomain = window.location.hostname;
+  
+  // Don't proceed if not on a supported merchant site
+  const merchant = isSupportedMerchant();
+  if (!merchant) {
+    console.log('Kindly: Not a supported merchant site');
+    return;
+  }
+  
+  // Store merchant data for later use
+  await chrome.storage.local.set({ currentMerchant: merchant });
+
+  const loggedIn = await isLoggedIn();
+  if (!loggedIn) {
+    console.log('Kindly: User not logged in, showing auth form on supported site');
+    
+    // Add Google Font
+    const linkEl = document.createElement('link');
+    linkEl.rel = 'stylesheet';
+    linkEl.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap';
+    document.head.appendChild(linkEl);
+
+    // Add styles to document head
+    const styleEl = document.createElement('style');
+    styleEl.textContent = `
+      .kindly-popup {
+        position: fixed !important;
+        top: 20px !important;
+        right: 20px !important;
+        width: 360px !important;
+        background: #ffffff !important;
+        border-radius: 8px !important;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+        z-index: 2147483647 !important;
+        font-family: 'Inter', sans-serif !important;
+      }
+      .kindly-header {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 10px 17px !important;
+        background: #e11d48 !important;
+        color: white !important;
+        border-top-left-radius: 8px !important;
+        border-top-right-radius: 8px !important;
+      }
+      .kindly-logo {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        font-weight: 600 !important;
+        font-size: 15px !important;
+      }
+      .kindly-logo span {
+        font-family: 'Inter', sans-serif !important;
+        letter-spacing: 0.05em !important;
+        font-weight: 700 !important;
+      }
+      .kindly-close-button {
+        background: none !important;
+        border: none !important;
+        color: white !important;
+        cursor: pointer !important;
+        padding: 4px !important;
+        position: absolute !important;
+        top: 6px !important;
+        right: 17px !important;
+        font-size: 20px !important;
+        font-weight: 500 !important;
+        line-height: 1 !important;
+      }
+      .kindly-headline {
+        font-family: 'Inter', sans-serif !important;
+        font-size: 19px !important;
+        font-weight: 700 !important;
+        color: #222 !important;
+        margin: 0 0 10px 0 !important;
+        line-height: 1.2em !important;
+        text-align: center !important;
+        text-transform: none !important;
+        letter-spacing: 0 !important;
+      }
+      .kindly-content {
+        padding: 17px 23px !important;
+      }
+      .kindly-tabs {
+        display: flex !important;
+        gap: 8px !important;
+        margin-bottom: 16px !important;
+      }
+      .kindly-tab {
+        flex: 1 !important;
+        padding: 8px !important;
+        background: none !important;
+        border: none !important;
+        border-bottom: 2px solid #e5e7eb !important;
+        color: #6b7280 !important;
+        cursor: pointer !important;
+        font-size: 15px !important;
+        text-align: center !important;
+        font-family: 'Inter', sans-serif !important;
+        letter-spacing: normal !important;
+        text-transform: none !important;
+      }
+      .kindly-tab.active {
+        border-bottom-color: #e11d48 !important;
+        color: #e11d48 !important;
+      }
+      .kindly-input {
+        width: 100% !important;
+        height: 40px !important;
+        min-height: 40px !important;
+        max-height: 40px !important;
+        padding: 8px 12px !important;
+        margin-bottom: 12px !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: 4px !important;
+        font-size: 14px !important;
+        font-weight: normal !important;
+        text-align: left !important;
+        line-height: 1.5 !important;
+        box-sizing: border-box !important;
+        font-family: 'Inter', sans-serif !important;
+        letter-spacing: normal !important;
+        background: #ffffff !important;
+        background-color: #ffffff !important;
+        color: #000000 !important;
+      }
+      .kindly-input:focus {
+        background: #ffffff !important;
+        background-color: #ffffff !important;
+        border-color: #e11d48 !important;
+        outline: none !important;
+        box-shadow: 0 0 0 2px rgba(225, 29, 72, 0.2) !important;
+        font-weight: normal !important;
+      }
+      .kindly-button {
+        width: 100% !important;
+        padding: 10px !important;
+        border: none !important;
+        border-radius: 4px !important;
+        font-weight: bold !important;
+        cursor: pointer !important;
+        margin-bottom: 8px !important;
+        text-align: center !important;
+        font-size: 15px !important;
+        font-family: 'Inter', sans-serif !important;
+      }
+      .kindly-button-primary {
+        background: #e11d48 !important;
+        color: white !important;
+      }
+      .kindly-button-secondary {
+        background: white !important;
+        border: 1px solid #e5e7eb !important;
+        color: #374151 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+      }
+      .kindly-error {
+        color: #ef4444 !important;
+        font-size: 14px !important;
+        margin-top: 8px !important;
+      }
+    `;
+    document.head.appendChild(styleEl);
+    
+    const container = document.createElement('div');
+    container.id = 'kindly-popup';
+    container.className = 'kindly-popup';
+    const authForm = createAuthForm();
+    container.innerHTML = `
+      ${createKindlyHeader()}
+      <div class="kindly-content">
+        ${authForm.html}
+      </div>
+    `;
+    document.body.appendChild(container);
+    document.getElementById('kindly-close')?.addEventListener('click', async () => {
+      container.remove();
+      await setManualClose(currentDomain);
+    });
+    // Set up auth form listeners
+    authForm.setupListeners(container);
+    return;
+  }
+
+  // User is logged in, proceed with normal flow
+  console.log('Kindly: On supported merchant site, checking state');
+    
+  // Check if Kindly is already active
+  if (isKindlyActive()) {
+    console.log('Kindly: Already active, showing success state');
+    const currentMerchant = merchantsData.find(m => currentDomain.includes(m.domain));
+    if (currentMerchant) {
+      showSuccessState(currentMerchant);
+    }
+    return;
+  }
+
+  // Get domain activations
+  const activations = await getDomainActivations();
+  const lastActivation = activations[currentDomain];
+  const now = Date.now();
+  const HOURS_24 = 24 * 60 * 60 * 1000;
+
+  // Show success state if there's an active donation
+  if (lastActivation && (now - lastActivation) < HOURS_24) {
+    console.log('Kindly: Active donation found, showing success state');
+    const currentMerchant = merchantsData.find(m => currentDomain.includes(m.domain));
+    if (currentMerchant) {
+      showSuccessState(currentMerchant);
+    }
+    return;
+  }
+
+  // Check if we should show the popup
+  const shouldShow = await shouldShowPopup(currentDomain);
+  if (shouldShow) {
+    console.log('Kindly: Showing donation popup');
+    setTimeout(createDonationPopup, 1000);
+  } else {
+    console.log('Kindly: Not showing popup - manually closed');
+  }
+};
+
+initialize();
 
 // Listen for messages from background script
 chrome.runtime.onMessage.addListener((message) => {
   console.log('Kindly: Received message:', message);
-  if (message.type === 'SHOW_POPUP') {
-    console.log('Kindly: Show popup message received');
-    createDonationPopup();
+  switch (message.type) {
+    case 'SHOW_POPUP':
+      console.log('Kindly: Show popup message received');
+      createDonationPopup();
+      break;
+
+    case 'USER_LOGGED_OUT':
+      console.log('Kindly: User logged out');
+      // Remove any existing popups
+      document.querySelectorAll('.kindly-popup').forEach(el => el.remove());
+      break;
   }
 });
