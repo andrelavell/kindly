@@ -144,20 +144,21 @@ export function createAuthForm(successMessage?: string) {
             // Force show success state
             await showSuccessState(currentMerchant);
           } else {
-            try {
-              const firstName = (form.querySelector('#firstName') as HTMLInputElement).value;
-              const lastName = (form.querySelector('#lastName') as HTMLInputElement).value;
-              const name = `${firstName} ${lastName}`;
-              await authService.register(email, password, name);
-              
-              // Simply reload the page to show the main popup
-              window.location.reload();
-            } catch (error: any) {
-              console.error('Registration error:', error);
-              errorMessage.textContent = error.message || 'Error during registration. Please try again.';
-              errorMessage.classList.remove('hidden');
+            const firstName = (form.querySelector('#firstName') as HTMLInputElement).value;
+            const lastName = (form.querySelector('#lastName') as HTMLInputElement).value;
+            const name = `${firstName} ${lastName}`;
+            const user = await authService.register(email, password, name);
+            console.log('Kindly DEBUG: Registration successful:', user);
+            
+            // Remove existing popup
+            const popup = document.querySelector('#kindly-popup');
+            if (popup) {
+              console.log('Kindly DEBUG: Removing old popup');
+              popup.remove();
             }
-            return;
+            
+            // Show donation popup immediately
+            await createDonationPopup();
           }
         } catch (error: any) {
           errorMessage.textContent = error.message || 'An error occurred';

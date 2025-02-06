@@ -1,4 +1,5 @@
 import { authService, User } from '../services/auth';
+import { auth } from '../utils/firebase';
 
 class AuthStore {
   private static instance: AuthStore;
@@ -19,7 +20,16 @@ class AuthStore {
 
   private async init() {
     try {
+      // Force refresh the Firebase user to get latest verification status
+      const firebaseUser = auth.currentUser;
+      if (firebaseUser) {
+        await firebaseUser.reload();
+        console.log('Kindly DEBUG: Firebase user after reload:', firebaseUser.emailVerified);
+      }
+
+      // Get fresh user data with updated verification status
       const user = await authService.getCurrentUser();
+      console.log('Kindly DEBUG: User data after init:', user);
       this._user = user;
     } catch (error) {
       console.error('Error initializing auth store:', error);
@@ -54,12 +64,19 @@ class AuthStore {
   }
 
   async register(email: string, password: string, name: string) {
+    this._loading = true;
+    this.notifyListeners();
+    
     try {
       const user = await authService.register(email, password, name);
       this._user = user;
+      this._loading = false;
       this.notifyListeners();
+      return user;
     } catch (error) {
       console.error('Registration error:', error);
+      this._loading = false;
+      this.notifyListeners();
       throw error;
     }
   }

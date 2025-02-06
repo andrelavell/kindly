@@ -7,7 +7,8 @@ import {
   signInWithPopup,
   User as FirebaseUser,
   setPersistence,
-  browserLocalPersistence
+  browserLocalPersistence,
+  sendEmailVerification
 } from 'firebase/auth';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
 import { auth, db } from '../utils/firebase';
@@ -18,11 +19,23 @@ setPersistence(auth, browserLocalPersistence)
     // Check for existing auth state on startup
     onAuthStateChanged(auth, async (firebaseUser) => {
       if (firebaseUser) {
+        // Always reload the user to get fresh email verification status
+        await firebaseUser.reload();
+        console.log('Kindly DEBUG: Auth state changed, email verified:', firebaseUser.emailVerified);
+        
+        // Get user data and update verification status
         const userData = await authService.getCurrentUser(firebaseUser.uid);
         if (userData) {
+          userData.emailVerified = firebaseUser.emailVerified;
+          
+          // Update Firestore
+          await setDoc(doc(db, 'users', firebaseUser.uid), userData);
+          
+          // Update local storage
           await chrome.storage.local.set({
             kindlyUserId: firebaseUser.uid,
-            kindlyUserData: userData
+            kindlyUserData: userData,
+            kindlyAuthState: { user: userData }
           });
         }
       }
@@ -55,7 +68,9 @@ export const authService = {
       }
 
       // Send verification email
-      await sendEmailVerification(firebaseUser);
+      if (auth.currentUser) {
+        await sendEmailVerification(auth.currentUser);
+      }
 
       // Generate 7-character alphanumeric ID
       const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
@@ -77,13 +92,19 @@ export const authService = {
       console.log('Creating user profile in Firestore...');
       await setDoc(doc(db, 'users', firebaseUser.uid), userData);
       
+      // Store user data and auth state in local storage
+      await chrome.storage.local.set({
+        kindlyUserId: firebaseUser.uid,
+        kindlyUserData: userData,
+        kindlyAuthState: { user: userData },
+        kindlyAuthToken: await firebaseUser.getIdToken()
+      });
+      
       return userData;
     } catch (error) {
       console.error('Registration error:', error);
       throw error;
     }
-
-    return userData;
   },
 
   // Login with email/password
@@ -177,41 +198,66 @@ export const authService = {
     return userProfile;
   },
 
+  // Refresh user token after email verification
+  async refreshUserToken() {
+    const currentUser = auth.currentUser;
+    if (!currentUser) return;
+
+    // Get fresh ID token which will have updated claims
+    await currentUser.getIdToken(true);
+    await currentUser.reload();
+    console.log('Kindly DEBUG: Refreshed user token, email verified:', currentUser.emailVerified);
+  },
+
   // Get current user with local storage fallback
   async getCurrentUser(userId?: string): Promise<User | null> {
     try {
-      // First check chrome.storage.local for cached user data
-      const storage = await chrome.storage.local.get(['kindlyUserId', 'kindlyUserData']);
-      
-      // If we have cached data and a valid Firebase user, return the cached data
-      if (storage.kindlyUserId && storage.kindlyUserData && auth.currentUser) {
-        console.log('Using cached user data');
-        return storage.kindlyUserData as User;
+      // First get current Firebase user and reload to get fresh state
+      const currentUser = auth.currentUser;
+      if (currentUser) {
+        await currentUser.reload();
+        console.log('Kindly DEBUG: Firebase user after reload:', {
+          uid: currentUser.uid,
+          emailVerified: currentUser.emailVerified
+        });
+      }
+
+      // Get userId from current user if not provided
+      userId = userId || (currentUser?.uid);
+      if (!userId) {
+        console.log('No user ID available');
+        return null;
       }
 
       console.log('Getting current user for ID:', userId);
-      if (!userId) {
-        const currentUser = auth.currentUser;
-        if (!currentUser) {
-          console.log('No current Firebase user');
-          return null;
-        }
-        userId = currentUser.uid;
-      }
-
       const userDoc = await getDoc(doc(db, 'users', userId));
+      
       if (!userDoc.exists()) {
         console.log('No Firestore document found for user:', userId);
         return null;
       }
       
       const userData = userDoc.data() as User;
-      console.log('Found user data:', userData);
+      
+      // Always use the latest verification status from Firebase
+      if (currentUser) {
+        const wasVerified = userData.emailVerified;
+        userData.emailVerified = currentUser.emailVerified;
+        
+        // If verification status changed, update Firestore
+        if (wasVerified !== userData.emailVerified) {
+          console.log('Kindly DEBUG: Email verification status changed:', userData.emailVerified);
+          await setDoc(doc(db, 'users', userId), userData);
+        }
+      }
+      
+      console.log('Kindly DEBUG: Final user data:', userData);
 
-      // Cache the user data
+      // Cache the updated user data
       await chrome.storage.local.set({
         kindlyUserId: userId,
-        kindlyUserData: userData
+        kindlyUserData: userData,
+        kindlyAuthState: { user: userData }
       });
 
       return userData;

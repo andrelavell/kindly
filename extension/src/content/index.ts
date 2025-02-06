@@ -523,6 +523,21 @@ export const createDonationPopup = async () => {
   // Check if user is logged in
   const loggedIn = await isLoggedIn();
   console.log('Kindly: User login status:', loggedIn);
+  
+  // Get current user to check email verification status
+  const currentUser = await authService.getCurrentUser();
+  console.log('Kindly DEBUG: Current user:', currentUser);
+  
+  // Also check Firebase auth directly
+  const firebaseUser = auth.currentUser;
+  console.log('Kindly DEBUG: Firebase user:', firebaseUser);
+  if (firebaseUser) {
+    await firebaseUser.reload();
+    console.log('Kindly DEBUG: Firebase email verified:', firebaseUser.emailVerified);
+  }
+  
+  const needsEmailVerification = currentUser && !currentUser.emailVerified;
+  console.log('Kindly DEBUG: Email verification needed:', needsEmailVerification);
   // Find the current merchant
   const currentDomain = window.location.hostname.replace('www.', '');
   const currentMerchant = merchantsData.find(m => currentDomain.includes(m.domain));
@@ -561,6 +576,12 @@ export const createDonationPopup = async () => {
     <div class="kindly-content">
       <div style="text-align: center; margin: 0;">
         ${loggedIn ? `
+          ${needsEmailVerification ? `
+            <div class="kindly-email-verification" style="background: #fff3cd; color: #856404; padding: 10px; border-radius: 8px; margin-bottom: 15px; text-align: left;">
+              <p style="margin: 0 0 8px 0; font-size: 14px;">Please verify your email address</p>
+              <p style="margin: 0; font-size: 13px;">Check your inbox for a verification link</p>
+            </div>
+          ` : ''}
           <div style="display: flex; justify-content: center; margin-bottom: 10px;">
             <img 
               src="https://joinkindly.org/images/causes/susan-g-komen-logo.png"

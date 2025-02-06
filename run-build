@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Change to the extension directory
+cd /Users/deandremoore/Desktop/kindly/extension && ./node_modules/.bin/webpack --config webpack.config.js
