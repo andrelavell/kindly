@@ -406,7 +406,7 @@ const createAffiliateChoiceDialog = (affiliateTag: string) => {
 };
 
 // Create a consistent header for all popups
-const createKindlyHeader = () => `
+const createKindlyHeader = (includeClose = true) => `
   <div class="kindly-header">
     <div class="kindly-logo">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2">
@@ -414,9 +414,108 @@ const createKindlyHeader = () => `
       </svg>
       <span>KINDLY</span>
     </div>
-    <button id="kindly-close" class="kindly-close-button">×</button>
+    ${includeClose ? '<button id="kindly-suppress-close" class="kindly-close-button" style="background: none; border: none; color: white; font-size: 24px; cursor: pointer; padding: 0 8px;">×</button>' : ''}
   </div>
 `;
+
+// Show suppression dialog
+const showSuppressionDialog = async () => {
+  const dialog = document.createElement('div');
+  dialog.id = 'kindly-suppression-dialog';
+  dialog.className = 'kindly-popup';
+  dialog.style.maxWidth = '400px';
+
+  // Add styles for hover effect
+  const style = document.createElement('style');
+  style.textContent = `
+    .kindly-suppress-button {
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 15px !important;
+      width: 100% !important;
+      border-radius: 8px !important;
+      background: #fff !important;
+      color: rgb(225, 29, 72) !important;
+      border: 1px solid rgb(225, 29, 72) !important;
+      margin-bottom: 1px !important;
+      padding: 14px !important;
+    }
+    .kindly-suppress-button:hover {
+      background: rgb(225, 29, 72) !important;
+      color: white !important;
+      font-weight: bold !important;
+    }
+  `;
+  document.head.appendChild(style);
+
+  dialog.innerHTML = `
+    ${createKindlyHeader(true)}
+    <div class="kindly-content" style="padding: 24px;">
+      <h2 class="kindly-headline" style="text-align: center; margin-top: 20px !important; margin-bottom: 24px !important;">
+        Suppress donation reminders for this site:
+      </h2>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <button id="suppress-today" class="kindly-suppress-button">
+          Today
+        </button>
+        <button id="suppress-month" class="kindly-suppress-button">
+          This month
+        </button>
+        <button id="suppress-always" class="kindly-suppress-button">
+          Always
+        </button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(dialog);
+
+
+
+  // Handle suppression choices
+  const domain = window.location.hostname;
+  const now = Date.now();
+
+  document.getElementById('suppress-today')?.addEventListener('click', async () => {
+    await chrome.storage.local.set({
+      [`suppressed_${domain}`]: now + (24 * 60 * 60 * 1000) // 24 hours
+    });
+    dialog.remove();
+  });
+
+  document.getElementById('suppress-month')?.addEventListener('click', async () => {
+    const endOfMonth = new Date();
+    endOfMonth.setMonth(endOfMonth.getMonth() + 1);
+    endOfMonth.setDate(0); // Last day of current month
+    endOfMonth.setHours(23, 59, 59, 999);
+    
+    await chrome.storage.local.set({
+      [`suppressed_${domain}`]: endOfMonth.getTime()
+    });
+    dialog.remove();
+  });
+
+  document.getElementById('suppress-always')?.addEventListener('click', async () => {
+    await chrome.storage.local.set({
+      [`suppressed_${domain}`]: 'forever'
+    });
+    dialog.remove();
+  });
+
+  // Add close button handler
+  document.getElementById('kindly-suppress-close')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dialog.remove();
+  });
+
+  // Click outside to cancel
+  dialog.addEventListener('click', (e) => {
+    if (e.target === dialog) {
+      dialog.remove();
+    }
+  });
+};
 
 // Create and inject the popup
 export const createDonationPopup = async () => {
@@ -448,7 +547,7 @@ export const createDonationPopup = async () => {
   container.innerHTML = `
     <div class="kindly-header">
       <div class="kindly-logo">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2">
           <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
         </svg>
         <span>KINDLY</span>
@@ -470,7 +569,7 @@ export const createDonationPopup = async () => {
             />
           </div>
           <h2 class="kindly-headline" style="margin-bottom: 5px;">
-            Get up to ${getDonationPercentage(currentMerchant)} donated to Susan G Komen
+            We'll donate ${getDonationPercentage(currentMerchant)} of this purchase to Susan G Komen
           </h2>
           <p style="color: #222 !important; font-family: Inter, sans-serif !important; font-size: 15px !important; text-align: center !important; margin: 0 0 10px 0 !important;">
             For Breast Cancer Research
@@ -498,6 +597,7 @@ export const createDonationPopup = async () => {
   // Add event listeners
   document.getElementById('kindly-close')?.addEventListener('click', (e) => {
     e.preventDefault();
+    showSuppressionDialog();
     container.remove();
     // Store that user has closed the popup
     chrome.storage.local.set({ popupClosed: Date.now() });
@@ -515,7 +615,7 @@ export const createDonationPopup = async () => {
       const header = `
         <div class="kindly-header">
           <div class="kindly-logo">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2">
               <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
             </svg>
             <span>KINDLY</span>
@@ -602,6 +702,27 @@ export const initialize = async () => {
   }
 
   const currentDomain = window.location.hostname;
+
+  // Check if popups are suppressed for this domain
+  const suppressionKey = `suppressed_${currentDomain}`;
+  const suppression = await chrome.storage.local.get([suppressionKey]);
+  const suppressedUntil = suppression[suppressionKey];
+
+  if (suppressedUntil) {
+    if (suppressedUntil === 'forever') {
+      console.log('Kindly: Popups permanently suppressed for this domain');
+      return;
+    }
+    
+    const now = Date.now();
+    if (now < suppressedUntil) {
+      console.log('Kindly: Popups temporarily suppressed for this domain');
+      return;
+    }
+    
+    // Clear expired suppression
+    await chrome.storage.local.remove([suppressionKey]);
+  }
   
   // Don't proceed if not on a supported merchant site
   const merchant = isSupportedMerchant();
@@ -656,7 +777,8 @@ export const initialize = async () => {
       .kindly-logo span {
         font-family: 'Inter', sans-serif !important;
         letter-spacing: 0.05em !important;
-        font-weight: 700 !important;
+        font-weight: normal !important;
+        font-size: 13px !important;
       }
       .kindly-close-button {
         background: none !important;
