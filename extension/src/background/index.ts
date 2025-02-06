@@ -3,73 +3,140 @@
 // Background service worker
 console.log('Kindly: Background script loaded');
 
+interface Merchant {
+  domain: string;
+  merchant: string;
+  network: string;
+  affiliateLink: string;
+  commissionType: string;
+  commissionValue: string;
+}
+
 const MERCHANTS_URL = 'https://kindly-merchant-data.s3.us-east-2.amazonaws.com/merchants.json';
-let cachedMerchants: any[] | null = null;
+const CACHE_KEY = 'kindly_merchants_cache';
+const CACHE_EXPIRY = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
-// Function to fetch merchants data
-async function fetchMerchants() {
-  console.log('Kindly Background DEBUG: Starting fetchMerchants');
+async function loadFromCache(): Promise<Merchant[] | null> {
   try {
-    if (cachedMerchants) {
-      console.log('Kindly Background DEBUG: Found cached data:', {
-        length: cachedMerchants.length,
-        sample: cachedMerchants[0]
-      });
-      return cachedMerchants;
-    }
+    const data = await chrome.storage.local.get(CACHE_KEY);
+    if (!data[CACHE_KEY]) return null;
 
-    console.log('Kindly Background DEBUG: No cache, fetching from:', MERCHANTS_URL);
-    const response = await fetch(MERCHANTS_URL);
-    console.log('Kindly Background DEBUG: Fetch response status:', response.status);
-    
-    const data = await response.json();
-    console.log('Kindly Background DEBUG: Parsed JSON data length:', data.length);
-    console.log('Kindly Background DEBUG: First item:', data[0]);
-    
-    // Cache the data
-    cachedMerchants = data;
-    const merchantCount = data[0]?.metadata ? data.length - 1 : data.length;
-    console.log('Kindly Background DEBUG: Cached', merchantCount, 'merchants');
-    console.log('Kindly Background DEBUG: Sample merchants:', data.slice(0, 3));
-    
-    return data;
+    const { merchants, timestamp } = data[CACHE_KEY];
+    if (Date.now() - timestamp > CACHE_EXPIRY) return null;
+
+    return merchants;
   } catch (error) {
-    console.error('Kindly Background DEBUG: Error in fetchMerchants:', error);
-    console.error('Kindly Background DEBUG: Error stack:', error.stack);
+    console.error('Kindly: Cache read error:', error);
     return null;
   }
 }
 
-// Clear any existing state on startup
-chrome.storage.local.clear(() => {
-  console.log('Kindly: Storage cleared on startup');
-});
+async function saveToCache(merchants: Merchant[]): Promise<void> {
+  try {
+    await chrome.storage.local.set({
+      [CACHE_KEY]: {
+        merchants,
+        timestamp: Date.now()
+      }
+    });
+  } catch (error) {
+    console.error('Kindly: Cache write error:', error);
+  }
+}
+
+// Function to fetch merchants data
+async function fetchMerchants(forceRefresh = false): Promise<Merchant[]> {
+  try {
+    // Check cache first unless force refresh is requested
+    if (!forceRefresh) {
+      const cached = await loadFromCache();
+      if (cached) {
+        console.log('Kindly: Using cached merchant data');
+        return cached;
+      }
+    }
+
+    // Fetch fresh data
+    console.log('Kindly: Fetching fresh merchant data from:', MERCHANTS_URL);
+    const response = await fetch(MERCHANTS_URL, {
+      method: 'GET',
+      mode: 'cors',
+      cache: 'no-cache',
+      credentials: 'omit',
+      headers: {
+        'Accept': 'application/json',
+        'Origin': chrome.runtime.getURL(''),
+        'Cache-Control': 'no-cache'
+      }
+    });
+    
+    console.log('Kindly: Fetch response status:', response.status);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    if (!Array.isArray(data)) {
+      throw new Error('Received data is not an array');
+    }
+    
+    // Skip metadata if present
+    const merchants = data[0]?.metadata ? data.slice(1) : data;
+    if (merchants.length === 0) {
+      throw new Error('No merchant data available');
+    }
+    
+    // Cache the fresh data
+    await saveToCache(merchants);
+    return merchants;
+  } catch (error) {
+    console.error('Kindly Background DEBUG: Error in fetchMerchants:', error);
+    
+    // If fetch fails, try to use expired cache as fallback
+    const expired = await loadFromCache();
+    if (expired) {
+      console.log('Kindly: Using expired cache as fallback');
+      return expired;
+    }
+    
+    throw error;
+  }
+}
+
+// Initialize by fetching merchants data with retry logic
+async function initializeMerchants(retries = 3, delay = 5000) {
+  for (let i = 0; i < retries; i++) {
+    try {
+      const data = await fetchMerchants(true);
+      console.log('Kindly: Successfully loaded merchant data on startup');
+      return data;
+    } catch (error) {
+      console.error(`Kindly: Retry ${i + 1}/${retries} failed:`, error);
+      if (i < retries - 1) await new Promise(resolve => setTimeout(resolve, delay));
+    }
+  }
+  console.error('Kindly: All retries failed to load merchant data');
+}
+
+// Start initialization
+initializeMerchants();
 
 // Listen for messages from content script
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  console.log('Kindly Background DEBUG: Message received:', {
-    type: message.type,
-    sender: sender.url
-  });
-  
   if (message.type === 'FETCH_MERCHANTS') {
-    console.log('Kindly Background DEBUG: Processing FETCH_MERCHANTS request');
-    // Fetch merchants and send response
-    fetchMerchants().then(data => {
-      console.log('Kindly Background DEBUG: Sending response to content script:', {
-        dataLength: data?.length,
-        hasData: !!data,
-        sampleMerchant: data?.[0]
+    fetchMerchants()
+      .then(merchants => {
+        console.log('Kindly: Successfully fetched merchants for content script');
+        sendResponse(merchants);
+      })
+      .catch(error => {
+        console.error('Kindly: Error fetching merchants for content script:', error);
+        sendResponse({ error: error.message });
       });
-      sendResponse(data);
-    }).catch(error => {
-      console.error('Kindly Background DEBUG: Error in message handler:', error);
-      sendResponse(null);
-    });
-    
-    // Return true to indicate we will send a response asynchronously
-    return true;
+    return true; // Will respond asynchronously
   }
+  return false;
 });
 
 // Listen for tab updates
@@ -115,6 +182,23 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       // Open popup.html in a new tab
       chrome.tabs.create({ url: 'popup.html' });
       console.log('Kindly: Opening cause selector');
+      break;
+
+    case 'LOGOUT':
+      // Clear storage and notify all tabs
+      chrome.storage.local.clear(() => {
+        console.log('Kindly: Storage cleared on logout');
+        // Notify all tabs about logout
+        chrome.tabs.query({}, (tabs) => {
+          tabs.forEach(tab => {
+            if (tab.id) {
+              chrome.tabs.sendMessage(tab.id, { type: 'USER_LOGGED_OUT' }).catch(() => {
+                // Ignore errors for inactive tabs
+              });
+            }
+          });
+        });
+      });
       break;
 
     case 'GET_ACTIVE_TAB':

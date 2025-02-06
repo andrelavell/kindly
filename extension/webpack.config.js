@@ -2,7 +2,6 @@ const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 const dotenv = require('dotenv');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // Load environment variables from .env file
 const env = dotenv.config().parsed || {};
@@ -19,7 +18,7 @@ module.exports = {
   entry: {
     popup: './src/popup/index.tsx',
     content: './src/content/index.ts',
-    background: './src/background/index.ts',
+    background: './src/background/index.ts'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -40,33 +39,12 @@ module.exports = {
         ],
         exclude: /node_modules/,
       },
-      {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                plugins: [
-                  require('tailwindcss'),
-                  require('autoprefixer'),
-                ],
-              },
-            },
-          },
-        ],
-      },
     ],
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
   plugins: [
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-    }),
     new CopyPlugin({
       patterns: [
         { from: 'public', to: '.' },

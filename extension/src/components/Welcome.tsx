@@ -16,55 +16,55 @@ export function Welcome() {
   return (
     <div>
       {/* Header Block */}
-      <div className="bg-rose-600 text-white px-4 py-6">
-        <h2 className="text-xl font-bold mb-2">
+      <div style={{ backgroundColor: '#E91E63', color: 'white', padding: '1.5rem 1rem' }}>
+        <h2 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.5rem' }}>
           Welcome to Kindly, {firstName}! 🎉
         </h2>
-        <p className="text-sm opacity-90">
+        <p style={{ fontSize: '0.875rem', opacity: 0.9 }}>
           Let's make every purchase count
         </p>
       </div>
 
-      <div className="p-4 space-y-6">
+      <div style={{ padding: '1rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
         {/* Main Content */}
-        <div className="space-y-4">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <div>
-            <h3 className="text-base font-semibold text-gray-900 mb-3">
+            <h3 style={{ fontSize: '1rem', fontWeight: 600, color: '#111827', marginBottom: '0.75rem' }}>
               How Kindly Works
             </h3>
-            <div className="space-y-3">
-              <div className="flex items-start space-x-3">
-                <div className="flex-shrink-0 w-8 h-8 bg-rose-100 rounded-full flex items-center justify-center">
-                  <span className="text-rose-600 font-semibold">1</span>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
+                <div style={{ flexShrink: 0, width: '2rem', height: '2rem', backgroundColor: '#FCE7F3', borderRadius: '9999px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <span style={{ color: '#E91E63', fontWeight: 600 }}>1</span>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-700">Shop on Amazon as you normally would</p>
+                  <p style={{ fontSize: '0.875rem', color: '#374151' }}>Shop on Amazon as you normally would</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-3">
-                <div className="flex-shrink-0 w-8 h-8 bg-rose-100 rounded-full flex items-center justify-center">
-                  <span className="text-rose-600 font-semibold">2</span>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
+                <div style={{ flexShrink: 0, width: '2rem', height: '2rem', backgroundColor: '#FCE7F3', borderRadius: '9999px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <span style={{ color: '#E91E63', fontWeight: 600 }}>2</span>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-700">Choose from our curated ethical alternatives</p>
+                  <p style={{ fontSize: '0.875rem', color: '#374151' }}>Choose from our curated ethical alternatives</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-3">
-                <div className="flex-shrink-0 w-8 h-8 bg-rose-100 rounded-full flex items-center justify-center">
-                  <span className="text-rose-600 font-semibold">3</span>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
+                <div style={{ flexShrink: 0, width: '2rem', height: '2rem', backgroundColor: '#FCE7F3', borderRadius: '9999px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <span style={{ color: '#E91E63', fontWeight: 600 }}>3</span>
                 </div>
                 <div>
-                  <p className="text-sm text-gray-700">A portion of your purchase supports your chosen cause</p>
+                  <p style={{ fontSize: '0.875rem', color: '#374151' }}>A portion of your purchase supports your chosen cause</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-gray-200 pt-4">
-            <h3 className="text-base font-semibold text-gray-900 mb-3">
+          <div style={{ borderTop: '1px solid #E5E7EB', paddingTop: '1rem' }}>
+            <h3 style={{ fontSize: '1rem', fontWeight: 600, color: '#111827', marginBottom: '0.75rem' }}>
               Getting Started
             </h3>
-            <div className="space-y-2 text-sm text-gray-700">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.875rem', color: '#374151' }}>
               <p>• Visit any product on Amazon.com</p>
               <p>• Click the Kindly icon in your browser</p>
               <p>• Choose from ethical alternatives</p>
@@ -77,7 +77,17 @@ export function Welcome() {
         <button
           onClick={handleContinue}
           disabled={loading}
-          className="w-full bg-rose-600 text-white py-2 px-4 rounded-md hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500 disabled:opacity-50 mt-4"
+          style={{
+            width: '100%',
+            backgroundColor: '#E91E63',
+            color: 'white',
+            padding: '0.5rem 1rem',
+            borderRadius: '0.375rem',
+            border: 'none',
+            cursor: loading ? 'not-allowed' : 'pointer',
+            opacity: loading ? 0.5 : 1,
+            marginTop: '1rem'
+          }}
         >
           {loading ? 'Loading...' : 'Continue to Select Your Cause'}
         </button>

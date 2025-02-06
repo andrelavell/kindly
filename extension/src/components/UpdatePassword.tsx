@@ -51,10 +51,10 @@ export function UpdatePassword() {
 
   if (success) {
     return (
-      <div className="p-4">
-        <div className="mb-6">
-          <h2 className="text-xl font-bold text-gray-900 mb-2">Password Updated</h2>
-          <p className="text-sm text-gray-600">
+      <div style={{ padding: '1rem' }}>
+        <div style={{ marginBottom: '1.5rem' }}>
+          <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#111827', marginBottom: '0.5rem' }}>Password Updated</h2>
+          <p style={{ fontSize: '0.875rem', color: '#4B5563' }}>
             Your password has been successfully updated. You can now sign in with your new password.
           </p>
         </div>
@@ -63,17 +63,17 @@ export function UpdatePassword() {
   }
 
   return (
-    <div className="p-4">
-      <div className="mb-6">
-        <h2 className="text-xl font-bold text-gray-900 mb-2">Update Password</h2>
-        <p className="text-sm text-gray-600">
+    <div style={{ padding: '1rem' }}>
+      <div style={{ marginBottom: '1.5rem' }}>
+        <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#111827', marginBottom: '0.5rem' }}>Update Password</h2>
+        <p style={{ fontSize: '0.875rem', color: '#4B5563' }}>
           Please enter your new password below.
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         <div>
-          <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="password" style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, color: '#374151', marginBottom: '0.25rem' }}>
             New Password
           </label>
           <input
@@ -81,13 +81,19 @@ export function UpdatePassword() {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-rose-500 focus:border-rose-500"
+            style={{
+              width: '100%',
+              padding: '0.5rem 0.75rem',
+              border: '1px solid #D1D5DB',
+              borderRadius: '0.375rem',
+              boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)'
+            }}
             required
           />
         </div>
 
         <div>
-          <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="confirmPassword" style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, color: '#374151', marginBottom: '0.25rem' }}>
             Confirm New Password
           </label>
           <input
@@ -95,13 +101,19 @@ export function UpdatePassword() {
             type="password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-rose-500 focus:border-rose-500"
+            style={{
+              width: '100%',
+              padding: '0.5rem 0.75rem',
+              border: '1px solid #D1D5DB',
+              borderRadius: '0.375rem',
+              boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)'
+            }}
             required
           />
         </div>
 
         {error && (
-          <div className="text-sm text-red-600 bg-red-50 p-2 rounded">
+          <div style={{ fontSize: '0.875rem', color: '#EF4444', backgroundColor: '#FEF2F2', padding: '0.5rem', borderRadius: '0.375rem' }}>
             {error}
           </div>
         )}
@@ -109,7 +121,16 @@ export function UpdatePassword() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-rose-600 text-white py-2 px-4 rounded-md hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500 disabled:opacity-50"
+          style={{
+            width: '100%',
+            backgroundColor: '#E91E63',
+            color: 'white',
+            padding: '0.5rem 1rem',
+            borderRadius: '0.375rem',
+            border: 'none',
+            cursor: loading ? 'not-allowed' : 'pointer',
+            opacity: loading ? 0.5 : 1
+          }}
         >
           {loading ? 'Updating...' : 'Update Password'}
         </button>

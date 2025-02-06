@@ -1,4 +1,4 @@
-import { auth, User } from '../services/auth';
+import { authService, User } from '../services/auth';
 
 class AuthStore {
   private static instance: AuthStore;
@@ -19,7 +19,7 @@ class AuthStore {
 
   private async init() {
     try {
-      const user = await auth.getCurrentUser();
+      const user = await authService.getCurrentUser();
       this._user = user;
     } catch (error) {
       console.error('Error initializing auth store:', error);
@@ -38,19 +38,24 @@ class AuthStore {
   }
 
   async login(email: string, password: string) {
+    this._loading = true;
+    this.notifyListeners();
+    
     try {
-      await auth.login(email, password);
-      this._user = await auth.getCurrentUser();
-      this.notifyListeners();
+      await authService.login(email, password);
+      this._user = await authService.getCurrentUser();
     } catch (error) {
       console.error('Login error:', error);
       throw error;
+    } finally {
+      this._loading = false;
+      this.notifyListeners();
     }
   }
 
   async register(email: string, password: string, name: string) {
     try {
-      const user = await auth.register(email, password, name);
+      const user = await authService.register(email, password, name);
       this._user = user;
       this.notifyListeners();
     } catch (error) {
@@ -61,7 +66,7 @@ class AuthStore {
 
   async logout() {
     try {
-      await auth.logout();
+      await authService.logout();
       this._user = null;
       this.notifyListeners();
     } catch (error) {

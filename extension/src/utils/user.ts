@@ -1,4 +1,5 @@
-import { supabase } from './supabase';
+import { db } from './firebase';
+import { collection, query, where, getDocs } from 'firebase/firestore';
 
 // Generate a random 5-digit number
 function generateUserId(): string {
@@ -11,13 +12,11 @@ export async function getUniqueUserId(): Promise<string> {
   let exists = true;
   
   while (exists) {
-    const { data } = await supabase
-      .from('users')
-      .select('user_id')
-      .eq('user_id', userId)
-      .single();
+    const usersRef = collection(db, 'users');
+    const q = query(usersRef, where('user_id', '==', userId));
+    const querySnapshot = await getDocs(q);
     
-    exists = !!data;
+    exists = !querySnapshot.empty;
     if (exists) {
       userId = generateUserId();
     }

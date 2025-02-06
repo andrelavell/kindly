@@ -266,7 +266,13 @@ const showProcessingState = () => {
 };
 
 // Show success state popup
-export const showSuccessState = (merchant: Merchant) => {
+export const showSuccessState = async (merchant: Merchant) => {
+  // Check if success popup was already shown and closed
+  const stored = await chrome.storage.local.get([`success_popup_closed_${window.location.hostname}`]);
+  if (stored[`success_popup_closed_${window.location.hostname}`]) {
+    console.log('Kindly DEBUG: Success popup already shown and closed for this domain');
+    return;
+  }
   // Record domain activation
   setDomainActivation(window.location.hostname);
   // Remove any existing popups
@@ -278,7 +284,15 @@ export const showSuccessState = (merchant: Merchant) => {
   popup.className = 'kindly-popup';
 
   popup.innerHTML = `
-    ${createKindlyHeader()}
+    <div class="kindly-header">
+      <div class="kindly-logo">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        </svg>
+        <span>KINDLY</span>
+      </div>
+      <button id="kindly-close" class="kindly-close-button">×</button>
+    </div>
     <!-- Content -->
     <div class="kindly-content">
       <div style="text-align: center;">
@@ -301,8 +315,12 @@ export const showSuccessState = (merchant: Merchant) => {
 
   document.body.appendChild(popup);
 
-  // Add event listener
-  document.getElementById('kindly-close-success')?.addEventListener('click', () => {
+  // Add event listener for close button
+  document.getElementById('kindly-close')?.addEventListener('click', async () => {
+    // Track that success popup was closed for this domain
+    await chrome.storage.local.set({
+      [`success_popup_closed_${window.location.hostname}`]: Date.now()
+    });
     popup.remove();
   });
 
@@ -559,11 +577,11 @@ const handleActivateClick = async (e?: Event) => {
     if (response?.success) {
       // Update local storage and show success state
       const currentDomain = window.location.hostname;
-      chrome.storage.local.get(['domainDonations'], (result) => {
+      chrome.storage.local.get(['domainDonations'], async (result) => {
         const domainDonations = result.domainDonations || {};
         domainDonations[currentDomain] = Date.now(); // Store timestamp instead of boolean
-        chrome.storage.local.set({ domainDonations });
-        showSuccessState(currentMerchant);
+        await chrome.storage.local.set({ domainDonations });
+        await showSuccessState(currentMerchant);
       });
     }
   } catch (error) {
@@ -595,18 +613,17 @@ export const initialize = async () => {
   // Store merchant data for later use
   await chrome.storage.local.set({ currentMerchant: merchant });
 
-  const loggedIn = await isLoggedIn();
-  if (!loggedIn) {
-    console.log('Kindly: User not logged in, showing auth form on supported site');
-    
-    // Add Google Font
+  // Add styles before showing any popup
+  if (!document.querySelector('link[href*="fonts.googleapis.com/css2?family=Inter"]')) {
     const linkEl = document.createElement('link');
     linkEl.rel = 'stylesheet';
     linkEl.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap';
     document.head.appendChild(linkEl);
+  }
 
-    // Add styles to document head
+  if (!document.querySelector('style[data-kindly="true"]')) {
     const styleEl = document.createElement('style');
+    styleEl.setAttribute('data-kindly', 'true');
     styleEl.textContent = `
       .kindly-popup {
         position: fixed !important;
@@ -730,6 +747,8 @@ export const initialize = async () => {
         text-align: center !important;
         font-size: 15px !important;
         font-family: 'Inter', sans-serif !important;
+        text-transform: none !important;
+        letter-spacing: 0 !important;
       }
       .kindly-button-primary {
         background: #e11d48 !important;
@@ -751,6 +770,11 @@ export const initialize = async () => {
       }
     `;
     document.head.appendChild(styleEl);
+  }
+
+  const loggedIn = await isLoggedIn();
+  if (!loggedIn) {
+    console.log('Kindly: User not logged in, showing auth form on supported site');
     
     const container = document.createElement('div');
     container.id = 'kindly-popup';
@@ -780,7 +804,7 @@ export const initialize = async () => {
     console.log('Kindly: Already active, showing success state');
     const currentMerchant = merchantsData.find(m => currentDomain.includes(m.domain));
     if (currentMerchant) {
-      showSuccessState(currentMerchant);
+      await showSuccessState(currentMerchant);
     }
     return;
   }
@@ -796,7 +820,7 @@ export const initialize = async () => {
     console.log('Kindly: Active donation found, showing success state');
     const currentMerchant = merchantsData.find(m => currentDomain.includes(m.domain));
     if (currentMerchant) {
-      showSuccessState(currentMerchant);
+      await showSuccessState(currentMerchant);
     }
     return;
   }

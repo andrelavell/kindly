@@ -1,9 +1,12 @@
 import React, { useEffect, useState, useRef, Component } from 'react';
 import { createRoot } from 'react-dom/client';
-import './popup.css';
 import { Auth } from '../components/Auth';
 import { authStore } from '../stores/authStore';
 import { User } from '../services/auth';
+
+
+// Log initialization
+console.log('Popup: Initializing at:', new Date().toISOString());
 
 function Popup() {
   const [user, setUser] = useState<User | null>(null);
@@ -25,111 +28,157 @@ function Popup() {
 
   if (loading) {
     return (
-      <div style={{ width: '320px', height: '360px', padding: '24px', textAlign: 'center' }}>
-        <div style={{ color: '#6B7280', fontSize: '14px' }}>Loading...</div>
+      <div style={{
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '2rem',
+        backgroundColor: 'white'
+      }}>
+        <div style={{
+          fontSize: '0.875rem',
+          color: '#6B7280'
+        }}>Loading...</div>
       </div>
     );
   }
 
   return (
-    <div style={{ width: '320px', height: '360px' }}>
+    <div style={{
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column' as const,
+        backgroundColor: 'white'
+      }}>
       {/* Header */}
       <div style={{
-        background: '#e11d48',
-        color: 'white',
-        padding: '12px 16px',
         display: 'flex',
+        alignItems: 'center',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        padding: '1rem 1.5rem',
+        backgroundColor: '#E91E63',
+        color: 'white'
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="white" stroke="currentColor" strokeWidth="2">
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          fontWeight: 600,
+          fontSize: '1.125rem'
+        }}>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
           </svg>
-          <span style={{
-            fontWeight: 600,
-            fontSize: '15px',
-            fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
-          }}>KINDLY</span>
+          <span>Kindly</span>
         </div>
-        {user && (
-          <button
-            onClick={() => authStore.logout()}
-            style={{
-              color: 'white',
-              padding: '4px 8px',
-              border: '1px solid white',
-              background: 'none',
-              cursor: 'pointer',
-              borderRadius: '4px',
-              fontSize: '14px',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '4px'
-            }}
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-              <polyline points="16 17 21 12 16 7"></polyline>
-              <line x1="21" y1="12" x2="9" y2="12"></line>
-            </svg>
-            Logout
-          </button>
-        )}
+        <button 
+          onClick={() => window.close()}
+          style={{
+            background: 'none',
+            border: 'none',
+            padding: '0.5rem',
+            cursor: 'pointer',
+            color: 'white',
+            opacity: 0.8,
+            transition: 'opacity 150ms ease',
+            ':hover': { opacity: 1 }
+          }}
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
+        </button>
       </div>
 
-
-
       {/* Content */}
-      {user ? (
-        <div style={{ padding: '24px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '24px' }}>
-            <div style={{ width: '80px', height: '80px', margin: '0 auto 24px' }}>
-              <img 
-                src="https://joinkindly.org/_next/image?url=%2Fimages%2Fcauses%2Fsusan-g-komen-logo.png&w=128&q=75"
-                alt="Susan G Komen"
-                style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '8px', background: 'white' }}
-              />
-            </div>
+      <div style={{
+        flex: 1,
+        padding: '1.5rem',
+        display: 'flex',
+        flexDirection: 'column' as const
+      }}>
+        {user ? (
+          <div style={{
+            textAlign: 'center' as const,
+            padding: '2rem 1rem'
+          }}>
+            <svg 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+              style={{
+                width: '48px',
+                height: '48px',
+                margin: '0 auto 1rem',
+                color: '#10B981'
+              }}
+            >
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
             <h3 style={{
-              color: '#2D3648',
-              fontSize: '20px',
+              fontSize: '1.25rem',
               fontWeight: 600,
-              marginBottom: '8px',
-              lineHeight: 1.2,
-              fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
-            }}>
-              Your donations are making a difference
-            </h3>
+              marginBottom: '0.5rem',
+              color: '#111827'
+            }}>Welcome back!</h3>
             <p style={{
-              color: 'rgba(45, 54, 72, 0.7)',
-              fontSize: '14px',
-              fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+              color: '#6B7280',
+              marginBottom: '1.5rem'
+            }}>You're all set to start making a difference.</p>
+
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column' as const,
+              gap: '0.5rem'
             }}>
-              Visit our website to see your impact
-            </p>
+              <a 
+                href="https://joinkindly.org" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '0.75rem 1.5rem',
+                  fontSize: '0.875rem',
+                  fontWeight: 500,
+                  borderRadius: '0.375rem',
+                  cursor: 'pointer',
+                  backgroundColor: '#F3F4F6',
+                  color: '#374151',
+                  textDecoration: 'none',
+                  border: '1px solid #E5E7EB'
+                }}
+              >
+                View Impact
+              </a>
+              <button 
+                onClick={() => authStore.logout()}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '0.75rem 1.5rem',
+                  fontSize: '0.875rem',
+                  fontWeight: 500,
+                  borderRadius: '0.375rem',
+                  cursor: 'pointer',
+                  backgroundColor: '#F3F4F6',
+                  color: '#374151',
+                  border: '1px solid #E5E7EB'
+                }}
+              >
+                Sign Out
+              </button>
+            </div>
           </div>
-          <button
-            onClick={() => window.open('https://joinkindly.org', '_blank')}
-            style={{
-              width: '100%',
-              background: '#e11d48',
-              color: 'white',
-              padding: '12px',
-              borderRadius: '6px',
-              fontWeight: 600,
-              fontSize: '14px',
-              border: 'none',
-              cursor: 'pointer',
-              fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
-            }}
-          >
-            View Impact
-          </button>
-        </div>
-      ) : (
-        <Auth />
-      )}
+        ) : (
+          <Auth />
+        )}
+      </div>
     </div>
   );
 }
@@ -156,7 +205,7 @@ class ErrorBoundary extends Component<{children: React.ReactNode}, {hasError: bo
   }
 }
 
-console.log('Popup script starting');
+console.log('VERIFY BUILD - Popup script starting - ' + new Date().toISOString());
 
 const container = document.getElementById('root');
 if (!container) {

@@ -1,8 +1,0 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Override Chrome extension popup defaults */
-html, body, #root {
-  overflow: visible !important;
-}

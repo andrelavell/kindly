@@ -43,16 +43,24 @@ export function ResetPassword({ onBack }: ResetPasswordProps) {
 
   if (success) {
     return (
-      <div className="p-4">
-        <div className="mb-6">
-          <h2 className="text-xl font-bold text-gray-900 mb-2">Check Your Email</h2>
-          <p className="text-sm text-gray-600">
+      <div style={{ padding: '1rem' }}>
+        <div style={{ marginBottom: '1.5rem' }}>
+          <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#111827', marginBottom: '0.5rem' }}>Check Your Email</h2>
+          <p style={{ fontSize: '0.875rem', color: '#4B5563' }}>
             We've sent you a password reset link. Please check your email and follow the instructions.
           </p>
         </div>
         <button
           onClick={onBack}
-          className="w-full bg-rose-600 text-white py-2 px-4 rounded-md hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500"
+          style={{
+            width: '100%',
+            backgroundColor: '#E91E63',
+            color: 'white',
+            padding: '0.5rem 1rem',
+            borderRadius: '0.375rem',
+            border: 'none',
+            cursor: 'pointer'
+          }}
         >
           Back to Sign In
         </button>
@@ -61,17 +69,17 @@ export function ResetPassword({ onBack }: ResetPasswordProps) {
   }
 
   return (
-    <div className="p-4">
-      <div className="mb-6">
-        <h2 className="text-xl font-bold text-gray-900 mb-2">Reset Password</h2>
-        <p className="text-sm text-gray-600">
+    <div style={{ padding: '1rem' }}>
+      <div style={{ marginBottom: '1.5rem' }}>
+        <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: '#111827', marginBottom: '0.5rem' }}>Reset Password</h2>
+        <p style={{ fontSize: '0.875rem', color: '#4B5563' }}>
           Enter your email address and we'll send you instructions to reset your password.
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="email" style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, color: '#374151', marginBottom: '0.25rem' }}>
             Email
           </label>
           <input
@@ -79,13 +87,19 @@ export function ResetPassword({ onBack }: ResetPasswordProps) {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-rose-500 focus:border-rose-500"
+            style={{
+              width: '100%',
+              padding: '0.5rem 0.75rem',
+              border: '1px solid #D1D5DB',
+              borderRadius: '0.375rem',
+              boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)'
+            }}
             required
           />
         </div>
 
         {error && (
-          <div className="text-sm text-red-600 bg-red-50 p-2 rounded">
+          <div style={{ fontSize: '0.875rem', color: '#EF4444', backgroundColor: '#FEF2F2', padding: '0.5rem', borderRadius: '0.375rem' }}>
             {error}
           </div>
         )}
@@ -93,7 +107,16 @@ export function ResetPassword({ onBack }: ResetPasswordProps) {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-rose-600 text-white py-2 px-4 rounded-md hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500 disabled:opacity-50"
+          style={{
+            width: '100%',
+            backgroundColor: '#E91E63',
+            color: 'white',
+            padding: '0.5rem 1rem',
+            borderRadius: '0.375rem',
+            border: 'none',
+            cursor: loading ? 'not-allowed' : 'pointer',
+            opacity: loading ? 0.5 : 1
+          }}
         >
           {loading ? 'Sending...' : 'Send Reset Link'}
         </button>
@@ -101,7 +124,16 @@ export function ResetPassword({ onBack }: ResetPasswordProps) {
         <button
           type="button"
           onClick={onBack}
-          className="w-full text-sm text-gray-600 hover:text-gray-900"
+          style={{
+            width: '100%',
+            fontSize: '0.875rem',
+            color: '#4B5563',
+            backgroundColor: 'transparent',
+            border: 'none',
+            cursor: 'pointer',
+            padding: '0.5rem 1rem',
+            ':hover': { color: '#111827' }
+          }}
         >
           Back to Sign In
         </button>

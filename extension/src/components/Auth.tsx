@@ -35,131 +35,139 @@ export function Auth({ onSuccess }: AuthProps) {
   };
 
   return (
-    <div style={{ padding: '24px' }}>
-      <h2 style={{
-        fontSize: '20px',
-        fontWeight: 600,
-        marginBottom: '16px',
-        color: '#2D3648',
-        textAlign: 'center',
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+    <div style={{
+        width: '100%',
+        padding: '1.5rem',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '1.5rem'
       }}>
-        {isLogin ? 'Welcome Back' : 'Create Account'}
-      </h2>
+      <div style={{
+        display: 'flex',
+        gap: '1rem',
+        marginBottom: '1.5rem'
+      }}>
+        <button 
+          type="button" 
+          onClick={() => setIsLogin(true)}
+          style={{
+            flex: 1,
+            padding: '0.75rem',
+            backgroundColor: 'transparent',
+            border: 'none',
+            borderBottom: isLogin ? '2px solid #E91E63' : '2px solid #E5E7EB',
+            color: isLogin ? '#E91E63' : '#6B7280',
+            fontSize: '0.875rem',
+            fontWeight: 500,
+            cursor: 'pointer'
+          }}
+        >
+          Sign In
+        </button>
+        <button 
+          type="button" 
+          onClick={() => setIsLogin(false)}
+          style={{
+            flex: 1,
+            padding: '0.75rem',
+            backgroundColor: 'transparent',
+            border: 'none',
+            borderBottom: !isLogin ? '2px solid #E91E63' : '2px solid #E5E7EB',
+            color: !isLogin ? '#E91E63' : '#6B7280',
+            fontSize: '0.875rem',
+            fontWeight: 500,
+            cursor: 'pointer'
+          }}
+        >
+          Create Account
+        </button>
+      </div>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '0.75rem'
+      }}>
         {!isLogin && (
-          <div style={{ marginBottom: '12px' }}>
-            <input
-              type="text"
-              placeholder="Name"
-              value={form.name}
-              onChange={e => setForm({ ...form, name: e.target.value })}
-              required={!isLogin}
-              style={{
-                width: '100%',
-                padding: '8px 12px',
-                border: '1px solid #E5E7EB',
-                borderRadius: '6px',
-                fontSize: '14px',
-                fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
-              }}
-            />
-          </div>
+          <input
+            type="text"
+            placeholder="Full Name"
+            value={form.name}
+            onChange={e => setForm({ ...form, name: e.target.value })}
+            required={!isLogin}
+            style={{
+              width: '100%',
+              padding: '0.75rem 1rem',
+              border: '1px solid #D1D5DB',
+              borderRadius: '0.375rem',
+              fontSize: '0.875rem',
+              outline: 'none'
+            }}
+          />
         )}
 
-        <div style={{ marginBottom: '12px' }}>
-          <input
-            type="email"
-            placeholder="Email"
-            value={form.email}
-            onChange={e => setForm({ ...form, email: e.target.value })}
-            required
-            style={{
-              width: '100%',
-              padding: '8px 12px',
-              border: '1px solid #E5E7EB',
-              borderRadius: '6px',
-              fontSize: '14px',
-              fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
-            }}
-          />
-        </div>
+        <input
+          type="email"
+          placeholder="Email Address"
+          value={form.email}
+          onChange={e => setForm({ ...form, email: e.target.value })}
+          required
+          style={{
+            width: '100%',
+            padding: '0.75rem 1rem',
+            border: '1px solid #D1D5DB',
+            borderRadius: '0.375rem',
+            fontSize: '0.875rem',
+            outline: 'none'
+          }}
+        />
 
-        <div style={{ marginBottom: '16px' }}>
-          <input
-            type="password"
-            placeholder="Password"
-            value={form.password}
-            onChange={e => setForm({ ...form, password: e.target.value })}
-            required
-            style={{
-              width: '100%',
-              padding: '8px 12px',
-              border: '1px solid #E5E7EB',
-              borderRadius: '6px',
-              fontSize: '14px',
-              fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
-            }}
-          />
-        </div>
+        <input
+          type="password"
+          placeholder="Password"
+          value={form.password}
+          onChange={e => setForm({ ...form, password: e.target.value })}
+          required
+          style={{
+            width: '100%',
+            padding: '0.75rem 1rem',
+            border: '1px solid #D1D5DB',
+            borderRadius: '0.375rem',
+            fontSize: '0.875rem',
+            outline: 'none'
+          }}
+        />
 
         {error && (
           <div style={{
-            color: '#e11d48',
-            fontSize: '14px',
-            marginBottom: '16px',
-            textAlign: 'center',
-            fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
-          }}>
-            {error}
-          </div>
+            color: '#EF4444',
+            fontSize: '0.875rem',
+            marginTop: '0.5rem'
+          }}>{error}</div>
         )}
 
         <button
           type="submit"
           disabled={loading}
           style={{
-            width: '100%',
-            background: '#e11d48',
-            color: 'white',
-            padding: '12px',
-            borderRadius: '6px',
-            border: 'none',
-            fontSize: '14px',
-            fontWeight: 600,
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '0.75rem 1.5rem',
+            fontSize: '0.875rem',
+            fontWeight: 500,
+            borderRadius: '0.375rem',
             cursor: loading ? 'not-allowed' : 'pointer',
-            opacity: loading ? 0.7 : 1,
-            fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+            border: 'none',
+            backgroundColor: '#E91E63',
+            color: 'white',
+            width: '100%',
+            marginTop: '0.5rem',
+            opacity: loading ? 0.5 : 1
           }}
         >
-          {loading ? 'Loading...' : (isLogin ? 'Sign In' : 'Create Account')}
+          {loading ? 'Please wait...' : (isLogin ? 'Sign In' : 'Create Account')}
         </button>
-
-        <div style={{
-          marginTop: '16px',
-          textAlign: 'center',
-          fontSize: '14px',
-          color: '#6B7280',
-          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
-        }}>
-          {isLogin ? "Don't have an account? " : 'Already have an account? '}
-          <button
-            type="button"
-            onClick={() => setIsLogin(!isLogin)}
-            style={{
-              background: 'none',
-              border: 'none',
-              color: '#e11d48',
-              cursor: 'pointer',
-              padding: 0,
-              font: 'inherit',
-              fontWeight: 500
-            }}
-          >
-            {isLogin ? 'Sign Up' : 'Sign In'}
-          </button>
-        </div>
       </form>
     </div>
   );

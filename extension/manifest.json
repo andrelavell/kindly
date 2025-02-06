@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Kindly",
-  "version": "1.0.0",
+  "version": "1.0.8",
   "description": "Make a difference while you shop",
   "permissions": [
     "storage",
@@ -9,7 +9,7 @@
     "identity"
   ],
   "oauth2": {
-    "client_id": "${SUPABASE_CLIENT_ID}",
+    "client_id": "85259780860-4o3hn7p4v0ue5ld2qqp4oa0oqjvs2rrb.apps.googleusercontent.com",
     "scopes": [
       "https://www.googleapis.com/auth/userinfo.email",
       "https://www.googleapis.com/auth/userinfo.profile"
@@ -17,10 +17,12 @@
   },
   "host_permissions": [
     "*://*/*",
-    "https://*.amazonaws.com/*"
+    "https://*.firebaseio.com/*",
+    "https://*.googleapis.com/*",
+    "https://*.s3.us-east-2.amazonaws.com/*"
   ],
   "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' https://*.amazonaws.com https://*.supabase.co;"
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' https://*.firebaseio.com https://*.googleapis.com https://*.s3.us-east-2.amazonaws.com;"
   },
   "action": {
     "default_popup": "popup.html",
@@ -43,11 +45,8 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "*://*/*"
-      ],
+      "matches": ["*://*/*"],
       "js": ["content.js"],
-      "css": ["content.css"],
       "run_at": "document_end"
     }
   ]
