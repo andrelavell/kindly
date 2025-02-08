@@ -208,7 +208,7 @@ export function HowItWorks() {
                             />
                           </div>
                           <h3 className="text-[#2D3648] text-xl font-semibold text-center leading-tight mb-2">
-                            Get up to 2.6% donated to Susan G Komen
+                            We'll donate 2.5% of this purchase to Susan G Komen
                           </h3>
                           <p className="text-[#2D3648]/70 text-sm text-center">
                             For Breast Cancer Research
