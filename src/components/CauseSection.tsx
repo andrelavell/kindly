@@ -53,7 +53,7 @@ export function CauseSection() {
               <div className="bg-brand rounded-t-lg border border-gray-200 shadow-xl">
                 <div className="flex items-center px-4 py-3 space-x-2">
                   <Heart className="text-white" style={{ width: '18px', height: '18px' }} />
-                  <div className="text-base text-white font-medium">kindly</div>
+                  <div className="text-base text-white font-medium">KINDLY</div>
                   <div className="flex-1"></div>
                   <div className="text-gray-400">
                     <svg className="w-4 h-4" fill="none" stroke="white" viewBox="0 0 24 24">
