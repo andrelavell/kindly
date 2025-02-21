@@ -124,7 +124,7 @@ export function HowItWorks() {
                   <div className="w-3 h-3 rounded-full bg-green-400"></div>
                 </div>
                 <div className="flex-1 bg-white rounded-md px-4 py-1 text-sm text-gray-600">
-                  <span className="select-none">amazon.com</span>
+                  <span className="select-none">petco.com</span>
                 </div>
               </div>
             </div>
@@ -133,14 +133,14 @@ export function HowItWorks() {
               {/* Amazon-like Header */}
               <div className="bg-[#232f3e] text-white px-4 py-2 flex items-center space-x-6">
                 <img 
-                  src="/images/amazon-logo-white.png" 
-                  alt="Amazon" 
+                  src="/images/petco-logo.png" 
+                  alt="Petco" 
                   className="h-6 object-contain"
                 />
                 <div className="flex-1">
                   <div className="relative flex items-center bg-gray-100 rounded-lg px-4 py-2">
                     <input type="text" placeholder="Search" className="bg-transparent flex-1 outline-none text-gray-900" />
-                    <span className="text-gray-500 font-mono">amazon.com</span>
+                    <span className="text-gray-500 font-mono">petco.com</span>
                   </div>
                 </div>
               </div>
