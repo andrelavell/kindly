@@ -208,7 +208,7 @@ export function HowItWorks() {
                             />
                           </div>
                           <h3 className="text-[#2D3648] text-xl font-semibold text-center leading-tight mb-2">
-                            We'll donate 2.5% of this purchase to Susan G Komen
+                            We'll donate 15% of this purchase to Susan G Komen
                           </h3>
                           <p className="text-[#2D3648]/70 text-sm text-center">
                             For Breast Cancer Research
@@ -304,7 +304,7 @@ export function HowItWorks() {
                             Donation Activated!
                             </h3>
                             <p className="text-[#2D3648] text-base">
-                              Purchases will now generate up to a 2.5% donation to Susan G Komen for Breast Cancer Research.
+                              Purchases will now generate up to a 15% donation to Susan G Komen for Breast Cancer Research.
                             </p>
                           </motion.div>
                         </div>
