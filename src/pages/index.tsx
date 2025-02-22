@@ -75,6 +75,8 @@ export default function Home() {
         <FAQ />
         <CallToAction />
       </main>
+      <script type="text/javascript" src="http://classic.avantlink.com/affiliate_app_confirm.php?mode=js&authResponse=c5ac2f8bc09473db332245a828036c1827eb0767"></script>
+      <script type="text/javascript" src="http://classic.avantlink.com/affiliate_app_confirm.php?mode=js&authResponse=c5ac2f8bc09473db332245a828036c1827eb0767"></script>
     </>
   )
 }
